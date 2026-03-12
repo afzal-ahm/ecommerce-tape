@@ -267,6 +267,12 @@ export default function CheckoutPage() {
 
     // Process checkout
     const handleCheckout = async () => {
+
+        console.log("INVOICE DEBUG", {    /////DEBUG
+            requiresInvoice,
+            companyInfo
+        });
+
         if (!selectedAddressId) {
             toast.error("Please select a shipping address");
             return;
@@ -309,6 +315,13 @@ export default function CheckoutPage() {
                         couponCode: coupon?.code || null,
                         couponId: coupon?.id || null,
                         discountAmount: totals.discount || 0,
+
+                        // COMPANY INVOICE DATA
+                        requiresInvoice,
+                        companyName: requiresInvoice ? companyInfo.companyName : null,
+                        companyAddress: requiresInvoice ? companyInfo.companyAddress : null,
+                        companyTaxCode: requiresInvoice ? companyInfo.companyTaxCode : null,
+                        companyEmail: requiresInvoice ? companyInfo.companyEmail : null
                     }),
                 });
 
@@ -448,22 +461,29 @@ export default function CheckoutPage() {
                                 method: "POST",
                                 credentials: "include",
                                 body: JSON.stringify({
-                                    // Send both formats to ensure compatibility
                                     razorpay_order_id: response.razorpay_order_id,
                                     razorpay_payment_id: response.razorpay_payment_id,
                                     razorpay_signature: response.razorpay_signature,
-                                    // Also send camelCase versions
+
                                     razorpayOrderId: response.razorpay_order_id,
                                     razorpayPaymentId: response.razorpay_payment_id,
                                     razorpaySignature: response.razorpay_signature,
-                                    // Include shipping and coupon information
+
                                     shippingAddressId: selectedAddressId,
                                     billingAddressSameAsShipping: true,
-                                    // Also pass coupon information again to ensure it's included
+
                                     couponCode: coupon?.code || null,
                                     couponId: coupon?.id || null,
                                     discountAmount: totals.discount || 0,
+
                                     notes: "",
+
+                                    // 🔥 COMPANY INVOICE DATA
+                                    requiresInvoice: requiresInvoice,
+                                    companyName: requiresInvoice ? companyInfo.companyName : null,
+                                    companyAddress: requiresInvoice ? companyInfo.companyAddress : null,
+                                    companyTaxCode: requiresInvoice ? companyInfo.companyTaxCode : null,
+                                    companyEmail: requiresInvoice ? companyInfo.companyEmail : null
                                 }),
                             });
 

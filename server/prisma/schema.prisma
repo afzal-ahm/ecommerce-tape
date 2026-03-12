@@ -404,6 +404,20 @@ model Order {
   referral                     Referral?
   returnRequests               ReturnRequest[]
   tracking                     Tracking?
+  invoice                      OrderInvoice?
+}
+
+model OrderInvoice {
+  id             String   @id @default(uuid())
+  orderId        String   @unique
+  companyName    String?
+  companyAddress String?
+  companyTaxCode String?
+  companyEmail   String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  order          Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
 }
 
 model OrderItem {

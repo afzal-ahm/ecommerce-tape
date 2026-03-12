@@ -249,6 +249,7 @@ export const getOrderById = asyncHandler(async (req, res, next) => {
           discountValue: true,
         },
       },
+      invoice: true,
     },
   });
 

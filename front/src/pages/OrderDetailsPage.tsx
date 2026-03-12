@@ -101,6 +101,13 @@ export default function OrderDetailsPage() {
     };
     shippingCost?: string | number;
     total?: string | number;
+
+    invoice?: {
+      companyName: string;
+      companyAddress: string;
+      companyTaxCode: string;
+      companyEmail: string;
+    };
   }
 
   const [orderDetails, setOrderDetails] = useState<OrderDetails | null>(null);
@@ -878,6 +885,40 @@ export default function OrderDetailsPage() {
             </CardContent>
           </Card>
 
+          {orderDetails.invoice && (
+            <Card className="bg-[#FFFFFF] border-[#E5E7EB] shadow-[0_1px_2px_rgba(0,0,0,0.04)] rounded-xl">
+              <CardHeader className="px-6 pt-6 pb-4">
+                <CardTitle className="text-lg font-semibold text-[#1F2937]">
+                  Company Invoice
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="px-6 pb-6 space-y-3">
+
+                <div>
+                  <p className="text-xs text-[#9CA3AF]">Company Name</p>
+                  <p className="font-medium">{orderDetails.invoice.companyName}</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-[#9CA3AF]">Company Address</p>
+                  <p className="font-medium">{orderDetails.invoice.companyAddress}</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-[#9CA3AF]">Company Tax Code</p>
+                  <p className="font-medium">{orderDetails.invoice.companyTaxCode}</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-[#9CA3AF]">Company Email</p>
+                  <p className="font-medium">{orderDetails.invoice.companyEmail}</p>
+                </div>
+
+              </CardContent>
+            </Card>
+          )}
+
           {/* Order Summary */}
           <Card className="bg-[#FFFFFF] border-[#E5E7EB] shadow-[0_1px_2px_rgba(0,0,0,0.04)] rounded-xl">
             <CardHeader className="px-6 pt-6 pb-4">
@@ -993,6 +1034,8 @@ export default function OrderDetailsPage() {
               </div>
             </CardContent>
           </Card>
+
+
 
           {/* Tracking Info */}
           {orderDetails.status === "SHIPPED" ||

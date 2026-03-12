@@ -303,6 +303,13 @@ export const paymentVerification = asyncHandler(async (req, res) => {
     couponId: requestCouponId,
     discountAmount: requestDiscount,
     notes,
+
+    // NEW INVOICE FIELDS
+    requiresInvoice,
+    companyName,
+    companyAddress,
+    companyTaxCode,
+    companyEmail
   } = req.body;
 
   // Validation
@@ -648,6 +655,19 @@ export const paymentVerification = asyncHandler(async (req, res) => {
           couponId: couponId,
         },
       });
+
+      // SAVE COMPANY INVOICE DATA
+      if (requiresInvoice) {
+        await tx.orderInvoice.create({
+          data: {
+            orderId: order.id,
+            companyName,
+            companyAddress,
+            companyTaxCode,
+            companyEmail,
+          },
+        });
+      }
 
       // If a coupon was used, mark it as inactive for this user
       if (userCoupon && userCoupon.coupon) {
@@ -1530,6 +1550,13 @@ export const createCashOrder = asyncHandler(async (req, res) => {
     couponId: requestCouponId,
     discountAmount: requestDiscount,
     notes,
+
+    // NEW INVOICE FIELDS
+    companyName,
+    companyAddress,
+    companyTaxCode,
+    companyEmail,
+    requiresInvoice
   } = req.body;
 
   if (!shippingAddressId) {
@@ -1768,6 +1795,19 @@ export const createCashOrder = asyncHandler(async (req, res) => {
           couponId: couponId,
         },
       });
+
+      // Save company invoice if user requested
+      if (requiresInvoice) {
+        await tx.orderInvoice.create({
+          data: {
+            orderId: order.id,
+            companyName,
+            companyAddress,
+            companyTaxCode,
+            companyEmail,
+          },
+        });
+      }
 
       // If a coupon was used, mark it as inactive for this user
       if (userCoupon && userCoupon.coupon) {
