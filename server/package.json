@@ -1,0 +1,62 @@
+{
+  "name": "ecom-dashboard-server",
+  "version": "1.0.0",
+  "description": "Backend server for ecommerce dashboard",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node -r dotenv/config --experimental-json-modules index.js",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules index.js",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "studio": "prisma studio",
+    "push": "prisma db push",
+    "seed": "node -r dotenv/config --experimental-json-modules prisma/seed.js",
+    "update-permissions": "node -r dotenv/config --experimental-json-modules scripts/updateAdminPermissions.js",
+    "fix-permissions": "node -r dotenv/config --experimental-json-modules scripts/fixPermissions.js",
+    "fix-super-admin": "node -r dotenv/config --experimental-json-modules scripts/fixSuperAdminPermissions.js",
+    "setup-s3": "node scripts/setup-s3.js",
+    "test-s3": "node utils/s3test.js",
+    "seed-tape-attributes": "node -r dotenv/config --experimental-json-modules scripts/seedTapeAttributes.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecommerce",
+    "api",
+    "express",
+    "postgres",
+    "prisma"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.529.1",
+    "@prisma/adapter-pg": "^7.0.1",
+    "@prisma/client": "^7.0.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.19.1",
+    "express-rate-limit": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^6.9.13",
+    "pg": "^8.16.3",
+    "razorpay": "^2.9.2",
+    "sharp": "^0.33.3",
+    "slugify": "^1.6.6",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prisma": "^7.0.1",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

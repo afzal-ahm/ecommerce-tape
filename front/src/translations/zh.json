@@ -1,0 +1,2003 @@
+{
+    "nav": {
+        "dashboard": "仪表板",
+        "products": "产品",
+        "all_products": "所有产品",
+        "add_product": "添加产品",
+        "brands": "品牌",
+        "categories": "分类",
+        "attributes": "属性",
+        "orders": "订单",
+        "all_orders": "所有订单",
+        "return_requests": "退货请求",
+        "coupons": "优惠券",
+        "users": "用户",
+        "partners": "合作伙伴",
+        "referrals": "推荐",
+        "support": "支持",
+        "contact": "联系",
+        "reviews": "评论",
+        "faq": "常见问题",
+        "settings": "设置",
+        "price_visibility": "价格可见性",
+        "moq": "最小起订量",
+        "pricing_slabs": "价格分层",
+        "payment": "支付",
+        "gateway_keys": "网关键值",
+        "shipping": "运输",
+        "shiprocket": "Shiprocket",
+        "language": "语言"
+    },
+    "admin": {
+        "admin_dashboard": "管理仪表板",
+        "logout": "登出",
+        "loading": "加载中...",
+        "role": {
+            "super_admin": "超级管理员",
+            "admin": "管理员",
+            "user": "用户"
+        }
+    },
+    "settings": {
+        "title": "语言设置",
+        "description": "管理管理面板和客户网站的语言设置",
+        "admin_panel_language": "管理面板语言",
+        "admin_panel_desc": "设置管理仪表板界面的默认语言",
+        "select_language": "选择语言",
+        "current": "当前",
+        "choose_language": "选择语言",
+        "client_website_language": "客户网站语言",
+        "client_website_desc": "设置客户网站的默认语言",
+        "select_languages_multi": "选择语言（允许多选）",
+        "selected": "已选择",
+        "save_button": "保存语言设置",
+        "alert_saved": "语言设置已保存！"
+    },
+    "payment_gateway_settings": {
+        "title": "支付网关设置",
+        "description": "配置您的 Razorpay 支付网关密钥。密钥已加密并安全存储。",
+        "info_title": "安全与多商户支持",
+        "info_list": {
+            "1": "所有支付密钥在存储到数据库前均已加密",
+            "2": "每个用户（管理员/卖家）可以配置自己的支付密钥",
+            "3": "订单使用订单所有者的支付网关密钥",
+            "4": "从测试模式 (TEST) 开始，准备好后切换到实时模式 (LIVE)"
+        },
+        "razorpay": {
+            "title": "Razorpay 配置",
+            "description": "为在线支付配置您的 Razorpay 支付网关密钥",
+            "enable": "启用 Razorpay",
+            "enable_desc": "激活 Razorpay 支付网关",
+            "mode": "支付模式",
+            "test_mode": "测试模式",
+            "live_mode": "实时模式",
+            "mode_desc": "开发使用测试模式，生产使用实时模式",
+            "key_id": "Key ID",
+            "key_secret": "Key Secret",
+            "webhook_secret": "Webhook Secret (可选)",
+            "save_button": "保存 Razorpay 设置",
+            "reset": "重置",
+            "saving": "正在保存...",
+            "success": "Razorpay 设置保存成功"
+        },
+        "phonepe": {
+            "title": "PhonePe 配置",
+            "save_button": "保存 PhonePe 设置"
+        }
+    },
+    "payment_settings": {
+        "title": "支付设置",
+        "description": "管理客户结账时可用的支付方式",
+        "card_title": "支付方式",
+        "card_desc": "启用或禁用您商店的支付方式",
+        "cod": {
+            "title": "货到付款 (COD)",
+            "description": "允许客户在订单交付时支付现金"
+        },
+        "razorpay": {
+            "title": "Razorpay (在线支付)",
+            "description": "启用通过 Razorpay 的在线支付（信用卡/借记卡、UPI、网银等）",
+            "configured": "Razorpay 密钥已配置并启用",
+            "not_configured": "请先在网关设置中配置 Razorpay 密钥"
+        },
+        "save_button": "保存设置",
+        "saving": "正在保存..."
+    },
+    "moq_settings": {
+        "title": "MOQ 设置",
+        "description": "为您的商店全局配置最小起订量 (MOQ)",
+        "card_title": "全局 MOQ 配置",
+        "card_desc": "启用后，所有产品都将需要最小起订量，除非在产品或变体级别被覆盖。",
+        "enable": "启用 MOQ 系统",
+        "enable_desc": "全局开启最小起订量要求",
+        "min_qty_label": "最小起订量",
+        "min_qty_desc": "客户必须至少订购此数量的任何产品",
+        "info_title": "MOQ 优先级如何工作",
+        "info_list": {
+            "1": "变体级 MOQ 覆盖产品级 MOQ",
+            "2": "产品级 MOQ 覆盖全局 MOQ",
+            "3": "如果禁用 MOQ，则数量从 1 开始（正常行为）"
+        },
+        "status": {
+            "active": "MOQ 已激活 - 最小数量:",
+            "disabled": "MOQ 已禁用 - 无最小数量限制"
+        },
+        "save_button": "保存设置",
+        "saving": "正在保存...",
+        "reset": "重置"
+    },
+    "price_visibility": {
+        "title": "价格可见性设置",
+        "description": "控制您商店中访客用户的价格可见性",
+        "card_title": "价格可见性控制",
+        "hide_guests": "对访客用户隐藏价格",
+        "hide_guests_desc": "启用后，未登录用户将无法看到价格。登录用户可以正常看到所有价格。",
+        "info_title": "工作原理：",
+        "info_list": {
+            "1": "OFF (默认): 所有用户都可以看到产品价格、变体并添加到购物车",
+            "2": "ON: 访客用户可以看到产品，但价格会隐藏直到登录",
+            "3": "购物车和愿望清单: 功能对所有用户保持正常",
+            "4": "登录用户: 无论此设置如何，始终看到完整的产品详细信息"
+        },
+        "current_status": "当前状态:",
+        "status_hidden": "对访客隐藏价格",
+        "status_visible": "对所有用户显示价格",
+        "save_button": "保存设置",
+        "saving": "正在保存..."
+    },
+    "faq_management": {
+        "title": "常见问题管理",
+        "description": "管理网站的常见问题 (FAQ)",
+        "add_button": "添加新 FAQ",
+        "search_placeholder": "搜索 FAQ...",
+        "list_title": "常见问题",
+        "list_desc": "在此管理您的 FAQ 内容",
+        "no_faqs": "未找到 FAQ",
+        "no_results": "没有符合搜索条件的 FAQ",
+        "create_first": "创建您的第一个 FAQ 以开始",
+        "adjust_search": "尝试调整您的搜索字词",
+        "actions": "操作",
+        "edit": "编辑",
+        "delete": "删除",
+        "publish": "发布",
+        "unpublish": "取消发布",
+        "status_published": "已发布",
+        "status_draft": "草稿",
+        "create_title": "创建新 FAQ",
+        "create_subtitle": "向您的网站添加常见问题",
+        "edit_title": "编辑 FAQ",
+        "dialog_desc": "在此更改 FAQ。完成后单击保存。",
+        "form": {
+            "question": "问题",
+            "question_placeholder": "输入问题",
+            "answer": "答案",
+            "answer_placeholder": "输入答案",
+            "answer_help": "您可以使用基本的 HTML 标签进行格式化",
+            "category": "类别",
+            "category_placeholder": "例如：运输、退货、产品信息（可选）",
+            "publish_label": "已发布",
+            "publish_immediate": "立即发布",
+            "yes": "是",
+            "no": "否",
+            "cancel": "取消",
+            "save": "保存更改",
+            "create": "创建 FAQ",
+            "creating": "创建中...",
+            "back": "返回"
+        },
+        "delete_dialog": {
+            "title": "确认删除",
+            "desc": "您确定要删除此 FAQ 吗？此操作无法撤消。",
+            "confirm": "删除"
+        },
+        "messages": {
+            "load_error": "加载 FAQ 失败",
+            "updated": "FAQ 更新成功",
+            "created": "FAQ 创建成功",
+            "deleted": "FAQ 删除成功",
+            "published": "FAQ 已发布",
+            "unpublished": "FAQ 已取消发布",
+            "save_error": "保存 FAQ 失败",
+            "delete_error": "删除 FAQ 失败",
+            "required": "问题和答案为必填项"
+        }
+    },
+    "contact_management": {
+        "title": "联系管理",
+        "description": "管理客户咨询和联系表单提交",
+        "search_placeholder": "按姓名或电子邮件搜索...",
+        "filter_status": "按状态筛选",
+        "all_status": "所有状态",
+        "status": {
+            "new": "新",
+            "in_progress": "处理中",
+            "resolved": "已解决",
+            "spam": "垃圾邮件"
+        },
+        "loading": "正在加载提交...",
+        "no_submissions": "未找到联系提交",
+        "no_submissions_desc": "联系表单提交将显示在这里",
+        "page": "页",
+        "of": "/",
+        "actions": {
+            "view_details": "查看详情",
+            "update_status": "更新状态",
+            "delete": "删除"
+        },
+        "view_dialog": {
+            "title": "联系提交详情",
+            "name": "姓名",
+            "email": "电子邮件",
+            "phone": "电话",
+            "subject": "主题",
+            "not_provided": "未提供",
+            "no_subject": "无主题",
+            "message": "消息",
+            "admin_notes": "管理员备注",
+            "submitted": "已提交",
+            "last_updated": "最后更新",
+            "close": "关闭",
+            "update": "更新状态"
+        },
+        "update_dialog": {
+            "title": "更新提交状态",
+            "status_label": "状态",
+            "select_status": "选择状态",
+            "notes_label": "备注",
+            "notes_placeholder": "添加关于此提交的备注",
+            "cancel": "取消",
+            "update": "更新"
+        },
+        "delete_dialog": {
+            "title": "删除联系提交",
+            "desc": "您确定要删除此联系提交吗：",
+            "confirm": "删除"
+        },
+        "messages": {
+            "fetch_error": "获取联系提交失败",
+            "delete_success": "联系提交删除成功",
+            "delete_error": "删除联系提交失败",
+            "update_success": "联系提交更新成功",
+            "update_error": "更新联系提交失败"
+        }
+    },
+    "referrals_page": {
+        "title": "推荐管理",
+        "description": "查看和管理用户推荐和奖励",
+        "stats": {
+            "total_referrals": "总推荐",
+            "completed": "已完成",
+            "pending": "待处理",
+            "total_rewards_paid": "已支付奖励总额"
+        },
+        "top_referrers": {
+            "title": "最佳推荐人",
+            "referrals_suffix": "次推荐",
+            "unknown_user": "未知用户",
+            "code": "代码"
+        },
+        "search": {
+            "placeholder": "按代码、姓名或电子邮件搜索...",
+            "button": "搜索"
+        },
+        "filters": {
+            "all_status": "所有状态",
+            "pending": "待处理",
+            "completed": "已完成",
+            "cancelled": "已取消"
+        },
+        "list": {
+            "title": "所有推荐",
+            "no_referrals": "未找到推荐",
+            "empty_description": "推荐数据将在可用时显示在此处"
+        },
+        "card": {
+            "referral_code": "推荐代码",
+            "referrer_label": "推荐人（谁推荐的）",
+            "referred_label": "被推荐用户",
+            "order_details": "订单详情",
+            "reward": "奖励",
+            "completed_on": "完成于",
+            "created": "创建于"
+        },
+        "badges": {
+            "completed": "已完成",
+            "pending": "待处理",
+            "cancelled": "已取消"
+        }
+    },
+    "partner_management": {
+        "title": "合作伙伴管理",
+        "description": "管理已批准和待处理的合作伙伴请求",
+        "tabs": {
+            "approved": "已批准的合作伙伴",
+            "non_approved": "未批准的合作伙伴"
+        },
+        "details": {
+            "back_button": "返回合作伙伴",
+            "refresh_button": "刷新数据",
+            "header_subtitle": "合作伙伴详情和收入",
+            "badges": {
+                "active": "活跃",
+                "inactive": "不活跃"
+            },
+            "stats": {
+                "total_earnings": "总收入",
+                "pending_amount": "待处理金额",
+                "paid_amount": "已付金额",
+                "total_orders": "总订单"
+            },
+            "info": {
+                "title": "合作伙伴信息",
+                "email": "电子邮件",
+                "phone": "电话",
+                "location": "位置",
+                "commission_rate": "佣金率",
+                "registered": "注册于"
+            },
+            "coupons": {
+                "title": "分配的优惠券",
+                "commission": "佣金",
+                "discount": "折扣",
+                "min_order": "最低订单",
+                "used": "已使用",
+                "valid_until": "有效期至",
+                "empty": "没有分配给此合作伙伴的优惠券"
+            },
+            "earnings": {
+                "title": "月收入",
+                "filters": {
+                    "all_years": "所有年份",
+                    "all_months": "所有月份",
+                    "export": "导出"
+                },
+                "table": {
+                    "month": "月份",
+                    "orders": "订单",
+                    "amount": "金额",
+                    "status": "状态",
+                    "paid_date": "支付日期",
+                    "actions": "操作",
+                    "empty": "未找到所选期间的收入数据"
+                },
+                "payment_notes_placeholder": "支付备注..."
+            },
+            "not_found": {
+                "title": "未找到合作伙伴",
+                "description": "您查找的合作伙伴不存在。"
+            }
+        },
+        "registrations": {
+            "title": "合作伙伴注册",
+            "badges": {
+                "pending": "待处理",
+                "approved": "已批准",
+                "rejected": "已拒绝"
+            },
+            "filters": {
+                "placeholder": "状态",
+                "all_statuses": "所有状态",
+                "clear_filters": "清除过滤器"
+            },
+            "table": {
+                "name": "姓名",
+                "email": "电子邮件",
+                "number": "号码",
+                "city": "城市",
+                "state": "省份",
+                "status": "状态",
+                "message": "消息",
+                "requested_at": "请求时间",
+                "actions": "操作",
+                "empty": "未找到合作伙伴注册。"
+            },
+            "actions": {
+                "approve": "批准",
+                "reject": "拒绝",
+                "details": "详情",
+                "close": "关闭",
+                "cancel": "取消"
+            },
+            "dialogs": {
+                "approve": {
+                    "title": "设置合作伙伴密码",
+                    "description": "为此合作伙伴输入密码（至少 6 个字符）。",
+                    "password_placeholder": "密码",
+                    "submit": "批准并设置密码"
+                },
+                "password": {
+                    "title": "合作伙伴密码",
+                    "description": "这是您为合作伙伴设置的密码。请复制并安全分享。您将无法再次看到它。",
+                    "copy": "复制",
+                    "copied": "已复制！"
+                },
+                "details": {
+                    "title": "合作伙伴详情",
+                    "description": "此合作伙伴的完整详情、优惠券和收入。",
+                    "assigned_coupons": "分配的优惠券",
+                    "earnings": "收入",
+                    "total": "总计",
+                    "monthly": "每月"
+                }
+            }
+        }
+    },
+    "user_management": {
+        "title": "用户",
+        "description": "管理客户帐户和访问权限",
+        "search_placeholder": "按姓名或电子邮件搜索...",
+        "search": "搜索",
+        "searching": "搜索中...",
+        "clear": "清除",
+        "loading": "加载用户...",
+        "error_title": "错误",
+        "try_again": "重试",
+        "no_users": "未找到用户",
+        "no_users_desc": "尝试调整您的搜索查询或稍后再试",
+        "clear_search": "清除搜索",
+        "showing": "显示",
+        "of": "/",
+        "users_count": "用户",
+        "page": "页",
+        "joined": "加入时间",
+        "actions": {
+            "view_details": "查看详情",
+            "edit": "编辑",
+            "verify_email": "验证电子邮件",
+            "delete": "删除"
+        },
+        "status": {
+            "verified": "已验证",
+            "not_verified": "未验证"
+        },
+        "fields": {
+            "name": "姓名",
+            "name_placeholder": "用户姓名",
+            "email": "电子邮件",
+            "email_placeholder": "user@example.com",
+            "phone": "电话",
+            "phone_placeholder": "电话号码",
+            "email_verified": "电子邮件已验证",
+            "role": "角色",
+            "created_at": "创建于",
+            "last_updated": "最后更新",
+            "not_provided": "未提供"
+        },
+        "dialogs": {
+            "details": {
+                "title": "用户详情",
+                "description": "关于此用户的详细信息",
+                "close": "关闭"
+            },
+            "edit": {
+                "title": "编辑用户",
+                "description": "更新用户信息",
+                "cancel": "取消",
+                "save": "保存更改",
+                "saving": "保存中..."
+            },
+            "delete": {
+                "title": "确认删除",
+                "description": "您确定要删除此用户吗？此操作无法撤销。",
+                "confirm": "删除",
+                "deleting": "删除中..."
+            }
+        },
+        "messages": {
+            "verify_success": "用户电子邮件验证成功",
+            "verify_error": "验证用户电子邮件失败",
+            "verify_exception": "验证用户电子邮件时发生错误",
+            "update_success": "用户详情更新成功",
+            "update_error": "更新用户详情失败",
+            "update_exception": "更新用户详情时发生错误",
+            "delete_success": "用户删除成功",
+            "delete_error": "删除用户失败",
+            "delete_exception": "删除用户时发生错误",
+            "fetch_error": "获取用户失败",
+            "fetch_exception": "获取用户时发生错误"
+        }
+    },
+    "coupons": {
+        "title": "优惠券",
+        "description": "管理折扣优惠券和促销优惠",
+        "add_coupon": "添加优惠券",
+        "no_coupons": "未找到优惠券",
+        "no_coupons_desc": "创建您的第一个折扣优惠券以提供给客户",
+        "add_first_coupon": "添加您的第一个优惠券",
+        "loading": "加载优惠券...",
+        "error_title": "出错了",
+        "try_again": "重试",
+        "status": {
+            "active": "有效",
+            "inactive": "无效"
+        },
+        "discount": {
+            "off": "折扣",
+            "min_order": "最低"
+        },
+        "targets": {
+            "all_items": "所有商品",
+            "categories": "类别",
+            "category": "类别",
+            "products": "产品",
+            "product": "产品",
+            "brands": "品牌",
+            "brand": "品牌"
+        },
+        "partners_count": "合作伙伴",
+        "form": {
+            "create_title": "添加新优惠券",
+            "edit_title": "编辑优惠券",
+            "create_desc": "为您的客户创建折扣优惠券",
+            "edit_desc": "更新优惠券详情和设置",
+            "back_to_coupons": "返回优惠券",
+            "basic_info": "基本信息",
+            "basic_info_desc": "输入优惠券代码和描述",
+            "code": "优惠券代码",
+            "code_placeholder": "例如，SUMMER2023，WELCOME10",
+            "description": "描述",
+            "description_placeholder": "优惠券简短描述",
+            "discount_settings": "折扣设置",
+            "discount_settings_desc": "配置折扣类型、价值和使用限制",
+            "discount_type": "折扣类型",
+            "type_percentage": "百分比折扣 (%)",
+            "type_fixed": "固定金额折扣 (₹)",
+            "discount_value": "折扣价值",
+            "min_order_amount": "最低订单金额",
+            "max_uses": "最大使用次数",
+            "max_uses_placeholder": "留空表示无限制",
+            "target_selection": "目标选择",
+            "target_selection_desc": "选择特定类别、产品或品牌（可选 - 留空表示所有商品）",
+            "target_categories": "目标类别（可选）",
+            "target_products": "目标产品（可选）",
+            "target_brands": "目标品牌（可选）",
+            "select_placeholder_categories": "选择类别",
+            "select_placeholder_products": "选择产品",
+            "select_placeholder_brands": "选择品牌",
+            "target_hint_categories": "留空允许在所有类别上使用优惠券。",
+            "target_hint_products": "留空允许在所有产品上使用优惠券。",
+            "target_hint_brands": "留空允许在所有品牌上使用优惠券。",
+            "validity_period": "有效期",
+            "validity_period_desc": "设置开始日期、结束日期和活动状态",
+            "start_date": "开始日期",
+            "end_date": "结束日期",
+            "active_status": "活动状态",
+            "active_status_desc": "启用或禁用此优惠券",
+            "partner_assignments": "合作伙伴分配",
+            "partner_assignments_desc": "将此优惠券分配给合作伙伴以进行佣金跟踪（可选）",
+            "add_partner": "添加合作伙伴",
+            "no_partners_assigned": "未分配合作伙伴。此优惠券将是对所有人通用的优惠券。",
+            "select_partner": "选择合作伙伴...",
+            "partner_already_assigned": "此合作伙伴已分配给此优惠券",
+            "assign_partner_desc": "将此优惠券分配给特定合作伙伴以进行佣金跟踪。合作伙伴将从使用此优惠券的订单中获得指定的佣金百分比。",
+            "commission_note_title": "佣金计算说明",
+            "commission_example": "例如：订单价值 ₹100，优惠券折扣 ₹10，合作伙伴佣金 5%",
+            "commission_calc_1": "佣金计算基数：₹90（折扣后订单价值）",
+            "commission_calc_2": "合作伙伴获得：₹4.50（₹90 的 5%）",
+            "commission_final_note": "佣金始终根据应用优惠券折扣后的最终订单金额计算。",
+            "cancel": "取消",
+            "create_btn": "创建优惠券",
+            "update_btn": "更新优惠券"
+        },
+        "messages": {
+            "delete_confirm": "您确定要删除优惠券“{code}”吗？",
+            "delete_success": "优惠券删除成功",
+            "delete_error": "删除优惠券失败",
+            "status_update_success": "优惠券“{code}”{action}成功",
+            "status_update_error": "{action}优惠券失败",
+            "create_success": "优惠券创建成功",
+            "update_success": "优惠券更新成功",
+            "create_error": "创建优惠券失败",
+            "update_error": "更新优惠券失败",
+            "fetch_error": "获取优惠券失败",
+            "load_error": "加载优惠券失败。请重试。",
+            "code_required": "优惠券代码是必填项",
+            "code_invalid": "优惠券代码只能包含字母、数字、下划线和连字符",
+            "discount_positive": "折扣价值必须是正数",
+            "discount_percentage_limit": "百分比折扣不能大于 100%",
+            "min_order_positive": "最低订单金额必须是正数",
+            "max_uses_integer": "最大使用次数必须是正整数",
+            "end_date_invalid": "结束日期必须在开始日期之后",
+            "partner_required": "请选择合作伙伴或删除空的合作伙伴条目",
+            "partner_duplicate": "每个合作伙伴每张优惠券只能分配一次。请删除重复的合作伙伴。",
+            "commission_limit": "{name} 的佣金必须在 0 到 100 之间",
+            "code_exists": "此优惠券代码已在使用中。请选择不同的代码。"
+        }
+    },
+    "pricing_slabs": {
+        "title": "价格阶梯",
+        "description": "为产品和变体配置基于数量的定价",
+        "add_button": "添加价格阶梯",
+        "info_title": "价格阶梯如何工作：",
+        "info_list": {
+            "1": "产品阶梯适用于所有变体，除非变体有自己的阶梯",
+            "2": "变体阶梯会覆盖该特定变体的产品阶梯",
+            "3": "将最大数量留空表示最高层级（无限）",
+            "4": "当购物车数量在最小-最大范围内时应用价格"
+        },
+        "filter_type": "按类型筛选",
+        "all_slabs": "所有阶梯",
+        "product_slabs": "仅产品阶梯",
+        "variant_slabs": "仅变体阶梯",
+        "no_slabs": "暂无价格阶梯",
+        "create_first": "创建您的第一个价格阶梯以启用基于数量的定价",
+        "table": {
+            "type": "类型",
+            "product_variant": "产品/变体",
+            "min_qty": "最小数量",
+            "max_qty": "最大数量",
+            "price": "价格",
+            "actions": "操作"
+        },
+        "product": "产品",
+        "variant": "变体",
+        "dialog": {
+            "create_title": "创建价格阶梯",
+            "edit_title": "编辑价格阶梯",
+            "description": "配置基于数量的定价。变体阶梯会覆盖产品阶梯。"
+        },
+        "form": {
+            "product_label": "产品（可选）",
+            "product_placeholder": "选择产品（可选）",
+            "variant_label": "变体（可选）",
+            "variant_placeholder": "选择变体（可选）",
+            "no_variants": "无可用变体",
+            "clear_selection": "清除选择",
+            "min_qty_label": "最小数量",
+            "max_qty_label": "最大数量（可选）",
+            "max_qty_placeholder": "留空表示无限",
+            "price_label": "价格（INR）"
+        },
+        "validation": {
+            "min_qty_error": "最小数量必须至少为1",
+            "max_qty_error": "最大数量必须大于最小数量",
+            "price_error": "价格必须大于0",
+            "product_variant_required": "请选择产品或变体"
+        },
+        "warning": {
+            "select_product_or_variant": "请为此价格阶梯选择产品或变体。"
+        },
+        "actions": {
+            "cancel": "取消",
+            "create_slab": "创建阶梯",
+            "update_slab": "更新阶梯"
+        },
+        "messages": {
+            "fetch_error": "加载价格阶梯失败",
+            "create_success": "价格阶梯创建成功",
+            "update_success": "价格阶梯更新成功",
+            "save_error": "保存价格阶梯失败",
+            "delete_confirm": "确定要删除此价格阶梯吗？",
+            "delete_success": "价格阶梯删除成功",
+            "delete_error": "删除价格阶梯失败"
+        }
+    },
+    "product_sections": {
+        "title": "产品分区",
+        "subtitle": "管理首页展示的产品分区（每个分区最多15个产品）",
+        "help_button": "帮助 - 产品分区如何工作",
+        "create_button": "创建分区",
+        "loading": "正在加载产品分区...",
+        "error": {
+            "title": "出了点问题",
+            "try_again": "重试"
+        },
+        "empty": {
+            "title": "暂无分区",
+            "description": "创建您的第一个产品分区以在首页展示产品",
+            "create_first": "创建第一个分区"
+        },
+        "section": {
+            "products_count": "{count} 个产品",
+            "active": "已激活",
+            "inactive": "未激活",
+            "edit": "编辑分区",
+            "add_products": "添加产品",
+            "delete": "删除分区",
+            "toggle_status": "切换激活状态"
+        },
+        "products": {
+            "section_products": "分区产品",
+            "total_products": "{max} 个产品中的 {current} 个",
+            "no_products": "此分区中没有产品",
+            "add_products_hint": "将产品添加到此分区以在首页展示",
+            "add_button": "添加产品",
+            "remove": "从分区移除"
+        },
+        "dialog": {
+            "create_title": "创建新分区",
+            "edit_title": "编辑分区",
+            "add_products_title": "向 {section} 添加产品",
+            "delete_confirm": "确定要删除此分区吗？此操作无法撤销。"
+        },
+        "form": {
+            "name_label": "分区名称",
+            "name_placeholder": "输入分区名称",
+            "slug_label": "别名",
+            "slug_placeholder": "自动生成的别名",
+            "description_label": "描述（可选）",
+            "description_placeholder": "输入分区描述",
+            "icon_label": "图标名称",
+            "icon_placeholder": "例如：star, heart, gift",
+            "color_label": "颜色",
+            "display_order_label": "显示顺序",
+            "max_products_label": "最大产品数",
+            "active_label": "激活"
+        },
+        "add_products_dialog": {
+            "search_placeholder": "搜索产品...",
+            "no_products": "无可用产品",
+            "all_products_added": "所有产品已添加到此分区",
+            "loading": "正在加载产品..."
+        },
+        "actions": {
+            "cancel": "取消",
+            "create": "创建分区",
+            "update": "更新分区",
+            "close": "关闭"
+        },
+        "messages": {
+            "fetch_error": "加载分区失败",
+            "create_success": "分区创建成功",
+            "create_error": "创建分区失败",
+            "update_success": "分区更新成功",
+            "update_error": "更新分区失败",
+            "delete_success": "分区删除成功",
+            "delete_error": "删除分区失败",
+            "product_add_success": "产品已添加到分区",
+            "product_add_error": "添加产品失败",
+            "product_remove_success": "产品已从分区移除",
+            "product_remove_error": "移除产品失败",
+            "status_update_success": "分区状态已更新",
+            "status_update_error": "更新分区状态失败"
+        },
+        "help": {
+            "title": "帮助 - 产品分区如何工作",
+            "description": "产品分区允许您将产品组织成出现在首页的组。",
+            "items": {
+                "1": "使用自定义名称、图标和颜色创建分区",
+                "2": "每个分区最多可容纳15个产品",
+                "3": "设置显示顺序以控制首页上的分区排列",
+                "4": "激活/停用分区以显示或隐藏它们",
+                "5": "随时添加或移除分区中的产品"
+            }
+        }
+    },
+    "partners_tab": {
+        "approved": {
+            "demo_title": "合作伙伴演示密码",
+            "demo_desc": "所有获得批准的合作伙伴都可以使用此演示密码登录。首次登录后将被提示更改密码。",
+            "no_partners": "未找到已批准的合作伙伴。",
+            "active": "活跃",
+            "remove": "移除",
+            "removing": "正在移除...",
+            "details_title": "合作伙伴详情",
+            "details_desc": "{name} 的详细信息",
+            "registered": "注册时间",
+            "message": "消息",
+            "assigned_coupons": "已分配优惠券",
+            "no_coupons": "未分配优惠券。",
+            "no_desc": "无描述",
+            "earnings": "收入",
+            "total": "总计",
+            "monthly": "月度明细",
+            "confirm_remove_coupon": "从合作伙伴移除此优惠券？",
+            "confirm_deactivate": "您确定要停用此合作伙伴吗？这将移除其访问权限但保留其数据。",
+            "deactivate_success": "合作伙伴停用成功。",
+            "deactivate_error": "停用合作伙伴失败。",
+            "remove_coupon_error": "移除优惠券失败。"
+        },
+        "non_approved": {
+            "no_partners": "未找到未批准的合作伙伴。",
+            "details": "详情",
+            "accept": "接受",
+            "decline": "拒绝",
+            "details_title": "合作伙伴申请详情",
+            "details_desc": "{name} 的申请详情",
+            "applied_date": "申请日期",
+            "city": "城市",
+            "state": "州/省",
+            "no_message": "未提供消息",
+            "approve_title": "批准合作伙伴",
+            "approve_desc": "此合作伙伴将被批准并分配演示密码 \"dfixventure\"。情在批准后将此密码分享给合作伙伴。",
+            "demo_password": "演示密码",
+            "demo_hint": "合作伙伴可以使用此密码登录并会被提示更改密码。",
+            "approving": "正在批准...",
+            "confirm_approve": "您确定要批准此合作伙伴吗？将为其分配演示密码。",
+            "approve_success": "合作伙伴批准成功！\n演示密码：{password}\n请将此密码分享给合作伙伴。",
+            "approve_error": "批准合作伙伴失败。",
+            "confirm_reject": "您确定要拒绝此申请吗？",
+            "reject_error": "拒绝合作伙伴失败。"
+        },
+        "common": {
+            "name": "姓名",
+            "email": "电子邮件",
+            "number": "电话号码",
+            "status": "状态",
+            "monthly_earnings": "月收入",
+            "actions": "操作",
+            "close": "关闭",
+            "cancel": "取消",
+            "loading": "正在加载合作伙伴..."
+        }
+    },
+    "orders": {
+        "title": "订单",
+        "description": "管理和跟踪所有客户订单",
+        "summary": {
+            "total": "总计",
+            "delivered": "已送达"
+        },
+        "filters": {
+            "search_placeholder": "按订单号或客户搜索...",
+            "all_status": "所有状态",
+            "clear": "清除筛选"
+        },
+        "status": {
+            "pending": "待处理",
+            "processing": "处理中",
+            "shipped": "已发货",
+            "delivered": "已送达",
+            "cancelled": "已取消",
+            "refunded": "已退款",
+            "placed": "订单已下",
+            "paid": "已支付"
+        },
+        "list": {
+            "no_orders": "未找到订单",
+            "no_orders_status": "未找到 {status} 订单。",
+            "try_adjusting": "尝试调整您的搜索词。",
+            "empty_desc": "客户下单后，订单将显示在此处。",
+            "customer": "客户",
+            "order_date": "订单日期",
+            "total_amount": "总金额",
+            "items_count": "{count} 件商品",
+            "discount": "-{amount} 折扣"
+        },
+        "details": {
+            "title": "订单 #{number}",
+            "placed_on": "下单于 {date}",
+            "back_to_list": "返回订单",
+            "status_timeline": "状态和时间线",
+            "items": "订单商品",
+            "customer_info": "客户信息",
+            "cancellation_info": "取消信息",
+            "payment_info": "支付信息",
+            "shipping_address": "收货地址",
+            "sku": "SKU",
+            "flavor": "口味",
+            "weight": "重量",
+            "price": "价格",
+            "qty": "数量",
+            "total": "总计",
+            "method": "方式",
+            "gateway": "网关",
+            "transaction_id": "交易ID",
+            "order_id": "订单ID",
+            "cancelled_at": "取消于",
+            "reason": "原因",
+            "cancelled_by": "取消者",
+            "by_customer": "客户",
+            "by_admin": "管理员",
+            "no_reason": "未提供原因",
+            "not_available": "N/A",
+            "subtotal": "小计",
+            "shipping": "运费",
+            "tax": "税费",
+            "grand_total": "总计",
+            "not_found": "订单未找到",
+            "not_found_desc": "您查找的订单不存在或已被移除。"
+        },
+        "actions": {
+            "view_details": "查看详情",
+            "update_status": "更新状态",
+            "mark_processing": "标记为处理中",
+            "mark_shipped": "标记为已发货",
+            "mark_delivered": "标记为已送达",
+            "mark_paid": "标记为已支付",
+            "cancel": "取消订单",
+            "load_error": "加载订单失败",
+            "status_update_success": "订单状态已更新为 {status}",
+            "status_update_error": "更新状态失败"
+        }
+    },
+    "return_requests": {
+        "title": "退货申请",
+        "description": "管理客户退货申请和退款",
+        "settings_btn": "设置",
+        "filters": {
+            "search_placeholder": "按订单、名称、邮箱或产品搜索...",
+            "search_btn": "搜索",
+            "clear": "清除",
+            "all_status": "所有状态"
+        },
+        "status": {
+            "pending": "待处理",
+            "approved": "已批准",
+            "rejected": "已拒绝",
+            "processing": "处理中",
+            "completed": "已完成"
+        },
+        "status_badges": {
+            "pending": "待处理",
+            "approved": "已批准",
+            "rejected": "已拒绝",
+            "processing": "处理中",
+            "completed": "已完成"
+        },
+        "list": {
+            "no_requests": "未找到退货申请",
+            "no_requests_desc": "客户提交退货申请后将显示在此处",
+            "try_adjusting": "尝试调整您的搜索或筛选",
+            "order_number": "订单 #{number}",
+            "customer": "客户",
+            "product": "产品",
+            "qty": "数量",
+            "price": "价格",
+            "reason": "退货原因",
+            "admin_notes": "管理员备注",
+            "processed_on": "处理于"
+        },
+        "dialogs": {
+            "settings_title": "退货设置",
+            "settings_desc": "配置退货申请设置",
+            "enable_label": "启用退货申请",
+            "enable_desc": "允许客户提交退货申请",
+            "window_label": "退货窗口（天）",
+            "window_desc": "交付后允许退货的天数（1-30）",
+            "update_status_title": "更新状态",
+            "update_status_desc": "更新此退货申请的状态",
+            "status_label": "状态",
+            "notes_label": "管理员备注（可选）",
+            "notes_placeholder": "为此申请添加备注...",
+            "details_title": "申请详情",
+            "requested_on": "申请于"
+        },
+        "actions": {
+            "view_details": "查看详情",
+            "update_status": "更新状态",
+            "save_settings": "保存",
+            "saving": "保存中...",
+            "cancel": "取消",
+            "update": "更新",
+            "settings_success": "设置更新成功",
+            "settings_error": "更新设置失败",
+            "status_success": "退货申请更新成功",
+            "status_error": "更新申请失败",
+            "validation_days": "退货窗口必须在 1 到 30 天之间"
+        },
+        "common": {
+            "enabled": "已启用",
+            "disabled": "已禁用",
+            "days": "{count} 天"
+        }
+    },
+    "reviews": {
+        "title": "评论管理",
+        "description": "管理和回复客户产品评论",
+        "stats": {
+            "total": "评论总数",
+            "average": "平均评分",
+            "pending": "待处理评论",
+            "recent": "最近评论（7天）"
+        },
+        "filters": {
+            "title": "筛选评论",
+            "search_label": "搜索",
+            "search_placeholder": "按用户或内容搜索",
+            "rating_label": "评分",
+            "all_ratings": "所有评分",
+            "status_label": "状态",
+            "all_statuses": "所有状态",
+            "sort_by": "排序方式",
+            "date": "日期",
+            "order": "顺序",
+            "descending": "降序",
+            "ascending": "升序",
+            "reset": "重置",
+            "apply": "应用筛选"
+        },
+        "table": {
+            "title": "评论",
+            "total_found": "条评论",
+            "loading": "正在加载评论...",
+            "no_reviews": "未找到评论",
+            "empty_hint": "尝试调整您的筛选条件",
+            "unknown_product": "未知产品",
+            "anonymous": "匿名"
+        },
+        "actions": {
+            "view": "查看详情",
+            "reply": "回复",
+            "approve": "批准",
+            "reject": "拒绝",
+            "delete": "删除",
+            "mark_pending": "标记为待处理"
+        },
+        "dialog": {
+            "title": "评论详情",
+            "description": "查看和管理此客户评论",
+            "review_title": "评论标题",
+            "review_content": "评论内容",
+            "by": "来自",
+            "posted": "发布于",
+            "admin_reply": "管理员回复",
+            "replied_on": "回复于",
+            "admin_comment": "管理员备注（仅内部）",
+            "admin_comment_placeholder": "添加关于此评论的内部备注",
+            "review_status": "评论状态"
+        },
+        "messages": {
+            "reply_success": "回复添加成功",
+            "reply_error": "回复添加失败",
+            "status_success": "状态已更新为 {status}",
+            "status_error": "状态更新失败",
+            "comment_success": "管理员备注已更新",
+            "comment_error": "管理员备注更新失败",
+            "delete_success": "评论删除成功",
+            "delete_error": "评论删除失败",
+            "error_title": "出错了",
+            "try_again": "重试"
+        },
+        "status": {
+            "approved": "已批准",
+            "rejected": "已拒绝",
+            "pending": "待处理"
+        }
+    },
+    "brands": {
+        "title": "品牌",
+        "subtitle": "管理所有产品品牌",
+        "search_placeholder": "搜索品牌...",
+        "add_button": "添加品牌",
+        "filters": {
+            "all": "所有品牌",
+            "top": "热门",
+            "new": "新品",
+            "hot": "火热"
+        },
+        "empty": {
+            "title": "暂无品牌",
+            "title_search": "未找到品牌",
+            "description": "开始添加您的第一个品牌",
+            "description_search": "尝试调整搜索条件",
+            "add_first": "添加第一个品牌"
+        },
+        "products_count": "{count} 个产品",
+        "dialog": {
+            "add_title": "添加新品牌",
+            "edit_title": "编辑品牌",
+            "assign_title": "为 {brand} 分配产品"
+        },
+        "form": {
+            "name_label": "品牌名称",
+            "name_placeholder": "输入品牌名称",
+            "logo_label": "品牌Logo",
+            "tags_label": "标签",
+            "tags_placeholder": "选择标签（热门、新品、火热等）"
+        },
+        "dropzone": {
+            "drag_drop": "拖放图片到此处",
+            "click_select": "或点击选择",
+            "click_change": "点击更换图片",
+            "preview_alt": "预览"
+        },
+        "actions": {
+            "view_products": "查看产品",
+            "edit": "编辑",
+            "delete": "删除",
+            "cancel": "取消",
+            "create": "创建品牌",
+            "update": "更新品牌",
+            "creating": "创建中...",
+            "updating": "更新中..."
+        },
+        "assign": {
+            "search_placeholder": "搜索产品...",
+            "no_brand": "无品牌",
+            "assign_button": "分配给品牌",
+            "assigning": "分配中...",
+            "previous": "上一页",
+            "next": "下一页",
+            "page_info": "第 {page} 页，共 {total} 页"
+        },
+        "messages": {
+            "fetch_error": "加载品牌失败",
+            "name_image_required": "名称和图片为必填项",
+            "tag_required": "至少需要一个标签",
+            "create_success": "品牌创建成功",
+            "update_success": "品牌更新成功",
+            "save_error": "保存品牌失败",
+            "delete_confirm": "确定要删除此品牌吗？产品将保留，但会从此品牌取消分配。",
+            "delete_success": "品牌已删除。产品现已取消分配。",
+            "delete_error": "删除品牌失败",
+            "products_fetch_error": "加载产品失败",
+            "assign_success": "产品已分配给品牌",
+            "assign_error": "分配产品失败",
+            "remove_success": "产品已从品牌移除"
+        }
+    },
+    "categories": {
+        "title": "分类",
+        "subtitle": "使用分类和子分类组织您的产品",
+        "create_button": "添加分类",
+        "loading": "正在加载分类...",
+        "sub_categories_count": "{count} 个子分类",
+        "empty": {
+            "title": "未找到类别",
+            "description": "创建您的第一个类别来组织您的产品",
+            "create_first": "创建您的第一个类别"
+        },
+        "help_button": "帮助 - 类别和子类别的工作原理",
+        "help": {
+            "title": "类别和子类别的工作原理",
+            "what_is": {
+                "title": "什么是类别和子类别？",
+                "description": "类别是您网站上的主要产品分组（例如，“女装”、“男装”、“电子产品”）。子类别是类别中更具体的细分（例如，在“女装”下，您可以拥有“连衣裙”、“上衣”、“裤子”）。这种等级结构有助于组织您的产品，并使客户更容易找到他们想要的东西。"
+            },
+            "relationship": {
+                "title": "父子关系：",
+                "category_label": "类别（父级）：",
+                "subcategory_label": "子类别（子级）："
+            },
+            "guide": {
+                "title": "逐步指南：",
+                "step1": {
+                    "title": "创建类别：",
+                    "item1": "点击“添加类别”按钮",
+                    "item2": "输入类别名称（例如，“女装”）",
+                    "item3": "添加可选的描述和图像",
+                    "item4": "保存类别"
+                },
+                "step2": {
+                    "title": "创建子类别：",
+                    "item1": "进入类别编辑页面（点击编辑图标）",
+                    "item2": "在编辑表单中，您会发现子类别部分",
+                    "item3": "点击“添加子类别”按钮",
+                    "item4": "输入子类别名称（例如，“连衣裙”）",
+                    "item5": "添加可选的描述和图像",
+                    "item6": "保存子类别",
+                    "item7": "重复此步骤添加更多子类别"
+                },
+                "step3": {
+                    "title": "编辑子类别：",
+                    "item1": "进入类别编辑页面",
+                    "item2": "找到您要编辑的子类别",
+                    "item3": "点击子类别旁边的编辑图标",
+                    "item4": "更新名称、描述或图像",
+                    "item5": "保存更改"
+                },
+                "step4": {
+                    "title": "删除子类别：",
+                    "item1": "进入类别编辑页面",
+                    "item2": "点击子类别旁边的删除图标",
+                    "item3": "确认删除",
+                    "item4": "注意：分配给此子类别的产品不会被删除"
+                }
+            },
+            "limit": {
+                "title": "一个类别可以有多少个子类别？",
+                "info": "没有硬性限制！您可以根据需要为每个类别创建任意数量的子类别。但是，为了更好的组织和用户体验，我们建议：",
+                "rec1": "每个类别理想的子类别数量为 5-15 个",
+                "rec2": "子类别过多可能会使导航混乱",
+                "rec3": "子类别过少可能无法提供足够的组织结构",
+                "rec4": "逻辑地将类似项目组合在一起"
+            },
+            "examples": {
+                "title": "实际示例：",
+                "ex1": {
+                    "title": "示例 1 - 女装类别：",
+                    "items": "连衣裙、上衣、裤子、裙子、外套、配饰",
+                    "total": "总计：6 个子类别"
+                },
+                "ex2": {
+                    "title": "示例 2 - 电子产品类别：",
+                    "items": "手机、笔记本电脑、平板电脑、耳机、相机",
+                    "total": "总计：5 个子类别"
+                },
+                "ex3": {
+                    "title": "示例 3 - 家具和厨房类别：",
+                    "items": "炊具、餐具、收纳、装饰、家具",
+                    "total": "总计：5 个子类别"
+                }
+            },
+            "visibility": {
+                "title": "如何查看哪个子类别属于哪个类别：",
+                "list_title": "在类别列表中：",
+                "list_item1": "每个类别行显示它拥有的子类别数量",
+                "list_item2": "例如：“女装” - 6 个子类别",
+                "edit_title": "在类别编辑页面中：",
+                "edit_item1": "编辑类别时，您会看到列出的所有子类别",
+                "edit_item2": "每个子类别显示其名称、描述和图像",
+                "edit_item3": "您可以从页面上下文中查看它属于哪个类别",
+                "product_title": "在产品表单中：",
+                "product_item1": "创建/编辑产品时，您首先选择主类别",
+                "product_item2": "然后子类别会按其父类别分组显示",
+                "product_item3": "例如：在“女装”下，您将看到“连衣裙”、“上衣”等。"
+            },
+            "appear": {
+                "title": "它如何显示在您的网站上：",
+                "nav": "导航菜单：",
+                "page": "类别页面：",
+                "page_filters": "子类别筛选：[连衣裙] [上衣] [裤子] [裙子]",
+                "page_products": "根据选定的子类别显示产品"
+            },
+            "best_practices": {
+                "title": "最佳实践：",
+                "bp1": "清晰命名：为类别和子类别使用描述性名称",
+                "bp2": "逻辑分组：将相关项目组合在一起",
+                "bp3": "一致的结构：跨类别维护类似的结构",
+                "bp4": "图像：添加图像以增强视觉吸引力",
+                "bp5": "产品分配：将产品分配给主类别和子类别",
+                "bp6": "定期审查：随着产品系列的增加进行更新"
+            },
+            "tips": {
+                "title": "提示：",
+                "tip1": "在添加产品之前创建子类别",
+                "tip2": "一个产品可以属于多个子类别",
+                "tip3": "使用子类别图像建立视觉识别度",
+                "tip4": "保持子类别名称简短明了（1-3 个词）",
+                "tip5": "停用子类别而不是删除，以便将来可能再次使用"
+            }
+        },
+        "error": {
+            "title": "出了点问题",
+            "try_again": "重试"
+        },
+        "delete": {
+            "title": "删除分类",
+            "description": "确定要删除此分类吗？此操作无法撤消。",
+            "force_title": "分类包含产品",
+            "force_description": "由于包含产品,无法删除此分类。",
+            "force_button": "强制删除",
+            "confirm": "删除"
+        },
+        "form": {
+            "create_title": "创建类别",
+            "edit_title": "编辑类别",
+            "create_subtitle": "创建一个新类别来组织您的产品",
+            "edit_subtitle": "更新类别详情并管理子类别",
+            "info_title": "类别信息",
+            "info_subtitle": "输入类别名称、描述并上传图像",
+            "name_label": "类别名称 *",
+            "name_placeholder": "例如：电子产品、服装、家具与厨房",
+            "description_label": "描述",
+            "description_placeholder": "输入此类别的简短描述",
+            "image_label": "类别图像",
+            "image_desc": "为此类别上传一张图像",
+            "image_recommendation": "推荐尺寸：400x400 像素，最大尺寸：5MB",
+            "preview_alt": "类别预览",
+            "create_submit": "创建类别",
+            "update_submit": "更新类别",
+            "cancel": "取消",
+            "back": "返回类别列表",
+            "loading_category": "加载类别中...",
+            "preparing_form": "准备表单中..."
+        },
+        "subcategories": {
+            "title": "子分类",
+            "add_button": "添加子分类",
+            "empty": "暂无子分类。添加您的第一个子分类。",
+            "loading": "正在加载子分类...",
+            "dialog": {
+                "add_title": "添加子分类",
+                "edit_title": "编辑子分类",
+                "name_label": "子分类名称 *",
+                "name_placeholder": "输入子分类名称",
+                "description_label": "描述",
+                "description_placeholder": "输入子分类描述",
+                "image_label": "子分类图片",
+                "save": "保存子分类",
+                "cancel": "取消"
+            }
+        },
+        "messages": {
+            "load_error": "加载分类失败,请重试",
+            "fetch_error": "获取分类失败",
+            "fetch_details_error": "获取分类详情失败",
+            "create_success": "分类创建成功",
+            "create_error": "创建分类失败",
+            "update_success": "分类更新成功",
+            "update_error": "更新分类失败",
+            "delete_success": "分类删除成功",
+            "delete_error": "删除分类失败",
+            "subcategory_create_success": "子分类创建成功",
+            "subcategory_create_error": "创建子分类失败",
+            "subcategory_update_success": "子分类更新成功",
+            "subcategory_update_error": "更新子分类失败",
+            "subcategory_delete_success": "子分类删除成功",
+            "subcategory_delete_error": "删除子分类失败",
+            "subcategory_name_required": "子类别名称是必填项",
+            "creating": "正在创建...",
+            "updating": "正在更新...",
+            "save_category_first": "添加子类别前，请先保存类别",
+            "delete_subcategory_confirm": "您确定要删除此子类别吗？",
+            "operation_failed": "操作失败"
+        }
+    },
+    "attributes": {
+        "title": "属性",
+        "help_button": "帮助 - 如何创建/编辑属性",
+        "create_button": "添加属性",
+        "search_placeholder": "搜索属性...",
+        "values_count": "{count} 个值",
+        "manage_values": "管理",
+        "empty": {
+            "title": "未找到属性",
+            "description": "开始创建您的第一个属性"
+        },
+        "table": {
+            "name": "名称",
+            "input_type": "输入类型",
+            "values": "值",
+            "actions": "操作"
+        },
+        "form": {
+            "create_title": "创建属性",
+            "edit_title": "编辑属性",
+            "name_label": "属性名称 *",
+            "name_placeholder": "例如：尺寸、颜色、内存、存储",
+            "name_desc": "属性的名称（例如：尺寸、颜色、内存、存储）",
+            "input_type_label": "输入类型 *",
+            "input_type_placeholder": "选择输入类型",
+            "input_type_desc": "用户如何选择此属性值",
+            "preset_label": "快速设置（行业预设）",
+            "preset_placeholder": "选择行业进行快速设置（可选）",
+            "preset_desc": "选择一个行业自动填充常见属性。您仍可以在下方自定义。",
+            "create_submit": "创建属性",
+            "update_submit": "更新属性",
+            "cancel": "取消"
+        },
+        "input_types": {
+            "text": "文本",
+            "number": "数字",
+            "select": "选择（单选）",
+            "multiselect": "多选"
+        },
+        "presets": {
+            "fashion": "时尚/服装",
+            "electronics": "电子产品",
+            "furniture": "家具",
+            "books": "书籍"
+        },
+        "messages": {
+            "load_error": "加载属性失败。请重试。",
+            "delete_success": "属性删除成功",
+            "delete_error": "删除属性失败",
+            "create_success": "属性创建成功",
+            "create_error": "创建属性失败",
+            "update_success": "属性更新成功",
+            "update_error": "更新属性失败",
+            "load_single_error": "加载属性失败",
+            "delete_confirm": "您确定要删除此属性吗？此操作无法撤消。"
+        }
+    },
+    "attribute_values": {
+        "title": "属性值",
+        "subtitle": "管理 {attribute} 的值",
+        "create_button": "添加值",
+        "back_button": "返回属性",
+        "search_placeholder": "搜索值...",
+        "empty": {
+            "title": "未找到值",
+            "description": "开始为此属性添加值"
+        },
+        "table": {
+            "value": "值",
+            "preview": "预览",
+            "color_code": "颜色代码",
+            "actions": "操作"
+        },
+        "form": {
+            "create_title": "添加值",
+            "edit_title": "编辑值",
+            "value_label": "值 *",
+            "value_placeholder": "例如：红色、XL、128GB",
+            "value_desc": "实际值（例如：红色、XL、128GB）",
+            "color_label": "颜色代码（可选）",
+            "color_placeholder": "例如：#FF0000",
+            "color_desc": "用于视觉表示的十六进制颜色代码（例如：#FF0000）",
+            "preset_label": "快速添加（常用/预设值）",
+            "preset_placeholder": "选择常用值自动填充",
+            "image_label": "图片（可选）",
+            "image_desc": "上传此属性值的图片（例如：颜色样本、尺码表）",
+            "create_submit": "添加值",
+            "update_submit": "更新值",
+            "cancel": "取消"
+        },
+        "messages": {
+            "load_error": "加载值失败",
+            "load_details_error": "加载属性详情失败",
+            "create_success": "值添加成功",
+            "create_error": "添加值失败",
+            "update_success": "值更新成功",
+            "update_error": "更新值失败",
+            "delete_success": "值删除成功",
+            "delete_error": "删除值失败"
+        }
+    },
+    "banners": {
+        "title": "横幅",
+        "subtitle": "管理主页横幅和促销展示",
+        "create_button": "创建横幅",
+        "loading": "正在加载横幅...",
+        "loading_banner": "正在加载横幅...",
+        "create_title": "添加新横幅",
+        "edit_title": "编辑横幅",
+        "create_description": "填写详情以创建新横幅",
+        "edit_description": "更新横幅详情和图片",
+        "back": "返回",
+        "delete": "删除",
+        "saving": "正在保存...",
+        "create_banner": "创建横幅",
+        "save_changes": "保存更改",
+        "cancel": "取消",
+        "basic_info": {
+            "title": "基本信息",
+            "description": "输入横幅标题、副标题和链接详情"
+        },
+        "form": {
+            "title_label": "标题",
+            "title_optional": "（可选）",
+            "title_placeholder": "例如：2024夏季促销",
+            "subtitle_label": "副标题",
+            "subtitle_optional": "（可选）",
+            "subtitle_placeholder": "例如：精选商品最高50%折扣",
+            "link_label": "链接URL",
+            "link_placeholder": "/products",
+            "link_hint": "点击横幅时导航到的位置（默认：/products）"
+        },
+        "list": {
+            "search_placeholder": "按标题或副标题搜索横幅...",
+            "filter_all": "所有状态",
+            "filter_published": "已发布",
+            "filter_unpublished": "未发布",
+            "clear_filters": "清除筛选",
+            "no_banners": "暂无横幅",
+            "no_banners_desc": "创建您的第一个横幅以显示在主页上",
+            "create_first": "创建第一个横幅",
+            "untitled_banner": "无标题横幅",
+            "published": "已发布",
+            "unpublished": "未发布",
+            "active": "有效",
+            "inactive": "无效",
+            "link": "链接",
+            "position": "位置"
+        },
+        "settings": {
+            "title": "设置",
+            "description": "配置横幅位置和可见性",
+            "position_label": "显示位置",
+            "position_suggested": "（建议：{position}）",
+            "position_hint_create": "设置位置（0 = 第一）。此位置及之后的现有横幅将向下移动。",
+            "position_hint_edit": "更改位置（0 = 第一）。其他横幅将自动重新排序。",
+            "published_label": "已发布",
+            "published_hint": "在网站上显示此横幅",
+            "active_label": "激活",
+            "active_hint": "启用此横幅"
+        },
+        "desktop_image": {
+            "title": "桌面图片",
+            "description": "上传大屏幕图片（建议：1920x1080像素或更大）",
+            "preview_alt": "桌面预览",
+            "replace_hint": "点击或拖拽以替换图片",
+            "upload_title": "将桌面图片拖放到此处，或点击选择",
+            "upload_hint": "建议：1920x1080像素或更大"
+        },
+        "mobile_image": {
+            "title": "移动端图片",
+            "description": "上传小屏幕图片（建议：1080x1920像素或类似竖版比例）",
+            "preview_alt": "移动端预览",
+            "replace_hint": "点击或拖拽以替换图片",
+            "upload_title": "将移动端图片拖放到此处，或点击选择",
+            "upload_hint": "建议：1080x1920像素或类似竖版比例"
+        },
+        "danger_zone": {
+            "title": "危险区域",
+            "description": "永久删除此横幅。此操作无法撤销。",
+            "delete_button": "删除横幅"
+        },
+        "messages": {
+            "load_error": "加载横幅失败",
+            "images_required": "请上传桌面和移动端图片",
+            "id_missing": "缺少横幅ID",
+            "create_success": "横幅创建成功",
+            "update_success": "横幅更新成功",
+            "save_error": "保存横幅失败",
+            "delete_confirm": "确定要删除此横幅吗？此操作无法撤销。",
+            "delete_confirm_short": "确定要删除此横幅吗？",
+            "delete_success": "横幅删除成功。位置已重新排序。",
+            "delete_error": "删除横幅失败",
+            "toggle_success_published": "横幅发布成功",
+            "toggle_success_unpublished": "横幅取消发布成功",
+            "toggle_error": "更新横幅失败",
+            "fetch_error": "加载横幅失败。请重试。"
+        }
+    },
+    "flash_sales": {
+        "title": "限时抢购",
+        "subtitle": "管理限时抢购优惠",
+        "create_button": "创建限时抢购",
+        "loading": "正在加载限时抢购...",
+        "loading_sale": "正在加载限时抢购...",
+        "create_title": "添加新限时抢购",
+        "edit_title": "编辑限时抢购",
+        "create_description": "创建新的限时抢购活动",
+        "edit_description": "更新限时抢购详情",
+        "back": "返回限时抢购",
+        "cancel": "取消",
+        "creating": "正在创建...",
+        "updating": "正在更新...",
+        "create_sale": "创建限时抢购",
+        "update_sale": "更新限时抢购",
+        "empty": {
+            "title": "暂无限时抢购",
+            "description": "创建您的第一个限时抢购以提供限时折扣"
+        },
+        "status": {
+            "active": "进行中",
+            "inactive": "未激活",
+            "upcoming": "即将开始",
+            "ended": "已结束"
+        },
+        "card": {
+            "discount": "折扣",
+            "products": "商品",
+            "sold": "已售",
+            "max_quantity": "最大数量",
+            "start": "开始：",
+            "end": "结束："
+        },
+        "form": {
+            "info_title": "限时抢购信息",
+            "info_description": "配置销售详情、时间安排和商品选择",
+            "name_label": "销售名称",
+            "name_placeholder": "例如：夏日限时抢购",
+            "discount_label": "折扣百分比",
+            "discount_placeholder": "例如：50",
+            "start_time_label": "开始时间",
+            "end_time_label": "结束时间",
+            "max_quantity_label": "最大数量（可选）",
+            "max_quantity_placeholder": "留空表示无限制",
+            "active_status_label": "激活状态",
+            "active_status_hint": "启用或禁用此限时抢购",
+            "products_label": "商品",
+            "products_placeholder": "选择限时抢购商品",
+            "products_selected": "已选择 {count} 个商品"
+        },
+        "messages": {
+            "fetch_error": "获取限时抢购失败",
+            "load_error": "加载限时抢购失败",
+            "load_sale_error": "加载限时抢购失败",
+            "delete_confirm": "确定要删除 {name} 吗？",
+            "delete_success": "限时抢购删除成功",
+            "delete_error": "删除限时抢购失败",
+            "delete_error_generic": "删除限时抢购时发生错误",
+            "toggle_success_activated": "限时抢购激活成功",
+            "toggle_success_deactivated": "限时抢购停用成功",
+            "toggle_error": "切换状态失败",
+            "toggle_error_generic": "切换状态时发生错误",
+            "create_success": "限时抢购创建成功",
+            "update_success": "限时抢购更新成功",
+            "create_error": "创建限时抢购失败",
+            "update_error": "更新限时抢购失败",
+            "save_error": "保存限时抢购时发生错误"
+        }
+    },
+    "dashboard": {
+        "title": "仪表板",
+        "subtitle": "您的店铺表现概览",
+        "view_orders": "查看订单",
+        "quick_actions": {
+            "title": "快速操作",
+            "description": "快速管理您的店铺内容",
+            "product_sections": "产品部分",
+            "product_sections_desc": "管理主页部分",
+            "banners": "横幅",
+            "banners_desc": "管理促销横幅",
+            "flash_sales": "限时抢购",
+            "flash_sales_desc": "管理限时抢购",
+            "analytics": "分析",
+            "analytics_desc": "查看详细分析"
+        },
+        "inventory_alert": {
+            "title": "库存提醒",
+            "out_of_stock": "{count} 个产品缺货",
+            "low_stock": "{count} 个产品库存不足",
+            "view_inventory": "查看库存"
+        },
+        "stats": {
+            "total_revenue": "总收入",
+            "total_orders": "总订单",
+            "total_users": "总用户",
+            "return_requests": "退货申请",
+            "increase": "增长 {percent}%",
+            "decrease": "减少 {percent}%",
+            "vs_last_month": "对比上月",
+            "new_this_month": "本月新增 {count}",
+            "no_new_users": "无新用户",
+            "pending": "{count} 待处理",
+            "all_processed": "全部已处理"
+        },
+        "top_selling": {
+            "title": "畅销产品",
+            "subtitle": "按销量排名的最受欢迎产品",
+            "sold": "已售",
+            "revenue": "收入",
+            "view": "查看",
+            "no_data": "暂无销售数据",
+            "no_data_desc": "一旦您开始收到订单，销售活动将显示在这里",
+            "view_products": "查看产品"
+        },
+        "low_stock": {
+            "title": "低库存商品",
+            "out_of_stock": "缺货",
+            "left": "剩余 {count}",
+            "view_all": "查看所有 {count} 个商品"
+        },
+        "recent_returns": {
+            "title": "最近的退货申请",
+            "subtitle": "需要关注的最新退货申请",
+            "view_all": "查看全部",
+            "pending": "待处理",
+            "approved": "已批准",
+            "rejected": "已拒绝",
+            "processing": "处理中",
+            "completed": "已完成",
+            "empty_title": "无退货请求",
+            "empty_desc": "当客户提交退货请求时，它们将在此处显示",
+            "view_all_returns": "查看所有退货"
+        },
+        "order_stats": {
+            "title": "订单状态分布",
+            "subtitle": "订单的当前状态"
+        }
+    },
+    "analytics": {
+        "title": "分析仪表板",
+        "subtitle": "跟踪产品表现和用户参与度指标",
+        "tabs": {
+            "popular_products": "热门产品",
+            "user_carts": "用户购物车"
+        },
+        "products": {
+            "title": "浏览最多的产品",
+            "description": "跟踪哪些产品最受用户关注",
+            "views": "次浏览",
+            "no_views": "暂无产品浏览",
+            "no_views_desc": "当用户在您的网站上浏览产品时，此数据将填充",
+            "view_products": "查看产品"
+        },
+        "carts": {
+            "title": "购物车中有产品的用户",
+            "description": "查看哪些用户购物车中有商品并识别热门产品",
+            "anonymous": "匿名用户",
+            "items_in_cart": "购物车中的商品",
+            "qty": "数量",
+            "no_carts": "无活跃购物车",
+            "no_carts_desc": "目前没有用户购物车中有商品",
+            "view_orders": "查看订单"
+        }
+    },
+    "products": {
+        "title": "产品",
+        "add_new": "添加产品",
+        "edit_product": "编辑产品",
+        "list": {
+            "search_placeholder": "搜索产品...",
+            "status_filter": "按状态筛选",
+            "all_status": "所有状态",
+            "category_filter": "按类别筛选",
+            "all_categories": "所有类别",
+            "table": {
+                "product": "产品",
+                "category": "类别",
+                "price": "价格",
+                "stock": "库存",
+                "status": "状态",
+                "actions": "操作",
+                "no_products": "未找到产品",
+                "empty_desc": "尝试调整筛选条件或添加新产品"
+            },
+            "status": {
+                "active": "有效",
+                "inactive": "无效",
+                "featured": "精选",
+                "our_product": "自营产品"
+            }
+        },
+        "form": {
+            "permission_denied": "您没有权限创建产品。请联系管理员。",
+            "sections": {
+                "basic_info": "基本信息",
+                "basic_desc": "产品名称、描述和分类",
+                "media": "媒体",
+                "media_desc": "产品图片和展示",
+                "pricing_inventory": "价格与库存",
+                "pricing_desc": "管理价格和库存水平",
+                "variants": "变体",
+                "variants_desc": "管理产品变体（如尺寸、颜色）",
+                "seo": "SEO与元数据",
+                "seo_desc": "搜索引擎优化设置",
+                "organization": "组织",
+                "organization_desc": "品牌和标签",
+                "product_images": "产品图片",
+                "seo_information": "SEO信息",
+                "variants_configuration": "变体配置",
+                "moq_settings": "起订量设置"
+            },
+            "labels": {
+                "name": "产品名称",
+                "description": "描述",
+                "sku": "SKU",
+                "price": "价格",
+                "sale_price": "促销价格",
+                "quantity": "数量",
+                "category": "类别",
+                "brand": "品牌",
+                "tags": "标签",
+                "meta_title": "SEO标题",
+                "meta_description": "SEO描述",
+                "keywords": "关键词",
+                "featured": "精选产品",
+                "featured_desc": "在精选部分展示此产品",
+                "our_product": "自营产品",
+                "our_product_desc": "标记为内部产品",
+                "active": "有效",
+                "active_desc": "产品对客户可见",
+                "moq_active": "启用最低订购量",
+                "min_quantity": "最低数量"
+            },
+            "placeholders": {
+                "enter_name": "输入产品名称",
+                "enter_sku": "输入SKU",
+                "select_category": "选择类别",
+                "select_brand": "选择品牌",
+                "enter_tags": "输入标签（按Enter）",
+                "enter_meta_title": "SEO标题",
+                "enter_meta_desc": "SEO描述"
+            },
+            "buttons": {
+                "create": "创建产品",
+                "update": "更新产品",
+                "cancel": "取消",
+                "creating": "正在创建...",
+                "updating": "正在更新...",
+                "generate_variants": "生成变体",
+                "add_variant": "添加变体"
+            },
+            "media": {
+                "drop_text": "将图片拖放到此处或点击选择",
+                "upload_hint": "支持格式：JPG, PNG, WEBP。最大大小：10MB",
+                "set_primary": "设为主图",
+                "primary": "主图",
+                "drop_multiple_images": "将多张图片拖放到此处，或点击选择文件",
+                "alternative_input_hint": "备选：如果拖放无效，请使用此输入",
+                "image": "图片",
+                "primary_image": "主图"
+            },
+            "seo": {
+                "title_label": "SEO标题",
+                "title_placeholder": "SEO标题（建议50-60个字符）",
+                "title_hint": "若留空，将使用产品名称",
+                "description_label": "SEO描述",
+                "description_placeholder": "元描述（建议150-160个字符）",
+                "description_hint": "若留空，将从产品描述自动生成",
+                "current_length": "当前长度",
+                "characters": "字符",
+                "too_long": "太长",
+                "keywords_label": "关键词",
+                "keywords_placeholder": "逗号分隔的关键词",
+                "keywords_hint": "搜索引擎关键词（逗号分隔）"
+            },
+            "variants": {
+                "enable": "此产品有变体",
+                "enable_desc": "如果此产品有多种选项（尺寸、颜色等），请启用",
+                "select_attributes": "选择属性",
+                "generate_btn": "生成变体",
+                "no_attributes": "未找到属性。请先创建属性。",
+                "manage_combinations": "管理组合",
+                "using_variant_images": "使用变体特定图片",
+                "variant_mode": "变体模式",
+                "variant_mode_hint": "每个变体可以有自己的图片。在下表中为每个变体上传图片。",
+                "no_attributes_available": "没有可用属性。请先在",
+                "attributes_link": "属性",
+                "section_text": "部分中创建属性。",
+                "no_values_available": "没有可用值。",
+                "add_values_link": "添加值",
+                "generate_variants_button": "生成变体",
+                "variants_label": "变体",
+                "variants_count": "变体",
+                "no_variants_yet": "暂无变体。选择属性值并点击“生成变体”以创建。"
+            },
+            "moq": {
+                "enable_moq_label": "为此产品启用MOQ",
+                "enable_moq_hint": "覆盖此产品的全局起订量设置",
+                "minimum_quantity_label": "最低数量",
+                "minimum_quantity_placeholder": "输入最低数量",
+                "minimum_quantity_hint": "客户必须至少订购此数量的产品",
+                "moq_priority_title": "MOQ优先级",
+                "moq_priority_hint": "产品MOQ覆盖全局MOQ。变体MOQ（如果设置）将覆盖此设置。"
+            },
+            "add_product_button": "添加产品",
+            "update_product_button": "更新产品",
+            "categories": {
+                "loading": "正在加载类别...",
+                "no_categories": "没有可用类别",
+                "primary": "主要",
+                "set_as_primary": "设为主要"
+            }
+        },
+        "details": {
+            "tabs": {
+                "details": "详情",
+                "variants": "变体",
+                "reviews": "评论"
+            },
+            "info": {
+                "categories": "类别",
+                "status": "状态",
+                "description": "描述",
+                "nutrition": "营养信息",
+                "sku": "SKU",
+                "price": "价格",
+                "sale_price": "促销价格",
+                "stock": "库存"
+            },
+            "actions": {
+                "edit": "编辑",
+                "delete": "删除",
+                "activate": "激活",
+                "deactivate": "停用",
+                "back": "返回产品"
+            },
+            "dialogs": {
+                "delete_title": "删除产品",
+                "delete_desc": "确定要删除此产品吗？此操作无法撤销。",
+                "force_delete_title": "产品有订单记录",
+                "force_delete_desc": "此产品有订单记录，无法永久删除。您可以将其标记为无效。",
+                "mark_inactive": "标记为无效"
+            },
+            "not_found_desc": "您查找的产品不存在或已被删除。"
+        }
+    },
+    "shiprocket_settings": {
+        "title": "Shiprocket 设置",
+        "description": "配置 Shiprocket 运输集成以自动完成订单",
+        "enable_title": "启用 Shiprocket 集成",
+        "enable_desc": "付款成功时自动创建运输订单",
+        "api_credentials": {
+            "title": "API 凭据",
+            "description": "输入您的 Shiprocket API 用户凭据",
+            "email": "API 邮箱",
+            "email_placeholder": "api-user@yourcompany.com",
+            "password": "API 密码",
+            "password_placeholder": "输入密码"
+        },
+        "how_to_get_credentials": {
+            "title": "如何获取 API 凭据：",
+            "step1": "登录您的 Shiprocket 账户",
+            "step2": "转到设置 → API → 创建 API 用户",
+            "step3": "使用与主登录不同的邮箱"
+        },
+        "test_connection": "测试连接",
+        "testing": "测试中...",
+        "connection_success": "连接成功！API 凭据有效。",
+        "connection_failed": "连接失败。请检查您的凭据。",
+        "default_dimensions": {
+            "title": "默认运输尺寸",
+            "description": "当产品变体没有运输信息时的备用尺寸",
+            "length": "长度 (厘米)",
+            "breadth": "宽度 (厘米)",
+            "height": "高度 (厘米)",
+            "weight": "重量 (千克)"
+        },
+        "pickup_addresses": {
+            "title": "取件地址",
+            "description": "配置仓库/取件地点以进行发货",
+            "add_button": "添加地址",
+            "no_addresses": "尚未配置取件地址。",
+            "add_hint": "添加仓库地址以开始发货。",
+            "default_badge": "默认",
+            "edit": "编辑",
+            "delete": "删除"
+        },
+        "address_form": {
+            "add_title": "添加取件地址",
+            "edit_title": "编辑取件地址",
+            "nickname": "别名",
+            "nickname_placeholder": "主仓库",
+            "contact_name": "联系人姓名",
+            "contact_placeholder": "张三",
+            "email": "邮箱",
+            "email_placeholder": "warehouse@company.com",
+            "phone": "电话",
+            "phone_placeholder": "13800138000",
+            "address1": "地址行 1",
+            "address1_placeholder": "街道地址",
+            "address2": "地址行 2",
+            "address2_placeholder": "地标、建筑名称（可选）",
+            "city": "城市",
+            "city_placeholder": "上海",
+            "state": "省份",
+            "state_placeholder": "上海",
+            "pincode": "邮编",
+            "pincode_placeholder": "200000",
+            "set_default": "设为默认取件地址"
+        },
+        "buttons": {
+            "save": "保存设置",
+            "saving": "保存中...",
+            "cancel": "取消",
+            "add_address": "添加地址",
+            "update_address": "更新地址"
+        },
+        "messages": {
+            "save_success": "设置保存成功",
+            "save_error": "保存设置失败",
+            "enabled": "Shiprocket 已启用",
+            "disabled": "Shiprocket 已禁用",
+            "credentials_required": "请先配置 API 凭据",
+            "address_created": "地址创建成功",
+            "address_updated": "地址更新成功",
+            "address_deleted": "地址删除成功",
+            "address_error": "保存地址失败",
+            "fill_required": "请填写所有必填字段",
+            "loading": "加载设置中..."
+        },
+        "shipping_charges": {
+            "title": "运费",
+            "description": "配置标准运费和免邮门槛",
+            "charge_label": "标准运费",
+            "threshold_label": "免邮门槛",
+            "threshold_hint": "订单金额超过此数额将享受免邮"
+        }
+    },
+    "variant_card": {
+        "moq": {
+            "title": "MOQ 设置",
+            "enable": "为此变体启用 MOQ",
+            "override_desc": "覆盖产品/全局 MOQ",
+            "min_quantity": "最小数量",
+            "placeholder": "最小数量"
+        },
+        "pricing_slabs": {
+            "title": "价格分层",
+            "add": "添加分层",
+            "edit": "编辑",
+            "delete": "删除",
+            "no_slabs": "未配置价格分层",
+            "add_hint": "为此变体添加基于数量的定价",
+            "min_qty": "最小数量",
+            "max_qty": "最大数量",
+            "price": "价格 (₹)",
+            "unlimited": "无限",
+            "save": "保存",
+            "cancel": "取消",
+            "pieces": "件",
+            "save_product_first": "先保存产品以添加价格分层",
+            "slab_added": "价格分层已添加",
+            "slab_updated": "价格分层已更新",
+            "slab_deleted": "价格分层已删除",
+            "slab_error": "保存价格分层失败",
+            "confirm_delete": "删除此价格分层？"
+        },
+        "shipping": {
+            "title": "运输尺寸 (适用于 Shiprocket)",
+            "optional": "可选",
+            "length": "长度 (厘米)",
+            "breadth": "宽度 (厘米)",
+            "height": "高度 (厘米)",
+            "weight": "重量 (千克)",
+            "hint": "留空以使用 Shiprocket 设置中的默认尺寸"
+        },
+        "images": {
+            "title": "添加变体图片",
+            "upload_hint": "拖放图片或点击上传",
+            "max_reached": "已达到最大图片数量",
+            "uploading": "上传中...",
+            "set_primary": "设为主图",
+            "remove": "移除"
+        }
+    }
+}

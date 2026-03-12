@@ -1,0 +1,2185 @@
+{
+    "common": {
+        "cancel": "Cancelar",
+        "creating": "Creando...",
+        "updating": "Actualizando...",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "actions": "Acciones",
+        "status": "Estado",
+        "active": "Activo",
+        "inactive": "Inactivo",
+        "yes": "Sí",
+        "no": "No",
+        "pagination": "Página {current} de {total}"
+    },
+    "nav": {
+        "dashboard": "Panel de Control",
+        "products": "Productos",
+        "all_products": "Todos los Productos",
+        "add_product": "Agregar Producto",
+        "brands": "Marcas",
+        "categories": "Categorías",
+        "attributes": "Atributos",
+        "orders": "Pedidos",
+        "all_orders": "Todos los Pedidos",
+        "return_requests": "Solicitudes de Devolución",
+        "coupons": "Cupones",
+        "users": "Usuarios",
+        "partners": "Socios",
+        "referrals": "Referencias",
+        "support": "Soporte",
+        "contact": "Contacto",
+        "reviews": "Reseñas",
+        "faq": "Preguntas Frecuentes",
+        "settings": "Configuración",
+        "price_visibility": "Visibilidad de Precios",
+        "moq": "MOQ",
+        "pricing_slabs": "Tramos de Precios",
+        "payment": "Pago",
+        "gateway_keys": "Claves de Pasarela",
+        "shipping": "Envío",
+        "shiprocket": "Shiprocket",
+        "language": "Idioma"
+    },
+    "admin": {
+        "admin_dashboard": "Panel de Administración",
+        "logout": "Cerrar Sesión",
+        "loading": "Cargando...",
+        "role": {
+            "super_admin": "Super Administrador",
+            "admin": "Administrador",
+            "user": "Usuario"
+        }
+    },
+    "settings": {
+        "title": "Configuración de Idioma",
+        "description": "Administrar la configuración de idioma para el panel de administración y el sitio web del cliente",
+        "admin_panel_language": "Idioma del Panel de Administración",
+        "admin_panel_desc": "Establecer el idioma predeterminado para la interfaz del panel de administración",
+        "select_language": "Seleccionar Idioma",
+        "current": "Actual",
+        "choose_language": "Elegir idioma",
+        "client_website_language": "Idioma del Sitio Web del Cliente",
+        "client_website_desc": "Establecer el idioma predeterminado para su sitio web orientado al cliente",
+        "select_languages_multi": "Seleccionar Idiomas (Se permite selección múltiple)",
+        "selected": "Seleccionado",
+        "save_button": "Guardar Configuración de Idioma",
+        "alert_saved": "¡Configuración de idioma guardada!"
+    },
+    "payment_gateway_settings": {
+        "title": "Configuración de Pasarela de Pago",
+        "description": "Configure sus claves de pasarela de pago Razorpay. Las claves están cifradas y almacenadas de forma segura.",
+        "info_title": "Seguridad y Soporte Multi-Comerciante",
+        "info_list": {
+            "1": "Todas las claves de pago se cifran antes de almacenarse en la base de datos",
+            "2": "Cada usuario (admin/vendedor) puede configurar sus propias claves de pago",
+            "3": "Los pedidos utilizan las claves de pasarela de pago del propietario del pedido",
+            "4": "Comience con el modo PRUEBA, cambie a VIVO cuando esté listo"
+        },
+        "razorpay": {
+            "title": "Configuración de Razorpay",
+            "description": "Configure sus claves de pasarela de pago Razorpay para pagos en línea",
+            "enable": "Habilitar Razorpay",
+            "enable_desc": "Activar pasarela de pago Razorpay",
+            "mode": "Modo de Pago",
+            "test_mode": "Modo Prueba",
+            "live_mode": "Modo Vivo",
+            "mode_desc": "Use el modo PRUEBA para desarrollo, modo VIVO para producción",
+            "key_id": "Key ID",
+            "key_secret": "Key Secret",
+            "webhook_secret": "Webhook Secret (Opcional)",
+            "save_button": "Guardar Configuración de Razorpay",
+            "reset": "Restablecer",
+            "saving": "Guardando...",
+            "success": "Configuración de Razorpay guardada exitosamente"
+        },
+        "phonepe": {
+            "title": "Configuración de PhonePe",
+            "save_button": "Guardar Configuración de PhonePe"
+        }
+    },
+    "payment_settings": {
+        "title": "Configuración de Pago",
+        "description": "Administrar métodos de pago disponibles para los clientes durante el pago",
+        "card_title": "Métodos de Pago",
+        "card_desc": "Habilitar o deshabilitar métodos de pago para su tienda",
+        "cod": {
+            "title": "Pago Contra Entrega (COD)",
+            "description": "Permitir a los clientes pagar en efectivo cuando se entrega el pedido"
+        },
+        "razorpay": {
+            "title": "Razorpay (Pago en Línea)",
+            "description": "Habilitar pagos en línea a través de Razorpay (Tarjetas de Crédito/Débito, UPI, Banca en Línea, etc.)",
+            "configured": "Claves de Razorpay configuradas y habilitadas",
+            "not_configured": "Configure las claves de Razorpay en Configuración de Pasarela primero"
+        },
+        "save_button": "Guardar Configuración",
+        "saving": "Guardando..."
+    },
+    "moq_settings": {
+        "title": "Configuración de MOQ",
+        "description": "Configurar Cantidad Mínima de Pedido (MOQ) globalmente para su tienda",
+        "card_title": "Configuración Global de MOQ",
+        "card_desc": "Cuando está habilitado, todos los productos requerirán una cantidad mínima de pedido a menos que se anule a nivel de producto o variante.",
+        "enable": "Habilitar Sistema MOQ",
+        "enable_desc": "Activar requisitos de cantidad mínima de pedido globalmente",
+        "min_qty_label": "Cantidad Mínima de Pedido",
+        "min_qty_desc": "Los clientes deben pedir al menos esta cantidad para cualquier producto",
+        "info_title": "Cómo Funciona la Prioridad de MOQ",
+        "info_list": {
+            "1": "MOQ a nivel de variante anula MOQ a nivel de producto",
+            "2": "MOQ a nivel de producto anula MOQ Global",
+            "3": "Si MOQ está deshabilitado, la cantidad comienza desde 1 (comportamiento normal)"
+        },
+        "status": {
+            "active": "MOQ está Activo - Cantidad mínima:",
+            "disabled": "MOQ está Deshabilitado - Sin restricciones de cantidad mínima"
+        },
+        "save_button": "Guardar Configuración",
+        "saving": "Guardando...",
+        "reset": "Restablecer"
+    },
+    "price_visibility": {
+        "title": "Visibilidad de Precios",
+        "description": "Controlar visibilidad de precios para usuarios invitados en su tienda",
+        "card_title": "Control de Visibilidad de Precios",
+        "hide_guests": "Ocultar Precios para Usuarios Invitados",
+        "hide_guests_desc": "Cuando está habilitado, los precios estarán ocultos para usuarios no registrados. Los usuarios registrados pueden ver todos los precios normalmente.",
+        "info_title": "Cómo funciona:",
+        "info_list": {
+            "1": "OFF (Predeterminado): Todos los usuarios pueden ver precios, variantes y agregar al carrito",
+            "2": "ON: Los usuarios invitados ven productos pero los precios están ocultos hasta que inician sesión",
+            "3": "Carrito y Lista de Deseos: La funcionalidad permanece normal para todos los usuarios",
+            "4": "Usuarios registrados: Siempre ven detalles completos del producto independientemente de esta configuración"
+        },
+        "current_status": "Estado Actual:",
+        "status_hidden": "Precios ocultos para invitados",
+        "status_visible": "Precios visibles para todos los usuarios",
+        "save_button": "Guardar Configuración",
+        "saving": "Guardando..."
+    },
+    "faq_management": {
+        "title": "Gestión de Preguntas Frecuentes",
+        "description": "Gestione las preguntas frecuentes para su sitio",
+        "add_button": "Añadir Nueva FAQ",
+        "search_placeholder": "Buscar FAQs...",
+        "list_title": "FAQs",
+        "list_desc": "Gestione el contenido de sus preguntas frecuentes aquí",
+        "no_faqs": "No se encontraron FAQs",
+        "no_results": "No hay FAQs que coincidan con su búsqueda",
+        "create_first": "Cree su primera FAQ para comenzar",
+        "adjust_search": "Intente ajustar sus términos de búsqueda",
+        "actions": "Acciones",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "publish": "Publicar",
+        "unpublish": "Despublicar",
+        "status_published": "Publicado",
+        "status_draft": "Borrador",
+        "create_title": "Crear Nueva FAQ",
+        "create_subtitle": "Añada una pregunta frecuente a su sitio",
+        "edit_title": "Editar FAQ",
+        "dialog_desc": "Realice cambios en la FAQ aquí. Haga clic en guardar cuando termine.",
+        "form": {
+            "question": "Pregunta",
+            "question_placeholder": "Introduzca la pregunta",
+            "answer": "Respuesta",
+            "answer_placeholder": "Introduzca la respuesta",
+            "answer_help": "Puede utilizar etiquetas HTML básicas para el formato",
+            "category": "Categoría",
+            "category_placeholder": "Ej., Envíos, Devoluciones (opcional)",
+            "publish_label": "Publicado",
+            "publish_immediate": "Publicar inmediatamente",
+            "yes": "Sí",
+            "no": "No",
+            "cancel": "Cancelar",
+            "save": "Guardar cambios",
+            "create": "Crear FAQ",
+            "creating": "Creando...",
+            "back": "Volver"
+        },
+        "delete_dialog": {
+            "title": "Confirmar Eliminación",
+            "desc": "¿Está seguro de que desea eliminar esta FAQ? Esta acción no se puede deshacer.",
+            "confirm": "Eliminar"
+        },
+        "messages": {
+            "load_error": "Error al cargar FAQs",
+            "updated": "FAQ actualizada correctamente",
+            "created": "FAQ creada correctamente",
+            "deleted": "FAQ eliminada correctamente",
+            "published": "FAQ publicada",
+            "unpublished": "FAQ despublicada",
+            "save_error": "Error al guardar FAQ",
+            "delete_error": "Error al eliminar FAQ",
+            "required": "Pregunta y respuesta son obligatorias"
+        }
+    },
+    "contact_management": {
+        "title": "Gestión de Contacto",
+        "description": "Gestione consultas de clientes y envíos de formularios de contacto",
+        "search_placeholder": "Buscar por nombre o correo...",
+        "filter_status": "Filtrar por estado",
+        "all_status": "Todos los estados",
+        "status": {
+            "new": "Nuevo",
+            "in_progress": "En Progreso",
+            "resolved": "Resuelto",
+            "spam": "Spam"
+        },
+        "loading": "Cargando envíos...",
+        "no_submissions": "No se encontraron envíos de contacto",
+        "no_submissions_desc": "Los envíos del formulario de contacto aparecerán aquí",
+        "page": "Página",
+        "of": "de",
+        "actions": {
+            "view_details": "Ver Detalles",
+            "update_status": "Actualizar Estado",
+            "delete": "Eliminar"
+        },
+        "view_dialog": {
+            "title": "Detalles del Envío de Contacto",
+            "name": "Nombre",
+            "email": "Correo",
+            "phone": "Teléfono",
+            "subject": "Asunto",
+            "not_provided": "No proporcionado",
+            "no_subject": "Sin asunto",
+            "message": "Mensaje",
+            "admin_notes": "Notas del Administrador",
+            "submitted": "Enviado",
+            "last_updated": "Última Actualización",
+            "close": "Cerrar",
+            "update": "Actualizar Estado"
+        },
+        "update_dialog": {
+            "title": "Actualizar Estado del Envío",
+            "status_label": "Estado",
+            "select_status": "Seleccione un estado",
+            "notes_label": "Notas",
+            "notes_placeholder": "Añadir notas sobre este envío",
+            "cancel": "Cancelar",
+            "update": "Actualizar"
+        },
+        "delete_dialog": {
+            "title": "Eliminar Envío de Contacto",
+            "desc": "¿Está seguro de que desea eliminar este envío de contacto de",
+            "confirm": "Eliminar"
+        },
+        "messages": {
+            "fetch_error": "Error al obtener envíos de contacto",
+            "delete_success": "Envío de contacto eliminado correctamente",
+            "delete_error": "Error al eliminar envío de contacto",
+            "update_success": "Envío de contacto actualizado correctamente",
+            "update_error": "Error al actualizar envío de contacto"
+        }
+    },
+    "referrals_page": {
+        "title": "Gestión de Referidos",
+        "description": "Ver y administrar referidos y recompensas de usuarios",
+        "stats": {
+            "total_referrals": "Referidos Totales",
+            "completed": "Completados",
+            "pending": "Pendientes",
+            "total_rewards_paid": "Total Recompensas Pagadas"
+        },
+        "top_referrers": {
+            "title": "Mejores Referidores",
+            "referrals_suffix": "referidos",
+            "unknown_user": "Usuario Desconocido",
+            "code": "Código"
+        },
+        "search": {
+            "placeholder": "Buscar por código, nombre o correo...",
+            "button": "Buscar"
+        },
+        "filters": {
+            "all_status": "Todos los Estados",
+            "pending": "Pendiente",
+            "completed": "Completado",
+            "cancelled": "Cancelado"
+        },
+        "list": {
+            "title": "Todos los Referidos",
+            "no_referrals": "No se encontraron referidos",
+            "empty_description": "Los datos de referidos aparecerán aquí cuando estén disponibles"
+        },
+        "card": {
+            "referral_code": "Código de Referido",
+            "referrer_label": "Referidor (Quien refirió)",
+            "referred_label": "Usuario Referido",
+            "order_details": "Detalles del Pedido",
+            "reward": "Recompensa",
+            "completed_on": "Completado el",
+            "created": "Creado"
+        },
+        "badges": {
+            "completed": "Completado",
+            "pending": "Pendiente",
+            "cancelled": "Cancelado"
+        }
+    },
+    "partner_management": {
+        "title": "Gestión de Socios",
+        "description": "Gestionar solicitudes de socios aprobadas y pendientes",
+        "tabs": {
+            "approved": "Socios Aprobados",
+            "non_approved": "Socios No Aprobados"
+        },
+        "details": {
+            "back_button": "Volver a Socios",
+            "refresh_button": "Actualizar Datos",
+            "header_subtitle": "Detalles del Socio y Ganancias",
+            "badges": {
+                "active": "Activo",
+                "inactive": "Inactivo"
+            },
+            "stats": {
+                "total_earnings": "Ganancias Totales",
+                "pending_amount": "Monto Pendiente",
+                "paid_amount": "Monto Pagado",
+                "total_orders": "Pedidos Totales"
+            },
+            "info": {
+                "title": "Información del Socio",
+                "email": "Correo",
+                "phone": "Teléfono",
+                "location": "Ubicación",
+                "commission_rate": "Tasa de Comisión",
+                "registered": "Registrado"
+            },
+            "coupons": {
+                "title": "Cupones Asignados",
+                "commission": "Comisión",
+                "discount": "Descuento",
+                "min_order": "Pedido Mín",
+                "used": "Usado",
+                "valid_until": "Válido Hasta",
+                "empty": "No hay cupones asignados a este socio"
+            },
+            "earnings": {
+                "title": "Ganancias Mensuales",
+                "filters": {
+                    "all_years": "Todos los Años",
+                    "all_months": "Todos los Meses",
+                    "export": "Exportar"
+                },
+                "table": {
+                    "month": "Mes",
+                    "orders": "Pedidos",
+                    "amount": "Monto",
+                    "status": "Estado",
+                    "paid_date": "Fecha de Pago",
+                    "actions": "Acciones",
+                    "empty": "No se encontraron datos de ganancias para el período seleccionado"
+                },
+                "payment_notes_placeholder": "Notas de pago..."
+            },
+            "not_found": {
+                "title": "Socio no encontrado",
+                "description": "El socio que busca no existe."
+            }
+        },
+        "registrations": {
+            "title": "Registros de Socios",
+            "badges": {
+                "pending": "Pendiente",
+                "approved": "Aprobado",
+                "rejected": "Rechazado"
+            },
+            "filters": {
+                "placeholder": "Estado",
+                "all_statuses": "Todos los Estados",
+                "clear_filters": "Limpiar Filtros"
+            },
+            "table": {
+                "name": "Nombre",
+                "email": "Correo",
+                "number": "Número",
+                "city": "Ciudad",
+                "state": "Estado",
+                "status": "Estado",
+                "message": "Mensaje",
+                "requested_at": "Solicitado El",
+                "actions": "Acciones",
+                "empty": "No se encontraron registros de socios."
+            },
+            "actions": {
+                "approve": "Aprobar",
+                "reject": "Rechazar",
+                "details": "Detalles",
+                "close": "Cerrar",
+                "cancel": "Cancelar"
+            },
+            "dialogs": {
+                "approve": {
+                    "title": "Establecer Contraseña del Socio",
+                    "description": "Ingrese una contraseña para este socio (mín 6 caracteres).",
+                    "password_placeholder": "Contraseña",
+                    "submit": "Aprobar y Establecer Contraseña"
+                },
+                "password": {
+                    "title": "Contraseña del Socio",
+                    "description": "Esta es la contraseña que estableció para el socio. Cópiela y compártala de forma segura. No podrá verla de nuevo.",
+                    "copy": "Copiar",
+                    "copied": "¡Copiado!"
+                },
+                "details": {
+                    "title": "Detalles del Socio",
+                    "description": "Detalles completos, cupones y ganancias para este socio.",
+                    "assigned_coupons": "Cupones Asignados",
+                    "earnings": "Ganancias",
+                    "total": "Total",
+                    "monthly": "Mensual"
+                }
+            }
+        }
+    },
+    "user_management": {
+        "title": "Usuarios",
+        "description": "Gestionar cuentas y acceso de clientes",
+        "search_placeholder": "Buscar por nombre o correo...",
+        "search": "Buscar",
+        "searching": "Buscando...",
+        "clear": "Limpiar",
+        "loading": "Cargando usuarios...",
+        "error_title": "Error",
+        "try_again": "Intentar de Nuevo",
+        "no_users": "No se encontraron usuarios",
+        "no_users_desc": "Intente ajustar su consulta de búsqueda o vuelva a consultar más tarde",
+        "clear_search": "Limpiar Búsqueda",
+        "showing": "Mostrando",
+        "of": "de",
+        "users_count": "usuarios",
+        "page": "Página",
+        "joined": "Se unió",
+        "actions": {
+            "view_details": "Ver Detalles",
+            "edit": "Editar",
+            "verify_email": "Verificar Correo",
+            "delete": "Eliminar"
+        },
+        "status": {
+            "verified": "Verificado",
+            "not_verified": "No Verificado"
+        },
+        "fields": {
+            "name": "Nombre",
+            "name_placeholder": "Nombre del usuario",
+            "email": "Correo",
+            "email_placeholder": "usuario@ejemplo.com",
+            "phone": "Teléfono",
+            "phone_placeholder": "Número de teléfono",
+            "email_verified": "Correo Verificado",
+            "role": "Rol",
+            "created_at": "Creado En",
+            "last_updated": "Última Actualización",
+            "not_provided": "No proporcionado"
+        },
+        "dialogs": {
+            "details": {
+                "title": "Detalles del Usuario",
+                "description": "Información detallada sobre este usuario",
+                "close": "Cerrar"
+            },
+            "edit": {
+                "title": "Editar Usuario",
+                "description": "Actualizar información del usuario",
+                "cancel": "Cancelar",
+                "save": "Guardar Cambios",
+                "saving": "Guardando..."
+            },
+            "delete": {
+                "title": "Confirmar Eliminación",
+                "description": "¿Está seguro de que desea eliminar este usuario? Esta acción no se puede deshacer.",
+                "confirm": "Eliminar",
+                "deleting": "Eliminando..."
+            }
+        },
+        "messages": {
+            "verify_success": "Correo de usuario verificado exitosamente",
+            "verify_error": "Error al verificar correo de usuario",
+            "verify_exception": "Ocurrió un error al verificar el correo del usuario",
+            "update_success": "Detalles de usuario actualizados exitosamente",
+            "update_error": "Error al actualizar detalles de usuario",
+            "update_exception": "Ocurrió un error al actualizar detalles de usuario",
+            "delete_success": "Usuario eliminado exitosamente",
+            "delete_error": "Error al eliminar usuario",
+            "delete_exception": "Ocurrió un error al eliminar usuario",
+            "fetch_error": "Error al obtener usuarios",
+            "fetch_exception": "Ocurrió un error al obtener usuarios"
+        }
+    },
+    "coupons": {
+        "title": "Cupones",
+        "description": "Gestionar cupones de descuento y ofertas promocionales",
+        "add_coupon": "Añadir cupón",
+        "no_coupons": "No se encontraron cupones",
+        "no_coupons_desc": "Crea tu primer cupón de descuento para ofrecer a los clientes",
+        "add_first_coupon": "Añade tu primer cupón",
+        "loading": "Cargando cupones...",
+        "error_title": "Algo salió mal",
+        "try_again": "Intentar de nuevo",
+        "status": {
+            "active": "Activo",
+            "inactive": "Inactivo"
+        },
+        "discount": {
+            "off": "de descuento",
+            "min_order": "Mín."
+        },
+        "targets": {
+            "all_items": "Todos los artículos",
+            "categories": "categorías",
+            "category": "categoría",
+            "products": "productos",
+            "product": "producto",
+            "brands": "marcas",
+            "brand": "marca"
+        },
+        "partners_count": "socio(s)",
+        "form": {
+            "create_title": "Añadir nuevo cupón",
+            "edit_title": "Editar cupón",
+            "create_desc": "Crear un cupón de descuento para tus clientes",
+            "edit_desc": "Actualizar detalles y configuración del cupón",
+            "back_to_coupons": "Volver a Cupones",
+            "basic_info": "Información básica",
+            "basic_info_desc": "Ingrese el código del cupón y la descripción",
+            "code": "Código del cupón",
+            "code_placeholder": "ej., VERANO2023, BIENVENIDO10",
+            "description": "Descripción",
+            "description_placeholder": "Descripción corta del cupón",
+            "discount_settings": "Configuración de descuento",
+            "discount_settings_desc": "Configurar tipo de descuento, valor y límites de uso",
+            "discount_type": "Tipo de descuento",
+            "type_percentage": "Descuento porcentual (%)",
+            "type_fixed": "Descuento de monto fijo (₹)",
+            "discount_value": "Valor del descuento",
+            "min_order_amount": "Monto mínimo del pedido",
+            "max_uses": "Usos máximos",
+            "max_uses_placeholder": "Dejar vacío para ilimitado",
+            "target_selection": "Selección de objetivo",
+            "target_selection_desc": "Seleccionar categorías, productos o marcas específicas (opcional - dejar vacío para todos los artículos)",
+            "target_categories": "Categorías objetivo (opcional)",
+            "target_products": "Productos objetivo (opcional)",
+            "target_brands": "Marcas objetivo (opcional)",
+            "select_placeholder_categories": "Seleccionar categorías",
+            "select_placeholder_products": "Seleccionar productos",
+            "select_placeholder_brands": "Seleccionar marcas",
+            "target_hint_categories": "Dejar vacío para permitir el cupón en todas las categorías.",
+            "target_hint_products": "Dejar vacío para permitir el cupón en todos los productos.",
+            "target_hint_brands": "Dejar vacío para permitir el cupón en todas las marcas.",
+            "validity_period": "Período de validez",
+            "validity_period_desc": "Establecer fecha de inicio, fecha de finalización y estado activo",
+            "start_date": "Fecha de inicio",
+            "end_date": "Fecha de finalización",
+            "active_status": "Estado activo",
+            "active_status_desc": "Habilitar o deshabilitar este cupón",
+            "partner_assignments": "Asignaciones de socios",
+            "partner_assignments_desc": "Asignar este cupón a socios para el seguimiento de comisiones (opcional)",
+            "add_partner": "Añadir socio",
+            "no_partners_assigned": "No hay socios asignados. Este cupón será un cupón general disponible para todos.",
+            "select_partner": "Seleccionar socio...",
+            "partner_already_assigned": "Este socio ya está asignado a este cupón",
+            "assign_partner_desc": "Asignar este cupón a socios específicos para el seguimiento de comisiones. Los socios ganarán el porcentaje de comisión especificado de los pedidos que utilicen este cupón.",
+            "commission_note_title": "Nota de cálculo de comisión",
+            "commission_example": "Ejemplo: Valor del pedido ₹100, Descuento del cupón ₹10, Comisión del socio 5%",
+            "commission_calc_1": "La comisión se calcula sobre: ₹90 (Valor del pedido después del descuento)",
+            "commission_calc_2": "El socio gana: ₹4.50 (5% de ₹90)",
+            "commission_final_note": "La comisión siempre se calcula sobre el monto final del pedido después de aplicar el descuento del cupón.",
+            "cancel": "Cancelar",
+            "create_btn": "Crear cupón",
+            "update_btn": "Actualizar cupón"
+        },
+        "messages": {
+            "delete_confirm": "¿Está seguro de que desea eliminar el cupón \"{code}\"?",
+            "delete_success": "Cupón eliminado con éxito",
+            "delete_error": "Error al eliminar el cupón",
+            "status_update_success": "Cupón \"{code}\" {action}do con éxito",
+            "status_update_error": "Error al {action}r el cupón",
+            "create_success": "Cupón creado con éxito",
+            "update_success": "Cupón actualizado con éxito",
+            "create_error": "Error al crear el cupón",
+            "update_error": "Error al actualizar el cupón",
+            "fetch_error": "Error al obtener cupones",
+            "load_error": "Error al cargar cupones. Por favor, inténtelo de nuevo.",
+            "code_required": "El código del cupón es obligatorio",
+            "code_invalid": "El código del cupón solo puede contener letras, números, guiones bajos y guiones medio",
+            "discount_positive": "El valor del descuento debe ser un número positivo",
+            "discount_percentage_limit": "El descuento porcentual no puede ser mayor al 100%",
+            "min_order_positive": "El monto mínimo del pedido debe ser un número positivo",
+            "max_uses_integer": "Los usos máximos deben ser un entero positivo",
+            "end_date_invalid": "La fecha de finalización debe ser posterior a la fecha de inicio",
+            "partner_required": "Por favor seleccione un socio o elimine las entradas de socios vacías",
+            "partner_duplicate": "Cada socio solo puede ser asignado una vez por cupón. Por favor elimine los socios duplicados.",
+            "commission_limit": "La comisión de {name} debe estar entre 0 y 100",
+            "code_exists": "Este código de cupón ya está en uso. Por favor elija un código diferente."
+        }
+    },
+    "pricing_slabs": {
+        "title": "Tramos de Precios",
+        "description": "Configure precios basados en cantidad para productos y variantes",
+        "add_button": "Agregar Tramo de Precios",
+        "info_title": "Cómo funcionan los Tramos de Precios:",
+        "info_list": {
+            "1": "Los tramos de producto aplican a todas las variantes a menos que la variante tenga su propio tramo",
+            "2": "Los tramos de variante anulan los tramos de producto para esa variante específica",
+            "3": "Deje la cantidad máxima vacía para el nivel más alto (ilimitado)",
+            "4": "Los precios se aplican cuando la cantidad del carrito está dentro del rango mín-máx"
+        },
+        "filter_type": "Filtrar por Tipo",
+        "all_slabs": "Todos los Tramos",
+        "product_slabs": "Solo Tramos de Producto",
+        "variant_slabs": "Solo Tramos de Variante",
+        "no_slabs": "Aún no hay tramos de precios",
+        "create_first": "Cree su primer tramo de precios para habilitar precios basados en cantidad",
+        "table": {
+            "type": "Tipo",
+            "product_variant": "Producto/Variante",
+            "min_qty": "Cant. Mín",
+            "max_qty": "Cant. Máx",
+            "price": "Precio",
+            "actions": "Acciones"
+        },
+        "product": "Producto",
+        "variant": "Variante",
+        "dialog": {
+            "create_title": "Crear Tramo de Precios",
+            "edit_title": "Editar Tramo de Precios",
+            "description": "Configure precios basados en cantidad. Los tramos de variante anulan los tramos de producto."
+        },
+        "form": {
+            "product_label": "Producto (Opcional)",
+            "product_placeholder": "Seleccione producto (opcional)",
+            "variant_label": "Variante (Opcional)",
+            "variant_placeholder": "Seleccione variante (opcional)",
+            "no_variants": "No hay variantes disponibles",
+            "clear_selection": "Limpiar selección",
+            "min_qty_label": "Cantidad Mínima",
+            "max_qty_label": "Cantidad Máxima (Opcional)",
+            "max_qty_placeholder": "Dejar vacío para ilimitado",
+            "price_label": "Precio (INR)"
+        },
+        "validation": {
+            "min_qty_error": "La cantidad mínima debe ser al menos 1",
+            "max_qty_error": "La cantidad máxima debe ser mayor que la cantidad mínima",
+            "price_error": "El precio debe ser mayor que 0",
+            "product_variant_required": "Por favor seleccione un producto o variante"
+        },
+        "warning": {
+            "select_product_or_variant": "Por favor seleccione un producto o variante para este tramo de precios."
+        },
+        "actions": {
+            "cancel": "Cancelar",
+            "create_slab": "Crear Tramo",
+            "update_slab": "Actualizar Tramo"
+        },
+        "messages": {
+            "fetch_error": "Error al cargar tramos de precios",
+            "create_success": "Tramo de precios creado exitosamente",
+            "update_success": "Tramo de precios actualizado exitosamente",
+            "save_error": "Error al guardar tramo de precios",
+            "delete_confirm": "¿Está seguro de que desea eliminar este tramo de precios?",
+            "delete_success": "Tramo de precios eliminado exitosamente",
+            "delete_error": "Error al eliminar tramo de precios"
+        }
+    },
+    "product_sections": {
+        "title": "Secciones de Productos",
+        "subtitle": "Gestione secciones de productos para la página de inicio (máximo 15 productos por sección)",
+        "help_button": "Ayuda - Cómo funcionan las Secciones de Productos",
+        "create_button": "Crear Sección",
+        "loading": "Cargando secciones de productos...",
+        "error": {
+            "title": "Algo salió mal",
+            "try_again": "Reintentar"
+        },
+        "empty": {
+            "title": "Aún no hay secciones",
+            "description": "Cree su primera sección de productos para mostrar productos en su página de inicio",
+            "create_first": "Crear primera sección"
+        },
+        "section": {
+            "products_count": "{count} productos",
+            "active": "Activo",
+            "inactive": "Inactivo",
+            "edit": "Editar Sección",
+            "add_products": "Agregar Productos",
+            "delete": "Eliminar Sección",
+            "toggle_status": "Cambiar Estado Activo"
+        },
+        "products": {
+            "section_products": "Productos de la Sección",
+            "total_products": "{current} de {max} productos",
+            "no_products": "No hay productos en esta sección",
+            "add_products_hint": "Agregue productos a esta sección para mostrarlos en su página de inicio",
+            "add_button": "Agregar Productos",
+            "remove": "Eliminar de la Sección"
+        },
+        "dialog": {
+            "create_title": "Crear Nueva Sección",
+            "edit_title": "Editar Sección",
+            "add_products_title": "Agregar Productos a {section}",
+            "delete_confirm": "¿Está seguro de que desea eliminar esta sección? Esta acción no se puede deshacer."
+        },
+        "form": {
+            "name_label": "Nombre de la Sección",
+            "name_placeholder": "Ingrese nombre de la sección",
+            "slug_label": "Slug",
+            "slug_placeholder": "slug-auto-generado",
+            "description_label": "Descripción (Opcional)",
+            "description_placeholder": "Ingrese descripción de la sección",
+            "icon_label": "Nombre del Ícono",
+            "icon_placeholder": "ej., star, heart, gift",
+            "color_label": "Color",
+            "display_order_label": "Orden de Visualización",
+            "max_products_label": "Máximo de Productos",
+            "active_label": "Activo"
+        },
+        "add_products_dialog": {
+            "search_placeholder": "Buscar productos...",
+            "no_products": "No hay productos disponibles",
+            "all_products_added": "Todos los productos han sido agregados a esta sección",
+            "loading": "Cargando productos..."
+        },
+        "actions": {
+            "cancel": "Cancelar",
+            "create": "Crear Sección",
+            "update": "Actualizar Sección",
+            "close": "Cerrar"
+        },
+        "messages": {
+            "fetch_error": "Error al cargar secciones",
+            "create_success": "Sección creada exitosamente",
+            "create_error": "Error al crear sección",
+            "update_success": "Sección actualizada exitosamente",
+            "update_error": "Error al actualizar sección",
+            "delete_success": "Sección eliminada exitosamente",
+            "delete_error": "Error al eliminar sección",
+            "product_add_success": "Producto agregado a la sección",
+            "product_add_error": "Error al agregar producto",
+            "product_remove_success": "Producto eliminado de la sección",
+            "product_remove_error": "Error al eliminar producto",
+            "status_update_success": "Estado de la sección actualizado",
+            "status_update_error": "Error al actualizar estado de la sección"
+        },
+        "help": {
+            "title": "Ayuda - Cómo funcionan las Secciones de Productos",
+            "description": "Las secciones de productos le permiten organizar productos en grupos que aparecen en su página de inicio.",
+            "items": {
+                "1": "Cree secciones con nombres, íconos y colores personalizados",
+                "2": "Cada sección puede contener hasta 15 productos",
+                "3": "Establezca el orden de visualización para controlar la disposición en la página de inicio",
+                "4": "Active/desactive secciones para mostrarlas u ocultarlas",
+                "5": "Agregue o elimine productos de las secciones en cualquier momento"
+            }
+        }
+    },
+    "partners_tab": {
+        "approved": {
+            "demo_title": "Contraseña de demostración para socios",
+            "demo_desc": "Todos los socios aprobados pueden iniciar sesión con esta contraseña de demostración. Se les pedirá que la cambien después del primer inicio de sesión.",
+            "no_partners": "No se encontraron socios aprobados.",
+            "active": "Activo",
+            "remove": "Eliminar",
+            "removing": "Eliminando...",
+            "details_title": "Detalles del socio",
+            "details_desc": "Información detallada sobre {name}",
+            "registered": "Registrado",
+            "message": "Mensaje",
+            "assigned_coupons": "Cupones asignados",
+            "no_coupons": "No hay cupones asignados.",
+            "no_desc": "Sin descripción",
+            "earnings": "Ganancias",
+            "total": "Total",
+            "monthly": "Desglose mensual",
+            "confirm_remove_coupon": "¿Eliminar este cupón del socio?",
+            "confirm_deactivate": "¿Está seguro de que desea desactivar a este socio? Esto eliminará su acceso pero mantendrá sus datos.",
+            "deactivate_success": "Socio desactivado con éxito.",
+            "deactivate_error": "Error al desactivar al socio.",
+            "remove_coupon_error": "Error al eliminar el cupón."
+        },
+        "non_approved": {
+            "no_partners": "No se encontraron socios no aprobados.",
+            "details": "Detalles",
+            "accept": "Aceptar",
+            "decline": "Rechazar",
+            "details_title": "Detalles de la solicitud de socio",
+            "details_desc": "Detalles de la solicitud para {name}",
+            "applied_date": "Fecha de solicitud",
+            "city": "Ciudad",
+            "state": "Estado",
+            "no_message": "No se proporcionó mensaje",
+            "approve_title": "Aprobar socio",
+            "approve_desc": "Este socio será aprobado con la contraseña de demostración \"dfixventure\". Por favor, comparta esta contraseña con el socio después de la aprobación.",
+            "demo_password": "Contraseña de demostración",
+            "demo_hint": "El socio puede iniciar sesión con esta contraseña y se le pedirá que la cambie.",
+            "approving": "Aprobando...",
+            "confirm_approve": "¿Está seguro de que desea aprobar a este socio? Se le asignará la contraseña de demostración.",
+            "approve_success": "¡Socio aprobado con éxito!\nContraseña de demostración: {password}\nPor favor, comparta esta contraseña con el socio.",
+            "approve_error": "Error al aprobar al socio.",
+            "confirm_reject": "¿Está seguro de que desea rechazar esta solicitud?",
+            "reject_error": "Error al rechazar al socio."
+        },
+        "common": {
+            "name": "Nombre",
+            "email": "Correo electrónico",
+            "number": "Número",
+            "status": "Estado",
+            "monthly_earnings": "Ganancias mensuales",
+            "actions": "Acciones",
+            "close": "Cerrar",
+            "cancel": "Cancelar",
+            "loading": "Cargando socios..."
+        }
+    },
+    "orders": {
+        "title": "Pedidos",
+        "description": "Gestionar y rastrear todos los pedidos de clientes",
+        "summary": {
+            "total": "Total",
+            "delivered": "Entregado"
+        },
+        "filters": {
+            "search_placeholder": "Buscar por número de pedido o cliente...",
+            "all_status": "Todos los estados",
+            "clear": "Borrar filtros"
+        },
+        "status": {
+            "pending": "Pendiente",
+            "processing": "Procesando",
+            "shipped": "Enviado",
+            "delivered": "Entregado",
+            "cancelled": "Cancelado",
+            "refunded": "Reembolsado",
+            "placed": "Pedido realizado",
+            "paid": "Pagado"
+        },
+        "list": {
+            "no_orders": "No se encontraron pedidos",
+            "no_orders_status": "No se encontraron pedidos {status}.",
+            "try_adjusting": "Intente ajustar sus términos de búsqueda.",
+            "empty_desc": "Los pedidos aparecerán aquí cuando los clientes los realicen.",
+            "customer": "Cliente",
+            "order_date": "Fecha del pedido",
+            "total_amount": "Monto total",
+            "items_count": "{count} artículos",
+            "discount": "-{amount} descuento"
+        },
+        "details": {
+            "title": "Pedido #{number}",
+            "placed_on": "Realizado el {date}",
+            "back_to_list": "Volver a Pedidos",
+            "status_timeline": "Estado y Cronología",
+            "items": "Artículos del pedido",
+            "customer_info": "Información del Cliente",
+            "cancellation_info": "Información de cancelación",
+            "payment_info": "Información de pago",
+            "shipping_address": "Dirección de envío",
+            "sku": "SKU",
+            "flavor": "Sabor",
+            "weight": "Peso",
+            "price": "Precio",
+            "qty": "Cant",
+            "total": "Total",
+            "method": "Método",
+            "gateway": "Pasarela",
+            "transaction_id": "ID de transacción",
+            "order_id": "ID de pedido",
+            "cancelled_at": "Cancelado el",
+            "reason": "Motivo",
+            "cancelled_by": "Cancelado por",
+            "by_customer": "Cliente",
+            "by_admin": "Admin",
+            "no_reason": "No se proporcionó motivo",
+            "not_available": "N/A",
+            "subtotal": "Subtotal",
+            "shipping": "Envío",
+            "tax": "Impuesto",
+            "grand_total": "Gran Total",
+            "not_found": "Pedido no encontrado",
+            "not_found_desc": "El pedido que busca no existe o ha sido eliminado."
+        },
+        "actions": {
+            "view_details": "Ver Detalles",
+            "update_status": "Actualizar estado",
+            "mark_processing": "Marcar como Procesando",
+            "mark_shipped": "Marcar como Enviado",
+            "mark_delivered": "Marcar como Entregado",
+            "mark_paid": "Marcar como Pagado",
+            "cancel": "Cancelar pedido",
+            "load_error": "Error al cargar pedidos",
+            "status_update_success": "Estado del pedido actualizado a {status}",
+            "status_update_error": "Error al actualizar estado"
+        }
+    },
+    "return_requests": {
+        "title": "Solicitudes de devolución",
+        "description": "Gestionar solicitudes de devolución y reembolsos",
+        "settings_btn": "Configuración",
+        "filters": {
+            "search_placeholder": "Buscar por pedido, nombre, email o producto...",
+            "search_btn": "Buscar",
+            "clear": "Borrar",
+            "all_status": "Todos los estados"
+        },
+        "status": {
+            "pending": "Pendiente",
+            "approved": "Aprobado",
+            "rejected": "Rechazado",
+            "processing": "Procesando",
+            "completed": "Completado"
+        },
+        "status_badges": {
+            "pending": "Pendiente",
+            "approved": "Aprobado",
+            "rejected": "Rechazado",
+            "processing": "Procesando",
+            "completed": "Completado"
+        },
+        "list": {
+            "no_requests": "No se encontraron solicitudes de devolución",
+            "no_requests_desc": "Las solicitudes de devolución aparecerán aquí cuando los clientes las envíen",
+            "try_adjusting": "Intente ajustar su búsqueda o filtros",
+            "order_number": "Pedido #{number}",
+            "customer": "Cliente",
+            "product": "Producto",
+            "qty": "Cantidad",
+            "price": "Precio",
+            "reason": "Motivo de devolución",
+            "admin_notes": "Notas del administrador",
+            "processed_on": "Procesado el"
+        },
+        "dialogs": {
+            "settings_title": "Configuración de devoluciones",
+            "settings_desc": "Configurar opciones de solicitud de devolución",
+            "enable_label": "Habilitar solicitudes de devolución",
+            "enable_desc": "Permitir a los clientes enviar solicitudes de devolución",
+            "window_label": "Ventana de devolución (Días)",
+            "window_desc": "Número de días después de la entrega para permitir devoluciones (1-30)",
+            "update_status_title": "Actualizar estado",
+            "update_status_desc": "Actualizar el estado de esta solicitud de devolución",
+            "status_label": "Estado",
+            "notes_label": "Notas del administrador (Opcional)",
+            "notes_placeholder": "Agregar notas sobre esta solicitud...",
+            "details_title": "Detalles de la solicitud",
+            "requested_on": "Solicitado el"
+        },
+        "actions": {
+            "view_details": "Ver Detalles",
+            "update_status": "Actualizar estado",
+            "save_settings": "Guardar",
+            "saving": "Guardando...",
+            "cancel": "Cancelar",
+            "update": "Actualizar",
+            "settings_success": "Configuración actualizada con éxito",
+            "settings_error": "Error al actualizar configuración",
+            "status_success": "Solicitud de devolución actualizada con éxito",
+            "status_error": "Error al actualizar solicitud",
+            "validation_days": "La ventana de devolución debe ser entre 1 y 30 días"
+        },
+        "common": {
+            "enabled": "Habilitado",
+            "disabled": "Deshabilitado",
+            "days": "{count} días"
+        },
+        "attributes": {
+            "title": "Attributes",
+            "add_button": "Add Attribute",
+            "create_title": "Create Attribute",
+            "edit_title": "Edit Attribute",
+            "search_placeholder": "Search attributes...",
+            "no_attributes": "No attributes found",
+            "get_started": "Get started by creating your first attribute",
+            "manage": "Manage",
+            "table": {
+                "name": "Name",
+                "input_type": "Input Type",
+                "values": "Values",
+                "actions": "Actions",
+                "values_count": "{count} value(s)"
+            },
+            "form": {
+                "name_label": "Attribute Name *",
+                "name_placeholder": "e.g., Size, Color, RAM, Storage",
+                "name_desc": "The name of the attribute (e.g., Size, Color, RAM, Storage)",
+                "input_type_label": "Input Type *",
+                "input_type_desc": "How users will select this attribute value",
+                "quick_setup_label": "Quick Setup (Industry Presets)",
+                "quick_setup_placeholder": "Select industry for quick setup (optional)",
+                "quick_setup_desc": "Select an industry to auto-fill common attributes. You can still customize below.",
+                "available_attributes": "Available attributes for {industry}:",
+                "buttons": {
+                    "create": "Create Attribute",
+                    "update": "Update Attribute",
+                    "cancel": "Cancel",
+                    "save": "Save Changes"
+                }
+            },
+            "input_types": {
+                "text": "Text",
+                "number": "Number",
+                "select": "Select (Single)",
+                "multiselect": "Multi-Select"
+            },
+            "industry_presets": {
+                "clothing": "Clothing",
+                "supplements": "Supplements",
+                "medicine": "Medicine",
+                "mobile": "Mobile Store",
+                "electronics": "Electronics",
+                "shoes": "Shoes",
+                "furniture": "Furniture",
+                "vehicles": "Vehicles",
+                "appliances": "Home Appliances",
+                "accessories": "Phone Accessories"
+            },
+            "messages": {
+                "delete_success": "Attribute deleted successfully",
+                "delete_error": "Failed to delete attribute",
+                "create_success": "Attribute created successfully",
+                "update_success": "Attribute updated successfully",
+                "create_error": "Failed to create attribute",
+                "update_error": "Failed to update attribute",
+                "load_error": "Failed to load attributes",
+                "in_use": "Attribute In Use",
+                "generic_error": "An error occurred while deleting the attribute"
+            },
+            "help": {
+                "create_title": "How to Create an Attribute",
+                "edit_title": "How to Edit an Attribute",
+                "step_guide": "Step-by-Step Guide:",
+                "tips": "Tips:"
+            }
+        },
+        "attribute_values": {
+            "title": "{name} Values",
+            "subtitle": "Manage values for this attribute",
+            "create_title": "Create Value",
+            "edit_title": "Edit Value",
+            "add_button": "Add Value",
+            "no_values": "No values found",
+            "get_started": "Get started by creating your first value for this attribute",
+            "input_type": "Input Type:",
+            "table": {
+                "value": "Value",
+                "preview": "Preview",
+                "actions": "Actions",
+                "no_preview": "No preview"
+            },
+            "form": {
+                "value_label": "Value *",
+                "value_placeholder": "e.g., Small, Medium, Large",
+                "value_desc": "The value for this attribute (e.g., S, M, L, XL or Red, Blue, Black)",
+                "quick_add_placeholder": "Quick Add",
+                "color_code_label": "Color Code (Hex)",
+                "color_code_desc": "Select or enter a hex color code (e.g., #FF0000 for red)",
+                "image_label": "Image (Optional)",
+                "image_desc": "Upload an image for this attribute value (e.g., color swatch, size chart)",
+                "buttons": {
+                    "create": "Create Value",
+                    "update": "Update Value",
+                    "cancel": "Cancel"
+                }
+            },
+            "messages": {
+                "delete_success": "Attribute value deleted successfully",
+                "delete_error": "Failed to delete value",
+                "create_success": "Attribute value created successfully",
+                "update_success": "Attribute value updated successfully",
+                "create_error": "Failed to create value",
+                "update_error": "Failed to update value",
+                "in_use": "Value In Use",
+                "load_error": "Failed to load attribute values",
+                "generic_error": "An error occurred while deleting the value",
+                "id_required": "Attribute ID is required",
+                "invalid_route": "Invalid route"
+            },
+            "help": {
+                "title": "How to Use Attribute Values",
+                "what_are": "What are Attribute Values?"
+            }
+        }
+    },
+    "reviews": {
+        "title": "Gestión de Reseñas",
+        "description": "Administrar y responder reseñas de productos",
+        "stats": {
+            "total": "Total Reseñas",
+            "average": "Calificación Promedio",
+            "pending": "Reseñas Pendientes",
+            "recent": "Reseñas Recientes (7 días)"
+        },
+        "filters": {
+            "title": "Filtrar Reseñas",
+            "search_label": "Buscar",
+            "search_placeholder": "Buscar por usuario o contenido",
+            "rating_label": "Calificación",
+            "all_ratings": "Todas las Calificaciones",
+            "status_label": "Estado",
+            "all_statuses": "Todos los Estados",
+            "sort_by": "Ordenar Por",
+            "date": "Fecha",
+            "order": "Orden",
+            "descending": "Descendente",
+            "ascending": "Ascendente",
+            "reset": "Reiniciar",
+            "apply": "Aplicar Filtros"
+        },
+        "table": {
+            "title": "Reseñas",
+            "total_found": "reseñas encontradas",
+            "loading": "Cargando reseñas...",
+            "no_reviews": "No se encontraron reseñas",
+            "empty_hint": "Intenta ajustar tus filtros",
+            "unknown_product": "Producto Desconocido",
+            "anonymous": "Anónimo"
+        },
+        "actions": {
+            "view": "Ver Detalles",
+            "reply": "Responder",
+            "approve": "Aprobar",
+            "reject": "Rechazar",
+            "delete": "Eliminar",
+            "mark_pending": "Marcar como Pendiente"
+        },
+        "dialog": {
+            "title": "Detalles de la Reseña",
+            "description": "Ver y gestionar esta reseña",
+            "review_title": "Título de la Reseña",
+            "review_content": "Contenido de la Reseña",
+            "by": "Por",
+            "posted": "Publicado",
+            "admin_reply": "Respuesta del Admin",
+            "replied_on": "Respondido el",
+            "admin_comment": "Comentario Admin (Interno)",
+            "admin_comment_placeholder": "Agregar notas internas",
+            "review_status": "Estado de la Reseña"
+        },
+        "messages": {
+            "reply_success": "Respuesta agregada con éxito",
+            "reply_error": "Error al agregar respuesta",
+            "status_success": "Estado actualizado a {status}",
+            "status_error": "Error al actualizar estado",
+            "comment_success": "Comentario admin actualizado",
+            "comment_error": "Error al actualizar comentario",
+            "delete_success": "Reseña eliminada con éxito",
+            "delete_error": "Error al eliminar reseña",
+            "error_title": "Algo salió mal",
+            "try_again": "Intentar de nuevo"
+        },
+        "status": {
+            "approved": "Aprobado",
+            "rejected": "Rechazado",
+            "pending": "Pendiente"
+        }
+    },
+    "brands": {
+        "title": "Marcas",
+        "subtitle": "Gestiona todas tus marcas de productos",
+        "search_placeholder": "Buscar marcas...",
+        "add_button": "Agregar Marca",
+        "filters": {
+            "all": "Todas las Marcas",
+            "top": "Top",
+            "new": "Nuevo",
+            "hot": "Caliente"
+        },
+        "empty": {
+            "title": "Aún no hay marcas",
+            "title_search": "No se encontraron marcas",
+            "description": "Comienza agregando tu primera marca",
+            "description_search": "Intenta ajustar tu consulta de búsqueda",
+            "add_first": "Agrega tu primera marca"
+        },
+        "products_count": "{count} productos",
+        "dialog": {
+            "add_title": "Agregar Nueva Marca",
+            "edit_title": "Editar Marca",
+            "assign_title": "Asignar Productos a {brand}"
+        },
+        "form": {
+            "name_label": "Nombre de la Marca",
+            "name_placeholder": "Ingresa el nombre de la marca",
+            "logo_label": "Logo de la Marca",
+            "tags_label": "Etiquetas",
+            "tags_placeholder": "Selecciona etiquetas (Top, Nuevo, Caliente, etc.)"
+        },
+        "dropzone": {
+            "drag_drop": "Arrastra y suelta imagen aquí",
+            "click_select": "o haz clic para seleccionar",
+            "click_change": "Haz clic para cambiar imagen",
+            "preview_alt": "Vista previa"
+        },
+        "actions": {
+            "view_products": "Ver Productos",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "cancel": "Cancelar",
+            "create": "Crear Marca",
+            "update": "Actualizar Marca",
+            "creating": "Creando...",
+            "updating": "Actualizando..."
+        },
+        "assign": {
+            "search_placeholder": "Buscar productos...",
+            "no_brand": "Sin marca",
+            "assign_button": "Asignar a Marca",
+            "assigning": "Asignando...",
+            "previous": "Anterior",
+            "next": "Siguiente",
+            "page_info": "Página {page} de {total}"
+        },
+        "messages": {
+            "fetch_error": "Error al cargar marcas",
+            "name_image_required": "El nombre y la imagen son obligatorios",
+            "tag_required": "Se requiere al menos una etiqueta",
+            "create_success": "Marca creada",
+            "update_success": "Marca actualizada",
+            "save_error": "Error al guardar marca",
+            "delete_confirm": "¿Estás seguro de que deseas eliminar esta marca? Los productos permanecerán, pero se desasignarán de esta marca.",
+            "delete_success": "Marca eliminada. Los productos ahora están desasignados.",
+            "delete_error": "Error al eliminar marca",
+            "products_fetch_error": "Error al cargar productos",
+            "assign_success": "Productos asignados a la marca",
+            "assign_error": "Error al asignar productos",
+            "remove_success": "Producto eliminado de la marca"
+        }
+    },
+    "categories": {
+        "title": "Categorías",
+        "subtitle": "Organiza tus productos con categorías y subcategorías",
+        "create_button": "Añadir Categoría",
+        "loading": "Cargando categorías...",
+        "sub_categories_count": "{count} subcategorías",
+        "empty": {
+            "title": "No se encontraron categorías",
+            "description": "Cree su primera categoría para organizar sus productos",
+            "create_first": "Crear su primera categoría"
+        },
+        "help_button": "Ayuda - Cómo funcionan las categorías y subcategorías",
+        "help": {
+            "title": "Cómo funcionan las categorías y subcategorías",
+            "what_is": {
+                "title": "¿Qué son las categorías y subcategorías?",
+                "description": "Las categorías son las agrupaciones principales de productos en su sitio web (por ejemplo, 'Ropa de mujer', 'Ropa de hombre', 'Electrónica'). Las subcategorías son grupos más específicos dentro de una categoría (por ejemplo, en 'Ropa de mujer', puede tener 'Vestidos', 'Tops', 'Pantalones'). Esta estructura jerárquica ayuda a organizar sus productos y facilita que los clientes encuentren lo que buscan."
+            },
+            "relationship": {
+                "title": "Relación padre-hijo:",
+                "category_label": "Categoría (Padre):",
+                "subcategory_label": "Subcategoría (Hijo):"
+            },
+            "guide": {
+                "title": "Guía paso a paso:",
+                "step1": {
+                    "title": "Crear una categoría:",
+                    "item1": "Haga clic en el botón 'Agregar categoría'",
+                    "item2": "Ingrese el nombre de la categoría (por ejemplo, 'Ropa de mujer')",
+                    "item3": "Agregue una descripción y una imagen opcionales",
+                    "item4": "Guarde la categoría"
+                },
+                "step2": {
+                    "title": "Crear subcategorías:",
+                    "item1": "Vaya a la página de edición de la categoría (haga clic en el icono Editar)",
+                    "item2": "En el formulario de edición, encontrará la sección de subcategorías",
+                    "item3": "Haga clic en el botón 'Agregar subcategoría'",
+                    "item4": "Ingrese el nombre de la subcategoría (por ejemplo, 'Vestidos')",
+                    "item5": "Agregue una descripción y una imagen opcionales",
+                    "item6": "Guarde la subcategoría",
+                    "item7": "Repita para más subcategorías"
+                },
+                "step3": {
+                    "title": "Editar subcategorías:",
+                    "item1": "Vaya a la página de edición de la categoría",
+                    "item2": "Busque la subcategoría que desea editar",
+                    "item3": "Haga clic en el icono Editar junto a la subcategoría",
+                    "item4": "Actualice el nombre, la descripción o la imagen",
+                    "item5": "Guarde los cambios"
+                },
+                "step4": {
+                    "title": "Eliminar subcategorías:",
+                    "item1": "Vaya a la página de edición de la categoría",
+                    "item2": "Haga clic en el icono Eliminar junto a la subcategoría",
+                    "item3": "Confirme la eliminación",
+                    "item4": "Nota: Los productos asignados a esta subcategoría no se eliminarán"
+                }
+            },
+            "limit": {
+                "title": "¿Cuántas subcategorías puede tener una categoría?",
+                "info": "¡No hay un límite estricto! Puede crear tantas subcategorías como necesite para cada categoría. Sin embargo, para una mejor organización y experiencia del usuario, recomendamos:",
+                "rec1": "Lo ideal es de 5 a 15 subcategorías por categoría",
+                "rec2": "Demasiadas subcategorías pueden confundir la navegación",
+                "rec3": "Muy pocas subcategorías pueden no proporcionar suficiente organización",
+                "rec4": "Agrupe artículos similares de forma lógica"
+            },
+            "examples": {
+                "title": "Ejemplos del mundo real:",
+                "ex1": {
+                    "title": "Ejemplo 1 - Categoría de ropa de mujer:",
+                    "items": "Vestidos, Tops, Pantalones, Faldas, Chaquetas, Accesorios",
+                    "total": "Total: 6 subcategorías"
+                },
+                "ex2": {
+                    "title": "Ejemplo 2 - Categoría de electrónica:",
+                    "items": "Teléfonos móviles, Portátiles, Tabletas, Auriculares, Cámaras",
+                    "total": "Total: 5 subcategorías"
+                },
+                "ex3": {
+                    "title": "Ejemplo 3 - Categoría de hogar y cocina:",
+                    "items": "Utensilios de cocina, Vajilla, Almacenamiento, Decoración, Muebles",
+                    "total": "Total: 5 subcategorías"
+                }
+            },
+            "visibility": {
+                "title": "Cómo ver qué subcategoría pertenece a qué categoría:",
+                "list_title": "En la lista de categorías:",
+                "list_item1": "Cada fila muestra el número de subcategorías que tiene",
+                "list_item2": "Ejemplo: 'Ropa de mujer' - 6 subcategorías",
+                "edit_title": "En la página de edición de categorías:",
+                "edit_item1": "Al editar una categoría, verá todas sus subcategorías listadas",
+                "edit_item2": "Cada subcategoría muestra su nombre, descripción e imagen",
+                "edit_item3": "Puede ver a qué categoría pertenece por el contexto de la página",
+                "product_title": "En el formulario del producto:",
+                "product_item1": "Al crear/editar un producto, primero selecciona las categorías principales",
+                "product_item2": "Luego aparecen las subcategorías agrupadas bajo su categoría padre",
+                "product_item3": "Ejemplo: En 'Ropa de mujer', verá 'Vestidos', 'Tops', etc."
+            },
+            "appear": {
+                "title": "Cómo aparece en su sitio web:",
+                "nav": "Menú de navegación:",
+                "page": "Página de categoría:",
+                "page_filters": "Filtros de subcategoría: [Vestidos] [Tops] [Pantalones] [Faldas]",
+                "page_products": "Productos mostrados según la subcategoría seleccionada"
+            },
+            "best_practices": {
+                "title": "Mejores prácticas:",
+                "bp1": "Nombres claros: use nombres descriptivos para categorías y subcategorías",
+                "bp2": "Agrupación lógica: agrupe artículos relacionados",
+                "bp3": "Estructura consistente: mantenga estructuras similares en todas las categorías",
+                "bp4": "Imágenes: agregue imágenes para un mejor atractivo visual",
+                "bp5": "Asignación de productos: asigne productos tanto a categorías principales como a subcategorías",
+                "bp6": "Revisión regular: actualice a medida que crezca su gama de productos"
+            },
+            "tips": {
+                "title": "Consejos:",
+                "tip1": "Cree subcategorías antes de agregar productos",
+                "tip2": "Un producto puede pertenecer a varias subcategorías",
+                "tip3": "Use imágenes de subcategorías para la identidad visual",
+                "tip4": "Mantenga los nombres de las subcategorías cortos y claros (1-3 palabras)",
+                "tip5": "Desactive las subcategorías en lugar de eliminarlas si podrían usarse de nuevo"
+            }
+        },
+        "error": {
+            "title": "Algo salió mal",
+            "try_again": "Reintentar"
+        },
+        "delete": {
+            "title": "Eliminar Categoría",
+            "description": "¿Estás seguro de eliminar esta categoría? Esta acción no se puede deshacer.",
+            "force_title": "La categoría tiene productos",
+            "force_description": "Esta categoría no se puede eliminar porque tiene productos.",
+            "force_button": "Eliminar forzado",
+            "confirm": "Eliminar"
+        },
+        "form": {
+            "create_title": "Crear categoría",
+            "edit_title": "Editar categoría",
+            "create_subtitle": "Cree una nueva categoría para organizar sus productos",
+            "edit_subtitle": "Actualice los detalles de la categoría y gestione las subcategorías",
+            "info_title": "Información de la categoría",
+            "info_subtitle": "Ingrese el nombre de la categoría, la descripción y cargue una imagen",
+            "name_label": "Nombre de la categoría *",
+            "name_placeholder": "ej., Electrónica, Ropa, Hogar y cocina",
+            "description_label": "Descripción",
+            "description_placeholder": "Ingrese una breve descripción de esta categoría",
+            "image_label": "Imagen de la categoría",
+            "image_desc": "Cargue una imagen para esta categoría",
+            "image_recommendation": "Tamaño recomendado: 400x400 píxeles, tamaño máx.: 5 MB",
+            "preview_alt": "Vista previa de la categoría",
+            "create_submit": "Crear categoría",
+            "update_submit": "Actualizar categoría",
+            "cancel": "Cancelar",
+            "back": "Volver a categorías",
+            "loading_category": "Cargando categoría...",
+            "preparing_form": "Preparando formulario..."
+        },
+        "subcategories": {
+            "title": "Subcategorías",
+            "add_button": "Añadir Subcategoría",
+            "empty": "Aún no hay subcategorías. Añade tu primera subcategoría.",
+            "loading": "Cargando subcategorías...",
+            "dialog": {
+                "add_title": "Añadir Subcategoría",
+                "edit_title": "Editar Subcategoría",
+                "name_label": "Nombre de Subcategoría *",
+                "name_placeholder": "Ingresa nombre de subcategoría",
+                "description_label": "Descripción",
+                "description_placeholder": "Ingresa descripción de subcategoría",
+                "image_label": "Imagen de Subcategoría",
+                "save": "Guardar Subcategoría",
+                "cancel": "Cancelar"
+            }
+        },
+        "messages": {
+            "load_error": "Error al cargar categorías. Por favor, inténtalo de nuevo.",
+            "fetch_error": "Error al obtener categorías",
+            "fetch_details_error": "Error al obtener detalles de categoría",
+            "create_success": "Categoría creada exitosamente",
+            "create_error": "Error al crear categoría",
+            "update_success": "Categoría actualizada exitosamente",
+            "update_error": "Error al actualizar categoría",
+            "delete_success": "Categoría eliminada exitosamente",
+            "delete_error": "Error al eliminar categoría",
+            "subcategory_create_success": "Subcategoría creada exitosamente",
+            "subcategory_create_error": "Error al crear subcategoría",
+            "subcategory_update_success": "Subcategoría actualizada exitosamente",
+            "subcategory_update_error": "Error al actualizar subcategoría",
+            "subcategory_delete_success": "Subcategoría eliminada exitosamente",
+            "subcategory_delete_error": "Error al eliminar subcategoría",
+            "subcategory_name_required": "El nombre de la subcategoría es obligatorio",
+            "creating": "Creando...",
+            "updating": "Actualizando...",
+            "save_category_first": "Guarde la categoría primero antes de agregar subcategorías",
+            "delete_subcategory_confirm": "¿Está seguro de que desea eliminar esta subcategoría?",
+            "operation_failed": "La operación falló"
+        }
+    },
+    "attributes": {
+        "title": "Atributos",
+        "help_button": "Ayuda - Cómo crear/editar atributos",
+        "create_button": "Agregar Atributo",
+        "search_placeholder": "Buscar atributos...",
+        "values_count": "{count} valor(es)",
+        "manage_values": "Gestionar",
+        "empty": {
+            "title": "No se encontraron atributos",
+            "description": "Comience creando su primer atributo"
+        },
+        "table": {
+            "name": "Nombre",
+            "input_type": "Tipo de Entrada",
+            "values": "Valores",
+            "actions": "Acciones"
+        },
+        "form": {
+            "create_title": "Crear Atributo",
+            "edit_title": "Editar Atributo",
+            "name_label": "Nombre del Atributo *",
+            "name_placeholder": "ej., Talla, Color, RAM, Almacenamiento",
+            "name_desc": "El nombre del atributo (ej., Talla, Color, RAM, Almacenamiento)",
+            "input_type_label": "Tipo de Entrada *",
+            "input_type_placeholder": "Seleccionar tipo de entrada",
+            "input_type_desc": "Cómo los usuarios seleccionarán el valor de este atributo",
+            "preset_label": "Configuración Rápida (Preajustes de Industria)",
+            "preset_placeholder": "Seleccionar industria para configuración rápida (opcional)",
+            "preset_desc": "Seleccione una industria para completar automáticamente atributos comunes. Puede personalizar abajo.",
+            "create_submit": "Crear Atributo",
+            "update_submit": "Actualizar Atributo",
+            "cancel": "Cancelar"
+        },
+        "input_types": {
+            "text": "Texto",
+            "number": "Número",
+            "select": "Selección (Única)",
+            "multiselect": "Selección Múltiple"
+        },
+        "presets": {
+            "fashion": "Moda / Ropa",
+            "electronics": "Electrónica",
+            "furniture": "Muebles",
+            "books": "Libros"
+        },
+        "messages": {
+            "load_error": "Error al cargar atributos. Por favor, intente de nuevo.",
+            "delete_success": "Atributo eliminado exitosamente",
+            "delete_error": "Error al eliminar atributo",
+            "create_success": "Atributo creado exitosamente",
+            "create_error": "Error al crear atributo",
+            "update_success": "Atributo actualizado exitosamente",
+            "update_error": "Error al actualizar atributo",
+            "load_single_error": "Error al cargar el atributo",
+            "delete_confirm": "¿Está seguro de que desea eliminar este atributo? Esta acción no se puede deshacer."
+        }
+    },
+    "attribute_values": {
+        "title": "Valores de Atributo",
+        "subtitle": "Gestionar valores para {attribute}",
+        "create_button": "Agregar Valor",
+        "back_button": "Volver a Atributos",
+        "search_placeholder": "Buscar valores...",
+        "empty": {
+            "title": "No se encontraron valores",
+            "description": "Comience agregando valores para este atributo"
+        },
+        "table": {
+            "value": "Valor",
+            "preview": "Vista Previa",
+            "color_code": "Código de Color",
+            "actions": "Acciones"
+        },
+        "form": {
+            "create_title": "Agregar Valor",
+            "edit_title": "Editar Valor",
+            "value_label": "Valor *",
+            "value_placeholder": "ej., Rojo, XL, 128GB",
+            "value_desc": "El valor real (ej., Rojo, XL, 128GB)",
+            "color_label": "Código de Color (Opcional)",
+            "color_placeholder": "ej., #FF0000",
+            "color_desc": "Código de color hexadecimal para representación visual (ej., #FF0000)",
+            "preset_label": "Agregar Rápido (Valores Comunes/Preestablecidos)",
+            "preset_placeholder": "Seleccionar un valor común para autocompletar",
+            "image_label": "Imagen (Opcional)",
+            "image_desc": "Subir imagen para este valor de atributo (ej., muestra de color, tabla de tallas)",
+            "create_submit": "Agregar Valor",
+            "update_submit": "Actualizar Valor",
+            "cancel": "Cancelar"
+        },
+        "messages": {
+            "load_error": "Error al cargar valores",
+            "load_details_error": "Error al cargar detalles del atributo",
+            "create_success": "Valor agregado exitosamente",
+            "create_error": "Error al agregar valor",
+            "update_success": "Valor actualizado exitosamente",
+            "update_error": "Error al actualizar valor",
+            "delete_success": "Valor eliminado exitosamente",
+            "delete_error": "Error al eliminar valor"
+        }
+    },
+    "banners": {
+        "title": "Banners",
+        "subtitle": "Administrar banners de la página principal y promociones",
+        "create_button": "Crear Banner",
+        "loading": "Cargando banners...",
+        "loading_banner": "Cargando banner...",
+        "create_title": "Agregar Nuevo Banner",
+        "edit_title": "Editar Banner",
+        "create_description": "Complete los detalles para crear un nuevo banner",
+        "edit_description": "Actualizar detalles e imágenes del banner",
+        "back": "Volver",
+        "delete": "Eliminar",
+        "saving": "Guardando...",
+        "create_banner": "Crear Banner",
+        "save_changes": "Guardar Cambios",
+        "cancel": "Cancelar",
+        "basic_info": {
+            "title": "Información Básica",
+            "description": "Ingrese título, subtítulo y detalles del enlace del banner"
+        },
+        "form": {
+            "title_label": "Título",
+            "title_optional": "(Opcional)",
+            "title_placeholder": "ej., Venta de Verano 2024",
+            "subtitle_label": "Subtítulo",
+            "subtitle_optional": "(Opcional)",
+            "subtitle_placeholder": "ej., Obtén hasta 50% de descuento en artículos seleccionados",
+            "link_label": "URL del Enlace",
+            "link_placeholder": "/products",
+            "link_hint": "A dónde navegará el banner al hacer clic (predeterminado: /products)"
+        },
+        "list": {
+            "search_placeholder": "Buscar banners por título o subtítulo...",
+            "filter_all": "Todos los estados",
+            "filter_published": "Publicado",
+            "filter_unpublished": "No publicado",
+            "clear_filters": "Borrar filtros",
+            "no_banners": "No hay banners todavía",
+            "no_banners_desc": "Crea tu primer banner para mostrarlo en tu página de inicio",
+            "create_first": "Crea tu primer banner",
+            "untitled_banner": "Banner sin título",
+            "published": "Publicado",
+            "unpublished": "No publicado",
+            "active": "Activo",
+            "inactive": "Inactivo",
+            "link": "Enlace",
+            "position": "Posición"
+        },
+        "settings": {
+            "title": "Configuración",
+            "description": "Configurar posición y visibilidad del banner",
+            "position_label": "Posición de Visualización",
+            "position_suggested": "(Sugerido: {position})",
+            "position_hint_create": "Establecer posición (0 = primero). Los banners existentes en esta posición y después se desplazarán hacia abajo.",
+            "position_hint_edit": "Cambiar posición (0 = primero). Otros banners se reordenarán automáticamente.",
+            "published_label": "Publicado",
+            "published_hint": "Mostrar este banner en el sitio web",
+            "active_label": "Activo",
+            "active_hint": "Habilitar este banner"
+        },
+        "desktop_image": {
+            "title": "Imagen de Escritorio",
+            "description": "Subir imagen para pantallas grandes (recomendado: 1920x1080px o mayor)",
+            "preview_alt": "Vista previa de escritorio",
+            "replace_hint": "Haga clic o arrastre para reemplazar la imagen",
+            "upload_title": "Arrastre y suelte la imagen de escritorio aquí, o haga clic para seleccionar",
+            "upload_hint": "Recomendado: 1920x1080px o mayor"
+        },
+        "mobile_image": {
+            "title": "Imagen Móvil",
+            "description": "Subir imagen para pantallas pequeñas (recomendado: 1080x1920px o similar proporción vertical)",
+            "preview_alt": "Vista previa móvil",
+            "replace_hint": "Haga clic o arrastre para reemplazar la imagen",
+            "upload_title": "Arrastre y suelte la imagen móvil aquí, o haga clic para seleccionar",
+            "upload_hint": "Recomendado: 1080x1920px o similar proporción vertical"
+        },
+        "danger_zone": {
+            "title": "Zona de Peligro",
+            "description": "Eliminar permanentemente este banner. Esta acción no se puede deshacer.",
+            "delete_button": "Eliminar Banner"
+        },
+        "messages": {
+            "load_error": "Error al cargar banner",
+            "images_required": "Por favor suba ambas imágenes de escritorio y móvil",
+            "id_missing": "Falta el ID del banner",
+            "create_success": "Banner creado exitosamente",
+            "update_success": "Banner actualizado exitosamente",
+            "save_error": "Error al guardar banner",
+            "delete_confirm": "¿Está seguro de que desea eliminar este banner? Esta acción no se puede deshacer.",
+            "delete_confirm_short": "¿Está seguro de que desea eliminar este banner?",
+            "delete_success": "Banner eliminado exitosamente. Las posiciones han sido reordenadas.",
+            "delete_error": "Error al eliminar banner",
+            "toggle_success_published": "Banner publicado exitosamente",
+            "toggle_success_unpublished": "Banner despublicado exitosamente",
+            "toggle_error": "Error al actualizar banner",
+            "fetch_error": "Error al cargar banners. Por favor intente de nuevo."
+        }
+    },
+    "flash_sales": {
+        "title": "Ventas Flash",
+        "subtitle": "Administrar ofertas de ventas flash por tiempo limitado",
+        "create_button": "Crear Venta Flash",
+        "loading": "Cargando ventas flash...",
+        "loading_sale": "Cargando venta flash...",
+        "create_title": "Agregar Nueva Venta Flash",
+        "edit_title": "Editar Venta Flash",
+        "create_description": "Crear una nueva venta flash por tiempo limitado",
+        "edit_description": "Actualizar detalles de la venta flash",
+        "back": "Volver a Ventas Flash",
+        "cancel": "Cancelar",
+        "creating": "Creando...",
+        "updating": "Actualizando...",
+        "create_sale": "Crear Venta Flash",
+        "update_sale": "Actualizar Venta Flash",
+        "empty": {
+            "title": "Sin Ventas Flash",
+            "description": "Cree su primera venta flash para ofrecer descuentos por tiempo limitado"
+        },
+        "status": {
+            "active": "Activo",
+            "inactive": "Inactivo",
+            "upcoming": "Próximo",
+            "ended": "Finalizado"
+        },
+        "card": {
+            "discount": "Descuento",
+            "products": "Productos",
+            "sold": "Vendidos",
+            "max_quantity": "Cantidad Máx",
+            "start": "Inicio:",
+            "end": "Fin:"
+        },
+        "form": {
+            "info_title": "Información de Venta Flash",
+            "info_description": "Configure detalles de venta, horarios y selección de productos",
+            "name_label": "Nombre de Venta",
+            "name_placeholder": "ej., Venta Flash de Verano",
+            "discount_label": "Porcentaje de Descuento",
+            "discount_placeholder": "ej., 50",
+            "start_time_label": "Hora de Inicio",
+            "end_time_label": "Hora de Fin",
+            "max_quantity_label": "Cantidad Máxima (Opcional)",
+            "max_quantity_placeholder": "Dejar vacío para ilimitado",
+            "active_status_label": "Estado Activo",
+            "active_status_hint": "Habilitar o deshabilitar esta venta flash",
+            "products_label": "Productos",
+            "products_placeholder": "Seleccionar productos para venta flash",
+            "products_selected": "{count} producto(s) seleccionado(s)"
+        },
+        "messages": {
+            "fetch_error": "Error al obtener ventas flash",
+            "load_error": "Error al cargar ventas flash",
+            "load_sale_error": "Error al cargar venta flash",
+            "delete_confirm": "¿Está seguro de que desea eliminar \"{name}\"?",
+            "delete_success": "Venta flash eliminada exitosamente",
+            "delete_error": "Error al eliminar venta flash",
+            "delete_error_generic": "Ocurrió un error al eliminar la venta flash",
+            "toggle_success_activated": "Venta flash activada exitosamente",
+            "toggle_success_deactivated": "Venta flash desactivada exitosamente",
+            "toggle_error": "Error al cambiar estado",
+            "toggle_error_generic": "Ocurrió un error al cambiar estado",
+            "create_success": "Venta flash creada exitosamente",
+            "update_success": "Venta flash actualizada exitosamente",
+            "create_error": "Error al crear venta flash",
+            "update_error": "Error al actualizar venta flash",
+            "save_error": "Ocurrió un error al guardar venta flash"
+        }
+    },
+    "dashboard": {
+        "title": "Panel de Control",
+        "subtitle": "Resumen del rendimiento de tu tienda",
+        "view_orders": "Ver Pedidos",
+        "quick_actions": {
+            "title": "Acciones Rápidas",
+            "description": "Gestiona el contenido de tu tienda rápidamente",
+            "product_sections": "Secciones de Productos",
+            "product_sections_desc": "Gestionar secciones de la página de inicio",
+            "banners": "Banners",
+            "banners_desc": "Gestionar banners promocionales",
+            "flash_sales": "Ventas Flash",
+            "flash_sales_desc": "Gestionar ventas flash",
+            "analytics": "Análisis",
+            "analytics_desc": "Ver análisis detallados"
+        },
+        "inventory_alert": {
+            "title": "Alerta de Inventario",
+            "out_of_stock": "{count} productos agotados",
+            "low_stock": "{count} productos con bajo stock",
+            "view_inventory": "Ver Inventario"
+        },
+        "stats": {
+            "total_revenue": "Ingresos Totales",
+            "total_orders": "Pedidos Totales",
+            "total_users": "Usuarios Totales",
+            "return_requests": "Solicitudes de Devolución",
+            "increase": "{percent}% de aumento",
+            "decrease": "{percent}% de disminución",
+            "vs_last_month": "vs. mes anterior",
+            "new_this_month": "{count} nuevos este mes",
+            "no_new_users": "Sin usuarios nuevos",
+            "pending": "{count} pendientes",
+            "all_processed": "Todos procesados"
+        },
+        "top_selling": {
+            "title": "Productos Más Vendidos",
+            "subtitle": "Productos más populares por volumen de ventas",
+            "sold": "vendidos",
+            "revenue": "ingresos",
+            "view": "Ver",
+            "no_data": "Aún no hay datos de ventas",
+            "no_data_desc": "La actividad de ventas aparecerá aquí una vez que comiences a recibir pedidos",
+            "view_products": "Ver Productos"
+        },
+        "low_stock": {
+            "title": "Artículos con Bajo Stock",
+            "out_of_stock": "Agotado",
+            "left": "{count} restantes",
+            "view_all": "Ver todos los {count} artículos"
+        },
+        "recent_returns": {
+            "title": "Solicitudes de Devolución Recientes",
+            "subtitle": "Últimas solicitudes de devolución que necesitan atención",
+            "view_all": "Ver Todo",
+            "pending": "Pendiente",
+            "approved": "Aprobado",
+            "rejected": "Rechazado",
+            "processing": "Procesando",
+            "completed": "Completado",
+            "empty_title": "No hay solicitudes de devolución",
+            "empty_desc": "Las solicitudes de devolución aparecerán aquí cuando los clientes las envíen",
+            "view_all_returns": "Ver todas las devoluciones"
+        },
+        "order_stats": {
+            "title": "Distribución del estado del pedido",
+            "subtitle": "Estado actual de los pedidos"
+        }
+    },
+    "analytics": {
+        "title": "Panel de Análisis",
+        "subtitle": "Rastrea el rendimiento del producto y las métricas de participación del usuario",
+        "tabs": {
+            "popular_products": "Productos Populares",
+            "user_carts": "Carritos de Usuario"
+        },
+        "products": {
+            "title": "Productos Más Vistos",
+            "description": "Rastrea qué productos están recibiendo más atención de los usuarios",
+            "views": "visitas",
+            "no_views": "Aún no hay visitas al producto",
+            "no_views_desc": "Estos datos se completarán a medida que los usuarios vean productos en tu sitio",
+            "view_products": "Ver Productos"
+        },
+        "carts": {
+            "title": "Usuarios con Productos en el Carrito",
+            "description": "Mira qué usuarios tienen artículos en su carrito e identifica productos populares",
+            "anonymous": "Usuario Anónimo",
+            "items_in_cart": "artículos en el carrito",
+            "qty": "Cant.",
+            "no_carts": "No hay carritos activos",
+            "no_carts_desc": "Actualmente ningún usuario tiene artículos en su carrito",
+            "view_orders": "Ver Pedidos"
+        }
+    },
+    "products": {
+        "title": "Productos",
+        "add_new": "Añadir Producto",
+        "edit_product": "Editar Producto",
+        "list": {
+            "search_placeholder": "Buscar productos...",
+            "status_filter": "Filtrar por estado",
+            "all_status": "Todos los estados",
+            "category_filter": "Filtrar por categoría",
+            "all_categories": "Todas las categorías",
+            "table": {
+                "product": "Producto",
+                "category": "Categoría",
+                "price": "Precio",
+                "stock": "Stock",
+                "status": "Estado",
+                "actions": "Acciones",
+                "no_products": "No se encontraron productos",
+                "empty_desc": "Intente ajustar sus filtros o agregue un nuevo producto"
+            },
+            "status": {
+                "active": "Activo",
+                "inactive": "Inactivo",
+                "featured": "Destacado",
+                "our_product": "Nuestro Producto"
+            }
+        },
+        "form": {
+            "permission_denied": "No tienes permiso para crear productos. Por favor contacta a tu administrador.",
+            "sections": {
+                "basic_info": "Información Básica",
+                "basic_desc": "Nombre del producto, descripción y categorización",
+                "media": "Multimedia",
+                "media_desc": "Imágenes del producto y galería",
+                "pricing_inventory": "Precios e Inventario",
+                "pricing_desc": "Gestionar precios y niveles de stock",
+                "variants": "Variantes",
+                "variants_desc": "Gestionar variaciones de productos como tamaño y color",
+                "seo": "SEO y Meta",
+                "seo_desc": "Configuración de optimización de motores de búsqueda",
+                "organization": "Organización",
+                "organization_desc": "Marca y etiquetas",
+                "product_images": "Imágenes del Producto",
+                "seo_information": "Información SEO",
+                "variants_configuration": "Configuración de Variantes",
+                "moq_settings": "Configuración de MOQ"
+            },
+            "categories": {
+                "loading": "Cargando categorías...",
+                "no_categories": "No se encontraron categorías",
+                "primary": "Primaria",
+                "set_as_primary": "Establecer como primaria",
+                "select_multiple": "Seleccionar categorías (Múltiple)",
+                "primary_category": "Categoría Primaria",
+                "primary_category_hint": "La categoría primaria determina dónde aparece el producto en los listes principales",
+                "sub_categories_optional": "Subcategorías (Opcional) - Seleccionar Múltiple",
+                "select_sub_categories_hint": "Seleccione subcategorías de sus categorías elegidas.",
+                "sub_categories_label": "Subcategorías",
+                "no_sub_categories": "No hay subcategorías disponibles para las categorías seleccionadas.",
+                "create_sub_cat_link": "Página de Categorías",
+                "create_sub_cat_hint": "Puede crear subcategorías desde la",
+                "selected_sub_categories": "Subcategorías Seleccionadas"
+            },
+            "settings": {
+                "product_settings": "Configuración del producto",
+                "product_type": "Tipo de producto",
+                "select_type_hint": "Seleccione a qué categorías pertenece este producto",
+                "types": {
+                    "featured": "Destacado",
+                    "bestseller": "Más vendido",
+                    "trending": "Tendencia",
+                    "new": "Nuevas llegadas"
+                }
+            },
+            "media": {
+                "drop_text": "Arrastre imágenes aquí o haga clic para seleccionar",
+                "upload_hint": "Formatos soportados: JPG, PNG, WEBP. Tamaño máximo: 10MB",
+                "set_primary": "Establecer como primaria",
+                "primary": "Primaria",
+                "drop_multiple_images": "Arrastre varias imágenes aquí, o haga clic para seleccionar archivos",
+                "alternative_input_hint": "Alternativa: use esta entrada si arrastrar y soltar no funciona",
+                "image": "Imagen",
+                "primary_image": "Imagen Primaria",
+                "upload_title": "Subir Imágenes",
+                "drag_drop_hint": "Arrastra y suelta imágenes aquí, o haz clic para seleccionar archivos. La primera imagen será la principal.",
+                "drop_here": "Suelta las imágenes aquí..."
+            },
+            "labels": {
+                "name": "Nombre del Producto",
+                "description": "Descripción",
+                "sku": "SKU",
+                "price": "Precio",
+                "sale_price": "Precio de Oferta",
+                "sale_price_optional": "Precio de Oferta (Opcional)",
+                "quantity": "Cantidad",
+                "stock_quantity": "Cantidad de stock",
+                "category": "Categoría",
+                "brand": "Marca",
+                "brand_optional": "Marca (Opcional)",
+                "tags": "Etiquetas",
+                "has_variants": "Tiene variantes",
+                "meta_title": "Título Meta",
+                "meta_description": "Descripción Meta",
+                "keywords": "Palabras clave",
+                "featured": "Producto Destacado",
+                "featured_desc": "Mostrar este producto en secciones destacadas",
+                "our_product": "Nuestro Producto",
+                "our_product_desc": "Marcar esto como un producto interno",
+                "active": "Activo",
+                "active_desc": "El producto es visible para los clientes",
+                "moq_active": "Habilitar Cantidad Mínima de Pedido",
+                "min_quantity": "Cantidad Mínima"
+            },
+            "placeholders": {
+                "enter_name": "Ingresar nombre del producto",
+                "enter_sku": "Ingresar SKU",
+                "select_category": "Seleccionar categoría",
+                "select_brand": "Seleccionar marca",
+                "enter_tags": "Ingresar etiquetas (presionar Enter)",
+                "enter_meta_title": "Título SEO",
+                "enter_meta_desc": "Descripción SEO",
+                "sku_auto": "SKU (Auto)",
+                "sku_auto_hint": "Generado automáticamente"
+            },
+            "buttons": {
+                "create": "Crear Producto",
+                "update": "Actualizar Producto",
+                "cancel": "Cancelar",
+                "creating": "Creando...",
+                "updating": "Actualizando...",
+                "generate_variants": "Generar Variantes",
+                "add_variant": "Añadir Variante"
+            },
+            "seo": {
+                "title_label": "Título SEO",
+                "title_placeholder": "Título SEO (recomendado 50-60 caracteres)",
+                "title_hint": "Si se deja vacío, se utilizará el nombre del producto",
+                "description_label": "Descripción SEO",
+                "description_placeholder": "Meta descripción (recomendado 150-160 caracteres)",
+                "description_hint": "Si se deja vacío, se generará automáticamente a partir de la descripción del producto",
+                "current_length": "Longitud actual",
+                "characters": "caracteres",
+                "too_long": "Demasiado largo",
+                "keywords_label": "Palabras clave",
+                "keywords_placeholder": "Palabras clave separadas por comas",
+                "keywords_hint": "Palabras clave para motores de búsqueda (separadas por comas)"
+            },
+            "variants": {
+                "enable": "Este producto tiene variantes",
+                "enable_desc": "Habilitar si este producto viene en múltiples opciones (tamaño, color, etc.)",
+                "select_attributes": "Seleccionar Atributos",
+                "generate_btn": "Generar Variantes",
+                "no_attributes": "No se encontraron atributos. Crear atributos primero.",
+                "manage_combinations": "Gestionar Combinaciones",
+                "using_variant_images": "Usando imágenes específicas de variantes",
+                "variant_mode": "Modo Variante",
+                "variant_mode_hint": "Cada variante puede tener sus propias imágenes. Sube imágenes para cada variante abajo en la tabla.",
+                "no_attributes_available": "No hay atributos disponibles. Por favor crea atributos primero en la",
+                "attributes_link": "Atributos",
+                "section_text": "sección.",
+                "no_values_available": "No hay valores disponibles.",
+                "add_values_link": "Añadir valores",
+                "generate_variants_button": "Generar Variantes",
+                "variants_label": "Variantes",
+                "variants_count": "variantes",
+                "no_variants_yet": "No hay variantes todavía. Selecciona valores de atributos y haz clic en \"Generar Variantes\" para crearlas."
+            },
+            "moq": {
+                "title": "Configuración MOQ",
+                "enable": "Habilitar MOQ para este Producto",
+                "desc": "Establecer cantidad mínima de pedido para este producto",
+                "min_quantity": "Cantidad Mínima",
+                "enable_moq_label": "Habilitar MOQ para este Producto",
+                "enable_moq_hint": "Establecer cantidad mínima de pedido para este producto",
+                "minimum_quantity_label": "Cantidad Mínima",
+                "minimum_quantity_placeholder": "Ingresar cantidad mínima",
+                "minimum_quantity_hint": "Los clientes deben pedir al menos esta cantidad de este producto",
+                "moq_priority_title": "Prioridad de MOQ",
+                "moq_priority_hint": "El MOQ del producto anula el MOQ global. El MOQ de variante (si está configurado) anulará esto."
+            },
+            "add_product_button": "Añadir Producto",
+            "update_product_button": "Actualizar Producto",
+            "shipping": {
+                "title": "Dimensiones de Envío (para Shiprocket)",
+                "desc": "Establecer dimensiones de envío para este producto",
+                "hint": "Dejar vacío para usar dimensiones predeterminadas de configuración de Shiprocket",
+                "length_label": "Length (cm)",
+                "breadth_label": "Breadth (cm)",
+                "height_label": "Height (cm)",
+                "weight_label": "Weight (kg)"
+            },
+            "pricing_slabs": {
+                "title": "Escalas de Precios",
+                "desc": "Configurar precios basados en cantidad para este producto",
+                "add": "Agregar Escala",
+                "no_slabs": "No hay escalas de precios configuradas",
+                "add_hint": "Agregar precios basados en cantidad para este producto"
+            }
+        },
+        "details": {
+            "tabs": {
+                "details": "Detalles",
+                "variants": "Variantes",
+                "reviews": "Reseñas"
+            },
+            "info": {
+                "categories": "Categorías",
+                "status": "Estado",
+                "description": "Descripción",
+                "nutrition": "Información Nutricional",
+                "sku": "SKU",
+                "price": "Precio",
+                "sale_price": "Precio de Oferta",
+                "stock": "Stock"
+            },
+            "actions": {
+                "edit": "Editar",
+                "delete": "Eliminar",
+                "activate": "Activar",
+                "deactivate": "Desactivar",
+                "back": "Volver a Productos"
+            },
+            "dialogs": {
+                "delete_title": "Eliminar Producto",
+                "delete_desc": "¿Está seguro de que desea eliminar este producto? Esta acción no se puede deshacer.",
+                "force_delete_title": "El producto tiene historial de pedidos",
+                "force_delete_desc": "Este producto tiene historial de pedidos y no se puede eliminar permanentemente. Puede marcarlo como inactivo.",
+                "mark_inactive": "Marcar como Inactivo"
+            },
+            "not_found_desc": "El producto que buscas no existe o ha sido eliminado."
+        }
+    },
+    "shiprocket_settings": {
+        "title": "Configuración de Shiprocket",
+        "description": "Configure la integración de envío Shiprocket para el cumplimiento automático de pedidos",
+        "enable_title": "Habilitar Integración Shiprocket",
+        "enable_desc": "Crear pedidos de envío automáticamente cuando el pago es exitoso",
+        "api_credentials": {
+            "title": "Credenciales API",
+            "description": "Ingrese sus credenciales de usuario API de Shiprocket",
+            "email": "Email API",
+            "email_placeholder": "api-user@suempresa.com",
+            "password": "Contraseña API",
+            "password_placeholder": "Ingrese contraseña"
+        },
+        "how_to_get_credentials": {
+            "title": "Cómo obtener credenciales API:",
+            "step1": "Inicie sesión en su cuenta Shiprocket",
+            "step2": "Vaya a Configuración → API → Crear Usuario API",
+            "step3": "Use un email diferente al de su inicio de sesión principal"
+        },
+        "test_connection": "Probar Conexión",
+        "testing": "Probando...",
+        "connection_success": "¡Conexión exitosa! Las credenciales API son válidas.",
+        "connection_failed": "Conexión fallida. Verifique sus credenciales.",
+        "default_dimensions": {
+            "title": "Dimensiones de Envío Predeterminadas",
+            "description": "Dimensiones de respaldo cuando las variantes del producto no tienen información de envío",
+            "length": "Largo (cm)",
+            "breadth": "Ancho (cm)",
+            "height": "Alto (cm)",
+            "weight": "Peso (kg)"
+        },
+        "pickup_addresses": {
+            "title": "Direcciones de Recogida",
+            "description": "Configure ubicaciones de almacén/recogida para envíos",
+            "add_button": "Agregar Dirección",
+            "no_addresses": "No hay direcciones de recogida configuradas.",
+            "add_hint": "Agregue una dirección de almacén para comenzar a enviar.",
+            "default_badge": "Predeterminado",
+            "edit": "Editar",
+            "delete": "Eliminar"
+        },
+        "address_form": {
+            "add_title": "Agregar Dirección de Recogida",
+            "edit_title": "Editar Dirección de Recogida",
+            "nickname": "Apodo",
+            "nickname_placeholder": "Almacén Principal",
+            "contact_name": "Nombre de Contacto",
+            "contact_placeholder": "Juan Pérez",
+            "email": "Email",
+            "email_placeholder": "almacen@empresa.com",
+            "phone": "Teléfono",
+            "phone_placeholder": "9876543210",
+            "address1": "Línea de Dirección 1",
+            "address1_placeholder": "Dirección de la calle",
+            "address2": "Línea de Dirección 2",
+            "address2_placeholder": "Referencia, nombre del edificio (opcional)",
+            "city": "Ciudad",
+            "city_placeholder": "Madrid",
+            "state": "Estado",
+            "state_placeholder": "Madrid",
+            "pincode": "Código Postal",
+            "pincode_placeholder": "28001",
+            "set_default": "Establecer como dirección de recogida predeterminada"
+        },
+        "buttons": {
+            "save": "Guardar Configuración",
+            "saving": "Guardando...",
+            "cancel": "Cancelar",
+            "add_address": "Agregar Dirección",
+            "update_address": "Actualizar Dirección"
+        },
+        "messages": {
+            "save_success": "Configuración guardada exitosamente",
+            "save_error": "Error al guardar configuración",
+            "enabled": "Shiprocket habilitado",
+            "disabled": "Shiprocket deshabilitado",
+            "credentials_required": "Configure las credenciales API primero",
+            "address_created": "Dirección creada exitosamente",
+            "address_updated": "Dirección actualizada exitosamente",
+            "address_deleted": "Dirección eliminada exitosamente",
+            "address_error": "Error al guardar dirección",
+            "fill_required": "Por favor complete todos los campos requeridos",
+            "loading": "Cargando configuración..."
+        },
+        "shipping_charges": {
+            "title": "Gastos de envío",
+            "description": "Configure las tarifas de envío estándar y el umbral de envío gratuito",
+            "charge_label": "Cargo de envío estándar",
+            "threshold_label": "Umbral de envío gratuito",
+            "threshold_hint": "Los pedidos superiores a esta cantidad serán elegibles para envío gratuito"
+        }
+    },
+    "variant_card": {
+        "moq": {
+            "title": "Configuración MOQ",
+            "enable": "Habilitar MOQ para esta Variante",
+            "override_desc": "Anular MOQ de producto/global",
+            "min_quantity": "Cantidad Mínima",
+            "placeholder": "Cantidad mínima"
+        },
+        "pricing_slabs": {
+            "title": "Escalas de Precios",
+            "add": "Agregar Escala",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "no_slabs": "No hay escalas de precios configuradas",
+            "add_hint": "Agregar precios basados en cantidad para esta variante",
+            "min_qty": "Cant. Mín",
+            "max_qty": "Cant. Máx",
+            "price": "Precio (₹)",
+            "unlimited": "Ilimitado",
+            "save": "Guardar",
+            "cancel": "Cancelar",
+            "pieces": "piezas",
+            "save_product_first": "Guarde el producto primero para agregar escalas de precios",
+            "slab_added": "Escala de precios agregada",
+            "slab_updated": "Escala de precios actualizada",
+            "slab_deleted": "Escala de precios eliminada",
+            "slab_error": "Error al guardar escala de precios",
+            "confirm_delete": "¿Eliminar esta escala de precios?"
+        },
+        "shipping": {
+            "title": "Dimensiones de Envío (para Shiprocket)",
+            "optional": "Opcional",
+            "length": "Largo (cm)",
+            "breadth": "Ancho (cm)",
+            "height": "Alto (cm)",
+            "weight": "Peso (kg)",
+            "hint": "Dejar vacío para usar dimensiones predeterminadas de configuración de Shiprocket"
+        },
+        "images": {
+            "title": "Agregar imágenes de variante",
+            "upload_hint": "Arrastra imágenes o haz clic para subir",
+            "max_reached": "Máximo de imágenes alcanzado",
+            "uploading": "Subiendo...",
+            "set_primary": "Establecer como principal",
+            "remove": "Eliminar"
+        }
+    }
+}

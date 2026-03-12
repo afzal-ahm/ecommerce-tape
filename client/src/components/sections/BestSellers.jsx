@@ -1,0 +1,110 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { fetchApi, formatCurrency } from "@/lib/utils";
+import { getProductImageUrl as getImageUrl } from "@/lib/imageUrl";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart, Star, ArrowRight, Eye, Flame, Plus } from "lucide-react";
+import { useAddVariantToCart } from "@/lib/cart-utils";
+import { toast } from "sonner";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import { ProductCard } from "@/components/cards/ProductCard";
+
+export function BestSellers() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { addVariantToCart } = useAddVariantToCart();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetchApi("/public/products?bestseller=true&limit=12");
+        setProducts(response.data.products || []);
+      } catch (error) {
+        console.error("Error fetching best sellers:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+
+
+  const handleAddToCart = async (product) => {
+    if (product.variants?.length > 0) {
+      const variant = product.variants[0];
+      const result = await addVariantToCart(variant, 1, product.name);
+
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="section-padding bg-gradient-section">
+        <div className="section-container">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-gray-200 rounded-2xl h-80 animate-pulse" />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!products.length) return null;
+
+  return (
+    <section className="py-20 bg-gray-50/30">
+      <div className="section-container">
+        {/* Header - Screenshot 3 Style */}
+        <div className="text-center mb-16 relative">
+          <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tight uppercase mb-4">
+            <span className="text-black">BEST</span> <span className="text-[#F7941D]">SELLERS</span>
+          </h2>
+          <div className="w-20 h-[3px] bg-[#F7941D] mx-auto mb-6 rounded-full" />
+          <p className="text-gray-400 font-medium tracking-widest uppercase text-[12px]">Our most popular products loved by customers</p>
+        </div>
+
+        {/* Products Carousel */}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-3 md:-ml-6">
+              {products.map((product, index) => (
+                <CarouselItem key={product.id} className="pl-3 md:pl-6 basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6">
+                  <ProductCard product={product} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            {/* Minimalist Controls */}
+            <div className="flex justify-center gap-4 mt-12 md:mt-16">
+              <CarouselPrevious className="relative inset-0 translate-y-0 h-14 w-14 border-2 border-black rounded-none bg-transparent hover:bg-black hover:text-white transition-all duration-300" />
+              <Link href="/products?sort=popular" className="h-14 border-2 border-black flex items-center px-10 font-display font-black text-sm tracking-[0.2em] hover:bg-black hover:text-white transition-all uppercase">
+                Best Sellers
+              </Link>
+              <CarouselNext className="relative inset-0 translate-y-0 h-14 w-14 border-2 border-black rounded-none bg-transparent hover:bg-black hover:text-white transition-all duration-300" />
+            </div>
+          </Carousel>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default BestSellers;

@@ -1,0 +1,2247 @@
+{
+    "common": {
+        "cancel": "Cancel",
+        "creating": "Creating...",
+        "updating": "Updating...",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "actions": "Actions",
+        "status": "Status",
+        "active": "Active",
+        "inactive": "Inactive",
+        "yes": "Yes",
+        "no": "No",
+        "pagination": "Page {current} of {total}"
+    },
+    "nav": {
+        "dashboard": "Dashboard",
+        "products": "Products",
+        "all_products": "All Products",
+        "add_product": "Add Product",
+        "brands": "Brands",
+        "categories": "Categories",
+        "attributes": "Attributes",
+        "orders": "Orders",
+        "all_orders": "All Orders",
+        "return_requests": "Return Requests",
+        "coupons": "Coupons",
+        "users": "Users",
+        "partners": "Partners",
+        "referrals": "Referrals",
+        "support": "Support",
+        "contact": "Contact",
+        "reviews": "Reviews",
+        "faq": "FAQ",
+        "settings": "Settings",
+        "price_visibility": "Price Visibility",
+        "moq": "MOQ",
+        "pricing_slabs": "Pricing Slabs",
+        "payment": "Payment",
+        "gateway_keys": "Gateway Keys",
+        "shipping": "Shipping",
+        "shiprocket": "Shiprocket",
+        "parcelx": "ParcelX",
+        "language": "Language",
+        "change_password": "Change Password"
+    },
+    "admin": {
+        "admin_dashboard": "Admin Dashboard",
+        "logout": "Log out",
+        "loading": "Loading...",
+        "role": {
+            "super_admin": "Super Admin",
+            "admin": "Admin",
+            "user": "User"
+        }
+    },
+    "profile": {
+        "change_password_title": "Change Password",
+        "change_password_desc": "Update your account password to keep your admin access secure.",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "confirm_password": "Confirm New Password",
+        "enter_current_password": "Enter your current password",
+        "enter_new_password": "Enter a new password (min. 8 characters)",
+        "confirm_new_password": "Re-enter your new password",
+        "current_password_required": "Current password is required.",
+        "new_password_required": "New password is required.",
+        "password_min_length": "New password must be at least 8 characters.",
+        "confirm_password_required": "Please confirm your new password.",
+        "password_mismatch": "New password and confirmation do not match.",
+        "password_changed": "Your password has been changed successfully.",
+        "password_change_error": "Failed to change password. Please try again.",
+        "changing": "Changing...",
+        "change_password": "Change Password"
+    },
+    "settings": {
+        "title": "Language Settings",
+        "description": "Manage language settings for admin panel and client website",
+        "admin_panel_language": "Admin Panel Language",
+        "admin_panel_desc": "Set the default language for the admin dashboard interface",
+        "select_language": "Select Language",
+        "current": "Current",
+        "choose_language": "Choose language",
+        "client_website_language": "Client Website Language",
+        "client_website_desc": "Set the default language for your customer-facing website",
+        "select_languages_multi": "Select Languages (Multiple selection allowed)",
+        "selected": "Selected",
+        "save_button": "Save Language Settings",
+        "alert_saved": "Language settings saved!"
+    },
+    "payment_gateway_settings": {
+        "title": "Payment Gateway Settings",
+        "description": "Configure your Razorpay payment gateway keys. Keys are encrypted and stored securely.",
+        "info_title": "Security & Multi-Merchant Support",
+        "info_list": {
+            "1": "All payment keys are encrypted before storing in database",
+            "2": "Each user (admin/seller) can configure their own payment keys",
+            "3": "Orders use the order owner's payment gateway keys",
+            "4": "Start with TEST mode, switch to LIVE when ready"
+        },
+        "razorpay": {
+            "title": "Razorpay Configuration",
+            "description": "Configure your Razorpay payment gateway keys for online payments",
+            "enable": "Enable Razorpay",
+            "enable_desc": "Activate Razorpay payment gateway",
+            "mode": "Payment Mode",
+            "test_mode": "Test Mode",
+            "live_mode": "Live Mode",
+            "mode_desc": "Use TEST mode for development, LIVE mode for production",
+            "key_id": "Key ID",
+            "key_secret": "Key Secret",
+            "webhook_secret": "Webhook Secret (Optional)",
+            "save_button": "Save Razorpay Settings",
+            "reset": "Reset",
+            "saving": "Saving...",
+            "success": "Razorpay settings saved successfully"
+        },
+        "phonepe": {
+            "title": "PhonePe Configuration",
+            "save_button": "Save PhonePe Settings"
+        }
+    },
+    "parcelx_settings": {
+        "title": "ParcelX Settings",
+        "description": "Configure ParcelX shipping integration for automated order fulfillment",
+        "enable_title": "Enable ParcelX Integration",
+        "enable_desc": "Automatically create shipping orders when payment is successful",
+        "api_credentials": {
+            "title": "API Credentials",
+            "description": "Enter your ParcelX API credentials",
+            "api_key": "API Key",
+            "api_key_placeholder": "Enter ParcelX API Key",
+            "api_secret": "API Secret",
+            "api_secret_placeholder": "Enter ParcelX API Secret",
+            "base_url": "Base URL",
+            "base_url_placeholder": "Enter ParcelX Base URL"
+        },
+        "shipping_charges": {
+            "title": "Shipping Charges",
+            "description": "Default shipping rates for ParcelX",
+            "charge": "Shipping Charge (₹)",
+            "threshold": "Free Shipping Threshold (₹)"
+        },
+        "default_dimensions": {
+            "title": "Default Shipping Dimensions",
+            "description": "Used when variant specific dimensions are not provided",
+            "info": "These dimensions (L x B x H) and weight are used as fallback defaults during order creation.",
+            "length": "Length (cm)",
+            "breadth": "Breadth (cm)",
+            "height": "Height (cm)",
+            "weight": "Weight (kg)",
+            "save_success": "Dimensions updated successfully"
+        },
+        "how_to_get_credentials": {
+            "title": "How to get API credentials:",
+            "step1": "Login to your ParcelX account",
+            "step2": "Navigate to Settings > API Details",
+            "step3": "Copy your API Key and Secret and paste them here"
+        },
+        "pickup_addresses": {
+            "title": "Pickup Addresses",
+            "description": "Manage locations where couriers will pick up your orders",
+            "add_button": "Add Pickup Address",
+            "no_addresses": "No pickup addresses found",
+            "add_hint": "Add your first pickup address to enable shipping",
+            "default_badge": "Default",
+            "edit": "Edit"
+        },
+        "address_form": {
+            "add_title": "Add Pickup Address",
+            "edit_title": "Edit Pickup Address",
+            "nickname": "Nickname",
+            "nickname_placeholder": "e.g., Primary Warehouse",
+            "contact_name": "Contact Name",
+            "contact_placeholder": "Enter contact person name",
+            "email": "Email",
+            "email_placeholder": "Enter contact email",
+            "phone": "Phone",
+            "phone_placeholder": "Enter contact phone number",
+            "address1": "Address Line 1",
+            "address1_placeholder": "Building, Street name",
+            "address2": "Address Line 2",
+            "address2_placeholder": "Area, Landmark (optional)",
+            "city": "City",
+            "city_placeholder": "Enter city",
+            "state": "State",
+            "state_placeholder": "Enter state",
+            "pincode": "Pincode",
+            "pincode_placeholder": "Enter 6-digit pincode",
+            "set_default": "Set as default pickup address"
+        },
+        "messages": {
+            "loading": "Loading settings...",
+            "save_success": "Settings saved successfully",
+            "save_error": "Failed to save settings",
+            "credentials_required": "API Key and Secret are required to enable",
+            "enabled": "ParcelX integration enabled",
+            "disabled": "ParcelX integration disabled",
+            "address_created": "Address added successfully",
+            "address_updated": "Address updated successfully",
+            "address_deleted": "Address deleted successfully",
+            "address_error": "Failed to save address",
+            "fill_required": "Please fill all required fields"
+        },
+        "buttons": {
+            "save": "Save Settings",
+            "saving": "Saving...",
+            "cancel": "Cancel",
+            "add_address": "Add Address",
+            "update_address": "Update Address",
+            "test_connection": "Test Connection"
+        },
+        "test_connection": "Test Connection",
+        "testing": "Testing...",
+        "connection_success": "Connection successful!",
+        "connection_failed": "Connection failed"
+    },
+    "payment_settings": {
+        "title": "Payment Settings",
+        "description": "Configure payment methods for D fix",
+        "loading": "Loading payment settings...",
+        "card_title": "Payment Methods",
+        "card_desc": "Enable and configure the payment options available to your customers",
+        "save_button": "Save Payment Settings",
+        "saving": "Saving...",
+        "cod": {
+            "title": "Cash on Delivery",
+            "description": "Allow customers to pay when they receive their order"
+        },
+        "razorpay": {
+            "title": "Razorpay (Online Payment)",
+            "description": "Accept online payments via cards, UPI, netbanking, and more",
+            "configured": "Razorpay is configured",
+            "not_configured": "Configure Razorpay in Gateway Keys to enable"
+        },
+        "messages": {
+            "save_success": "Payment settings saved successfully",
+            "save_error": "Failed to save payment settings",
+            "at_least_one": "At least one payment method must be enabled",
+            "razorpay_required": "Please configure Razorpay keys first"
+        }
+    },
+    "moq_settings": {
+        "title": "MOQ Settings",
+        "description": "Configure Minimum Order Quantity (MOQ) globally for D fix",
+        "card_title": "Global MOQ Configuration",
+        "card_desc": "When enabled, all products will require a minimum order quantity unless overridden at product or variant level.",
+        "enable": "Enable MOQ System",
+        "enable_desc": "Turn on minimum order quantity requirements globally",
+        "min_qty_label": "Minimum Order Quantity",
+        "min_qty_desc": "Customers must order at least this quantity for any product",
+        "info_title": "How MOQ Priority Works",
+        "info_list": {
+            "1": "Variant-level MOQ overrides Product-level MOQ",
+            "2": "Product-level MOQ overrides Global MOQ",
+            "3": "If MOQ is disabled, quantity starts from 1 (normal behavior)"
+        },
+        "status": {
+            "active": "MOQ is Active - Minimum quantity:",
+            "disabled": "MOQ is Disabled - No minimum quantity restrictions"
+        },
+        "save_button": "Save Settings",
+        "saving": "Saving...",
+        "reset": "Reset",
+        "messages": {
+            "save_success": "MOQ settings updated successfully",
+            "save_error": "Failed to update MOQ settings",
+            "validation_error": "Minimum quantity must be at least 1"
+        }
+    },
+    "price_visibility": {
+        "title": "Price Visibility Settings",
+        "description": "Control price visibility for guest users on D fix",
+        "card_title": "Price Visibility Control",
+        "hide_guests": "Hide Prices for Guest Users",
+        "hide_guests_desc": "When enabled, prices will be hidden for non-logged-in users. Logged-in users can see all prices normally.",
+        "info_title": "How it works:",
+        "info_list": {
+            "1": "OFF (Default): All users can see product prices, variants, and add to cart",
+            "2": "ON: Guest users see products but prices are hidden until they log in",
+            "3": "Cart & Wishlist: Functionality remains normal for all users",
+            "4": "Logged-in users: Always see full product details regardless of this setting"
+        },
+        "current_status": "Current Status:",
+        "status_hidden": "Prices hidden for guests",
+        "status_visible": "Prices visible to all users",
+        "save_button": "Save Settings",
+        "saving": "Saving..."
+    },
+    "faq_management": {
+        "title": "FAQ Management",
+        "description": "Manage frequently asked questions for your site",
+        "add_button": "Add New FAQ",
+        "search_placeholder": "Search FAQs...",
+        "list_title": "FAQs",
+        "list_desc": "Manage your FAQ content here",
+        "no_faqs": "No FAQs found",
+        "no_results": "No FAQs match your search",
+        "create_first": "Create your first FAQ to get started",
+        "adjust_search": "Try adjusting your search terms",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete",
+        "publish": "Publish",
+        "unpublish": "Unpublish",
+        "status_published": "Published",
+        "status_draft": "Draft",
+        "create_title": "Create New FAQ",
+        "create_subtitle": "Add a frequently asked question to your site",
+        "edit_title": "Edit FAQ",
+        "dialog_desc": "Make changes to the FAQ here. Click save when you're done.",
+        "form": {
+            "question": "Question",
+            "question_placeholder": "Enter the question",
+            "answer": "Answer",
+            "answer_placeholder": "Enter the answer",
+            "answer_help": "You can use basic HTML tags for formatting",
+            "category": "Category",
+            "category_placeholder": "E.g., Shipping, Returns, Product Info (optional)",
+            "publish_label": "Published",
+            "publish_immediate": "Publish immediately",
+            "yes": "Yes",
+            "no": "No",
+            "cancel": "Cancel",
+            "save": "Save changes",
+            "create": "Create FAQ",
+            "creating": "Creating...",
+            "back": "Back"
+        },
+        "delete_dialog": {
+            "title": "Confirm Deletion",
+            "desc": "Are you sure you want to delete this FAQ? This action cannot be undone.",
+            "confirm": "Delete"
+        },
+        "messages": {
+            "load_error": "Failed to load FAQs",
+            "updated": "FAQ updated successfully",
+            "created": "FAQ created successfully",
+            "deleted": "FAQ deleted successfully",
+            "published": "FAQ published",
+            "unpublished": "FAQ unpublished",
+            "save_error": "Failed to save FAQ",
+            "delete_error": "Failed to delete FAQ",
+            "required": "Question and answer are required"
+        }
+    },
+    "contact_management": {
+        "title": "Contact Management",
+        "description": "Manage customer inquiries and contact form submissions",
+        "search_placeholder": "Search by name or email...",
+        "filter_status": "Filter by status",
+        "all_status": "All Status",
+        "status": {
+            "new": "New",
+            "in_progress": "In Progress",
+            "resolved": "Resolved",
+            "spam": "Spam"
+        },
+        "loading": "Loading submissions...",
+        "no_submissions": "No contact submissions found",
+        "no_submissions_desc": "Contact form submissions will appear here",
+        "page": "Page",
+        "of": "of",
+        "actions": {
+            "view_details": "View Details",
+            "update_status": "Update Status",
+            "delete": "Delete"
+        },
+        "view_dialog": {
+            "title": "Contact Submission Details",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "subject": "Subject",
+            "not_provided": "Not provided",
+            "no_subject": "No subject",
+            "message": "Message",
+            "admin_notes": "Admin Notes",
+            "submitted": "Submitted",
+            "last_updated": "Last Updated",
+            "close": "Close",
+            "update": "Update Status"
+        },
+        "update_dialog": {
+            "title": "Update Submission Status",
+            "status_label": "Status",
+            "select_status": "Select a status",
+            "notes_label": "Notes",
+            "notes_placeholder": "Add notes about this submission",
+            "cancel": "Cancel",
+            "update": "Update"
+        },
+        "delete_dialog": {
+            "title": "Delete Contact Submission",
+            "desc": "Are you sure you want to delete this contact submission from",
+            "confirm": "Delete"
+        },
+        "messages": {
+            "fetch_error": "Failed to fetch contact submissions",
+            "delete_success": "Contact submission deleted successfully",
+            "delete_error": "Failed to delete contact submission",
+            "update_success": "Contact submission updated successfully",
+            "update_error": "Failed to update contact submission"
+        }
+    },
+    "referrals_page": {
+        "title": "Referral Management",
+        "description": "View and manage user referrals and rewards",
+        "stats": {
+            "total_referrals": "Total Referrals",
+            "completed": "Completed",
+            "pending": "Pending",
+            "total_rewards_paid": "Total Rewards Paid"
+        },
+        "top_referrers": {
+            "title": "Top Referrers",
+            "referrals_suffix": "referrals",
+            "unknown_user": "Unknown User",
+            "code": "Code"
+        },
+        "search": {
+            "placeholder": "Search by code, name, or email...",
+            "button": "Search"
+        },
+        "filters": {
+            "all_status": "All Status",
+            "pending": "Pending",
+            "completed": "Completed",
+            "cancelled": "Cancelled"
+        },
+        "list": {
+            "title": "All Referrals",
+            "no_referrals": "No referrals found",
+            "empty_description": "Referral data will appear here when available"
+        },
+        "card": {
+            "referral_code": "Referral Code",
+            "referrer_label": "Referrer (Who Referred)",
+            "referred_label": "Referred User",
+            "order_details": "Order Details",
+            "reward": "Reward",
+            "completed_on": "Completed on",
+            "created": "Created"
+        },
+        "badges": {
+            "completed": "Completed",
+            "pending": "Pending",
+            "cancelled": "Cancelled"
+        }
+    },
+    "partner_management": {
+        "title": "Partner Management",
+        "description": "Manage approved and pending partner requests",
+        "tabs": {
+            "approved": "Approved Partners",
+            "non_approved": "Non-Approved Partners"
+        },
+        "details": {
+            "back_button": "Back to Partners",
+            "refresh_button": "Refresh Data",
+            "header_subtitle": "Partner Details & Earnings",
+            "badges": {
+                "active": "Active",
+                "inactive": "Inactive"
+            },
+            "stats": {
+                "total_earnings": "Total Earnings",
+                "pending_amount": "Pending Amount",
+                "paid_amount": "Paid Amount",
+                "total_orders": "Total Orders"
+            },
+            "info": {
+                "title": "Partner Information",
+                "email": "Email",
+                "phone": "Phone",
+                "location": "Location",
+                "commission_rate": "Commission Rate",
+                "registered": "Registered"
+            },
+            "coupons": {
+                "title": "Assigned Coupons",
+                "commission": "Commission",
+                "discount": "Discount",
+                "min_order": "Min Order",
+                "used": "Used",
+                "valid_until": "Valid Until",
+                "empty": "No coupons assigned to this partner"
+            },
+            "earnings": {
+                "title": "Monthly Earnings",
+                "filters": {
+                    "all_years": "All Years",
+                    "all_months": "All Months",
+                    "export": "Export"
+                },
+                "table": {
+                    "month": "Month",
+                    "orders": "Orders",
+                    "amount": "Amount",
+                    "status": "Status",
+                    "paid_date": "Paid Date",
+                    "actions": "Actions",
+                    "empty": "No earnings data found for the selected period"
+                },
+                "payment_notes_placeholder": "Payment notes..."
+            },
+            "not_found": {
+                "title": "Partner not found",
+                "description": "The partner you're looking for doesn't exist."
+            }
+        },
+        "registrations": {
+            "title": "Partner Registrations",
+            "badges": {
+                "pending": "Pending",
+                "approved": "Approved",
+                "rejected": "Rejected"
+            },
+            "filters": {
+                "placeholder": "Status",
+                "all_statuses": "All Statuses",
+                "clear_filters": "Clear Filters"
+            },
+            "table": {
+                "name": "Name",
+                "email": "Email",
+                "number": "Number",
+                "city": "City",
+                "state": "State",
+                "status": "Status",
+                "message": "Message",
+                "requested_at": "Requested At",
+                "actions": "Actions",
+                "empty": "No partner registrations found."
+            },
+            "actions": {
+                "approve": "Approve",
+                "reject": "Reject",
+                "details": "Details",
+                "close": "Close",
+                "cancel": "Cancel"
+            },
+            "dialogs": {
+                "approve": {
+                    "title": "Set Partner Password",
+                    "description": "Enter a password for this partner (min 6 characters).",
+                    "password_placeholder": "Password",
+                    "submit": "Approve & Set Password"
+                },
+                "password": {
+                    "title": "Partner Password",
+                    "description": "This is the password you set for the partner. Please copy and share it securely. You will not be able to see it again.",
+                    "copy": "Copy",
+                    "copied": "Copied!"
+                },
+                "details": {
+                    "title": "Partner Details",
+                    "description": "Full details, coupons, and earnings for this partner.",
+                    "assigned_coupons": "Assigned Coupons",
+                    "earnings": "Earnings",
+                    "total": "Total",
+                    "monthly": "Monthly"
+                }
+            }
+        }
+    },
+    "user_management": {
+        "title": "Users",
+        "description": "Manage customer accounts and access",
+        "search_placeholder": "Search by name or email...",
+        "search": "Search",
+        "searching": "Searching...",
+        "clear": "Clear",
+        "loading": "Loading users...",
+        "error_title": "Error",
+        "try_again": "Try Again",
+        "no_users": "No users found",
+        "no_users_desc": "Try adjusting your search query or check back later",
+        "clear_search": "Clear Search",
+        "showing": "Showing",
+        "of": "of",
+        "users_count": "users",
+        "page": "Page",
+        "joined": "Joined",
+        "actions": {
+            "view_details": "View Details",
+            "edit": "Edit",
+            "verify_email": "Verify Email",
+            "delete": "Delete"
+        },
+        "status": {
+            "verified": "Verified",
+            "not_verified": "Not Verified"
+        },
+        "fields": {
+            "name": "Name",
+            "name_placeholder": "User's name",
+            "email": "Email",
+            "email_placeholder": "user@example.com",
+            "phone": "Phone",
+            "phone_placeholder": "Phone number",
+            "email_verified": "Email Verified",
+            "role": "Role",
+            "created_at": "Created At",
+            "last_updated": "Last Updated",
+            "not_provided": "Not provided"
+        },
+        "dialogs": {
+            "details": {
+                "title": "User Details",
+                "description": "Detailed information about this user",
+                "close": "Close"
+            },
+            "edit": {
+                "title": "Edit User",
+                "description": "Update user information",
+                "cancel": "Cancel",
+                "save": "Save Changes",
+                "saving": "Saving..."
+            },
+            "delete": {
+                "title": "Confirm Delete",
+                "description": "Are you sure you want to delete this user? This action cannot be undone.",
+                "confirm": "Delete",
+                "deleting": "Deleting...",
+                "cancel": "Cancel"
+            }
+        },
+        "messages": {
+            "verify_success": "User email verified successfully",
+            "verify_error": "Failed to verify user email",
+            "verify_exception": "An error occurred while verifying user email",
+            "update_success": "User details updated successfully",
+            "update_error": "Failed to update user details",
+            "update_exception": "An error occurred while updating user details",
+            "delete_success": "User deleted successfully",
+            "delete_error": "Failed to delete user",
+            "delete_exception": "An error occurred while deleting user",
+            "fetch_error": "Failed to fetch users",
+            "fetch_exception": "An error occurred while fetching users"
+        }
+    },
+    "coupons": {
+        "title": "Coupons",
+        "description": "Manage discount coupons and promotional offers",
+        "add_coupon": "Add Coupon",
+        "no_coupons": "No Coupons Found",
+        "no_coupons_desc": "Create your first discount coupon to offer to customers",
+        "add_first_coupon": "Add Your First Coupon",
+        "loading": "Loading coupons...",
+        "error_title": "Something went wrong",
+        "try_again": "Try Again",
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive"
+        },
+        "discount": {
+            "off": "off",
+            "min_order": "Min."
+        },
+        "targets": {
+            "all_items": "All items",
+            "categories": "categories",
+            "category": "category",
+            "products": "products",
+            "product": "product",
+            "brands": "brands",
+            "brand": "brand"
+        },
+        "partners_count": "partner(s)",
+        "form": {
+            "create_title": "Add New Coupon",
+            "edit_title": "Edit Coupon",
+            "create_desc": "Create a discount coupon for your customers",
+            "edit_desc": "Update coupon details and settings",
+            "back_to_coupons": "Back to Coupons",
+            "basic_info": "Basic Information",
+            "basic_info_desc": "Enter coupon code and description",
+            "code": "Coupon Code",
+            "code_placeholder": "e.g., SUMMER2023, WELCOME10",
+            "description": "Description",
+            "description_placeholder": "Short description of the coupon",
+            "discount_settings": "Discount Settings",
+            "discount_settings_desc": "Configure discount type, value, and usage limits",
+            "discount_type": "Discount Type",
+            "type_percentage": "Percentage Discount (%)",
+            "type_fixed": "Fixed Amount Discount (₹)",
+            "discount_value": "Discount Value",
+            "min_order_amount": "Minimum Order Amount",
+            "max_uses": "Maximum Uses",
+            "max_uses_placeholder": "Leave empty for unlimited",
+            "target_selection": "Target Selection",
+            "target_selection_desc": "Select specific categories, products, or brands (optional - leave empty for all items)",
+            "target_categories": "Target Categories (optional)",
+            "target_products": "Target Products (optional)",
+            "target_brands": "Target Brands (optional)",
+            "select_placeholder_categories": "Select categories",
+            "select_placeholder_products": "Select products",
+            "select_placeholder_brands": "Select brands",
+            "target_hint_categories": "Leave empty to allow coupon on all categories.",
+            "target_hint_products": "Leave empty to allow coupon on all products.",
+            "target_hint_brands": "Leave empty to allow coupon on all brands.",
+            "validity_period": "Validity Period",
+            "validity_period_desc": "Set start date, end date, and active status",
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "active_status": "Active Status",
+            "active_status_desc": "Enable or disable this coupon",
+            "partner_assignments": "Partner Assignments",
+            "partner_assignments_desc": "Assign this coupon to partners for commission tracking (optional)",
+            "add_partner": "Add Partner",
+            "no_partners_assigned": "No partners assigned. This coupon will be a general coupon available to all.",
+            "select_partner": "Select Partner...",
+            "partner_already_assigned": "This partner is already assigned to this coupon",
+            "assign_partner_desc": "Assign this coupon to specific partners for commission tracking. Partners will earn the specified commission percentage from orders using this coupon.",
+            "commission_note_title": "Commission Calculation Note",
+            "commission_example": "Example: Order value ₹100, Coupon discount ₹10, Partner commission 5%",
+            "commission_calc_1": "Commission is calculated on: ₹90 (Order value after discount)",
+            "commission_calc_2": "Partner earns: ₹4.50 (5% of ₹90)",
+            "commission_final_note": "Commission is always calculated on the final order amount after applying the coupon discount.",
+            "cancel": "Cancel",
+            "create_btn": "Create Coupon",
+            "update_btn": "Update Coupon"
+        },
+        "messages": {
+            "delete_confirm": "Are you sure you want to delete coupon \"{code}\"?",
+            "delete_success": "Coupon deleted successfully",
+            "delete_error": "Failed to delete coupon",
+            "status_update_success": "Coupon \"{code}\" {action}d successfully",
+            "status_update_error": "Failed to {action} coupon",
+            "create_success": "Coupon created successfully",
+            "update_success": "Coupon updated successfully",
+            "create_error": "Failed to create coupon",
+            "update_error": "Failed to update coupon",
+            "fetch_error": "Failed to fetch coupons",
+            "load_error": "Failed to load coupons. Please try again.",
+            "code_required": "Coupon code is required",
+            "code_invalid": "Coupon code can only contain letters, numbers, underscores, and hyphens",
+            "discount_positive": "Discount value must be a positive number",
+            "discount_percentage_limit": "Percentage discount cannot be greater than 100%",
+            "min_order_positive": "Minimum order amount must be a positive number",
+            "max_uses_integer": "Maximum uses must be a positive integer",
+            "end_date_invalid": "End date must be after start date",
+            "partner_required": "Please select a partner or remove empty partner entries",
+            "partner_duplicate": "Each partner can only be assigned once per coupon. Please remove duplicate partners.",
+            "commission_limit": "{name}'s commission must be between 0 and 100",
+            "code_exists": "This coupon code is already in use. Please choose a different code."
+        }
+    },
+    "reviews": {
+        "title": "Reviews Management",
+        "description": "Manage and respond to customer product reviews",
+        "stats": {
+            "total": "Total Reviews",
+            "average": "Average Rating",
+            "pending": "Pending Reviews",
+            "recent": "Recent Reviews (7 days)"
+        },
+        "filters": {
+            "title": "Filter Reviews",
+            "search_label": "Search",
+            "search_placeholder": "Search by user or content",
+            "rating_label": "Rating",
+            "all_ratings": "All Ratings",
+            "status_label": "Status",
+            "all_statuses": "All Statuses",
+            "sort_by": "Sort By",
+            "date": "Date",
+            "order": "Order",
+            "descending": "Descending",
+            "ascending": "Ascending",
+            "reset": "Reset",
+            "apply": "Apply Filters"
+        },
+        "table": {
+            "title": "Reviews",
+            "total_found": "total reviews found",
+            "loading": "Loading reviews...",
+            "no_reviews": "No reviews found",
+            "empty_hint": "Try adjusting your filters or check back later",
+            "unknown_product": "Unknown Product",
+            "anonymous": "Anonymous"
+        },
+        "actions": {
+            "view": "View Details",
+            "reply": "Reply",
+            "approve": "Approve",
+            "reject": "Reject",
+            "delete": "Delete",
+            "mark_pending": "Mark as Pending"
+        },
+        "dialog": {
+            "title": "Review Details",
+            "description": "View and manage this customer review",
+            "review_title": "Review Title",
+            "review_content": "Review Content",
+            "by": "By",
+            "posted": "Posted",
+            "admin_reply": "Admin Reply",
+            "replied_on": "Replied on",
+            "admin_comment": "Admin Comment (Internal Only)",
+            "admin_comment_placeholder": "Add internal notes about this review",
+            "review_status": "Review Status"
+        },
+        "messages": {
+            "reply_success": "Reply added successfully",
+            "reply_error": "Failed to add reply",
+            "status_success": "Review status updated to {status}",
+            "status_error": "Failed to update review status",
+            "comment_success": "Admin comment updated",
+            "comment_error": "Failed to update admin comment",
+            "delete_success": "Review deleted successfully",
+            "delete_error": "Failed to delete review",
+            "error_title": "Something went wrong",
+            "try_again": "Try Again"
+        },
+        "status": {
+            "approved": "Approved",
+            "rejected": "Rejected",
+            "pending": "Pending"
+        }
+    },
+    "pricing_slabs": {
+        "title": "Pricing Slabs",
+        "description": "Configure quantity-based pricing for products and variants",
+        "add_button": "Add Pricing Slab",
+        "info_title": "How Pricing Slabs Work:",
+        "info_list": {
+            "1": "Product slabs apply to all variants unless a variant has its own slab",
+            "2": "Variant slabs override product slabs for that specific variant",
+            "3": "Leave max quantity empty for the highest tier (unlimited)",
+            "4": "Prices are applied when cart quantity falls within the min-max range"
+        },
+        "filter_type": "Filter by Type",
+        "all_slabs": "All Slabs",
+        "product_slabs": "Product Slabs Only",
+        "variant_slabs": "Variant Slabs Only",
+        "no_slabs": "No pricing slabs yet",
+        "create_first": "Create your first pricing slab to enable quantity-based pricing",
+        "table": {
+            "type": "Type",
+            "product_variant": "Product/Variant",
+            "min_qty": "Min Qty",
+            "max_qty": "Max Qty",
+            "price": "Price",
+            "actions": "Actions"
+        },
+        "product": "Product",
+        "variant": "Variant",
+        "dialog": {
+            "create_title": "Create Pricing Slab",
+            "edit_title": "Edit Pricing Slab",
+            "description": "Configure quantity-based pricing. Variant slabs override product slabs."
+        },
+        "form": {
+            "product_label": "Product (Optional)",
+            "product_placeholder": "Select product (optional)",
+            "variant_label": "Variant (Optional)",
+            "variant_placeholder": "Select variant (optional)",
+            "no_variants": "No variants available",
+            "clear_selection": "Clear selection",
+            "min_qty_label": "Min Quantity",
+            "max_qty_label": "Max Quantity (Optional)",
+            "max_qty_placeholder": "Leave empty for unlimited",
+            "price_label": "Price (INR)"
+        },
+        "validation": {
+            "min_qty_error": "Minimum quantity must be at least 1",
+            "max_qty_error": "Maximum quantity must be greater than minimum quantity",
+            "price_error": "Price must be greater than 0",
+            "product_variant_required": "Please select either a product or variant"
+        },
+        "warning": {
+            "select_product_or_variant": "Please select either a product or variant for this pricing slab."
+        },
+        "actions": {
+            "cancel": "Cancel",
+            "create_slab": "Create Slab",
+            "update_slab": "Update Slab"
+        },
+        "messages": {
+            "fetch_error": "Failed to load pricing slabs",
+            "create_success": "Pricing slab created successfully",
+            "update_success": "Pricing slab updated successfully",
+            "save_error": "Failed to save pricing slab",
+            "delete_confirm": "Are you sure you want to delete this pricing slab?",
+            "delete_success": "Pricing slab deleted successfully",
+            "delete_error": "Failed to delete pricing slab"
+        }
+    },
+    "product_sections": {
+        "title": "Product Sections",
+        "subtitle": "Manage product sections for homepage display (max 15 products per section)",
+        "help_button": "Help - How Product Sections Work",
+        "create_button": "Create Section",
+        "loading": "Loading product sections...",
+        "error": {
+            "title": "Something went wrong",
+            "try_again": "Try Again"
+        },
+        "empty": {
+            "title": "No sections yet",
+            "description": "Create your first product section to showcase products on your homepage",
+            "create_first": "Create your first section"
+        },
+        "section": {
+            "products_count": "{count} products",
+            "active": "Active",
+            "inactive": "Inactive",
+            "edit": "Edit Section",
+            "add_products": "Add Products",
+            "delete": "Delete Section",
+            "toggle_status": "Toggle Active Status"
+        },
+        "products": {
+            "section_products": "Section Products",
+            "total_products": "{current} of {max} products",
+            "no_products": "No products in this section",
+            "add_products_hint": "Add products to this section to display them on your homepage",
+            "add_button": "Add Products",
+            "remove": "Remove from Section"
+        },
+        "dialog": {
+            "create_title": "Create New Section",
+            "edit_title": "Edit Section",
+            "add_products_title": "Add Products to {section}",
+            "delete_confirm": "Are you sure you want to delete this section? This action cannot be undone."
+        },
+        "form": {
+            "name_label": "Section Name",
+            "name_placeholder": "Enter section name",
+            "slug_label": "Slug",
+            "slug_placeholder": "auto-generated-slug",
+            "description_label": "Description (Optional)",
+            "description_placeholder": "Enter section description",
+            "icon_label": "Icon Name",
+            "icon_placeholder": "e.g., star, heart, gift",
+            "color_label": "Color",
+            "display_order_label": "Display Order",
+            "max_products_label": "Max Products",
+            "active_label": "Active"
+        },
+        "add_products_dialog": {
+            "search_placeholder": "Search products...",
+            "no_products": "No products available",
+            "all_products_added": "All products have been added to this section",
+            "loading": "Loading products..."
+        },
+        "actions": {
+            "cancel": "Cancel",
+            "create": "Create Section",
+            "update": "Update Section",
+            "close": "Close"
+        },
+        "messages": {
+            "fetch_error": "Failed to load sections",
+            "create_success": "Section created successfully",
+            "create_error": "Failed to create section",
+            "update_success": "Section updated successfully",
+            "update_error": "Failed to update section",
+            "delete_success": "Section deleted successfully",
+            "delete_error": "Failed to delete section",
+            "product_add_success": "Product added to section",
+            "product_add_error": "Failed to add product",
+            "product_remove_success": "Product removed from section",
+            "product_remove_error": "Failed to remove product",
+            "status_update_success": "Section status updated",
+            "status_update_error": "Failed to update section status"
+        },
+        "help": {
+            "title": "Help - How Product Sections Work",
+            "description": "Product sections allow you to organize products into groups that appear on your homepage.",
+            "items": {
+                "1": "Create sections with custom names, icons, and colors",
+                "2": "Each section can hold up to 15 products",
+                "3": "Set display order to control section arrangement on homepage",
+                "4": "Toggle sections active/inactive to show or hide them",
+                "5": "Add or remove products from sections at any time"
+            }
+        },
+        "labels": {
+            "products": "Products",
+            "slug": "Slug",
+            "display_order": "Display Order",
+            "add_product": "Add Product",
+            "no_products_title": "No products in this section",
+            "no_products_desc": "Add products to display them on your homepage"
+        },
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive"
+        }
+    },
+    "banners": {
+        "title": "Banners",
+        "subtitle": "Manage homepage banners and promotional displays",
+        "create_button": "Create Banner",
+        "loading": "Loading banners...",
+        "loading_banner": "Loading banner...",
+        "create_title": "Add New Banner",
+        "edit_title": "Edit Banner",
+        "create_description": "Fill in the details to create a new banner",
+        "edit_description": "Update banner details and images",
+        "back": "Back",
+        "delete": "Delete",
+        "saving": "Saving...",
+        "create_banner": "Create Banner",
+        "save_changes": "Save Changes",
+        "cancel": "Cancel",
+        "basic_info": {
+            "title": "Basic Information",
+            "description": "Enter banner title, subtitle, and link details"
+        },
+        "form": {
+            "title_label": "Title",
+            "title_optional": "(Optional)",
+            "title_placeholder": "e.g., Summer Sale 2024",
+            "subtitle_label": "Subtitle",
+            "subtitle_optional": "(Optional)",
+            "subtitle_placeholder": "e.g., Get up to 50% off on selected items",
+            "link_label": "Link URL",
+            "link_placeholder": "/products",
+            "link_hint": "Where the banner will navigate when clicked (default: /products)"
+        },
+        "settings": {
+            "title": "Settings",
+            "description": "Configure banner position and visibility",
+            "position_label": "Display Position",
+            "position_suggested": "(Suggested: {position})",
+            "position_hint_create": "Set position (0 = first). Existing banners at this position and after will be shifted down.",
+            "position_hint_edit": "Change position (0 = first). Other banners will be automatically reordered.",
+            "published_label": "Published",
+            "published_hint": "Show this banner on the website",
+            "active_label": "Active",
+            "active_hint": "Enable this banner"
+        },
+        "desktop_image": {
+            "title": "Desktop Image",
+            "description": "Upload image for large screens (recommended: 1920x1080px or larger)",
+            "preview_alt": "Desktop preview",
+            "replace_hint": "Click or drag to replace image",
+            "upload_title": "Drag & drop desktop image here, or click to select",
+            "upload_hint": "Recommended: 1920x1080px or larger"
+        },
+        "mobile_image": {
+            "title": "Mobile Image",
+            "description": "Upload image for small screens (recommended: 1080x1920px or similar portrait ratio)",
+            "preview_alt": "Mobile preview",
+            "replace_hint": "Click or drag to replace image",
+            "upload_title": "Drag & drop mobile image here, or click to select",
+            "upload_hint": "Recommended: 1080x1920px or similar portrait ratio"
+        },
+        "danger_zone": {
+            "title": "Danger Zone",
+            "description": "Permanently delete this banner. This action cannot be undone.",
+            "delete_button": "Delete Banner"
+        },
+        "list": {
+            "search_placeholder": "Search banners by title or subtitle...",
+            "filter_all": "All Status",
+            "filter_published": "Published",
+            "filter_unpublished": "Unpublished",
+            "clear_filters": "Clear Filters",
+            "no_banners": "No banners yet",
+            "no_banners_desc": "Create your first banner to display on your homepage",
+            "create_first": "Create your first banner",
+            "desktop": "Desktop",
+            "mobile": "Mobile",
+            "untitled": "Untitled Banner",
+            "published": "Published",
+            "unpublished": "Unpublished",
+            "active": "Active",
+            "inactive": "Inactive",
+            "link": "Link:",
+            "position": "Position:",
+            "publish": "Publish",
+            "unpublish": "Unpublish"
+        },
+        "messages": {
+            "load_error": "Failed to load banner",
+            "images_required": "Please upload both desktop and mobile images",
+            "id_missing": "Banner ID is missing",
+            "create_success": "Banner created successfully",
+            "update_success": "Banner updated successfully",
+            "save_error": "Failed to save banner",
+            "delete_confirm": "Are you sure you want to delete this banner? This action cannot be undone.",
+            "delete_confirm_short": "Are you sure you want to delete this banner?",
+            "delete_success": "Banner deleted successfully. Positions have been reordered.",
+            "delete_error": "Failed to delete banner",
+            "toggle_success_published": "Banner published successfully",
+            "toggle_success_unpublished": "Banner unpublished successfully",
+            "toggle_error": "Failed to update banner",
+            "fetch_error": "Failed to load banners. Please try again."
+        }
+    },
+    "flash_sales": {
+        "title": "Flash Sales",
+        "subtitle": "Manage limited-time flash sale offers",
+        "create_button": "Create Flash Sale",
+        "loading": "Loading flash sales...",
+        "loading_sale": "Loading flash sale...",
+        "create_title": "Add New Flash Sale",
+        "edit_title": "Edit Flash Sale",
+        "create_description": "Create a new limited-time flash sale",
+        "edit_description": "Update flash sale details",
+        "back": "Back to Flash Sales",
+        "cancel": "Cancel",
+        "creating": "Creating...",
+        "updating": "Updating...",
+        "create_sale": "Create Flash Sale",
+        "update_sale": "Update Flash Sale",
+        "empty": {
+            "title": "No Flash Sales",
+            "description": "Create your first flash sale to offer limited-time discounts"
+        },
+        "status": {
+            "active": "Active",
+            "inactive": "Inactive",
+            "upcoming": "Upcoming",
+            "ended": "Ended"
+        },
+        "card": {
+            "discount": "Discount",
+            "products": "Products",
+            "sold": "Sold",
+            "max_quantity": "Max Quantity",
+            "start": "Start:",
+            "end": "End:"
+        },
+        "form": {
+            "info_title": "Flash Sale Information",
+            "info_description": "Configure sale details, timing, and product selection",
+            "name_label": "Sale Name",
+            "name_placeholder": "e.g., Summer Flash Sale",
+            "discount_label": "Discount Percentage",
+            "discount_placeholder": "e.g., 50",
+            "start_time_label": "Start Time",
+            "end_time_label": "End Time",
+            "max_quantity_label": "Max Quantity (Optional)",
+            "max_quantity_placeholder": "Leave empty for unlimited",
+            "active_status_label": "Active Status",
+            "active_status_hint": "Enable or disable this flash sale",
+            "products_label": "Products",
+            "products_placeholder": "Select products for flash sale",
+            "products_selected": "{count} product(s) selected"
+        },
+        "messages": {
+            "fetch_error": "Failed to fetch flash sales",
+            "load_error": "Failed to load flash sales",
+            "load_sale_error": "Failed to load flash sale",
+            "delete_confirm": "Are you sure you want to delete \"{name}\"?",
+            "delete_success": "Flash sale deleted successfully",
+            "delete_error": "Failed to delete flash sale",
+            "delete_error_generic": "An error occurred while deleting the flash sale",
+            "toggle_success_activated": "Flash sale activated successfully",
+            "toggle_success_deactivated": "Flash sale deactivated successfully",
+            "toggle_error": "Failed to toggle status",
+            "toggle_error_generic": "An error occurred while toggling status",
+            "create_success": "Flash sale created successfully",
+            "update_success": "Flash sale updated successfully",
+            "create_error": "Failed to create flash sale",
+            "update_error": "Failed to update flash sale",
+            "save_error": "An error occurred while saving flash sale"
+        }
+    },
+    "partners_tab": {
+        "approved": {
+            "demo_title": "Partner Demo Password",
+            "demo_desc": "All approved partners can login with this demo password. They will be prompted to change it after first login.",
+            "no_partners": "No approved partners found.",
+            "active": "Active",
+            "remove": "Remove",
+            "removing": "Removing...",
+            "details_title": "Partner Details",
+            "details_desc": "Detailed information about {name}",
+            "registered": "Registered",
+            "message": "Message",
+            "assigned_coupons": "Assigned Coupons",
+            "no_coupons": "No coupons assigned.",
+            "no_desc": "No description",
+            "earnings": "Earnings",
+            "total": "Total",
+            "monthly": "Monthly Breakdown",
+            "confirm_remove_coupon": "Remove this coupon from partner?",
+            "confirm_deactivate": "Are you sure you want to deactivate this partner? This will remove their access but keep their data.",
+            "deactivate_success": "Partner deactivated successfully.",
+            "deactivate_error": "Failed to deactivate partner.",
+            "remove_coupon_error": "Failed to remove coupon."
+        },
+        "non_approved": {
+            "no_partners": "No non-approved partners found.",
+            "details": "Details",
+            "accept": "Accept",
+            "decline": "Decline",
+            "details_title": "Partner Application Details",
+            "details_desc": "Application details for {name}",
+            "applied_date": "Applied Date",
+            "city": "City",
+            "state": "State",
+            "no_message": "No message provided",
+            "approve_title": "Approve Partner",
+            "approve_desc": "This partner will be approved with the demo password \"dfixventure\". Please share this password with the partner after approval.",
+            "demo_password": "Demo Password",
+            "demo_hint": "The partner can login with this password and will be prompted to change it.",
+            "approving": "Approving...",
+            "confirm_approve": "Are you sure you want to approve this partner? They will be assigned the demo password.",
+            "approve_success": "Partner approved successfully!\nDemo Password: {password}\nPlease share this password with the partner.",
+            "approve_error": "Failed to approve partner.",
+            "confirm_reject": "Are you sure you want to reject this request?",
+            "reject_error": "Failed to reject partner."
+        },
+        "common": {
+            "name": "Name",
+            "email": "Email",
+            "number": "Number",
+            "status": "Status",
+            "monthly_earnings": "Monthly Earnings",
+            "actions": "Actions",
+            "close": "Close",
+            "cancel": "Cancel",
+            "loading": "Loading partners..."
+        }
+    },
+    "orders": {
+        "title": "Orders",
+        "description": "Manage and track all customer orders",
+        "summary": {
+            "total": "Total",
+            "delivered": "Delivered"
+        },
+        "filters": {
+            "search_placeholder": "Search by order number or customer...",
+            "all_status": "All Statuses",
+            "clear": "Clear Filters"
+        },
+        "status": {
+            "pending": "Pending",
+            "processing": "Processing",
+            "shipped": "Shipped",
+            "delivered": "Delivered",
+            "cancelled": "Cancelled",
+            "refunded": "Refunded",
+            "placed": "Order Placed",
+            "paid": "Paid",
+            "return_approved": "Return Approved",
+            "return_completed": "Return Completed"
+        },
+        "list": {
+            "no_orders": "No orders found",
+            "no_orders_status": "No {status} orders found.",
+            "try_adjusting": "Try adjusting your search terms.",
+            "empty_desc": "Orders will appear here when customers place them.",
+            "customer": "Customer",
+            "order_date": "Order Date",
+            "total_amount": "Total Amount",
+            "items_count": "{count} items",
+            "discount": "-{amount} discount"
+        },
+        "details": {
+            "title": "Order #{number}",
+            "placed_on": "Placed on {date}",
+            "back_to_list": "Back to Orders",
+            "status_timeline": "Order Status & Timeline",
+            "items": "Order Items",
+            "customer_info": "Customer Information",
+            "cancellation_info": "Cancellation Information",
+            "payment_info": "Payment Information",
+            "shipping_address": "Shipping Address",
+            "sku": "SKU",
+            "flavor": "Flavor",
+            "weight": "Weight",
+            "price": "Price",
+            "qty": "Qty",
+            "total": "Total",
+            "method": "Method",
+            "gateway": "Gateway",
+            "transaction_id": "Transaction ID",
+            "order_id": "Order ID",
+            "cancelled_at": "Cancelled At",
+            "reason": "Reason",
+            "cancelled_by": "Cancelled By",
+            "by_customer": "Customer",
+            "by_admin": "Admin",
+            "no_reason": "No reason provided",
+            "not_available": "N/A",
+            "subtotal": "Subtotal",
+            "shipping": "Shipping",
+            "tax": "Tax",
+            "grand_total": "Grand Total",
+            "not_found": "Order not found",
+            "not_found_desc": "The order you're looking for doesn't exist or has been removed."
+        },
+        "actions": {
+            "view_details": "View Order Details",
+            "update_status": "Update Order Status",
+            "mark_processing": "Mark as Processing",
+            "mark_shipped": "Mark as Shipped",
+            "mark_delivered": "Mark as Delivered",
+            "mark_paid": "Mark Paid",
+            "cancel": "Cancel Order",
+            "delete": "Delete Order",
+            "delete_confirm": "Are you sure you want to delete this order? This action cannot be undone.",
+            "delete_success": "Order deleted successfully",
+            "delete_error": "Failed to delete order",
+            "load_error": "Failed to load orders",
+            "status_update_success": "Order status updated to {status}",
+            "status_update_error": "Failed to update order status"
+        }
+    },
+    "return_requests": {
+        "title": "Return Requests",
+        "description": "Manage customer return requests and refunds",
+        "settings_btn": "Settings",
+        "filters": {
+            "search_placeholder": "Search by order number, customer name, email, or product...",
+            "search_btn": "Search",
+            "clear": "Clear",
+            "all_status": "All Status"
+        },
+        "status": {
+            "pending": "Pending",
+            "approved": "Approved",
+            "rejected": "Rejected",
+            "processing": "Processing",
+            "completed": "Completed"
+        },
+        "status_badges": {
+            "pending": "Pending",
+            "approved": "Approved",
+            "rejected": "Rejected",
+            "processing": "Processing",
+            "completed": "Completed"
+        },
+        "list": {
+            "no_requests": "No return requests found",
+            "no_requests_desc": "Return requests will appear here when customers submit them",
+            "try_adjusting": "Try adjusting your search or filters",
+            "order_number": "Order #{number}",
+            "customer": "Customer",
+            "product": "Product",
+            "qty": "Quantity",
+            "price": "Price",
+            "reason": "Return Reason",
+            "admin_notes": "Admin Notes",
+            "processed_on": "Processed on"
+        },
+        "dialogs": {
+            "settings_title": "Return Settings",
+            "settings_desc": "Configure return request settings",
+            "enable_label": "Enable Return Requests",
+            "enable_desc": "Allow customers to submit return requests",
+            "window_label": "Return Window (Days)",
+            "window_desc": "Number of days after delivery to allow returns (1-30)",
+            "update_status_title": "Update Return Status",
+            "update_status_desc": "Update the status of this return request",
+            "status_label": "Status",
+            "notes_label": "Admin Notes (Optional)",
+            "notes_placeholder": "Add any notes about this return request...",
+            "details_title": "Return Request Details",
+            "requested_on": "Requested On"
+        },
+        "actions": {
+            "view_details": "View Details",
+            "update_status": "Update Status",
+            "save_settings": "Save Settings",
+            "saving": "Saving...",
+            "cancel": "Cancel",
+            "update": "Update Status",
+            "close": "Close",
+            "settings_success": "Settings updated successfully",
+            "settings_error": "Failed to update settings",
+            "status_success": "Return request updated successfully",
+            "status_error": "Failed to update return request",
+            "validation_days": "Return window must be between 1 and 30 days"
+        },
+        "settings": {
+            "cancel": "Cancel",
+            "save": "Save Settings",
+            "update_title": "Update Return Status",
+            "validation_error": "Return window must be between 1 and 30 days",
+            "save_success": "Settings updated successfully",
+            "save_error": "Failed to update settings"
+        },
+        "details": {
+            "customer": "Customer",
+            "product": "Product",
+            "reason": "Return Reason",
+            "admin_notes": "Admin Notes",
+            "admin_notes_placeholder": "Add notes about this return...",
+            "processed_on": "Processed on",
+            "requested_on": "Requested On",
+            "images": "Return Images",
+            "return_image": "Return image"
+        },
+        "common": {
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "days": "{count} days",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "number": "Number"
+        },
+        "status_label": "Status"
+    },
+    "brands": {
+        "title": "Brands",
+        "subtitle": "Manage all your product brands",
+        "search_placeholder": "Search brands...",
+        "add_button": "Add Brand",
+        "filters": {
+            "all": "All Brands",
+            "top": "Top",
+            "new": "New",
+            "hot": "Hot"
+        },
+        "empty": {
+            "title": "No brands yet",
+            "title_search": "No brands found",
+            "description": "Get started by adding your first brand",
+            "description_search": "Try adjusting your search query",
+            "add_first": "Add your first brand"
+        },
+        "products_count": "{count} products",
+        "dialog": {
+            "add_title": "Add New Brand",
+            "edit_title": "Edit Brand",
+            "assign_title": "Assign Products to {brand}"
+        },
+        "form": {
+            "name_label": "Brand Name",
+            "name_placeholder": "Enter brand name",
+            "logo_label": "Brand Logo",
+            "tags_label": "Tags",
+            "tags_placeholder": "Select tags (Top, New, Hot, etc.)"
+        },
+        "dropzone": {
+            "drag_drop": "Drag & drop image here",
+            "click_select": "or click to select",
+            "click_change": "Click to change image",
+            "preview_alt": "Preview"
+        },
+        "actions": {
+            "view_products": "View Products",
+            "edit": "Edit",
+            "delete": "Delete",
+            "cancel": "Cancel",
+            "create": "Create Brand",
+            "update": "Update Brand",
+            "creating": "Creating...",
+            "updating": "Updating..."
+        },
+        "assign": {
+            "search_placeholder": "Search products...",
+            "no_brand": "No brand",
+            "assign_button": "Assign to Brand",
+            "assigning": "Assigning...",
+            "previous": "Previous",
+            "next": "Next",
+            "page_info": "Page {page} of {total}"
+        },
+        "messages": {
+            "fetch_error": "Failed to fetch brands",
+            "name_image_required": "Name and image are required",
+            "tag_required": "At least one tag is required",
+            "create_success": "Brand created",
+            "update_success": "Brand updated",
+            "save_error": "Failed to save brand",
+            "delete_confirm": "Are you sure you want to delete this brand? Products will remain, but will be unassigned from this brand.",
+            "delete_success": "Brand deleted. Products are now unassigned.",
+            "delete_error": "Failed to delete brand",
+            "products_fetch_error": "Failed to fetch products",
+            "assign_success": "Products assigned to brand",
+            "assign_error": "Failed to assign products",
+            "remove_success": "Product removed from brand"
+        }
+    },
+    "categories": {
+        "title": "Categories",
+        "subtitle": "Organize your products with categories and sub-categories",
+        "create_button": "Add Category",
+        "loading": "Loading categories...",
+        "sub_categories_count": "{count} sub-categories",
+        "empty": {
+            "title": "No categories found",
+            "description": "Create your first category to organize your products",
+            "create_first": "Create your first category"
+        },
+        "help_button": "Help - How Categories & Sub-Categories Work",
+        "help": {
+            "title": "How Categories & Sub-Categories Work",
+            "what_is": {
+                "title": "What are Categories and Sub-Categories?",
+                "description": "Categories are the main product groupings on your website (e.g., 'Women's Clothing', 'Men's Clothing', 'Electronics'). Sub-Categories are more specific groupings within a category (e.g., under 'Women's Clothing', you can have 'Dresses', 'Tops', 'Pants'). This hierarchical structure helps organize your products and makes it easier for customers to find what they're looking for."
+            },
+            "relationship": {
+                "title": "Parent-Child Relationship:",
+                "category_label": "Category (Parent):",
+                "subcategory_label": "Sub-Category (Child):"
+            },
+            "guide": {
+                "title": "Step-by-Step Guide:",
+                "step1": {
+                    "title": "Create a Category:",
+                    "item1": "Click 'Add Category' button",
+                    "item2": "Enter category name (e.g., 'Women's Clothing')",
+                    "item3": "Add optional description and image",
+                    "item4": "Save the category"
+                },
+                "step2": {
+                    "title": "Create Sub-Categories:",
+                    "item1": "Go to the category edit page (click Edit icon)",
+                    "item2": "In the category edit form, you'll find sub-categories section",
+                    "item3": "Click 'Add Sub-Category' button",
+                    "item4": "Enter sub-category name (e.g., 'Dresses')",
+                    "item5": "Add optional description and image",
+                    "item6": "Save the sub-category",
+                    "item7": "Repeat for more sub-categories"
+                },
+                "step3": {
+                    "title": "Edit Sub-Categories:",
+                    "item1": "Go to the category edit page",
+                    "item2": "Find the sub-category you want to edit",
+                    "item3": "Click the Edit icon next to the sub-category",
+                    "item4": "Update name, description, or image",
+                    "item5": "Save changes"
+                },
+                "step4": {
+                    "title": "Delete Sub-Categories:",
+                    "item1": "Go to the category edit page",
+                    "item2": "Click the Delete icon next to the sub-category",
+                    "item3": "Confirm deletion",
+                    "item4": "Note: Products assigned to this sub-category won't be deleted"
+                }
+            },
+            "limit": {
+                "title": "How Many Sub-Categories Can a Category Have?",
+                "info": "There is no hard limit! You can create as many sub-categories as needed for each category. However, for better organization and user experience, we recommend:",
+                "rec1": "5-15 sub-categories per category is ideal",
+                "rec2": "Too many sub-categories can make navigation confusing",
+                "rec3": "Too few sub-categories might not provide enough organization",
+                "rec4": "Group similar items together logically"
+            },
+            "examples": {
+                "title": "Real-World Examples:",
+                "ex1": {
+                    "title": "Example 1 - Women's Clothing Category:",
+                    "items": "Dresses, Tops, Pants, Skirts, Jackets, Accessories",
+                    "total": "Total: 6 sub-categories"
+                },
+                "ex2": {
+                    "title": "Example 2 - Electronics Category:",
+                    "items": "Mobile Phones, Laptops, Tablets, Headphones, Cameras",
+                    "total": "Total: 5 sub-categories"
+                },
+                "ex3": {
+                    "title": "Example 3 - Home & Kitchen Category:",
+                    "items": "Cookware, Dinnerware, Storage, Decor, Furniture",
+                    "total": "Total: 5 sub-categories"
+                }
+            },
+            "visibility": {
+                "title": "How to See Which Sub-Category Belongs to Which Category:",
+                "list_title": "In the Categories List:",
+                "list_item1": "Each category row shows the number of sub-categories it has",
+                "list_item2": "Example: 'Women's Clothing' - 6 sub-categories",
+                "edit_title": "In the Category Edit Page:",
+                "edit_item1": "When you edit a category, you'll see all its sub-categories listed",
+                "edit_item2": "Each sub-category shows its name, description, and image",
+                "edit_item3": "You can see which category it belongs to from the page context",
+                "product_title": "In the Product Form:",
+                "product_item1": "When creating/editing a product, you select main categories first",
+                "product_item2": "Then sub-categories appear grouped under their parent category",
+                "product_item3": "Example: Under 'Women's Clothing', you'll see 'Dresses', 'Tops', etc."
+            },
+            "appear": {
+                "title": "How It Appears on Your Website:",
+                "nav": "Navigation Menu:",
+                "page": "Category Page:",
+                "page_filters": "Sub-Category Filters: [Dresses] [Tops] [Pants] [Skirts]",
+                "page_products": "Products shown based on selected sub-category"
+            },
+            "best_practices": {
+                "title": "Best Practices:",
+                "bp1": "Clear Naming: Use descriptive names for both categories and sub-categories",
+                "bp2": "Logical Grouping: Group related items together",
+                "bp3": "Consistent Structure: Maintain similar structures across categories",
+                "bp4": "Images: Add images for better visual appeal",
+                "bp5": "Product Assignment: Assign products to both main and sub-categories",
+                "bp6": "Regular Review: Update as your product range grows"
+            },
+            "tips": {
+                "title": "Tips:",
+                "tip1": "Create sub-categories before adding products",
+                "tip2": "A product can belong to multiple sub-categories",
+                "tip3": "Use sub-category images for visual identity",
+                "tip4": "Keep sub-category names short and clear (1-3 words)",
+                "tip5": "Deactivate sub-categories instead of deleting if they might be used again"
+            }
+        },
+        "error": {
+            "title": "Something went wrong",
+            "try_again": "Try Again"
+        },
+        "delete": {
+            "title": "Delete Category",
+            "description": "Are you sure you want to delete this category? This action cannot be undone.",
+            "force_title": "Category Has Products",
+            "force_description": "This category cannot be deleted because it has products. You can force delete it (this will reassign all products to the default category), but this is not recommended.",
+            "force_button": "Force Delete",
+            "confirm": "Delete"
+        },
+        "form": {
+            "create_title": "Create Category",
+            "edit_title": "Edit Category",
+            "create_subtitle": "Create a new category to organize your products",
+            "edit_subtitle": "Update category details and manage sub-categories",
+            "info_title": "Category Information",
+            "info_subtitle": "Enter category name, description, and upload an image",
+            "name_label": "Category Name *",
+            "name_placeholder": "e.g., Electronics, Clothing, Home & Kitchen",
+            "description_label": "Description",
+            "description_placeholder": "Enter a brief description of this category",
+            "image_label": "Category Image",
+            "image_desc": "Upload an image for this category",
+            "image_recommendation": "Recommended size: 400x400 pixels, Max size: 5MB",
+            "preview_alt": "Category preview",
+            "create_submit": "Create Category",
+            "update_submit": "Update Category",
+            "cancel": "Cancel",
+            "back": "Back to Categories",
+            "loading_category": "Loading category...",
+            "preparing_form": "Preparing form..."
+        },
+        "subcategories": {
+            "title": "Sub-Categories",
+            "subtitle": "Manage sub-categories for this category",
+            "add_button": "Add Sub-Category",
+            "empty": "No sub-categories yet. Add your first sub-category.",
+            "empty_title": "No sub-categories yet",
+            "empty_desc": "Add your first sub-category to organize products better",
+            "loading": "Loading sub-categories...",
+            "active": "Active",
+            "inactive": "Inactive",
+            "dialog": {
+                "add_title": "Add Sub-Category",
+                "edit_title": "Edit Sub-Category",
+                "add_desc": "Create a new sub-category for this category",
+                "edit_desc": "Update sub-category details",
+                "name_label": "Sub-Category Name *",
+                "name_placeholder": "e.g., Dresses, Tops, Pants",
+                "description_label": "Description",
+                "description_placeholder": "Optional description",
+                "image_label": "Sub-Category Image",
+                "image_recommendation": "Recommended size: 400x400 pixels, Max size: 5MB",
+                "preview_alt": "Sub-category preview",
+                "save": "Save Sub-Category",
+                "cancel": "Cancel",
+                "create_button": "Create Sub-Category",
+                "update_button": "Update Sub-Category"
+            }
+        },
+        "messages": {
+            "load_error": "Failed to load categories. Please try again.",
+            "fetch_error": "Failed to fetch categories",
+            "fetch_details_error": "Failed to fetch category details",
+            "create_success": "Category created successfully",
+            "create_error": "Failed to create category",
+            "update_success": "Category updated successfully",
+            "update_error": "Failed to update category",
+            "delete_success": "Category deleted successfully",
+            "delete_error": "Failed to delete category",
+            "subcategory_create_success": "Sub-category created successfully",
+            "subcategory_create_error": "Failed to create sub-category",
+            "subcategory_update_success": "Sub-category updated successfully",
+            "subcategory_update_error": "Failed to update sub-category",
+            "subcategory_delete_success": "Sub-category deleted successfully",
+            "subcategory_delete_error": "Failed to delete sub-category",
+            "subcategory_name_required": "Sub-category name is required",
+            "creating": "Creating...",
+            "updating": "Updating...",
+            "save_category_first": "Please save the category first before adding sub-categories",
+            "delete_subcategory_confirm": "Are you sure you want to delete this sub-category?",
+            "operation_failed": "Operation failed"
+        }
+    },
+    "attributes": {
+        "title": "Attributes",
+        "help_button": "Help - How to Create/Edit Attributes",
+        "create_button": "Add Attribute",
+        "search_placeholder": "Search attributes...",
+        "values_count": "{count} value(s)",
+        "manage_values": "Manage",
+        "empty": {
+            "title": "No attributes found",
+            "description": "Get started by creating your first attribute"
+        },
+        "table": {
+            "name": "Name",
+            "input_type": "Input Type",
+            "values": "Values",
+            "actions": "Actions"
+        },
+        "form": {
+            "create_title": "Create Attribute",
+            "edit_title": "Edit Attribute",
+            "name_label": "Attribute Name *",
+            "name_placeholder": "e.g., Size, Color, RAM, Storage",
+            "name_desc": "The name of the attribute (e.g., Size, Color, RAM, Storage)",
+            "input_type_label": "Input Type *",
+            "input_type_placeholder": "Select input type",
+            "input_type_desc": "How users will select this attribute value",
+            "preset_label": "Quick Setup (Industry Presets)",
+            "preset_placeholder": "Select industry for quick setup (optional)",
+            "preset_desc": "Select an industry to auto-fill common attributes. You can still customize below.",
+            "create_submit": "Create Attribute",
+            "update_submit": "Update Attribute",
+            "cancel": "Cancel"
+        },
+        "input_types": {
+            "text": "Text",
+            "number": "Number",
+            "select": "Select (Single)",
+            "multiselect": "Multi-Select"
+        },
+        "presets": {
+            "fashion": "Fashion / Apparel",
+            "electronics": "Electronics",
+            "furniture": "Furniture",
+            "books": "Books"
+        },
+        "messages": {
+            "load_error": "Failed to load attributes. Please try again.",
+            "delete_success": "Attribute deleted successfully",
+            "delete_error": "Failed to delete attribute",
+            "create_success": "Attribute created successfully",
+            "create_error": "Failed to create attribute",
+            "update_success": "Attribute updated successfully",
+            "update_error": "Failed to update attribute",
+            "load_single_error": "Failed to load attribute",
+            "delete_confirm": "Are you sure you want to delete this attribute? This action cannot be undone."
+        }
+    },
+    "attribute_values": {
+        "title": "Attribute Values",
+        "subtitle": "Manage values for {attribute}",
+        "create_button": "Add Value",
+        "back_button": "Back to Attributes",
+        "search_placeholder": "Search values...",
+        "empty": {
+            "title": "No values found",
+            "description": "Get started by adding values for this attribute"
+        },
+        "table": {
+            "value": "Value",
+            "preview": "Preview",
+            "color_code": "Color Code",
+            "actions": "Actions"
+        },
+        "form": {
+            "create_title": "Add Value",
+            "edit_title": "Edit Value",
+            "value_label": "Value *",
+            "value_placeholder": "e.g., Red, XL, 128GB",
+            "value_desc": "The actual value (e.g., Red, XL, 128GB)",
+            "color_label": "Color Code (Optional)",
+            "color_placeholder": "e.g., #FF0000",
+            "color_desc": "Hex color code for visual representation (e.g., #FF0000)",
+            "preset_label": "Quick Add (Common/Preset Values)",
+            "preset_placeholder": "Select a common value to auto-fill",
+            "image_label": "Image (Optional)",
+            "image_desc": "Upload an image for this attribute value (e.g., color swatch, size chart)",
+            "create_submit": "Add Value",
+            "update_submit": "Update Value",
+            "cancel": "Cancel"
+        },
+        "messages": {
+            "load_error": "Failed to load values",
+            "load_details_error": "Failed to load attribute details",
+            "create_success": "Value added successfully",
+            "create_error": "Failed to add value",
+            "update_success": "Value updated successfully",
+            "update_error": "Failed to update value",
+            "delete_success": "Value deleted successfully",
+            "delete_error": "Failed to delete value"
+        }
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Overview of D fix performance",
+        "view_orders": "View Orders",
+        "quick_actions": {
+            "title": "Quick Actions",
+            "description": "Manage D fix content quickly",
+            "product_sections": "Product Sections",
+            "product_sections_desc": "Manage homepage sections",
+            "banners": "Banners",
+            "banners_desc": "Manage promotional banners",
+            "flash_sales": "Flash Sales",
+            "flash_sales_desc": "Manage flash sales",
+            "analytics": "Analytics",
+            "analytics_desc": "View detailed analytics"
+        },
+        "inventory_alert": {
+            "title": "Inventory Alert",
+            "out_of_stock": "{count} products out of stock",
+            "low_stock": "{count} products low on stock",
+            "view_inventory": "View Inventory"
+        },
+        "stats": {
+            "total_revenue": "Total Revenue",
+            "total_orders": "Total Orders",
+            "total_users": "Total Users",
+            "return_requests": "Return Requests",
+            "increase": "{percent}% increase",
+            "decrease": "{percent}% decrease",
+            "vs_last_month": "vs. last month",
+            "new_this_month": "{count} new this month",
+            "no_new_users": "No new users",
+            "pending": "{count} pending",
+            "all_processed": "All processed"
+        },
+        "top_selling": {
+            "title": "Top Selling Products",
+            "subtitle": "Most popular products by sales volume",
+            "sold": "sold",
+            "revenue": "revenue",
+            "view": "View",
+            "no_data": "No sales data yet",
+            "no_data_desc": "Sales activity will appear here once you start receiving orders",
+            "view_products": "View Products"
+        },
+        "low_stock": {
+            "title": "Low Stock Items",
+            "out_of_stock": "Out of Stock",
+            "left": "{count} left",
+            "view_all": "View all {count} items"
+        },
+        "recent_returns": {
+            "title": "Recent Return Requests",
+            "subtitle": "Latest return requests that need attention",
+            "view_all": "View All",
+            "pending": "Pending",
+            "approved": "Approved",
+            "rejected": "Rejected",
+            "processing": "Processing",
+            "completed": "Completed",
+            "empty_title": "No return requests",
+            "empty_desc": "Return requests will appear here when customers submit them",
+            "view_all_returns": "View All Returns"
+        },
+        "order_stats": {
+            "title": "Order Status Distribution",
+            "subtitle": "Current status of orders"
+        }
+    },
+    "analytics": {
+        "title": "Analytics Dashboard",
+        "subtitle": "Track product performance and user engagement metrics",
+        "tabs": {
+            "popular_products": "Popular Products",
+            "user_carts": "User Carts"
+        },
+        "products": {
+            "title": "Most Viewed Products",
+            "description": "Track which products are receiving the most attention from users",
+            "views": "views",
+            "no_views": "No product views yet",
+            "no_views_desc": "This data will populate as users view products on your site",
+            "view_products": "View Products"
+        },
+        "carts": {
+            "title": "Users with Products in Cart",
+            "description": "See which users have items in their cart and identify popular products",
+            "anonymous": "Anonymous User",
+            "items_in_cart": "items in cart",
+            "qty": "Qty",
+            "no_carts": "No active carts",
+            "no_carts_desc": "No users currently have items in their cart",
+            "view_orders": "View Orders"
+        }
+    },
+    "products": {
+        "title": "Products",
+        "add_new": "Add Product",
+        "edit_product": "Edit Product",
+        "list": {
+            "search_placeholder": "Search products...",
+            "status_filter": "Filter by status",
+            "all_status": "All Status",
+            "category_filter": "Filter by category",
+            "all_categories": "All Categories",
+            "table": {
+                "product": "Product",
+                "category": "Category",
+                "price": "Price",
+                "stock": "Stock",
+                "status": "Status",
+                "actions": "Actions",
+                "no_products": "No products found",
+                "empty_desc": "Try adjusting your filters or add a new product"
+            },
+            "status": {
+                "active": "Active",
+                "inactive": "Inactive",
+                "featured": "Featured",
+                "our_product": "Our Product"
+            }
+        },
+        "form": {
+            "permission_denied": "You don't have permission to create products. Please contact your administrator.",
+            "sections": {
+                "basic_info": "Basic Information",
+                "basic_desc": "Product name, description and categorization",
+                "media": "Media",
+                "media_desc": "Product images and gallery",
+                "pricing_inventory": "Pricing & Inventory",
+                "pricing_desc": "Manage pricing and stock levels",
+                "variants": "Variants",
+                "variants_desc": "Manage product variations like size and color",
+                "seo": "SEO & Meta",
+                "seo_desc": "Search engine optimization settings",
+                "organization": "Organization",
+                "organization_desc": "Brand and tags",
+                "product_images": "Product Images",
+                "seo_information": "SEO Information",
+                "variants_configuration": "Variants Configuration",
+                "moq_settings": "MOQ Settings"
+            },
+            "variants": {
+                "generate_variants_button": "Generate Variants",
+                "variants_label": "Variants",
+                "variants_count": "Variants",
+                "no_variants_yet": "No variants created yet. Click 'Generate Variants' to create them based on selected attributes.",
+                "enable": "This product has variants",
+                "enable_desc": "Enable if this product comes in multiple options (size, color, etc.)",
+                "select_attributes": "Select Attributes",
+                "generate_btn": "Generate Variants",
+                "no_attributes": "No attributes found. Create attributes first.",
+                "manage_combinations": "Manage Combinations",
+                "variant_mode": "Variant Mode",
+                "variant_mode_hint": "Each variant can have its own price, stock, and images",
+                "using_variant_images": "Variants use their own images"
+            },
+            "moq": {
+                "enable_moq_label": "Enable Minimum Order Quantity",
+                "enable_moq_hint": "Set a minimum quantity customers must order for this product",
+                "minimum_quantity_label": "Minimum Quantity",
+                "minimum_quantity_placeholder": "e.g., 5",
+                "minimum_quantity_hint": "The minimum number of units required per order",
+                "moq_priority_title": "MOQ Priority",
+                "moq_priority_hint": "Variant MOQ > Product MOQ > Global MOQ"
+            },
+            "shipping": {
+                "title": "Shipping Settings",
+                "description": "Configure shipping dimensions for Shiprocket integration",
+                "length_label": "Length (cm)",
+                "breadth_label": "Breadth (cm)",
+                "height_label": "Height (cm)",
+                "weight_label": "Weight (kg)",
+                "optional_hint": "Leave specific dimensions blank to use defaults from Shiprocket settings"
+            },
+            "pricing_slabs": {
+                "title": "Pricing Slabs",
+                "add": "Add Slab",
+                "no_slabs": "No pricing slabs configured",
+                "add_hint": "Add quantity-based pricing for this product"
+            },
+            "categories": {
+                "loading": "Loading categories...",
+                "no_categories": "No categories found",
+                "primary": "Primary",
+                "set_as_primary": "Set as Primary",
+                "select_multiple": "Select Categories (Multiple)",
+                "primary_category": "Primary Category",
+                "primary_category_hint": "Primary category determines where the product appears in main listings",
+                "sub_categories_optional": "Sub-Categories (Optional) - Select Multiple",
+                "select_sub_categories_hint": "Select sub-categories from your chosen categories. You can select multiple sub-categories from any category.",
+                "sub_categories_label": "Sub-Categories",
+                "no_sub_categories": "No sub-categories available for selected categories.",
+                "create_sub_cat_link": "Categories Page",
+                "create_sub_cat_hint": "You can create sub-categories from the",
+                "selected_sub_categories": "Selected Sub-Categories"
+            },
+            "settings": {
+                "product_settings": "Product Settings",
+                "product_type": "Product Type",
+                "select_type_hint": "Select which categories this product belongs to",
+                "types": {
+                    "featured": "Featured",
+                    "bestseller": "Bestseller",
+                    "trending": "Trending",
+                    "new": "New Arrivals"
+                }
+            },
+            "media": {
+                "drop_text": "Drop images here or click to select",
+                "upload_hint": "Supported formats: JPG, PNG, WEBP. Max size: 10MB",
+                "set_primary": "Set as Primary",
+                "primary": "Primary",
+                "drop_multiple_images": "Drop multiple images here or select files",
+                "alternative_input_hint": "Alternative: Use this input if drag & drop fails",
+                "image": "Image",
+                "primary_image": "Primary",
+                "upload_title": "Upload Images",
+                "drag_drop_hint": "Drag and drop images here, or click to select files. The first image will be the primary image.",
+                "drop_here": "Drop the images here..."
+            },
+            "labels": {
+                "name": "Product Name",
+                "description": "Description",
+                "sku": "SKU",
+                "price": "Price",
+                "sale_price": "Sale Price",
+                "sale_price_optional": "Sale Price (Optional)",
+                "quantity": "Quantity",
+                "stock_quantity": "Stock Quantity",
+                "category": "Category",
+                "brand": "Brand",
+                "brand_optional": "Brand (optional)",
+                "tags": "Tags",
+                "has_variants": "Has Variants",
+                "meta_title": "Meta Title",
+                "meta_description": "Meta Description",
+                "keywords": "Keywords",
+                "featured": "Featured Product",
+                "featured_desc": "Display this product in featured sections",
+                "our_product": "Our Product",
+                "our_product_desc": "Mark this as an in-house product",
+                "active": "Active",
+                "active_desc": "Product is visible to customers",
+                "moq_active": "Enable Minimum Order Quantity",
+                "min_quantity": "Min Quantity"
+            },
+            "placeholders": {
+                "enter_name": "Enter product name",
+                "enter_sku": "Enter SKU",
+                "select_category": "Select category",
+                "select_brand": "Select brand",
+                "enter_tags": "Enter tags (press Enter)",
+                "enter_meta_title": "SEO Title",
+                "enter_meta_desc": "SEO Description",
+                "sku_auto": "SKU (Auto-generated)",
+                "sku_auto_hint": "Auto-generated from name, price and category"
+            },
+            "buttons": {
+                "create": "Create Product",
+                "update": "Update Product",
+                "cancel": "Cancel",
+                "creating": "Creating...",
+                "updating": "Updating...",
+                "generate_variants": "Generate Variants",
+                "add_variant": "Add Variant"
+            },
+            "seo": {
+                "title_label": "Meta Title",
+                "title_placeholder": "Enter SEO title",
+                "title_hint": "Recommended: 50-60 characters",
+                "description_label": "Meta Description",
+                "description_placeholder": "Enter SEO description",
+                "description_hint": "Recommended: 150-160 characters",
+                "current_length": "Current length",
+                "characters": "characters",
+                "keywords_label": "Keywords",
+                "keywords_placeholder": "Enter keywords (comma separated)",
+                "keywords_hint": "Enter keywords for SEO optimization"
+            },
+            "add_product_button": "Create Product",
+            "update_product_button": "Update Product"
+        },
+        "details": {
+            "tabs": {
+                "details": "Details",
+                "variants": "Variants",
+                "reviews": "Reviews"
+            },
+            "info": {
+                "categories": "Categories",
+                "status": "Status",
+                "description": "Description",
+                "nutrition": "Nutrition Information",
+                "sku": "SKU",
+                "price": "Price",
+                "sale_price": "Sale Price",
+                "stock": "Stock"
+            },
+            "actions": {
+                "edit": "Edit",
+                "delete": "Delete",
+                "activate": "Activate",
+                "deactivate": "Deactivate",
+                "back": "Back to Products"
+            },
+            "dialogs": {
+                "delete_title": "Delete Product",
+                "delete_desc": "Are you sure you want to delete this product? This action cannot be undone.",
+                "force_delete_title": "Product Has Order History",
+                "force_delete_desc": "This product has order history and cannot be permanently deleted. You can mark it as inactive.",
+                "mark_inactive": "Mark as Inactive"
+            }
+        }
+    },
+    "shiprocket_settings": {
+        "title": "Shiprocket Settings",
+        "description": "Configure Shiprocket shipping integration for automated order fulfillment",
+        "enable_title": "Enable Shiprocket Integration",
+        "enable_desc": "Automatically create shipping orders when payment is successful",
+        "api_credentials": {
+            "title": "API Credentials",
+            "description": "Enter your Shiprocket API user credentials",
+            "email": "API Email",
+            "email_placeholder": "api-user@yourcompany.com",
+            "password": "API Password",
+            "password_placeholder": "Enter password"
+        },
+        "how_to_get_credentials": {
+            "title": "How to get API credentials:",
+            "step1": "Login to your Shiprocket account",
+            "step2": "Go to Settings → API → Create API User",
+            "step3": "Use a different email than your main login"
+        },
+        "test_connection": "Test Connection",
+        "testing": "Testing...",
+        "connection_success": "Connection successful! API credentials are valid.",
+        "connection_failed": "Connection failed. Check your credentials.",
+        "default_dimensions": {
+            "title": "Default Shipping Dimensions",
+            "description": "Fallback dimensions when product variants don't have shipping info",
+            "length": "Length (cm)",
+            "breadth": "Breadth (cm)",
+            "height": "Height (cm)",
+            "weight": "Weight (kg)",
+            "save_success": "Dimensions saved successfully",
+            "info": "📦 This button ONLY saves shipping dimensions (Length, Breadth, Height, Weight). Example: Set Length=15cm, Breadth=10cm, Height=5cm, Weight=0.3kg → Click Save → Only these 4 values are updated. Shipping charges are NOT affected."
+        },
+        "shipping_charges": {
+            "title": "Shipping Charges",
+            "description": "Configure standard shipping rates and free shipping threshold",
+            "charge_label": "Standard Shipping Charge",
+            "threshold_label": "Free Shipping Threshold",
+            "threshold_hint": "Orders above this amount will be eligible for free shipping",
+            "save_success": "Shipping charges saved successfully",
+            "info": "🚚 This button ONLY saves shipping charges. Example: Set Shipping Charge=₹50, Free Threshold=₹999 → Click Save → Only these 2 values are updated. Dimensions are NOT affected."
+        },
+        "pickup_addresses": {
+            "title": "Pickup Addresses",
+            "description": "Configure warehouse/pickup locations for shipments",
+            "add_button": "Add Address",
+            "no_addresses": "No pickup addresses configured yet.",
+            "add_hint": "Add a warehouse address to start shipping.",
+            "default_badge": "Default",
+            "edit": "Edit",
+            "delete": "Delete"
+        },
+        "address_form": {
+            "add_title": "Add Pickup Address",
+            "edit_title": "Edit Pickup Address",
+            "nickname": "Nickname",
+            "nickname_placeholder": "Primary Warehouse",
+            "contact_name": "Contact Name",
+            "contact_placeholder": "John Doe",
+            "email": "Email",
+            "email_placeholder": "warehouse@company.com",
+            "phone": "Phone",
+            "phone_placeholder": "9876543210",
+            "address1": "Address Line 1",
+            "address1_placeholder": "Street address",
+            "address2": "Address Line 2",
+            "address2_placeholder": "Landmark, building name (optional)",
+            "city": "City",
+            "city_placeholder": "Mumbai",
+            "state": "State",
+            "state_placeholder": "Maharashtra",
+            "pincode": "Pincode",
+            "pincode_placeholder": "400001",
+            "set_default": "Set as default pickup address"
+        },
+        "buttons": {
+            "save": "Save Settings",
+            "saving": "Saving...",
+            "cancel": "Cancel",
+            "add_address": "Add Address",
+            "update_address": "Update Address"
+        },
+        "messages": {
+            "save_success": "Settings saved successfully",
+            "save_error": "Failed to save settings",
+            "enabled": "Shiprocket enabled",
+            "disabled": "Shiprocket disabled",
+            "credentials_required": "Please configure API credentials first",
+            "address_created": "Address created successfully",
+            "address_updated": "Address updated successfully",
+            "address_deleted": "Address deleted successfully",
+            "address_error": "Failed to save address",
+            "fill_required": "Please fill all required fields",
+            "loading": "Loading settings..."
+        }
+    },
+    "variant_card": {
+        "moq": {
+            "title": "MOQ Settings",
+            "enable": "Enable MOQ for this Variant",
+            "override_desc": "Override product/global MOQ",
+            "min_quantity": "Minimum Quantity",
+            "placeholder": "Min quantity"
+        },
+        "pricing_slabs": {
+            "title": "Pricing Slabs",
+            "add": "Add Slab",
+            "edit": "Edit",
+            "delete": "Delete",
+            "no_slabs": "No pricing slabs configured",
+            "add_hint": "Add quantity-based pricing for this variant",
+            "min_qty": "Min Qty",
+            "max_qty": "Max Qty",
+            "price": "Price (₹)",
+            "unlimited": "Unlimited",
+            "save": "Save",
+            "cancel": "Cancel",
+            "pieces": "pcs",
+            "save_product_first": "Save product first to add pricing slabs",
+            "slab_added": "Pricing slab added",
+            "slab_updated": "Pricing slab updated",
+            "slab_deleted": "Pricing slab deleted",
+            "slab_error": "Failed to save pricing slab",
+            "confirm_delete": "Delete this pricing slab?"
+        },
+        "shipping": {
+            "title": "Shipping Dimensions",
+            "optional": "Optional",
+            "length": "Length (cm)",
+            "breadth": "Breadth (cm)",
+            "height": "Height (cm)",
+            "weight": "Weight (kg)",
+            "hint": "Leave empty to use default dimensions from shipping settings"
+        },
+        "images": {
+            "title": "Add variant images",
+            "upload_hint": "Drop images or click to upload",
+            "max_reached": "Maximum images reached",
+            "uploading": "Uploading...",
+            "set_primary": "Set as primary",
+            "remove": "Remove"
+        }
+    }
+}

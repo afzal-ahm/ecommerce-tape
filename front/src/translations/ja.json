@@ -1,0 +1,2028 @@
+{
+    "common": {
+        "cancel": "キャンセル",
+        "creating": "作成中...",
+        "updating": "更新中...",
+        "save": "保存",
+        "delete": "削除",
+        "edit": "編集",
+        "actions": "操作",
+        "status": "ステータス",
+        "active": "有効",
+        "inactive": "無効",
+        "yes": "はい",
+        "no": "いいえ",
+        "pagination": "ページ {current} / {total}"
+    },
+    "nav": {
+        "dashboard": "ダッシュボード",
+        "products": "商品",
+        "all_products": "すべての商品",
+        "add_product": "商品を追加",
+        "brands": "ブランド",
+        "categories": "カテゴリー",
+        "attributes": "属性",
+        "orders": "注文",
+        "all_orders": "すべての注文",
+        "return_requests": "返品リクエスト",
+        "coupons": "クーポン",
+        "users": "ユーザー",
+        "partners": "パートナー",
+        "referrals": "紹介",
+        "support": "サポート",
+        "contact": "連絡先",
+        "reviews": "レビュー",
+        "faq": "よくある質問",
+        "settings": "設定",
+        "price_visibility": "価格の表示・非表示",
+        "moq": "MOQ",
+        "pricing_slabs": "価格設定スラブ",
+        "payment": "支払い",
+        "gateway_keys": "ゲートウェイキー",
+        "shipping": "配送",
+        "shiprocket": "Shiprocket",
+        "language": "言語"
+    },
+    "admin": {
+        "admin_dashboard": "管理ダッシュボード",
+        "logout": "ログアウト",
+        "loading": "読み込み中...",
+        "role": {
+            "super_admin": "スーパー管理者",
+            "admin": "管理者",
+            "user": "ユーザー"
+        }
+    },
+    "settings": {
+        "title": "言語設定",
+        "description": "管理パネルとクライアントウェブサイトの言語設定を管理します",
+        "admin_panel_language": "管理パネルの言語",
+        "admin_panel_desc": "管理ダッシュボードインターフェースのデフォルト言語を設定します",
+        "select_language": "言語を選択",
+        "current": "現在",
+        "choose_language": "言語を選択",
+        "client_website_language": "クライアントウェブサイトの言語",
+        "client_website_desc": "顧客向けウェブサイトのデフォルト言語を設定します",
+        "select_languages_multi": "言語を選択（複数選択可）",
+        "selected": "選択中",
+        "save_button": "言語設定を保存",
+        "alert_saved": "言語設定が保存されました！"
+    },
+    "payment_gateway_settings": {
+        "title": "決済ゲートウェイ設定",
+        "description": "Razorpay決済ゲートウェイキーを設定します。キーは暗号化され、安全に保存されます。",
+        "info_title": "セキュリティとマルチマーチャントサポート",
+        "info_list": {
+            "1": "すべての決済キーはデータベースに保存される前に暗号化されます",
+            "2": "各ユーザー（管理者/販売者）は独自の決済キーを設定できます",
+            "3": "注文は注文所有者の決済ゲートウェイキーを使用します",
+            "4": "テストモード（TEST）で開始し、準備ができたらライブモード（LIVE）に切り替えます"
+        },
+        "razorpay": {
+            "title": "Razorpay設定",
+            "description": "オンライン決済用のRazorpay決済ゲートウェイキーを設定します",
+            "enable": "Razorpayを有効にする",
+            "enable_desc": "Razorpay決済ゲートウェイをアクティブにする",
+            "mode": "決済モード",
+            "test_mode": "テストモード",
+            "live_mode": "ライブモード",
+            "mode_desc": "開発にはテストモード、本番にはライブモードを使用します",
+            "key_id": "Key ID",
+            "key_secret": "Key Secret",
+            "webhook_secret": "Webhook Secret (任意)",
+            "save_button": "Razorpay設定を保存",
+            "reset": "リセット",
+            "saving": "保存中...",
+            "success": "Razorpay設定が正常に保存されました"
+        },
+        "phonepe": {
+            "title": "PhonePe設定",
+            "save_button": "PhonePe設定を保存"
+        }
+    },
+    "payment_settings": {
+        "title": "支払い設定",
+        "description": "ストアの支払い方法を設定",
+        "loading": "支払い設定を読み込み中...",
+        "card_title": "支払い方法",
+        "card_desc": "顧客が利用できる支払いオプションを有効にして設定",
+        "save_button": "支払い設定を保存",
+        "saving": "保存中...",
+        "cod": {
+            "title": "代金引換",
+            "description": "顧客が注文を受け取ったときに支払えるようにする"
+        },
+        "razorpay": {
+            "title": "Razorpay (オンライン決済)",
+            "description": "カード、UPI、ネットバンキングなどでオンライン決済を受け付ける",
+            "configured": "Razorpayは設定済みです",
+            "not_configured": "有効にするにはゲートウェイキーでRazorpayを設定してください"
+        },
+        "messages": {
+            "save_success": "支払い設定が正常に保存されました",
+            "save_error": "支払い設定の保存に失敗しました",
+            "at_least_one": "少なくとも1つの支払い方法を有効にする必要があります",
+            "razorpay_required": "最初にRazorpayキーを設定してください"
+        }
+    },
+    "moq_settings": {
+        "title": "MOQ設定",
+        "description": "ストア全体の最小注文数量 (MOQ) を設定します",
+        "card_title": "グローバルMOQ設定",
+        "card_desc": "有効にすると、商品またはバリアントレベルで上書きされない限り、すべての商品に最小注文数量が必要になります。",
+        "enable": "MOQシステムを有効にする",
+        "enable_desc": "最小注文数量要件をグローバルにオンにします",
+        "min_qty_label": "最小注文数量",
+        "min_qty_desc": "顧客はどの商品に対しても少なくともこの数量を注文する必要があります",
+        "info_title": "MOQ優先度の仕組み",
+        "info_list": {
+            "1": "バリアントレベルのMOQは商品レベルのMOQを上書きします",
+            "2": "商品レベルのMOQはグローバルMOQを上書きします",
+            "3": "MOQが無効な場合、数量は1から始まります（通常の動作）"
+        },
+        "status": {
+            "active": "MOQはアクティブです - 最小数量:",
+            "disabled": "MOQは無効です - 最小数量制限なし"
+        },
+        "save_button": "設定を保存",
+        "saving": "保存中...",
+        "reset": "リセット",
+        "messages": {
+            "save_success": "MOQ設定が正常に更新されました",
+            "save_error": "MOQ設定の更新に失敗しました",
+            "validation_error": "最小数量は1以上である必要があります"
+        }
+    },
+    "price_visibility": {
+        "title": "価格表示設定",
+        "description": "ストアのゲストユーザーに対する価格表示を制御します",
+        "card_title": "価格表示制御",
+        "hide_guests": "ゲストユーザーに価格を非表示にする",
+        "hide_guests_desc": "有効にすると、ログインしていないユーザーには価格が表示されません。ログインユーザーは通常通りすべての価格を確認できます。",
+        "info_title": "仕組み：",
+        "info_list": {
+            "1": "OFF（デフォルト）：すべてのユーザーが商品価格、バリアントを表示し、カートに追加できます",
+            "2": "ON：ゲストユーザーは商品を表示できますが、ログインするまで価格は非表示になります",
+            "3": "カートとウィッシュリスト：機能はすべてのユーザーに対して通常通り維持されます",
+            "4": "ログインユーザー：この設定に関係なく、常に完全な商品詳細を表示します"
+        },
+        "current_status": "現在のステータス：",
+        "status_hidden": "ゲストに対して価格非表示",
+        "status_visible": "すべてのユーザーに価格表示",
+        "save_button": "設定を保存",
+        "saving": "保存中..."
+    },
+    "faq_management": {
+        "title": "FAQ管理",
+        "description": "サイトのよくある質問（FAQ）を管理します",
+        "add_button": "新しいFAQを追加",
+        "search_placeholder": "FAQを検索...",
+        "list_title": "よくある質問",
+        "list_desc": "ここでFAQコンテンツを管理します",
+        "no_faqs": "FAQが見つかりません",
+        "no_results": "検索条件に一致するFAQはありません",
+        "create_first": "最初のFAQを作成して始めましょう",
+        "adjust_search": "検索キーワードを調整してみてください",
+        "actions": "アクション",
+        "edit": "編集",
+        "delete": "削除",
+        "publish": "公開",
+        "unpublish": "非公開",
+        "status_published": "公開済み",
+        "status_draft": "下書き",
+        "create_title": "新しいFAQを作成",
+        "create_subtitle": "よくある質問をサイトに追加します",
+        "edit_title": "FAQを編集",
+        "dialog_desc": "ここでFAQを変更します。完了したら保存をクリックしてください。",
+        "form": {
+            "question": "質問",
+            "question_placeholder": "質問を入力",
+            "answer": "回答",
+            "answer_placeholder": "回答を入力",
+            "answer_help": "基本的なHTMLタグを使用して書式設定できます",
+            "category": "カテゴリ",
+            "category_placeholder": "例：配送、返品、製品情報（オプション）",
+            "publish_label": "公開済み",
+            "publish_immediate": "すぐに公開",
+            "yes": "はい",
+            "no": "いいえ",
+            "cancel": "キャンセル",
+            "save": "変更を保存",
+            "create": "FAQを作成",
+            "creating": "作成中...",
+            "back": "戻る"
+        },
+        "delete_dialog": {
+            "title": "削除の確認",
+            "desc": "このFAQを削除してもよろしいですか？この操作は元に戻せません。",
+            "confirm": "削除"
+        },
+        "messages": {
+            "load_error": "FAQの読み込みに失敗しました",
+            "updated": "FAQが正常に更新されました",
+            "created": "FAQが正常に作成されました",
+            "deleted": "FAQが正常に削除されました",
+            "published": "FAQが公開されました",
+            "unpublished": "FAQが非公開になりました",
+            "save_error": "FAQの保存に失敗しました",
+            "delete_error": "FAQの削除に失敗しました",
+            "required": "質問と回答は必須です"
+        }
+    },
+    "contact_management": {
+        "title": "お問い合わせ管理",
+        "description": "顧客からの問い合わせとコンタクトフォームの送信を管理します",
+        "search_placeholder": "名前またはメールで検索...",
+        "filter_status": "ステータスでフィルタ",
+        "all_status": "すべてのステータス",
+        "status": {
+            "new": "新規",
+            "in_progress": "進行中",
+            "resolved": "解決済み",
+            "spam": "スパム"
+        },
+        "loading": "送信内容を読み込んでいます...",
+        "no_submissions": "お問い合わせが見つかりません",
+        "no_submissions_desc": "コンタクトフォームの送信内容はここに表示されます",
+        "page": "ページ",
+        "of": "/",
+        "actions": {
+            "view_details": "詳細を見る",
+            "update_status": "ステータスを更新",
+            "delete": "削除"
+        },
+        "view_dialog": {
+            "title": "お問い合わせ詳細",
+            "name": "名前",
+            "email": "メール",
+            "phone": "電話番号",
+            "subject": "件名",
+            "not_provided": "未提供",
+            "no_subject": "件名なし",
+            "message": "メッセージ",
+            "admin_notes": "管理者メモ",
+            "submitted": "送信日時",
+            "last_updated": "最終更新",
+            "close": "閉じる",
+            "update": "ステータスを更新"
+        },
+        "update_dialog": {
+            "title": "送信ステータスを更新",
+            "status_label": "ステータス",
+            "select_status": "ステータスを選択",
+            "notes_label": "メモ",
+            "notes_placeholder": "この送信に関するメモを追加",
+            "cancel": "キャンセル",
+            "update": "更新"
+        },
+        "delete_dialog": {
+            "title": "お問い合わせを削除",
+            "desc": "このお問い合わせを削除してもよろしいですか：",
+            "confirm": "削除"
+        },
+        "messages": {
+            "fetch_error": "お問い合わせの取得に失敗しました",
+            "delete_success": "お問い合わせが正常に削除されました",
+            "delete_error": "お問い合わせの削除に失敗しました",
+            "update_success": "お問い合わせが正常に更新されました",
+            "update_error": "お問い合わせの更新に失敗しました"
+        }
+    },
+    "referrals_page": {
+        "title": "紹介管理",
+        "description": "ユーザーの紹介と報酬を表示および管理します",
+        "stats": {
+            "total_referrals": "紹介総数",
+            "completed": "完了",
+            "pending": "保留中",
+            "total_rewards_paid": "支払い済み報酬総額"
+        },
+        "top_referrers": {
+            "title": "トップ紹介者",
+            "referrals_suffix": "紹介",
+            "unknown_user": "不明なユーザー",
+            "code": "コード"
+        },
+        "search": {
+            "placeholder": "コード、名前、またはメールで検索...",
+            "button": "検索"
+        },
+        "filters": {
+            "all_status": "すべてのステータス",
+            "pending": "保留中",
+            "completed": "完了",
+            "cancelled": "キャンセル済み"
+        },
+        "list": {
+            "title": "すべての紹介",
+            "no_referrals": "紹介が見つかりません",
+            "empty_description": "紹介データは利用可能な場合にここに表示されます"
+        },
+        "card": {
+            "referral_code": "紹介コード",
+            "referrer_label": "紹介者（紹介した人）",
+            "referred_label": "紹介されたユーザー",
+            "order_details": "注文詳細",
+            "reward": "報酬",
+            "completed_on": "完了日",
+            "created": "作成日"
+        },
+        "badges": {
+            "completed": "完了",
+            "pending": "保留中",
+            "cancelled": "キャンセル済み"
+        }
+    },
+    "partner_management": {
+        "title": "パートナー管理",
+        "description": "承認済みおよび保留中のパートナーリクエストを管理します",
+        "tabs": {
+            "approved": "承認済みパートナー",
+            "non_approved": "承認されていないパートナー"
+        },
+        "details": {
+            "back_button": "パートナーに戻る",
+            "refresh_button": "データを更新",
+            "header_subtitle": "パートナーの詳細と収益",
+            "badges": {
+                "active": "アクティブ",
+                "inactive": "非アクティブ"
+            },
+            "stats": {
+                "total_earnings": "総収益",
+                "pending_amount": "保留中の金額",
+                "paid_amount": "支払い済みの金額",
+                "total_orders": "総注文数"
+            },
+            "info": {
+                "title": "パートナー情報",
+                "email": "メール",
+                "phone": "電話",
+                "location": "場所",
+                "commission_rate": "手数料率",
+                "registered": "登録日"
+            },
+            "coupons": {
+                "title": "割り当てられたクーポン",
+                "commission": "手数料",
+                "discount": "割引",
+                "min_order": "最小注文",
+                "used": "使用済み",
+                "valid_until": "有効期限",
+                "empty": "このパートナーに割り当てられたクーポンはありません"
+            },
+            "earnings": {
+                "title": "月次収益",
+                "filters": {
+                    "all_years": "すべての年",
+                    "all_months": "すべての月",
+                    "export": "エクスポート"
+                },
+                "table": {
+                    "month": "月",
+                    "orders": "注文",
+                    "amount": "金額",
+                    "status": "ステータス",
+                    "paid_date": "支払日",
+                    "actions": "アクション",
+                    "empty": "選択した期間の収益データは見つかりませんでした"
+                },
+                "payment_notes_placeholder": "支払いメモ..."
+            },
+            "not_found": {
+                "title": "パートナーが見つかりません",
+                "description": "お探しのパートナーは存在しません。"
+            }
+        },
+        "registrations": {
+            "title": "パートナー登録",
+            "badges": {
+                "pending": "保留中",
+                "approved": "承認済み",
+                "rejected": "拒否済み"
+            },
+            "filters": {
+                "placeholder": "ステータス",
+                "all_statuses": "すべてのステータス",
+                "clear_filters": "フィルターをクリア"
+            },
+            "table": {
+                "name": "名前",
+                "email": "メール",
+                "number": "番号",
+                "city": "市区町村",
+                "state": "都道府県",
+                "status": "ステータス",
+                "message": "メッセージ",
+                "requested_at": "リクエスト日時",
+                "actions": "アクション",
+                "empty": "パートナー登録は見つかりませんでした。"
+            },
+            "actions": {
+                "approve": "承認",
+                "reject": "拒否",
+                "details": "詳細",
+                "close": "閉じる",
+                "cancel": "キャンセル"
+            },
+            "dialogs": {
+                "approve": {
+                    "title": "パートナーパスワードを設定",
+                    "description": "このパートナーのパスワードを入力してください（6文字以上）。",
+                    "password_placeholder": "パスワード",
+                    "submit": "承認してパスワードを設定"
+                },
+                "password": {
+                    "title": "パートナーパスワード",
+                    "description": "これはパートナーに設定したパスワードです。コピーして安全に共有してください。もう一度見ることはできません。",
+                    "copy": "コピー",
+                    "copied": "コピーしました！"
+                },
+                "details": {
+                    "title": "パートナー詳細",
+                    "description": "このパートナーの詳細、クーポン、収益。",
+                    "assigned_coupons": "割り当てられたクーポン",
+                    "earnings": "収益",
+                    "total": "合計",
+                    "monthly": "月次"
+                }
+            }
+        }
+    },
+    "user_management": {
+        "title": "ユーザー",
+        "description": "顧客アカウントとアクセスの管理",
+        "search_placeholder": "名前またはメールで検索...",
+        "search": "検索",
+        "searching": "検索中...",
+        "clear": "クリア",
+        "loading": "ユーザーを読み込み中...",
+        "error_title": "エラー",
+        "try_again": "再試行",
+        "no_users": "ユーザーが見つかりません",
+        "no_users_desc": "検索クエリを調整するか、後でもう一度確認してください",
+        "clear_search": "検索をクリア",
+        "showing": "表示中",
+        "of": "/",
+        "users_count": "ユーザー",
+        "page": "ページ",
+        "joined": "参加",
+        "actions": {
+            "view_details": "詳細を見る",
+            "edit": "編集",
+            "verify_email": "メールを確認",
+            "delete": "削除"
+        },
+        "status": {
+            "verified": "確認済み",
+            "not_verified": "未確認"
+        },
+        "fields": {
+            "name": "名前",
+            "name_placeholder": "ユーザーの名前",
+            "email": "メール",
+            "email_placeholder": "user@example.com",
+            "phone": "電話",
+            "phone_placeholder": "電話番号",
+            "email_verified": "メール確認済み",
+            "role": "役割",
+            "created_at": "作成日時",
+            "last_updated": "最終更新",
+            "not_provided": "提供されていません"
+        },
+        "dialogs": {
+            "details": {
+                "title": "ユーザー詳細",
+                "description": "このユーザーに関する詳細情報",
+                "close": "閉じる"
+            },
+            "edit": {
+                "title": "ユーザー編集",
+                "description": "ユーザー情報を更新",
+                "cancel": "キャンセル",
+                "save": "変更を保存",
+                "saving": "保存中..."
+            },
+            "delete": {
+                "title": "削除の確認",
+                "description": "このユーザーを削除してもよろしいですか？この操作は取り消せません。",
+                "confirm": "削除",
+                "deleting": "削除中..."
+            }
+        },
+        "messages": {
+            "verify_success": "ユーザーのメールが正常に確認されました",
+            "verify_error": "ユーザーのメール確認に失敗しました",
+            "verify_exception": "ユーザーのメール確認中にエラーが発生しました",
+            "update_success": "ユーザーの詳細が正常に更新されました",
+            "update_error": "ユーザーの詳細の更新に失敗しました",
+            "update_exception": "ユーザーの詳細の更新中にエラーが発生しました",
+            "delete_success": "ユーザーが正常に削除されました",
+            "delete_error": "ユーザーの削除に失敗しました",
+            "delete_exception": "ユーザーの削除中にエラーが発生しました",
+            "fetch_error": "ユーザーの取得に失敗しました",
+            "fetch_exception": "ユーザーの取得中にエラーが発生しました"
+        }
+    },
+    "coupons": {
+        "title": "クーポン",
+        "description": "割引クーポンとプロモーションオファーを管理",
+        "add_coupon": "クーポンを追加",
+        "no_coupons": "クーポンが見つかりません",
+        "no_coupons_desc": "顧客に提供する最初の割引クーポンを作成してください",
+        "add_first_coupon": "最初のクーポンを追加",
+        "loading": "クーポンを読み込んでいます...",
+        "error_title": "問題が発生しました",
+        "try_again": "再試行",
+        "status": {
+            "active": "有効",
+            "inactive": "無効"
+        },
+        "discount": {
+            "off": "オフ",
+            "min_order": "最小"
+        },
+        "targets": {
+            "all_items": "すべてのアイテム",
+            "categories": "カテゴリ",
+            "category": "カテゴリ",
+            "products": "商品",
+            "product": "商品",
+            "brands": "ブランド",
+            "brand": "ブランド"
+        },
+        "partners_count": "パートナー",
+        "form": {
+            "create_title": "新しいクーポンを追加",
+            "edit_title": "クーポンを編集",
+            "create_desc": "顧客向けの割引クーポンを作成します",
+            "edit_desc": "クーポンの詳細と設定を更新します",
+            "back_to_coupons": "クーポンに戻る",
+            "basic_info": "基本情報",
+            "basic_info_desc": "クーポンコードと説明を入力してください",
+            "code": "クーポンコード",
+            "code_placeholder": "例：SUMMER2023, WELCOME10",
+            "description": "説明",
+            "description_placeholder": "クーポンの短い説明",
+            "discount_settings": "割引設定",
+            "discount_settings_desc": "割引タイプ、値、使用制限を構成します",
+            "discount_type": "割引タイプ",
+            "type_percentage": "割引率 (%)",
+            "type_fixed": "定額割引 (₹)",
+            "discount_value": "割引値",
+            "min_order_amount": "最小注文額",
+            "max_uses": "最大使用回数",
+            "max_uses_placeholder": "無制限の場合は空のままにしてください",
+            "target_selection": "ターゲット選択",
+            "target_selection_desc": "特定のカテゴリ、商品、またはブランドを選択します（オプション - 全アイテムの場合は空のままにしてください）",
+            "target_categories": "ターゲットカテゴリ (オプション)",
+            "target_products": "ターゲット商品 (オプション)",
+            "target_brands": "ターゲットブランド (オプション)",
+            "select_placeholder_categories": "カテゴリを選択",
+            "select_placeholder_products": "商品を選択",
+            "select_placeholder_brands": "ブランドを選択",
+            "target_hint_categories": "全カテゴリでクーポンを許可するには空のままにしてください。",
+            "target_hint_products": "全商品でクーポンを許可するには空のままにしてください。",
+            "target_hint_brands": "全ブランドでクーポンを許可するには空のままにしてください。",
+            "validity_period": "有効期間",
+            "validity_period_desc": "開始日、終了日、アクティブステータスを設定",
+            "start_date": "開始日",
+            "end_date": "終了日",
+            "active_status": "アクティブステータス",
+            "active_status_desc": "このクーポンを有効または無効にする",
+            "partner_assignments": "パートナー割り当て",
+            "partner_assignments_desc": "コミッション追跡のためにこのクーポンをパートナーに割り当てます（オプション）",
+            "add_partner": "パートナーを追加",
+            "no_partners_assigned": "パートナーが割り当てられていません。このクーポンは誰でも利用できる一般クーポンになります。",
+            "select_partner": "パートナーを選択...",
+            "partner_already_assigned": "このパートナーはすでにこのクーポンに割り当てられています",
+            "assign_partner_desc": "コミッション追跡のためにこのクーポンを特定のパートナーに割り当てます。パートナーは、このクーポンを使用した注文から指定されたコミッション料率を獲得します。",
+            "commission_note_title": "コミッション計算に関する注記",
+            "commission_example": "例：注文額 ₹100、クーポン割引 ₹10、パートナー手数料 5%",
+            "commission_calc_1": "手数料は以下に基づいて計算されます：₹90（割引後の注文額）",
+            "commission_calc_2": "パートナーの獲得額：₹4.50（₹90の5%）",
+            "commission_final_note": "手数料は、常にクーポン割引適用後の最終注文額に基づいて計算されます。",
+            "cancel": "キャンセル",
+            "create_btn": "クーポンを作成",
+            "update_btn": "クーポンを更新"
+        },
+        "messages": {
+            "delete_confirm": "本当にクーポン「{code}」を削除しますか？",
+            "delete_success": "クーポンが正常に削除されました",
+            "delete_error": "クーポンの削除に失敗しました",
+            "status_update_success": "クーポン「{code}」が正常に{action}されました",
+            "status_update_error": "クーポンの{action}に失敗しました",
+            "create_success": "クーポンが正常に作成されました",
+            "update_success": "クーポンが正常に更新されました",
+            "create_error": "クーポンの作成に失敗しました",
+            "update_error": "クーポンの更新に失敗しました",
+            "fetch_error": "クーポンの取得に失敗しました",
+            "load_error": "クーポンの読み込みに失敗しました。もう一度お試しください。",
+            "code_required": "クーポンコードは必須です",
+            "code_invalid": "クーポンコードには文字、数字、アンダースコア、ハイフンのみを含めることができます",
+            "discount_positive": "割引値は正の数である必要があります",
+            "discount_percentage_limit": "割引率は100%を超えることはできません",
+            "min_order_positive": "最小注文額は正の数である必要があります",
+            "max_uses_integer": "最大使用回数は正の整数である必要があります",
+            "end_date_invalid": "終了日は開始日より後である必要があります",
+            "partner_required": "パートナーを選択するか、空のパートナーエントリを削除してください",
+            "partner_duplicate": "パートナーはクーポンごとに1回しか割り当てることができません。重複するパートナーを削除してください。",
+            "commission_limit": "{name}の手数料は0から100の間である必要があります",
+            "code_exists": "このクーポンコードは既に使用されています。別のコードを選択してください。"
+        }
+    },
+    "pricing_slabs": {
+        "title": "価格帯",
+        "description": "製品とバリアントの数量ベースの料金を設定",
+        "add_button": "価格帯を追加",
+        "info_title": "価格帯の仕組み：",
+        "info_list": {
+            "1": "製品の価格帯は、バリアントに独自の価格帯がない限り、すべてのバリアントに適用されます",
+            "2": "バリアントの価格帯は、その特定のバリアントの製品価格帯を上書きします",
+            "3": "最高層（無制限）の場合は最大数量を空のままにします",
+            "4": "カート数量が最小-最大範囲内にある場合に価格が適用されます"
+        },
+        "filter_type": "タイプで絞り込む",
+        "all_slabs": "すべての価格帯",
+        "product_slabs": "製品の価格帯のみ",
+        "variant_slabs": "バリアントの価格帯のみ",
+        "no_slabs": "価格帯がありません",
+        "create_first": "数量ベースの価格設定を有効にするために最初の価格帯を作成してください",
+        "table": {
+            "type": "タイプ",
+            "product_variant": "製品/バリアント",
+            "min_qty": "最小数量",
+            "max_qty": "最大数量",
+            "price": "価格",
+            "actions": "アクション"
+        },
+        "product": "製品",
+        "variant": "バリアント",
+        "dialog": {
+            "create_title": "価格帯を作成",
+            "edit_title": "価格帯を編集",
+            "description": "数量ベースの価格設定を構成します。バリアントの価格帯は製品の価格帯を上書きします。"
+        },
+        "form": {
+            "product_label": "製品（オプション）",
+            "product_placeholder": "製品を選択（オプション）",
+            "variant_label": "バリアント（オプション）",
+            "variant_placeholder": "バリアントを選択（オプション）",
+            "no_variants": "利用可能なバリアントがありません",
+            "clear_selection": "選択をクリア",
+            "min_qty_label": "最小数量",
+            "max_qty_label": "最大数量（オプション）",
+            "max_qty_placeholder": "無制限の場合は空のまま",
+            "price_label": "価格（INR）"
+        },
+        "validation": {
+            "min_qty_error": "最小数量は1以上である必要があります",
+            "max_qty_error": "最大数量は最小数量より大きくする必要があります",
+            "price_error": "価格は0より大きくする必要があります",
+            "product_variant_required": "製品またはバリアントを選択してください"
+        },
+        "warning": {
+            "select_product_or_variant": "この価格帯の製品またはバリアントを選択してください。"
+        },
+        "actions": {
+            "cancel": "キャンセル",
+            "create_slab": "価格帯を作成",
+            "update_slab": "価格帯を更新"
+        },
+        "messages": {
+            "fetch_error": "価格帯の読み込みに失敗しました",
+            "create_success": "価格帯が正常に作成されました",
+            "update_success": "価格帯が正常に更新されました",
+            "save_error": "価格帯の保存に失敗しました",
+            "delete_confirm": "この価格帯を削除してもよろしいですか？",
+            "delete_success": "価格帯が正常に削除されました",
+            "delete_error": "価格帯の削除に失敗しました"
+        }
+    },
+    "partners_tab": {
+        "approved": {
+            "demo_title": "パートナーデモパスワード",
+            "demo_desc": "承認されたすべてのパートナーは、このデモパスワードでログインできます。初回ログイン後に変更するように求められます。",
+            "no_partners": "承認されたパートナーが見つかりません。",
+            "active": "アクティブ",
+            "remove": "削除",
+            "removing": "削除中...",
+            "details_title": "パートナーの詳細",
+            "details_desc": "{name}の詳細情報",
+            "registered": "登録済み",
+            "message": "メッセージ",
+            "assigned_coupons": "割り当てられたクーポン",
+            "no_coupons": "クーポンが割り当てられていません。",
+            "no_desc": "説明なし",
+            "earnings": "収益",
+            "total": "合計",
+            "monthly": "月次内訳",
+            "confirm_remove_coupon": "このクーポンをパートナーから削除しますか？",
+            "confirm_deactivate": "このパートナーを無効にしてもよろしいですか？これによりアクセス権は削除されますが、データは保持されます。",
+            "deactivate_success": "パートナーが正常に無効化されました。",
+            "deactivate_error": "パートナーの無効化に失敗しました。",
+            "remove_coupon_error": "クーポンの削除に失敗しました。"
+        },
+        "non_approved": {
+            "no_partners": "承認されていないパートナーが見つかりません。",
+            "details": "詳細",
+            "accept": "承認",
+            "decline": "拒否",
+            "details_title": "パートナー申請の詳細",
+            "details_desc": "{name}の申請詳細",
+            "applied_date": "申請日",
+            "city": "市区町村",
+            "state": "都道府県",
+            "no_message": "メッセージなし",
+            "approve_title": "パートナーを承認",
+            "approve_desc": "このパートナーはデモパスワード「dfixventure」で承認されます。承認後、このパスワードをパートナーと共有してください。",
+            "demo_password": "デモパスワード",
+            "demo_hint": "パートナーはこのパスワードでログインでき、変更するように求められます。",
+            "approving": "承認中...",
+            "confirm_approve": "このパートナーを承認してもよろしいですか？デモパスワードが割り当てられます。",
+            "approve_success": "パートナーが正常に承認されました！\nデモパスワード：{password}\nこのパスワードをパートナーと共有してください。",
+            "approve_error": "パートナーの承認に失敗しました。",
+            "confirm_reject": "この申請を拒否してもよろしいですか？",
+            "reject_error": "パートナーの拒否に失敗しました。"
+        },
+        "common": {
+            "name": "名前",
+            "email": "メールアドレス",
+            "number": "電話番号",
+            "status": "ステータス",
+            "monthly_earnings": "月次収益",
+            "actions": "アクション",
+            "close": "閉じる",
+            "cancel": "キャンセル",
+            "loading": "パートナーを読み込んでいます..."
+        }
+    },
+    "orders": {
+        "title": "注文",
+        "description": "すべての顧客注文を管理および追跡する",
+        "summary": {
+            "total": "合計",
+            "delivered": "配達済み"
+        },
+        "filters": {
+            "search_placeholder": "注文番号または顧客で検索...",
+            "all_status": "すべてのステータス",
+            "clear": "フィルターをクリア"
+        },
+        "status": {
+            "pending": "保留中",
+            "processing": "処理中",
+            "shipped": "発送済み",
+            "delivered": "配達済み",
+            "cancelled": "キャンセル済み",
+            "refunded": "返金済み",
+            "placed": "注文確定",
+            "paid": "支払い済み"
+        },
+        "list": {
+            "no_orders": "注文が見つかりません",
+            "no_orders_status": "{status}の注文は見つかりませんでした。",
+            "try_adjusting": "検索語句を調整してみてください。",
+            "empty_desc": "顧客が注文すると、ここに表示されます。",
+            "customer": "顧客",
+            "order_date": "注文日",
+            "total_amount": "合計金額",
+            "items_count": "{count}点",
+            "discount": "-{amount} 割引"
+        },
+        "details": {
+            "title": "注文 #{number}",
+            "placed_on": "注文日: {date}",
+            "back_to_list": "注文に戻る",
+            "status_timeline": "ステータスとタイムライン",
+            "items": "注文商品",
+            "customer_info": "顧客情報",
+            "cancellation_info": "キャンセル情報",
+            "payment_info": "支払い情報",
+            "shipping_address": "配送先住所",
+            "sku": "SKU",
+            "flavor": "フレーバー",
+            "weight": "重量",
+            "price": "価格",
+            "qty": "数量",
+            "total": "合計",
+            "method": "方法",
+            "gateway": "ゲートウェイ",
+            "transaction_id": "取引ID",
+            "order_id": "注文ID",
+            "cancelled_at": "キャンセル日時",
+            "reason": "理由",
+            "cancelled_by": "キャンセル者",
+            "by_customer": "顧客",
+            "by_admin": "管理者",
+            "no_reason": "理由なし",
+            "not_available": "N/A",
+            "subtotal": "小計",
+            "shipping": "送料",
+            "tax": "税金",
+            "grand_total": "総計",
+            "not_found": "注文が見つかりません",
+            "not_found_desc": "お探しの注文は存在しないか、削除されました。"
+        },
+        "actions": {
+            "view_details": "詳細を表示",
+            "update_status": "ステータスを更新",
+            "mark_processing": "処理中としてマーク",
+            "mark_shipped": "発送済みとしてマーク",
+            "mark_delivered": "配達済みとしてマーク",
+            "mark_paid": "支払い済みとしてマーク",
+            "cancel": "注文をキャンセル",
+            "load_error": "注文の読み込みに失敗しました",
+            "status_update_success": "注文ステータスが{status}に更新されました",
+            "status_update_error": "ステータスの更新に失敗しました"
+        }
+    },
+    "return_requests": {
+        "title": "返品リクエスト",
+        "description": "顧客の返品リクエストと返金を管理する",
+        "settings_btn": "設定",
+        "filters": {
+            "search_placeholder": "注文、名前、メール、または製品で検索...",
+            "search_btn": "検索",
+            "clear": "クリア",
+            "all_status": "すべてのステータス"
+        },
+        "status": {
+            "pending": "保留中",
+            "approved": "承認済み",
+            "rejected": "拒否済み",
+            "processing": "処理中",
+            "completed": "完了"
+        },
+        "status_badges": {
+            "pending": "保留中",
+            "approved": "承認済み",
+            "rejected": "拒否済み",
+            "processing": "処理中",
+            "completed": "完了"
+        },
+        "list": {
+            "no_requests": "返品リクエストが見つかりません",
+            "no_requests_desc": "顧客が返品リクエストを送信すると、ここに表示されます",
+            "try_adjusting": "検索またはフィルターを調整してみてください",
+            "order_number": "注文 #{number}",
+            "customer": "顧客",
+            "product": "製品",
+            "qty": "数量",
+            "price": "価格",
+            "reason": "返品理由",
+            "admin_notes": "管理者メモ",
+            "processed_on": "処理日"
+        },
+        "dialogs": {
+            "settings_title": "返品設定",
+            "settings_desc": "返品リクエスト設定を構成する",
+            "enable_label": "返品リクエストを有効にする",
+            "enable_desc": "顧客が返品リクエストを送信できるようにする",
+            "window_label": "返品期間（日）",
+            "window_desc": "配達後の返品可能日数（1-30）",
+            "update_status_title": "ステータスを更新",
+            "update_status_desc": "この返品リクエストのステータスを更新する",
+            "status_label": "ステータス",
+            "notes_label": "管理者メモ（オプション）",
+            "notes_placeholder": "このリクエストに関するメモを追加...",
+            "details_title": "リクエスト詳細",
+            "requested_on": "リクエスト日"
+        },
+        "actions": {
+            "view_details": "詳細を表示",
+            "update_status": "ステータスを更新",
+            "save_settings": "保存",
+            "saving": "保存中...",
+            "cancel": "キャンセル",
+            "update": "更新",
+            "settings_success": "設定が正常に更新されました",
+            "settings_error": "設定の更新に失敗しました",
+            "status_success": "返品リクエストが正常に更新されました",
+            "status_error": "リクエストの更新に失敗しました",
+            "validation_days": "返品期間は1〜30日の間である必要があります"
+        },
+        "common": {
+            "enabled": "有効",
+            "disabled": "無効",
+            "days": "{count} 日"
+        }
+    },
+    "reviews": {
+        "title": "レビュー管理",
+        "description": "顧客の製品レビューを管理および返信",
+        "stats": {
+            "total": "総レビュー数",
+            "average": "平均評価",
+            "pending": "保留中のレビュー",
+            "recent": "最近のレビュー（7日間）"
+        },
+        "filters": {
+            "title": "レビューをフィルタリング",
+            "search_label": "検索",
+            "search_placeholder": "ユーザーまたはコンテンツで検索",
+            "rating_label": "評価",
+            "all_ratings": "すべての評価",
+            "status_label": "ステータス",
+            "all_statuses": "すべてのステータス",
+            "sort_by": "並べ替え",
+            "date": "日付",
+            "order": "順序",
+            "descending": "降順",
+            "ascending": "昇順",
+            "reset": "リセット",
+            "apply": "フィルターを適用"
+        },
+        "table": {
+            "title": "レビュー",
+            "total_found": "件のレビューが見つかりました",
+            "loading": "レビューを読み込んでいます...",
+            "no_reviews": "レビューが見つかりません",
+            "empty_hint": "フィルターを調整してみてください",
+            "unknown_product": "不明な製品",
+            "anonymous": "匿名"
+        },
+        "actions": {
+            "view": "詳細を表示",
+            "reply": "返信",
+            "approve": "承認する",
+            "reject": "拒否する",
+            "delete": "削除する",
+            "mark_pending": "保留中としてマーク"
+        },
+        "dialog": {
+            "title": "レビューの詳細",
+            "description": "この顧客レビューを表示および管理",
+            "review_title": "レビュータイトル",
+            "review_content": "レビュー内容",
+            "by": "投稿者",
+            "posted": "投稿日",
+            "admin_reply": "管理者の返信",
+            "replied_on": "返信日",
+            "admin_comment": "管理者コメント（内部のみ）",
+            "admin_comment_placeholder": "内部メモを追加",
+            "review_status": "レビューステータス"
+        },
+        "messages": {
+            "reply_success": "返信が正常に追加されました",
+            "reply_error": "返信の追加に失敗しました",
+            "status_success": "ステータスが {status} に更新されました",
+            "status_error": "ステータスの更新に失敗しました",
+            "comment_success": "管理者コメントが更新されました",
+            "comment_error": "コメントの更新に失敗しました",
+            "delete_success": "レビューが正常に削除されました",
+            "delete_error": "レビューの削除に失敗しました",
+            "error_title": "問題が発生しました",
+            "try_again": "再試行"
+        },
+        "status": {
+            "approved": "承認済み",
+            "rejected": "拒否済み",
+            "pending": "保留中"
+        }
+    },
+    "brands": {
+        "title": "ブランド",
+        "subtitle": "すべての製品ブランドを管理",
+        "search_placeholder": "ブランドを検索...",
+        "add_button": "ブランドを追加",
+        "filters": {
+            "all": "すべてのブランド",
+            "top": "トップ",
+            "new": "新着",
+            "hot": "人気"
+        },
+        "empty": {
+            "title": "ブランドがありません",
+            "title_search": "ブランドが見つかりません",
+            "description": "最初のブランドを追加して始めましょう",
+            "description_search": "検索条件を調整してみてください",
+            "add_first": "最初のブランドを追加"
+        },
+        "products_count": "{count} 個の製品",
+        "dialog": {
+            "add_title": "新しいブランドを追加",
+            "edit_title": "ブランドを編集",
+            "assign_title": "{brand} に製品を割り当て"
+        },
+        "form": {
+            "name_label": "ブランド名",
+            "name_placeholder": "ブランド名を入力",
+            "logo_label": "ブランドロゴ",
+            "tags_label": "タグ",
+            "tags_placeholder": "タグを選択（トップ、新着、人気など）"
+        },
+        "dropzone": {
+            "drag_drop": "ここに画像をドラッグ＆ドロップ",
+            "click_select": "またはクリックして選択",
+            "click_change": "クリックして画像を変更",
+            "preview_alt": "プレビュー"
+        },
+        "actions": {
+            "view_products": "製品を表示",
+            "edit": "編集",
+            "delete": "削除",
+            "cancel": "キャンセル",
+            "create": "ブランドを作成",
+            "update": "ブランドを更新",
+            "creating": "作成中...",
+            "updating": "更新中..."
+        },
+        "assign": {
+            "search_placeholder": "製品を検索...",
+            "no_brand": "ブランドなし",
+            "assign_button": "ブランドに割り当て",
+            "assigning": "割り当て中...",
+            "previous": "前へ",
+            "next": "次へ",
+            "page_info": "{page} / {total} ページ"
+        },
+        "messages": {
+            "fetch_error": "ブランドの読み込みに失敗しました",
+            "name_image_required": "名前と画像は必須です",
+            "tag_required": "少なくとも1つのタグが必要です",
+            "create_success": "ブランドが作成されました",
+            "update_success": "ブランドが更新されました",
+            "save_error": "ブランドの保存に失敗しました",
+            "delete_confirm": "このブランドを削除してもよろしいですか？製品は残りますが、このブランドから割り当て解除されます。",
+            "delete_success": "ブランドが削除されました。製品は割り当て解除されました。",
+            "delete_error": "ブランドの削除に失敗しました",
+            "products_fetch_error": "製品の読み込みに失敗しました",
+            "assign_success": "製品がブランドに割り当てられました",
+            "assign_error": "製品の割り当てに失敗しました",
+            "remove_success": "製品がブランドから削除されました"
+        }
+    },
+    "categories": {
+        "title": "カテゴリ",
+        "subtitle": "カテゴリとサブカテゴリで製品を整理",
+        "create_button": "カテゴリを追加",
+        "loading": "カテゴリを読み込み中...",
+        "sub_categories_count": "{count} サブカテゴリ",
+        "empty": {
+            "title": "カテゴリーが見つかりません",
+            "description": "商品を整理するために最初のカテゴリーを作成してください",
+            "create_first": "最初のカテゴリーを作成する"
+        },
+        "help_button": "ヘルプ - カテゴリーとサブカテゴリーの仕組み",
+        "help": {
+            "title": "カテゴリーとサブカテゴリーの仕組み",
+            "what_is": {
+                "title": "カテゴリーとサブカテゴリーとは何ですか？",
+                "description": "カテゴリーは、ウェブサイト上の主な商品グループ（例：「レディースウェア」、「メンズウェア」、「電子機器」）です。サブカテゴリーは、カテゴリー内のより具体的なグループ（例：「レディースウェア」の下に「ドレス」、「トップス」、「パンツ」など）です。この階層構造により、商品が整理され、顧客が探しているものを見つけやすくなります。"
+            },
+            "relationship": {
+                "title": "親子関係:",
+                "category_label": "カテゴリー（親）:",
+                "subcategory_label": "サブカテゴリー（子）:"
+            },
+            "guide": {
+                "title": "ステップバイステップガイド:",
+                "step1": {
+                    "title": "カテゴリーを作成する:",
+                    "item1": "「カテゴリーを追加」ボタンをクリックします",
+                    "item2": "カテゴリー名を入力します（例：「レディースウェア」）",
+                    "item3": "オプションの説明と画像を追加します",
+                    "item4": "カテゴリーを保存します"
+                },
+                "step2": {
+                    "title": "サブカテゴリーを作成する:",
+                    "item1": "カテゴリー編集ページに移動します（編集アイコンをクリック）",
+                    "item2": "編集フォームの中に「サブカテゴリー」セクションがあります",
+                    "item3": "「サブカテゴリーを追加」ボタンをクリックします",
+                    "item4": "サブカテゴリー名を入力します（例：「ドレス」）",
+                    "item5": "オプションの説明と画像を追加します",
+                    "item6": "サブカテゴリーを保存します",
+                    "item7": "さらに追加する場合は繰り返します"
+                },
+                "step3": {
+                    "title": "サブカテゴリーを編集する:",
+                    "item1": "カテゴリー編集ページに移動します",
+                    "item2": "編集したいサブカテゴリーを見つけます",
+                    "item3": "サブカテゴリーの横にある編集アイコンをクリックします",
+                    "item4": "名前、説明、または画像を更新します",
+                    "item5": "変更を保存します"
+                },
+                "step4": {
+                    "title": "サブカテゴリーを削除する:",
+                    "item1": "カテゴリー編集ページに移動します",
+                    "item2": "サブカテゴリーの横にある削除アイコンをクリックします",
+                    "item3": "削除を確認します",
+                    "item4": "注意：このサブカテゴリーに割り当てられている商品は削除されません"
+                }
+            },
+            "limit": {
+                "title": "1つのカテゴリーにサブカテゴリーはいくつ作成できますか？",
+                "info": "厳密な制限はありません！各カテゴリーに必要な数だけサブカテゴリーを作成できます。ただし、整理しやすさとユーザー体験向上のために以下のことをお勧めします：",
+                "rec1": "1カテゴリーにつき5〜15のサブカテゴリーが理想的です",
+                "rec2": "サブカテゴリーが多すぎるとナビゲーションが混乱する可能性があります",
+                "rec3": "少なすぎると十分な整理ができない場合があります",
+                "rec4": "似たようなアイテムを論理的にグループ化してください"
+            },
+            "examples": {
+                "title": "具体例:",
+                "ex1": {
+                    "title": "例1 - レディースウェアカテゴリー:",
+                    "items": "ドレス、トップス、パンツ、スカート、ジャケット、アクセサリー",
+                    "total": "合計: 6つのサブカテゴリー"
+                },
+                "ex2": {
+                    "title": "例2 - 電子機器カテゴリー:",
+                    "items": "携帯電話、ノートパソコン、タブレット、ヘッドフォン、カメラ",
+                    "total": "合計: 5つのサブカテゴリー"
+                },
+                "ex3": {
+                    "title": "例3 - ホーム＆キッチンカテゴリー:",
+                    "items": "調理器具、食器、収納、デコレーション、家具",
+                    "total": "合計: 5つのサブカテゴリー"
+                }
+            },
+            "visibility": {
+                "title": "どのサブカテゴリーがどのカテゴリーに属しているかを確認する方法:",
+                "list_title": "カテゴリー一覧:",
+                "list_item1": "各カテゴリーの行に、サブカテゴリーの数が表示されます",
+                "list_item2": "例：「レディースウェア」 - サブカテゴリー6個",
+                "edit_title": "カテゴリー編集ページ:",
+                "edit_item1": "カテゴリーを編集する際、属するすべてのサブカテゴリーが表示されます",
+                "edit_item2": "各サブカテゴリーには名前、説明、画像が表示されます",
+                "edit_item3": "ページの文脈から、どのカテゴリーに属しているか分かります",
+                "product_title": "商品フォーム:",
+                "product_item1": "商品を作成/編集する際、まずメインカテゴリーを選択します",
+                "product_item2": "次に、親カテゴリーの下にグループ化されたサブカテゴリーが表示されます",
+                "product_item3": "例：「レディースウェア」の下に、「ドレス」、「トップス」などが表示されます"
+            },
+            "appear": {
+                "title": "ウェブサイトでの表示方法:",
+                "nav": "ナビゲーションメニュー:",
+                "page": "カテゴリーページ:",
+                "page_filters": "サブカテゴリーフィルター: [ドレス] [トップス] [パンツ] [スカート]",
+                "page_products": "選択したサブカテゴリーに基づいて商品が表示されます"
+            },
+            "best_practices": {
+                "title": "ベストプラクティス:",
+                "bp1": "明確な命名：カテゴリーとサブカテゴリーの両方に分かりやすい名前を付けます",
+                "bp2": "論理的なグループ化：関連するアイテムをまとめます",
+                "bp3": "一貫した構造：カテゴリー間で同様の構造を維持します",
+                "bp4": "画像：視覚的に分かりやすくするために画像を追加します",
+                "bp5": "商品の割り当て：商品をメインカテゴリーとサブカテゴリーの両方に割り当てます",
+                "bp6": "定期的な見直し：商品ラインナップの拡大に合わせて更新します"
+            },
+            "tips": {
+                "title": "ヒント:",
+                "tip1": "商品を追加する前にサブカテゴリーを作成してください",
+                "tip2": "1つの商品は複数のサブカテゴリーに属することができます",
+                "tip3": "視覚的な識別のためにサブカテゴリー画像を活用してください",
+                "tip4": "サブカテゴリー名は短く明確にしてください（1〜3単語）",
+                "tip5": "削除する代わりに非アクティブにすることで、将来の再利用に備えられます"
+            }
+        },
+        "error": {
+            "title": "問題が発生しました",
+            "try_again": "再試行"
+        },
+        "delete": {
+            "title": "カテゴリを削除",
+            "description": "このカテゴリを削除してもよろしいですか？この操作は元に戻せません。",
+            "force_title": "カテゴリに製品があります",
+            "force_description": "製品が含まれているため、このカテゴリを削除できません。",
+            "force_button": "強制削除",
+            "confirm": "削除"
+        },
+        "form": {
+            "create_title": "カテゴリー作成",
+            "edit_title": "カテゴリー編集",
+            "create_subtitle": "商品を整理するために新しいカテゴリーを作成します",
+            "edit_subtitle": "カテゴリーの詳細を更新し、サブカテゴリーを管理します",
+            "info_title": "カテゴリー情報",
+            "info_subtitle": "カテゴリー名、説明を入力し、画像をアップロードしてください",
+            "name_label": "カテゴリー名 *",
+            "name_placeholder": "例：電子機器、衣類、ホーム＆キッチン",
+            "description_label": "説明",
+            "description_placeholder": "このカテゴリーの簡単な説明を入力してください",
+            "image_label": "カテゴリー画像",
+            "image_desc": "このカテゴリーの画像をアップロードしてください",
+            "image_recommendation": "推奨サイズ: 400x400ピクセル、最大サイズ: 5MB",
+            "preview_alt": "カテゴリープレビュー",
+            "create_submit": "カテゴリーを作成",
+            "update_submit": "カテゴリーを更新",
+            "cancel": "キャンセル",
+            "back": "カテゴリー一覧に戻る",
+            "loading_category": "カテゴリーを読み込み中...",
+            "preparing_form": "フォームを準備中..."
+        },
+        "subcategories": {
+            "title": "サブカテゴリ",
+            "add_button": "サブカテゴリを追加",
+            "empty": "サブカテゴリがありません。最初のサブカテゴリを追加してください。",
+            "loading": "サブカテゴリを読み込み中...",
+            "dialog": {
+                "add_title": "サブカテゴリを追加",
+                "edit_title": "サブカテゴリを編集",
+                "name_label": "サブカテゴリ名 *",
+                "name_placeholder": "サブカテゴリ名を入力",
+                "description_label": "説明",
+                "description_placeholder": "サブカテゴリの説明を入力",
+                "image_label": "サブカテゴリ画像",
+                "save": "サブカテゴリを保存",
+                "cancel": "キャンセル"
+            }
+        },
+        "messages": {
+            "load_error": "カテゴリの読み込みに失敗しました。再試行してください。",
+            "fetch_error": "カテゴリの取得に失敗しました",
+            "fetch_details_error": "カテゴリ詳細の取得に失敗しました",
+            "create_success": "カテゴリが正常に作成されました",
+            "create_error": "カテゴリの作成に失敗しました",
+            "update_success": "カテゴリが正常に更新されました",
+            "update_error": "カテゴリの更新に失敗しました",
+            "delete_success": "カテゴリが正常に削除されました",
+            "delete_error": "カテゴリの削除に失敗しました",
+            "subcategory_create_success": "サブカテゴリが正常に作成されました",
+            "subcategory_create_error": "サブカテゴリの作成に失敗しました",
+            "subcategory_update_success": "サブカテゴリが正常に更新されました",
+            "subcategory_update_error": "サブカテゴリの更新に失敗しました",
+            "subcategory_delete_success": "サブカテゴリが正常に削除されました",
+            "subcategory_delete_error": "サブカテゴリの削除に失敗しました",
+            "subcategory_name_required": "サブカテゴリー名は必須です",
+            "creating": "作成中...",
+            "updating": "更新中...",
+            "save_category_first": "サブカテゴリーを追加する前にカテゴリーを保存してください",
+            "delete_subcategory_confirm": "このサブカテゴリーを削除してもよろしいですか？",
+            "operation_failed": "操作に失敗しました"
+        }
+    },
+    "attributes": {
+        "title": "属性",
+        "help_button": "ヘルプ - 属性の作成/編集方法",
+        "create_button": "属性を追加",
+        "search_placeholder": "属性を検索...",
+        "values_count": "{count} 個の値",
+        "manage_values": "管理",
+        "empty": {
+            "title": "属性が見つかりません",
+            "description": "最初の属性を作成して始めましょう"
+        },
+        "table": {
+            "name": "名前",
+            "input_type": "入力タイプ",
+            "values": "値",
+            "actions": "アクション"
+        },
+        "form": {
+            "create_title": "属性を作成",
+            "edit_title": "属性を編集",
+            "name_label": "属性名 *",
+            "name_placeholder": "例：サイズ、カラー、RAM、ストレージ",
+            "name_desc": "属性の名前（例：サイズ、カラー、RAM、ストレージ）",
+            "input_type_label": "入力タイプ *",
+            "input_type_placeholder": "入力タイプを選択",
+            "input_type_desc": "ユーザーがこの属性値をどのように選択するか",
+            "preset_label": "クイックセットアップ（業界プリセット）",
+            "preset_placeholder": "クイックセットアップ用に業界を選択（オプション）",
+            "preset_desc": "業界を選択して一般的な属性を自動入力します。下でカスタマイズできます。",
+            "create_submit": "属性を作成",
+            "update_submit": "属性を更新",
+            "cancel": "キャンセル"
+        },
+        "input_types": {
+            "text": "テキスト",
+            "number": "数値",
+            "select": "選択（単一）",
+            "multiselect": "複数選択"
+        },
+        "presets": {
+            "fashion": "ファッション/アパレル",
+            "electronics": "電子機器",
+            "furniture": "家具",
+            "books": "書籍"
+        },
+        "messages": {
+            "load_error": "属性の読み込みに失敗しました。もう一度お試しください。",
+            "delete_success": "属性が正常に削除されました",
+            "delete_error": "属性の削除に失敗しました",
+            "create_success": "属性が正常に作成されました",
+            "create_error": "属性の作成に失敗しました",
+            "update_success": "属性が正常に更新されました",
+            "update_error": "属性の更新に失敗しました",
+            "load_single_error": "属性の読み込みに失敗しました",
+            "delete_confirm": "この属性を削除してもよろしいですか？この操作は取り消せません。"
+        }
+    },
+    "attribute_values": {
+        "title": "属性値",
+        "subtitle": "{attribute} の値を管理",
+        "create_button": "値を追加",
+        "back_button": "属性に戻る",
+        "search_placeholder": "値を検索...",
+        "empty": {
+            "title": "値が見つかりません",
+            "description": "この属性の値を追加して始めましょう"
+        },
+        "table": {
+            "value": "値",
+            "preview": "プレビュー",
+            "color_code": "カラーコード",
+            "actions": "アクション"
+        },
+        "form": {
+            "create_title": "値を追加",
+            "edit_title": "値を編集",
+            "value_label": "値 *",
+            "value_placeholder": "例：赤、XL、128GB",
+            "value_desc": "実際の値（例：赤、XL、128GB）",
+            "color_label": "カラーコード（オプション）",
+            "color_placeholder": "例：#FF0000",
+            "color_desc": "視覚的表現用の16進数カラーコード（例：#FF0000）",
+            "preset_label": "クイック追加（一般的な/プリセット値）",
+            "preset_placeholder": "自動入力する一般的な値を選択",
+            "image_label": "画像（オプション）",
+            "image_desc": "この属性値の画像をアップロード（例：色見本、サイズチャート）",
+            "create_submit": "値を追加",
+            "update_submit": "値を更新",
+            "cancel": "キャンセル"
+        },
+        "messages": {
+            "load_error": "値の読み込みに失敗しました",
+            "load_details_error": "属性の詳細の読み込みに失敗しました",
+            "create_success": "値が正常に追加されました",
+            "create_error": "値の追加に失敗しました",
+            "update_success": "値が正常に更新されました",
+            "update_error": "値の更新に失敗しました",
+            "delete_success": "値が正常に削除されました",
+            "delete_error": "値の削除に失敗しました"
+        }
+    },
+    "banners": {
+        "title": "バナー",
+        "subtitle": "ホームページのバナーとプロモーション表示を管理",
+        "create_button": "バナーを作成",
+        "loading": "バナーを読み込み中...",
+        "loading_banner": "バナーを読み込み中...",
+        "create_title": "新しいバナーを追加",
+        "edit_title": "バナーを編集",
+        "create_description": "新しいバナーを作成するための詳細を入力してください",
+        "edit_description": "バナーの詳細と画像を更新",
+        "back": "戻る",
+        "delete": "削除",
+        "saving": "保存中...",
+        "create_banner": "バナーを作成",
+        "save_changes": "変更を保存",
+        "cancel": "キャンセル",
+        "basic_info": {
+            "title": "基本情報",
+            "description": "バナーのタイトル、サブタイトル、リンクの詳細を入力"
+        },
+        "form": {
+            "title_label": "タイトル",
+            "title_optional": "（任意）",
+            "title_placeholder": "例：2024年サマーセール",
+            "subtitle_label": "サブタイトル",
+            "subtitle_optional": "（任意）",
+            "subtitle_placeholder": "例：対象商品が最大50%オフ",
+            "link_label": "リンクURL",
+            "link_placeholder": "/products",
+            "link_hint": "クリック時のバナーの遷移先（デフォルト：/products）"
+        },
+        "list": {
+            "search_placeholder": "タイトルまたはサブタイトルで検索...",
+            "filter_all": "すべてのステータス",
+            "filter_published": "公開済み",
+            "filter_unpublished": "非公開",
+            "clear_filters": "フィルターを解除",
+            "no_banners": "バナーはまだありません",
+            "no_banners_desc": "最初のバナーを作成してホームページに表示しましょう",
+            "create_first": "最初のバナーを作成",
+            "untitled_banner": "無題のバナー",
+            "published": "公開済み",
+            "unpublished": "非公開",
+            "active": "有効",
+            "inactive": "無効",
+            "link": "リンク",
+            "position": "位置"
+        },
+        "settings": {
+            "title": "設定",
+            "description": "バナーの位置と表示設定を構成",
+            "position_label": "表示位置",
+            "position_suggested": "（推奨：{position}）",
+            "position_hint_create": "位置を設定（0 = 最初）。この位置以降の既存バナーは下に移動します。",
+            "position_hint_edit": "位置を変更（0 = 最初）。他のバナーは自動的に並び替えられます。",
+            "published_label": "公開済み",
+            "published_hint": "このバナーをウェブサイトに表示",
+            "active_label": "有効",
+            "active_hint": "このバナーを有効にする"
+        },
+        "desktop_image": {
+            "title": "デスクトップ画像",
+            "description": "大画面用の画像をアップロード（推奨：1920x1080ピクセル以上）",
+            "preview_alt": "デスクトッププレビュー",
+            "replace_hint": "クリックまたはドラッグして画像を置き換え",
+            "upload_title": "デスクトップ画像をここにドラッグ＆ドロップ、またはクリックして選択",
+            "upload_hint": "推奨：1920x1080ピクセル以上"
+        },
+        "mobile_image": {
+            "title": "モバイル画像",
+            "description": "小画面用の画像をアップロード（推奨：1080x1920ピクセルまたは同様の縦長比率）",
+            "preview_alt": "モバイルプレビュー",
+            "replace_hint": "クリックまたはドラッグして画像を置き換え",
+            "upload_title": "モバイル画像をここにドラッグ＆ドロップ、またはクリックして選択",
+            "upload_hint": "推奨：1080x1920ピクセルまたは同様の縦長比率"
+        },
+        "danger_zone": {
+            "title": "危険ゾーン",
+            "description": "このバナーを完全に削除します。この操作は取り消せません。",
+            "delete_button": "バナーを削除"
+        },
+        "messages": {
+            "load_error": "バナーの読み込みに失敗しました",
+            "images_required": "デスクトップとモバイルの両方の画像をアップロードしてください",
+            "id_missing": "バナーIDがありません",
+            "create_success": "バナーが正常に作成されました",
+            "update_success": "バナーが正常に更新されました",
+            "save_error": "バナーの保存に失敗しました",
+            "delete_confirm": "このバナーを削除してもよろしいですか？この操作は取り消せません。",
+            "delete_confirm_short": "このバナーを削除してもよろしいですか？",
+            "delete_success": "バナーが正常に削除されました。位置が再配置されました。",
+            "delete_error": "バナーの削除に失敗しました",
+            "toggle_success_published": "バナーが正常に公開されました",
+            "toggle_success_unpublished": "バナーが正常に非公開になりました",
+            "toggle_error": "バナーの更新に失敗しました",
+            "fetch_error": "バナーの読み込みに失敗しました。もう一度お試しください。"
+        }
+    },
+    "flash_sales": {
+        "title": "フラッシュセール",
+        "subtitle": "期間限定のフラッシュセールオファーを管理",
+        "create_button": "フラッシュセールを作成",
+        "loading": "フラッシュセールを読み込み中...",
+        "loading_sale": "フラッシュセールを読み込み中...",
+        "create_title": "新しいフラッシュセールを追加",
+        "edit_title": "フラッシュセールを編集",
+        "create_description": "新しい期間限定フラッシュセールを作成",
+        "edit_description": "フラッシュセールの詳細を更新",
+        "back": "フラッシュセールに戻る",
+        "cancel": "キャンセル",
+        "creating": "作成中...",
+        "updating": "更新中...",
+        "create_sale": "フラッシュセールを作成",
+        "update_sale": "フラッシュセールを更新",
+        "empty": {
+            "title": "フラッシュセールがありません",
+            "description": "期間限定の割引を提供するために最初のフラッシュセールを作成してください"
+        },
+        "status": {
+            "active": "有効",
+            "inactive": "無効",
+            "upcoming": "今後開催",
+            "ended": "終了"
+        },
+        "card": {
+            "discount": "割引",
+            "products": "商品",
+            "sold": "販売済み",
+            "max_quantity": "最大数量",
+            "start": "開始：",
+            "end": "終了："
+        },
+        "form": {
+            "info_title": "フラッシュセール情報",
+            "info_description": "販売詳細、スケジュール、商品選択を設定",
+            "name_label": "セール名",
+            "name_placeholder": "例：サマーフラッシュセール",
+            "discount_label": "割引率",
+            "discount_placeholder": "例：50",
+            "start_time_label": "開始時間",
+            "end_time_label": "終了時間",
+            "max_quantity_label": "最大数量（任意）",
+            "max_quantity_placeholder": "無制限の場合は空欄にしてください",
+            "active_status_label": "アクティブステータス",
+            "active_status_hint": "このフラッシュセールを有効または無効にする",
+            "products_label": "商品",
+            "products_placeholder": "フラッシュセールの商品を選択",
+            "products_selected": "{count}件の商品を選択"
+        },
+        "messages": {
+            "fetch_error": "フラッシュセールの取得に失敗しました",
+            "load_error": "フラッシュセールの読み込みに失敗しました",
+            "load_sale_error": "フラッシュセールの読み込みに失敗しました",
+            "delete_confirm": "「{name}」を削除してもよろしいですか？",
+            "delete_success": "フラッシュセールが正常に削除されました",
+            "delete_error": "フラッシュセールの削除に失敗しました",
+            "delete_error_generic": "フラッシュセールの削除中にエラーが発生しました",
+            "toggle_success_activated": "フラッシュセールが正常に有効化されました",
+            "toggle_success_deactivated": "フラッシュセールが正常に無効化されました",
+            "toggle_error": "ステータスの切り替えに失敗しました",
+            "toggle_error_generic": "ステータスの切り替え中にエラーが発生しました",
+            "create_success": "フラッシュセールが正常に作成されました",
+            "update_success": "フラッシュセールが正常に更新されました",
+            "create_error": "フラッシュセールの作成に失敗しました",
+            "update_error": "フラッシュセールの更新に失敗しました",
+            "save_error": "フラッシュセールの保存中にエラーが発生しました"
+        }
+    },
+    "product_sections": {
+        "title": "商品セクション",
+        "subtitle": "ホームページの商品セクションを管理",
+        "create_button": "セクションを作成",
+        "loading": "セクションを読み込み中...",
+        "empty": {
+            "title": "セクションはまだありません",
+            "description": "最初の商品セクションを作成してホームページに商品を表示しましょう",
+            "create_first": "最初のセクションを作成"
+        },
+        "status": {
+            "active": "有効",
+            "inactive": "無効"
+        },
+        "labels": {
+            "slug": "スラッグ",
+            "display_order": "表示順",
+            "products": "商品",
+            "add_product": "商品を追加",
+            "no_products_title": "このセクションには商品がありません",
+            "no_products_desc": "このセクションに商品を追加してホームページに表示しましょう"
+        },
+        "actions": {
+            "edit": "セクションを編集",
+            "delete": "セクションを削除",
+            "create": "セクションを作成",
+            "update": "変更を保存",
+            "cancel": "キャンセル",
+            "save": "保存"
+        },
+        "messages": {
+            "fetch_error": "セクションの取得に失敗しました",
+            "create_success": "セクションが正常に作成されました",
+            "create_error": "セクションの作成に失敗しました",
+            "update_success": "セクションが正常に更新されました",
+            "update_error": "セクションの更新に失敗しました",
+            "delete_confirm": "このセクションを削除してもよろしいですか？",
+            "delete_success": "セクションが正常に削除されました",
+            "delete_error": "セクションの削除に失敗しました",
+            "add_product_success": "商品がセクションに追加されました",
+            "add_product_error": "商品の追加に失敗しました",
+            "remove_product_success": "商品がセクションから削除されました",
+            "remove_product_error": "商品の削除に失敗しました",
+            "activation_success": "セクションが有効化されました",
+            "deactivation_success": "セクションが無効化されました"
+        },
+        "form": {
+            "create_title": "商品セクションを作成",
+            "create_desc": "新しい商品セクションを作成",
+            "edit_title": "商品セクションを編集",
+            "edit_desc": "セクションの詳細を更新",
+            "name_label": "セクション名",
+            "name_placeholder": "例：おすすめ商品、ベストセラー",
+            "slug_label": "スラッグ",
+            "slug_placeholder": "例：featured-products",
+            "slug_hint": "URLに適した識別子（名前から自動生成）",
+            "description_label": "説明",
+            "description_placeholder": "説明（オプション）",
+            "color_label": "カラーテーマ",
+            "max_products_label": "最大商品数",
+            "display_order_label": "表示順",
+            "display_order_hint": "数字が小さいほどホームページで先に表示されます"
+        },
+        "colors": {
+            "blue": "青",
+            "green": "緑",
+            "yellow": "黄",
+            "red": "赤",
+            "purple": "紫",
+            "pink": "ピンク",
+            "orange": "オレンジ"
+        }
+    },
+    "dashboard": {
+        "title": "ダッシュボード",
+        "subtitle": "ストアのパフォーマンス概要",
+        "view_orders": "注文を表示",
+        "quick_actions": {
+            "title": "クイックアクション",
+            "description": "ストアコンテンツを素早く管理",
+            "product_sections": "商品セクション",
+            "product_sections_desc": "ホームページセクションを管理",
+            "banners": "バナー",
+            "banners_desc": "プロモーションバナーを管理",
+            "flash_sales": "フラッシュセール",
+            "flash_sales_desc": "フラッシュセールを管理",
+            "analytics": "分析",
+            "analytics_desc": "詳細な分析を表示"
+        },
+        "inventory_alert": {
+            "title": "在庫アラート",
+            "out_of_stock": "{count} 商品が在庫切れ",
+            "low_stock": "{count} 商品が在庫僅少",
+            "view_inventory": "在庫を表示"
+        },
+        "stats": {
+            "total_revenue": "総売上",
+            "total_orders": "総注文数",
+            "total_users": "総ユーザー数",
+            "return_requests": "返品リクエスト",
+            "increase": "{percent}% 増加",
+            "decrease": "{percent}% 減少",
+            "vs_last_month": "先月比",
+            "new_this_month": "今月 {count} 件の新規",
+            "no_new_users": "新規ユーザーなし",
+            "pending": "{count} 件保留中",
+            "all_processed": "すべて処理済み"
+        },
+        "top_selling": {
+            "title": "ベストセラー商品",
+            "subtitle": "売上数による人気商品",
+            "sold": "販売済み",
+            "revenue": "収益",
+            "view": "表示",
+            "no_data": "売上データはまだありません",
+            "no_data_desc": "注文を受け始めると、ここに販売活動が表示されます",
+            "view_products": "商品を表示"
+        },
+        "low_stock": {
+            "title": "在庫僅少商品",
+            "out_of_stock": "在庫切れ",
+            "left": "残り {count}",
+            "view_all": "全 {count} 商品を表示"
+        },
+        "recent_returns": {
+            "title": "最近の返品リクエスト",
+            "subtitle": "対応が必要な最新の返品リクエスト",
+            "view_all": "すべて表示",
+            "pending": "保留中",
+            "approved": "承認済み",
+            "rejected": "却下済み",
+            "processing": "処理中",
+            "completed": "完了",
+            "empty_title": "返品リクエストはありません",
+            "empty_desc": "顧客が返品リクエストを送信すると、ここに表示されます",
+            "view_all_returns": "すべての返品を表示"
+        },
+        "order_stats": {
+            "title": "注文ステータスの分布",
+            "subtitle": "注文の現在のステータス"
+        }
+    },
+    "analytics": {
+        "title": "分析ダッシュボード",
+        "subtitle": "商品パフォーマンスとユーザーエンゲージメント指標を追跡",
+        "tabs": {
+            "popular_products": "人気商品",
+            "user_carts": "ユーザーカート"
+        },
+        "products": {
+            "title": "最も閲覧された商品",
+            "description": "ユーザーから最も注目されている商品を追跡",
+            "views": "ビュー",
+            "no_views": "商品ビューはまだありません",
+            "no_views_desc": "ユーザーがサイトで商品を閲覧すると、このデータが入力されます",
+            "view_products": "商品を表示"
+        },
+        "carts": {
+            "title": "カートに商品があるユーザー",
+            "description": "カートに商品があるユーザーを確認し、人気商品を特定",
+            "anonymous": "匿名ユーザー",
+            "items_in_cart": "カート内の商品",
+            "qty": "数量",
+            "no_carts": "アクティブなカートはありません",
+            "no_carts_desc": "現在、カートに商品を入れているユーザーはいません",
+            "view_orders": "注文を表示"
+        }
+    },
+    "products": {
+        "title": "商品",
+        "add_new": "商品を追加",
+        "edit_product": "商品を編集",
+        "list": {
+            "search_placeholder": "商品を検索...",
+            "status_filter": "ステータスでフィルター",
+            "all_status": "すべてのステータス",
+            "category_filter": "カテゴリーでフィルター",
+            "all_categories": "すべてのカテゴリー",
+            "table": {
+                "product": "商品",
+                "category": "カテゴリー",
+                "price": "価格",
+                "stock": "在庫",
+                "status": "ステータス",
+                "actions": "操作",
+                "no_products": "商品が見つかりません",
+                "empty_desc": "フィルターを調整するか、新しい商品を追加してください"
+            },
+            "status": {
+                "active": "有効",
+                "inactive": "無効",
+                "featured": "おすすめ",
+                "our_product": "自社商品"
+            }
+        },
+        "form": {
+            "permission_denied": "商品を作成する権限がありません。管理者に連絡してください。",
+            "sections": {
+                "basic_info": "基本情報",
+                "basic_desc": "商品名、説明、分類",
+                "media": "メディア",
+                "media_desc": "商品画像とギャラリー",
+                "pricing_inventory": "価格と在庫",
+                "pricing_desc": "価格と在庫レベルを管理",
+                "variants": "バリエーション",
+                "variants_desc": "サイズや色などの商品バリエーションを管理",
+                "seo": "SEOとメタデータ",
+                "seo_desc": "検索エンジン最適化設定",
+                "organization": "組織",
+                "organization_desc": "ブランドとタグ",
+                "product_images": "商品画像",
+                "seo_information": "SEO情報",
+                "variants_configuration": "バリエーション構成",
+                "moq_settings": "MOQ設定"
+            },
+            "categories": {
+                "loading": "カテゴリーを読み込み中...",
+                "no_categories": "カテゴリーがありません",
+                "primary": "メイン",
+                "set_as_primary": "メインに設定",
+                "select_multiple": "カテゴリを選択（複数可）",
+                "primary_category": "メインカテゴリ",
+                "primary_category_hint": "メインカテゴリは、商品がメインリストに表示される場所を決定します",
+                "sub_categories_optional": "サブカテゴリ（任意）- 複数選択",
+                "select_sub_categories_hint": "選択したカテゴリからサブカテゴリを選択してください。任意のカテゴリから複数のサブカテゴリを選択できます。",
+                "sub_categories_label": "サブカテゴリ",
+                "no_sub_categories": "選択したカテゴリにサブカテゴリはありません。",
+                "create_sub_cat_link": "カテゴリページ",
+                "create_sub_cat_hint": "からサブカテゴリを作成できます。",
+                "selected_sub_categories": "選択されたサブカテゴリ"
+            },
+            "settings": {
+                "product_settings": "商品設定",
+                "product_type": "商品タイプ",
+                "select_type_hint": "この商品が属するカテゴリを選択してください",
+                "types": {
+                    "featured": "おすすめ",
+                    "bestseller": "ベストセラー",
+                    "trending": "トレンド",
+                    "new": "新着"
+                }
+            },
+            "media": {
+                "drop_text": "画像をここにドロップするか、クリックして選択",
+                "upload_hint": "対応形式：JPG, PNG, WEBP。最大サイズ：10MB",
+                "set_primary": "メインに設定",
+                "primary": "メイン",
+                "drop_multiple_images": "複数の画像をここにドロップするか、ファイルを選択してください",
+                "alternative_input_hint": "代替：ドラッグ＆ドロップが機能しない場合はこの入力を使用してください",
+                "image": "画像",
+                "primary_image": "メイン",
+                "upload_title": "画像をアップロード",
+                "drag_drop_hint": "ここに画像をドラッグ＆ドロップするか、クリックしてファイルを選択してください。最初の画像がメイン画像になります。",
+                "drop_here": "ここに画像をドロップ..."
+            },
+            "labels": {
+                "name": "商品名",
+                "description": "説明",
+                "sku": "SKU",
+                "price": "価格",
+                "sale_price": "セール価格",
+                "sale_price_optional": "セール価格（任意）",
+                "quantity": "数量",
+                "category": "カテゴリー",
+                "brand": "ブランド",
+                "brand_optional": "ブランド（任意）",
+                "tags": "タグ",
+                "meta_title": "メタタイトル",
+                "meta_description": "メタディスクリプション",
+                "keywords": "キーワード",
+                "featured": "おすすめ商品",
+                "featured_desc": "この商品をおすすめセクションに表示する",
+                "our_product": "自社商品",
+                "our_product_desc": "これを自社商品としてマークする",
+                "active": "有効",
+                "active_desc": "商品は顧客に表示されます",
+                "moq_active": "最低注文数量を有効にする",
+                "min_quantity": "最低数量",
+                "stock_quantity": "在庫数",
+                "has_variants": "バリエーションあり"
+            },
+            "placeholders": {
+                "enter_name": "商品名を入力",
+                "enter_sku": "SKUを入力",
+                "select_category": "カテゴリーを選択",
+                "select_brand": "ブランドを選択",
+                "enter_tags": "タグを入力（Enterキー）",
+                "enter_meta_title": "SEOタイトル",
+                "enter_meta_desc": "SEO説明",
+                "sku_auto": "SKU（自動生成）",
+                "sku_auto_hint": "名前、価格、カテゴリから自動生成"
+            },
+            "buttons": {
+                "create": "商品を作成",
+                "update": "商品を更新",
+                "cancel": "キャンセル",
+                "creating": "作成中...",
+                "updating": "更新中...",
+                "generate_variants": "バリエーションを生成",
+                "add_variant": "バリエーションを追加"
+            },
+            "seo": {
+                "title_label": "SEOタイトル",
+                "title_placeholder": "SEOタイトル（推奨50〜60文字）",
+                "title_hint": "空欄の場合、商品名が使用されます",
+                "description_label": "SEO説明",
+                "description_placeholder": "メタディスクリプション（推奨150〜160文字）",
+                "description_hint": "空欄の場合、商品説明から自動生成されます",
+                "current_length": "現在の長さ",
+                "characters": "文字",
+                "too_long": "長すぎます",
+                "keywords_label": "キーワード",
+                "keywords_placeholder": "カンマ区切りのキーワード",
+                "keywords_hint": "検索エンジン用キーワード（カンマ区切り）"
+            },
+            "variants": {
+                "enable": "この商品にはバリエーションがあります",
+                "enable_desc": "この商品に複数のオプション（サイズ、色など）がある場合に有効にします",
+                "select_attributes": "属性を選択",
+                "generate_btn": "バリエーションを生成",
+                "no_attributes": "属性が見つかりません。最初に属性を作成してください。",
+                "manage_combinations": "組み合わせを管理",
+                "using_variant_images": "バリエーション固有の画像を使用",
+                "variant_mode": "バリエーションモード",
+                "variant_mode_hint": "各バリエーションに独自の画像を設定できます。以下の表で各バリエーションの画像をアップロードしてください。",
+                "no_attributes_available": "属性がありません。最初に",
+                "attributes_link": "属性",
+                "section_text": "セクションで属性を作成してください。",
+                "no_values_available": "値がありません。",
+                "add_values_link": "値を追加",
+                "generate_variants_button": "バリエーションを生成",
+                "variants_label": "バリエーション",
+                "variants_count": "バリエーション",
+                "no_variants_yet": "バリエーションはまだありません。属性値を選択して「バリエーションを生成」をクリックして作成してください。"
+            },
+            "moq": {
+                "title": "MOQ設定",
+                "enable": "この商品でMOQを有効にする",
+                "desc": "この商品の最小注文数量を設定",
+                "min_quantity": "最小数量",
+                "enable_moq_label": "この商品でMOQを有効にする",
+                "enable_moq_hint": "この商品の最小注文数量を設定",
+                "minimum_quantity_label": "最小数量",
+                "minimum_quantity_placeholder": "最低数量を入力",
+                "minimum_quantity_hint": "顧客はこの商品を少なくともこの数量注文する必要があります",
+                "moq_priority_title": "MOQの優先順位",
+                "moq_priority_hint": "商品MOQはグローバルMOQを上書きします。バリエーションMOQ（設定されている場合）はこれを上書きします。"
+            },
+            "add_product_button": "商品を追加",
+            "update_product_button": "商品を更新",
+            "shipping": {
+                "title": "配送寸法 (Shiprocket用)",
+                "desc": "この商品の配送寸法を設定",
+                "hint": "Shiprocket設定のデフォルト寸法を使用する場合は空のままにしてください",
+                "length_label": "Length (cm)",
+                "breadth_label": "Breadth (cm)",
+                "height_label": "Height (cm)",
+                "weight_label": "Weight (kg)"
+            },
+            "pricing_slabs": {
+                "title": "価格スラブ",
+                "desc": "この商品の数量ベースの価格を設定",
+                "add": "スラブを追加",
+                "no_slabs": "価格スラブが設定されていません",
+                "add_hint": "この商品に数量ベースの価格を追加"
+            }
+        },
+        "details": {
+            "tabs": {
+                "details": "詳細",
+                "variants": "バリエーション",
+                "reviews": "レビュー"
+            },
+            "info": {
+                "categories": "カテゴリー",
+                "status": "ステータス",
+                "description": "説明",
+                "nutrition": "栄養成分情報",
+                "sku": "SKU",
+                "price": "価格",
+                "sale_price": "セール価格",
+                "stock": "在庫"
+            },
+            "actions": {
+                "edit": "編集",
+                "delete": "削除",
+                "activate": "有効化",
+                "deactivate": "無効化",
+                "back": "商品に戻る"
+            },
+            "dialogs": {
+                "delete_title": "商品を削除",
+                "delete_desc": "この商品を削除してもよろしいですか？この操作は取り消せません。",
+                "force_delete_title": "商品に注文履歴があります",
+                "force_delete_desc": "この商品には注文履歴があり、完全に削除することはできません。無効としてマークすることができます。",
+                "mark_inactive": "無効としてマーク"
+            },
+            "not_found_desc": "お探しの商品は存在しないか、削除されました。"
+        }
+    },
+    "variant_card": {
+        "moq": {
+            "title": "MOQ設定",
+            "enable": "このバリエーションでMOQを有効にする",
+            "override_desc": "商品/グローバルMOQを上書き",
+            "min_quantity": "最小数量",
+            "placeholder": "最小数量"
+        },
+        "pricing_slabs": {
+            "title": "価格スラブ",
+            "add": "スラブを追加",
+            "edit": "編集",
+            "delete": "削除",
+            "no_slabs": "価格スラブが設定されていません",
+            "add_hint": "このバリエーションに数量ベースの価格を追加",
+            "min_qty": "最小数量",
+            "max_qty": "最大数量",
+            "price": "価格 (₹)",
+            "unlimited": "無制限",
+            "save": "保存",
+            "cancel": "キャンセル",
+            "pieces": "個",
+            "save_product_first": "価格スラブを追加するには先に商品を保存してください",
+            "slab_added": "価格スラブが追加されました",
+            "slab_updated": "価格スラブが更新されました",
+            "slab_deleted": "価格スラブが削除されました",
+            "slab_error": "価格スラブの保存に失敗しました",
+            "confirm_delete": "この価格スラブを削除しますか？"
+        },
+        "shipping": {
+            "title": "配送寸法 (Shiprocket用)",
+            "optional": "任意",
+            "length": "長さ (cm)",
+            "breadth": "幅 (cm)",
+            "height": "高さ (cm)",
+            "weight": "重量 (kg)",
+            "hint": "Shiprocket設定のデフォルト寸法を使用する場合は空のままにしてください"
+        },
+        "images": {
+            "title": "バリエーション画像を追加",
+            "upload_hint": "画像をドロップまたはクリックしてアップロード",
+            "max_reached": "最大画像数に達しました",
+            "uploading": "アップロード中...",
+            "set_primary": "メインに設定",
+            "remove": "削除"
+        }
+    },
+    "shiprocket_settings": {
+        "title": "Shiprocket設定",
+        "description": "自動注文処理のためのShiprocket配送統合を設定",
+        "enable_title": "Shiprocket統合を有効にする",
+        "enable_desc": "支払い成功時に自動的に配送注文を作成",
+        "api_credentials": {
+            "title": "API認証情報",
+            "description": "ShiprocketAPIユーザー認証情報を入力",
+            "email": "APIメール",
+            "email_placeholder": "api-user@yourcompany.com",
+            "password": "APIパスワード",
+            "password_placeholder": "パスワードを入力"
+        },
+        "test_connection": "接続テスト",
+        "testing": "テスト中...",
+        "connection_success": "接続成功！API認証情報は有効です。",
+        "connection_failed": "接続失敗。認証情報を確認してください。",
+        "default_dimensions": {
+            "title": "デフォルト配送寸法",
+            "description": "商品バリエーションに配送情報がない場合のフォールバック寸法",
+            "length": "長さ (cm)",
+            "breadth": "幅 (cm)",
+            "height": "高さ (cm)",
+            "weight": "重量 (kg)",
+            "save_success": "寸法が正常に保存されました",
+            "info": "📦 このボタンは配送寸法のみを保存します（長さ、幅、高さ、重量）。例：長さ=15cm、幅=10cm、高さ=5cm、重量=0.3kgを設定 → 保存をクリック → これら4つの値のみ更新されます。配送料金は影響を受けません。"
+        },
+        "shipping_charges": {
+            "title": "配送料金",
+            "description": "標準配送料金と送料無料しきい値を設定",
+            "charge_label": "標準配送料金",
+            "threshold_label": "送料無料しきい値",
+            "threshold_hint": "この金額を超える注文は送料無料になります",
+            "save_success": "配送料金が正常に保存されました",
+            "info": "🚚 このボタンは配送料金のみを保存します。例：配送料金=¥500、送料無料しきい値=¥9999を設定 → 保存をクリック → これら2つの値のみ更新されます。寸法は影響を受けません。"
+        },
+        "pickup_addresses": {
+            "title": "集荷住所",
+            "description": "配送のための倉庫/集荷場所を設定",
+            "add_button": "住所を追加",
+            "no_addresses": "まだ集荷住所が設定されていません。",
+            "add_hint": "配送を開始するために倉庫住所を追加してください。",
+            "default_badge": "デフォルト",
+            "edit": "編集",
+            "delete": "削除"
+        },
+        "buttons": {
+            "save": "設定を保存",
+            "saving": "保存中..."
+        },
+        "messages": {
+            "save_success": "設定が正常に保存されました",
+            "save_error": "設定の保存に失敗しました",
+            "credentials_required": "最初にAPIメールとパスワードを入力してください",
+            "enabled": "Shiprocket統合が有効になりました",
+            "disabled": "Shiprocket統合が無効になりました"
+        }
+    }
+}
