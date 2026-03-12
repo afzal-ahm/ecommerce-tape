@@ -29,6 +29,16 @@ import { getImageUrl } from "@/lib/imageUrl";
 
 
 export default function CheckoutPage() {
+
+    const [requiresInvoice, setRequiresInvoice] = useState(false);
+
+    const [companyInfo, setCompanyInfo] = useState({
+        companyName: "",
+        companyAddress: "",
+        companyTaxCode: "",
+        companyEmail: "",
+    });
+
     const { isAuthenticated, user } = useAuth();
     const router = useRouter();
     const { cart, coupon, getCartTotals, clearCart } = useCart();
@@ -55,16 +65,16 @@ export default function CheckoutPage() {
 
     const totals = getCartTotals();
     const gst = totals.subtotal * 0.18;
-//     console.log("CHECKOUT TOTALS DEBUG", {             //DEBUGGER
-//   subtotal: totals.subtotal,
-//   shipping: totals.shipping,
-//   tax: totals.tax,
-//   discount: totals.discount,
-//   total: totals.total
-// });
+    //     console.log("CHECKOUT TOTALS DEBUG", {             //DEBUGGER
+    //   subtotal: totals.subtotal,
+    //   shipping: totals.shipping,
+    //   tax: totals.tax,
+    //   discount: totals.discount,
+    //   total: totals.total
+    // });
 
     // GST 18%
-   // console.log("GST VALUE", gst);   // DEBUGGER
+    // console.log("GST VALUE", gst);   // DEBUGGER
 
     // Redirect if not authenticated
     useEffect(() => {
@@ -267,14 +277,14 @@ export default function CheckoutPage() {
 
         try {
             // Get checkout amount
-          //  const calculatedAmount = totals.total;   uncomment this to remove the GST functionality 
+            //  const calculatedAmount = totals.total;   uncomment this to remove the GST functionality 
 
-          const calculatedAmount =
-    totals.subtotal +
-    gst +
-    totals.shipping +
-    (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
-    totals.discount;
+            const calculatedAmount =
+                totals.subtotal +
+                gst +
+                totals.shipping +
+                (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
+                totals.discount;
             // Fix: Keep 2 decimal places instead of rounding to preserve exact amount
             const amount = Math.max(parseFloat(calculatedAmount.toFixed(2)), 1);
 
@@ -924,6 +934,68 @@ export default function CheckoutPage() {
                             </div>
                         )}
                     </div>
+
+                    {/* Company Invoice */}
+                    <div className="bg-white rounded-lg shadow-sm border p-6">
+
+                        <h2 className="text-lg font-semibold mb-4">
+                            Requires company invoice (Please fill in your company information to receive the invoice)?
+                        </h2>
+
+                        <div className="flex items-center mb-4">
+                            <input
+                                type="checkbox"
+                                checked={requiresInvoice}
+                                onChange={(e) => setRequiresInvoice(e.target.checked)}
+                                className="h-4 w-4 text-primary border-gray-300"
+                            />
+
+                            <label className="ml-2 text-sm text-gray-700">
+                                Yes, I need a company invoice
+                            </label>
+                        </div>
+
+                        {requiresInvoice && (
+
+                            <div className="space-y-3">
+
+                                <input
+                                    type="text"
+                                    placeholder="Company name"
+                                    value={companyInfo.companyName}
+                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyName: e.target.value })}
+                                    className="w-full border rounded-md p-2"
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Company address"
+                                    value={companyInfo.companyAddress}
+                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyAddress: e.target.value })}
+                                    className="w-full border rounded-md p-2"
+                                />
+
+                                <input
+                                    type="text"
+                                    placeholder="Company tax code"
+                                    value={companyInfo.companyTaxCode}
+                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyTaxCode: e.target.value })}
+                                    className="w-full border rounded-md p-2"
+                                />
+
+                                <input
+                                    type="email"
+                                    placeholder="Company email"
+                                    value={companyInfo.companyEmail}
+                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyEmail: e.target.value })}
+                                    className="w-full border rounded-md p-2"
+                                />
+
+                            </div>
+
+                        )}
+
+                    </div>
                 </div>
 
                 {/* Order Summary */}
@@ -1040,19 +1112,19 @@ export default function CheckoutPage() {
                                     </div>
                                 )}
 
-                               <div className="flex justify-between">
-    <span className="text-gray-600">Shipping</span>
-    {totals.shipping > 0 ? (
-        <span className="font-medium">{formatCurrency(totals.shipping)}</span>
-    ) : (
-        <span className="text-green-600 font-medium">FREE</span>
-    )}
-</div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-600">Shipping</span>
+                                    {totals.shipping > 0 ? (
+                                        <span className="font-medium">{formatCurrency(totals.shipping)}</span>
+                                    ) : (
+                                        <span className="text-green-600 font-medium">FREE</span>
+                                    )}
+                                </div>
 
-<div className="flex justify-between">
-    <span className="text-gray-600">GST (18%)</span>
-    <span>{formatCurrency(gst)}</span>
-</div>
+                                <div className="flex justify-between">
+                                    <span className="text-gray-600">GST (18%)</span>
+                                    <span>{formatCurrency(gst)}</span>
+                                </div>
 
                                 {/* COD Charge */}
                                 {paymentMethod === "CASH" && paymentSettings.codCharge > 0 && (
@@ -1079,9 +1151,9 @@ export default function CheckoutPage() {
                                             {/* {formatCurrency(
                                                 totals.total + (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0)
                                             )}   uncomment this to remove the GST     */
-                                            formatCurrency(
- totals.total + gst + (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0)
-)
+                                                formatCurrency(
+                                                    totals.total + gst + (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0)
+                                                )
                                             }
                                         </span>
                                     </div>
@@ -1116,16 +1188,16 @@ export default function CheckoutPage() {
                                     // </span>   uncomment this to remove the GST functionality 
 
                                     <span className="flex items-center justify-center">
-    <IndianRupee className="mr-2 h-4 w-4" />
-    Place Order •{" "}
-   {formatCurrency(
-    totals.subtotal +
-    totals.shipping +
-    gst +
-    (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
-    totals.discount
-)}
-</span>
+                                        <IndianRupee className="mr-2 h-4 w-4" />
+                                        Place Order •{" "}
+                                        {formatCurrency(
+                                            totals.subtotal +
+                                            totals.shipping +
+                                            gst +
+                                            (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
+                                            totals.discount
+                                        )}
+                                    </span>
                                 )}
                             </Button>
 
