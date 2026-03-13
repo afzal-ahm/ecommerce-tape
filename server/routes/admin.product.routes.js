@@ -8,6 +8,7 @@ import {
   deleteProduct,
   uploadProductImage,
   deleteProductImage,
+  setProductImagePrimary,
   createProductVariant,
   updateProductVariant,
   deleteProductVariant,
@@ -85,6 +86,13 @@ router.delete(
   verifyAdminJWT,
   hasPermission("products", "update"),
   deleteProductImage
+);
+
+router.patch(
+  "/products/images/:imageId/set-primary",
+  verifyAdminJWT,
+  hasPermission("products", "update"),
+  setProductImagePrimary
 );
 
 // Product variant routes

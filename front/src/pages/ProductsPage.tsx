@@ -435,16 +435,30 @@ export function ProductForm({
   };
 
   // Set an image as primary
-  const setPrimaryImage = (index: number) => {
-    // Update image previews with the new primary image
-    setImagePreviews((prev) => {
-      const updated = prev.map((preview, i) => ({
-        ...preview,
-        isPrimary: i === index,
-      }));
-      return updated;
-    });
-  };
+ const setPrimaryImage = async (index: number) => {
+
+  const image = imagePreviews[index];
+
+  // UI update
+  setImagePreviews((prev) =>
+    prev.map((preview, i) => ({
+      ...preview,
+      isPrimary: i === index,
+    }))
+  );
+
+  // agar image already server par hai
+  if (image.id) {
+    try {
+      await api.patch(`/api/admin/products/images/${image.id}/set-primary`);
+
+      toast.success("Primary image updated");
+    } catch (error) {
+      toast.error("Failed to update primary image");
+      console.error(error);
+    }
+  }
+};
 
 
   // Fetch brands for selection

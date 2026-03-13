@@ -2299,13 +2299,55 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
         }
       }
 
+      
+
+      // Handle primary selection for existing images
+      if (req.body.primaryImageId) {
+
+        console.log("Setting primary image:", req.body.primaryImageId);
+
+        // Remove primary from all images
+        await prisma.productImage.updateMany({
+          where: {
+            productId: productId
+          },
+          data: {
+            isPrimary: false
+          }
+        });
+
+        // Set selected image as primary
+        await prisma.productImage.update({
+          where: {
+            id: req.body.primaryImageId
+          },
+          data: {
+            isPrimary: true
+          }
+        });
+
+      }
 
       // Handle image uploads if provided
       if (req.files && req.files.length > 0) {
-        const primaryImageIndex = req.body.primaryImageIndex
-          ? parseInt(req.body.primaryImageIndex)
-          : 0;
+        let primaryImageIndex = 0;
 
+        if (req.body.primaryImageIndex !== undefined) {
+          primaryImageIndex = parseInt(req.body.primaryImageIndex);
+        }
+
+        // FIX: remove old primary image
+        if (req.body.primaryImageIndex !== undefined) {
+          await prisma.productImage.updateMany({
+            where: {
+              productId: productId,
+              isPrimary: true
+            },
+            data: {
+              isPrimary: false
+            }
+          });
+        }
         // If replacing all images, delete existing ones first
         if (req.body.replaceAllImages === "true") {
           try {
@@ -4312,4 +4354,30 @@ export const setVariantImageAsPrimary = asyncHandler(async (req, res, next) => {
       `Failed to set variant image as primary: ${error.message}`
     );
   }
+});
+
+export const setProductImagePrimary = asyncHandler(async (req, res) => {
+  const { imageId } = req.params;
+
+  const image = await prisma.productImage.findUnique({
+    where: { id: imageId }
+  });
+
+  if (!image) {
+    throw new ApiError(404, "Product image not found");
+  }
+
+  await prisma.productImage.updateMany({
+    where: { productId: image.productId },
+    data: { isPrimary: false }
+  });
+
+  await prisma.productImage.update({
+    where: { id: imageId },
+    data: { isPrimary: true }
+  });
+
+  res.status(200).json(
+    new ApiResponsive(200, null, "Primary image updated")
+  );
 });
