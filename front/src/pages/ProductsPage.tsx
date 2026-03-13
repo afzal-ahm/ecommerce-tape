@@ -358,20 +358,22 @@ export function ProductForm({
 
     // Create local previews for the UI
     const newPreviews = validFiles.map((file) => ({
-      url: URL.createObjectURL(file),
-      isPrimary: false,
-    }));
+  url: URL.createObjectURL(file),
+  isPrimary: false,
+}));
 
-    setImageFiles((prev) => {
-      // Set first image as primary if there are no existing images
-      if (prev.length === 0 && newPreviews.length > 0) {
-        newPreviews[0].isPrimary = true;
-      }
+setImagePreviews((prev) => {
 
-      return [...prev, ...validFiles];
-    });
+  const hasPrimary = prev.some(img => img.isPrimary);
 
-    setImagePreviews((prev) => [...prev, ...newPreviews]);
+  if (!hasPrimary && prev.length === 0 && newPreviews.length > 0) {
+    newPreviews[0].isPrimary = true;
+  }
+
+  return [...prev, ...newPreviews];
+});
+
+setImageFiles((prev) => [...prev, ...validFiles]);
 
     toast.success(`${validFiles.length} image(s) added successfully`);
   }, []);
