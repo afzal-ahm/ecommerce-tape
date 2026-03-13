@@ -124,7 +124,7 @@ export const updateVariantGroup = asyncHandler(async (req, res) => {
                     items: {
                         create: products.map((item, index) => ({
                             productId: item.productId,
-                            label: item.label,
+                            label: item.label?.match(/\d+\s*Rolls?/i)?.[0] || item.label,
                             value: item.value,
                             order: item.order || index,
                             isDefault: item.isDefault || false,

@@ -1161,8 +1161,12 @@ export const createProduct = asyncHandler(async (req, res, next) => {
 // Update a product
 export const updateProduct = asyncHandler(async (req, res, next) => {
   const { productId } = req.params;
+  console.log("REQ BODY VARIANT GROUP:", req.body.variantGroup);
+  console.log("REQ BODY:", JSON.stringify(req.body, null, 2));
+
   console.log(`[DEBUG] updateProduct called for ID: ${productId}`);
   console.log(`[DEBUG] Body Keys: ${Object.keys(req.body).join(", ")}`);
+  console.log("Incoming Body Data:", req.body);
 
   const {
     name,
@@ -1306,7 +1310,10 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
   // Update the product with transaction to handle variants and images
   try {
     const result = await prisma.$transaction(async (prisma) => {
-      const hasVariantsValue = hasVariants === "true" || hasVariants === true;
+      const hasVariantsValue = product.hasVariants;
+
+      console.log("variantsJson:", variantsJson);
+      console.log("hasVariantsValue:", hasVariantsValue);
       // Update product basic info
       const updatedProduct = await prisma.product.update({
         where: { id: productId },
@@ -1392,7 +1399,7 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
       const baseSku = `${namePart}${categoryPart}${timestamp}`;
 
       // Handle variants update if provided
-      if (variantsJson) {
+      if (variantsJson && variantsJson !== "" && variantsJson !== "null") {
         let variants = [];
         try {
           variants = JSON.parse(variantsJson);
@@ -1937,13 +1944,7 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
             }
           }
         }
-      } else if (
-        hasVariants === "false" ||
-        hasVariants === false ||
-        hasVariants === null ||
-        hasVariants === "null" ||
-        hasVariants === undefined
-      ) {
+      } else if (!hasVariantsValue && !variantsJson && product.variants.length === 0) {
         // If switching to non-variant mode, handle simple product price and quantity
         // If no variants exist, create a default one, otherwise update the first one
         console.log(
