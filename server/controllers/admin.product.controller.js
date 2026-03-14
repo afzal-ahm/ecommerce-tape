@@ -2299,7 +2299,7 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
         }
       }
 
-      
+
 
       // Handle primary selection for existing images
       if (req.body.primaryImageId) {
@@ -2368,7 +2368,20 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
           }
         }
 
+
         // Upload new images
+        const maxOrderImage = await prisma.productImage.findFirst({
+          where: { productId },
+          orderBy: { order: "desc" },
+          select: { order: true }
+        });
+
+        let nextOrder = (maxOrderImage?.order || -1) + 1;
+
+        const existingImagesCount = await prisma.productImage.count({
+          where: { productId }
+        });
+
         for (let i = 0; i < req.files.length; i++) {
           const file = req.files[i];
           const imageUrl = await processAndUploadImage(
@@ -2381,10 +2394,33 @@ export const updateProduct = asyncHandler(async (req, res, next) => {
               productId,
               url: imageUrl,
               alt: `${updatedProduct.name} - Image ${i + 1}`,
-              isPrimary: i === primaryImageIndex,
-              order: i,
+              isPrimary: (existingImagesCount + i) === primaryImageIndex,
+              order: nextOrder + i,
             },
           });
+        }
+
+        const hasPrimary = await prisma.productImage.findFirst({
+          where: {
+            productId,
+            isPrimary: true
+          }
+        });
+
+        if (!hasPrimary) {
+
+          const firstImage = await prisma.productImage.findFirst({
+            where: { productId },
+            orderBy: { order: "asc" }
+          });
+
+          if (firstImage) {
+            await prisma.productImage.update({
+              where: { id: firstImage.id },
+              data: { isPrimary: true }
+            });
+          }
+
         }
       } else if (req.file) {
         try {
