@@ -29,7 +29,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Image as ImageIcon,
-  Star,
   X,
   MoreVertical,
   Info,
@@ -133,8 +132,8 @@ export function ProductForm({
     redirectUrl: "",
   });
 
-  const [imageFiles, setImageFiles] = useState<File[]>([]);
   const [imagePreviews, setImagePreviews] = useState<ImagePreview[]>([]);
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
 
   // State for variants
   const [variants, setVariants] = useState<any[]>([]);
@@ -322,61 +321,96 @@ export function ProductForm({
     url: string;
     id?: string;
     isPrimary?: boolean;
+    order?: number;
+    file?: File; // only used in create mode
   }
 
   // Handle image drop for upload
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    console.log(
-      `📸 Files dropped/selected: ${acceptedFiles.length}`,
-      acceptedFiles
-    );
-
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
     if (acceptedFiles.length === 0) {
       toast.error("No valid files selected");
       return;
     }
 
-    // Validate files
     const validFiles = acceptedFiles.filter((file) => {
       const isValidType = file.type.startsWith("image/");
-      const isValidSize = file.size <= 10 * 1024 * 1024; // 10MB
-
-      if (!isValidType) {
-        toast.error(`${file.name} is not a valid image file`);
-        return false;
-      }
-      if (!isValidSize) {
-        toast.error(`${file.name} is too large. Maximum size is 10MB`);
-        return false;
-      }
+      const isValidSize = file.size <= 10 * 1024 * 1024;
+      if (!isValidType) { toast.error(`${file.name} is not a valid image file`); return false; }
+      if (!isValidSize) { toast.error(`${file.name} is too large. Maximum size is 10MB`); return false; }
       return true;
     });
 
-    if (validFiles.length === 0) {
+    if (validFiles.length === 0) return;
+
+    // In create mode — just show local previews, upload happens on form submit
+    if (mode === "create" || !productId) {
+      const newPreviews = validFiles.map((file) => ({
+        url: URL.createObjectURL(file),
+        isPrimary: false,
+        file, // store file reference for submit
+      }));
+      setImagePreviews((prev) => {
+        const updated = [...prev, ...newPreviews];
+        return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+      });
+      toast.success(`${validFiles.length} image(s) added`);
       return;
     }
 
-    // Create local previews for the UI
-    const newPreviews = validFiles.map((file) => ({
-  url: URL.createObjectURL(file),
-  isPrimary: false,
-}));
+    // In edit mode — upload immediately so image gets a real id
+    setIsUploadingImage(true);
+    let uploadedCount = 0;
 
-setImagePreviews((prev) => {
+    for (const file of validFiles) {
+      try {
+        const formData = new FormData();
+        formData.append("image", file);
+        // First image overall should be primary only if no images exist yet
+        const shouldBePrimary = imagePreviews.length === 0 && uploadedCount === 0;
+        formData.append("isPrimary", String(shouldBePrimary));
 
-  const hasPrimary = prev.some(img => img.isPrimary);
+        const response = await api.post(
+          `/api/admin/products/${productId}/images`,
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
 
-  if (!hasPrimary && prev.length === 0 && newPreviews.length > 0) {
-    newPreviews[0].isPrimary = true;
-  }
+        if (response.data.success) {
+          const newImage = response.data.data.image;
+          setImagePreviews((prev) => {
+            const updated = [...prev, {
+              url: newImage.url,
+              id: newImage.id,
+              isPrimary: newImage.isPrimary,
+            }];
+            return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+          });
+          uploadedCount++;
+        }
+      } catch (err) {
+        console.error("Failed to upload image:", err);
+        toast.error(`Failed to upload ${file.name}`);
+      }
+    }
 
-  return [...prev, ...newPreviews];
-});
-
-setImageFiles((prev) => [...prev, ...validFiles]);
-
-    toast.success(`${validFiles.length} image(s) added successfully`);
-  }, []);
+    setIsUploadingImage(false);
+    if (uploadedCount > 0) {
+      toast.success(`${uploadedCount} image(s) uploaded successfully`);
+      // After all uploads, sync order and primary with server
+      setImagePreviews((current) => {
+        const existingImages = current.filter((img) => img.id);
+        if (existingImages.length > 0) {
+          const imageOrders = existingImages.map((img) => ({
+            imageId: img.id!,
+            order: current.indexOf(img),
+          }));
+          api.put(`/api/admin/products/${productId}/images/reorder`, { imageOrders })
+            .catch((err) => console.error("Failed to sync image order after upload:", err));
+        }
+        return current;
+      });
+    }
+  }, [mode, productId, imagePreviews]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -402,11 +436,15 @@ setImageFiles((prev) => [...prev, ...validFiles]);
     const imageToRemove = imagePreviews[index];
 
     if (imageToRemove.id) {
-      // Check if this is the only image
+      // Block deleting the only image
       if (imagePreviews.length === 1) {
-        toast.error(
-          "Cannot delete the only image. Products must have at least one image."
-        );
+        toast.error("Cannot delete the only image. Products must have at least one image.");
+        return;
+      }
+
+      // Block deleting the primary image
+      if (imageToRemove.isPrimary) {
+        toast.error("Cannot delete the primary image. Set another image as primary first.");
         return;
       }
 
@@ -426,41 +464,48 @@ setImageFiles((prev) => [...prev, ...validFiles]);
           }
         });
     } else {
-      // This is a local preview only
+      // Block deleting primary local image
+      if (index === 0 && imagePreviews.length > 1) {
+        toast.error("Cannot delete the primary image. Reorder first to change primary.");
+        return;
+      }
       // Revoke the object URL to avoid memory leaks
       URL.revokeObjectURL(imagePreviews[index].url);
-
-      // Remove from both arrays
-      setImagePreviews((prev) => prev.filter((_, i) => i !== index));
-      setImageFiles((prev) => prev.filter((_, i) => i !== index));
+      setImagePreviews((prev) => {
+        const updated = prev.filter((_, i) => i !== index);
+        return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+      });
     }
   };
 
   // Set an image as primary
- const setPrimaryImage = async (index: number) => {
+  // Fix: set primary AND move it to position 0 in state
+  // Set an image as primary — always moves it to position 0
 
-  const image = imagePreviews[index];
 
-  // UI update
-  setImagePreviews((prev) =>
-    prev.map((preview, i) => ({
-      ...preview,
-      isPrimary: i === index,
-    }))
-  );
+  // Move image left (swap with the one before it)
+  const moveImageLeft = (index: number) => {
+    if (index === 0) return;
+    setImagePreviews((prev) => {
+      const updated = [...prev];
+      [updated[index - 1], updated[index]] = [updated[index], updated[index - 1]];
+      return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+    });
+  };
 
-  // agar image already server par hai
-  if (image.id) {
-    try {
-      await api.patch(`/api/admin/products/images/${image.id}/set-primary`);
+  // Move image right (swap with the one after it)
+  const moveImageRight = (index: number) => {
+    setImagePreviews((prev) => {
+      if (index >= prev.length - 1) return prev;
+      const updated = [...prev];
+      [updated[index], updated[index + 1]] = [updated[index + 1], updated[index]];
+      return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+    });
+  };
 
-      toast.success("Primary image updated");
-    } catch (error) {
-      toast.error("Failed to update primary image");
-      console.error(error);
-    }
-  }
-};
+  // Preview modal state
+  const [previewImageUrl, setPreviewImageUrl] = useState<string | null>(null);
+
 
 
   // Fetch brands for selection
@@ -953,40 +998,34 @@ setImageFiles((prev) => [...prev, ...validFiles]);
 
         formData.append("variants", JSON.stringify(processedVariants));
       }
-
-      // Add images (only for non-variant products)
-      if (!hasVariants && imageFiles.length > 0) {
-        console.log(
-          `📸 Submitting ${imageFiles.length} images for simple product:`,
-          imageFiles
-        );
-
-        // Add primary image index
-        const primaryIndex = imagePreviews.findIndex(
-          (img) => img.isPrimary === true
-        );
-        if (primaryIndex >= 0) {
-          formData.append("primaryImageIndex", String(primaryIndex));
-          console.log(`📸 Primary image index: ${primaryIndex}`);
-        } else {
-          // Default to first image as primary if none is marked
-          formData.append("primaryImageIndex", "0");
-          console.log(`📸 Default primary image index: 0`);
+      // Save image order for existing images in edit mode
+      // Save image order — works for both existing and newly uploaded images in edit mode
+      if (mode === "edit" && productId) {
+        const existingImages = imagePreviews.filter((img) => img.id);
+        if (existingImages.length > 0) {
+          const imageOrders = existingImages.map((img) => ({
+            imageId: img.id!,
+            order: imagePreviews.indexOf(img),
+          }));
+          try {
+            await api.put(`/api/admin/products/${productId}/images/reorder`, { imageOrders });
+          } catch (err) {
+            console.error("Failed to save image order:", err);
+            toast.error("Product saved but image order failed to update");
+          }
         }
+      }
 
-        // Append each image file with proper field name for multer
-        imageFiles.forEach((file, index) => {
-          formData.append("images", file);
-          console.log(
-            `📸 Added image ${index + 1}: ${file.name} (${file.size} bytes)`
-          );
-        });
-
-        // Also log the FormData contents
-        console.log(
-          `📸 FormData contents:`,
-          Object.fromEntries(formData.entries())
-        );
+      // In CREATE mode only — upload the local file previews now
+      if (mode === "create" && !hasVariants) {
+        const fileImages = imagePreviews.filter((img) => img.file);
+        if (fileImages.length > 0) {
+          fileImages.forEach((img) => {
+            formData.append("images", img.file!);
+          });
+          // First image is always primary
+          formData.append("primaryImageIndex", "0");
+        }
       } else if (hasVariants) {
         console.log(
           `📸 Skipping product images for variant product - will use variant-specific images`
@@ -1943,12 +1982,17 @@ setImageFiles((prev) => [...prev, ...validFiles]);
                   </div>
                   <div
                     {...getRootProps()}
-                    className={`border-2 border-dashed rounded-md p-8 cursor-pointer transition-colors text-center bg-white ${isDragActive
-                      ? "border-blue-400 bg-blue-50"
-                      : "border-gray-300 hover:border-gray-400 hover:bg-gray-50"
+                    className={`border-2 border-dashed rounded-md p-8 cursor-pointer transition-colors text-center bg-white ${isUploadingImage ? "border-blue-400 bg-blue-50 cursor-wait" :
+                      isDragActive ? "border-blue-400 bg-blue-50" : "border-gray-300 hover:border-gray-400 hover:bg-gray-50"
                       }`}
                   >
                     <input {...getInputProps()} />
+                    {isUploadingImage && (
+                      <div className="flex items-center justify-center gap-2 text-blue-600">
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                        <span className="text-sm font-medium">Uploading images...</span>
+                      </div>
+                    )}
                     <ImageIcon className="h-10 w-10 mx-auto mb-2 text-muted-foreground" />
                     {isDragActive ? (
                       <p className="text-blue-600 font-medium">
@@ -1977,7 +2021,6 @@ setImageFiles((prev) => [...prev, ...validFiles]);
                         if (e.target.files) {
                           const files = Array.from(e.target.files);
                           onDrop(files);
-                          // Clear the input so the same file can be selected again
                           e.target.value = "";
                         }
                       }}
@@ -1992,57 +2035,143 @@ setImageFiles((prev) => [...prev, ...validFiles]);
                 </div>
 
                 {/* Image previews */}
+                {/* Image previews */}
                 {imagePreviews.length > 0 && (
                   <div className="mt-4">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-2">
                       <Label>{t("products.form.sections.product_images")}</Label>
                       <Badge variant="outline" className="text-xs">
-                        {imagePreviews.length} {t("products.form.media.image")}
-                        {imagePreviews.length !== 1 ? "s" : ""}
+                        {imagePreviews.length} image{imagePreviews.length !== 1 ? "s" : ""}
                       </Badge>
                     </div>
+                    <p className="text-xs text-muted-foreground mb-3">
+                      💡 Drag to reorder or use ← → buttons. The first image is always the primary image.
+                    </p>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                       {imagePreviews.map((preview, index) => (
-                        <div key={index} className="relative group">
+                        <div
+                          key={preview.id || preview.url}
+                          className="relative group flex flex-col gap-1"
+                          draggable
+                          onDragStart={(e) => {
+                            e.dataTransfer.setData("dragIndex", String(index));
+                          }}
+                          onDragOver={(e) => e.preventDefault()}
+                          onDrop={(e) => {
+                            const fromIndex = Number(e.dataTransfer.getData("dragIndex"));
+                            if (fromIndex === index) return;
+
+                            setImagePreviews((prev) => {
+                              const updated = [...prev];
+                              const [moved] = updated.splice(fromIndex, 1);
+                              updated.splice(index, 0, moved);
+                              return updated.map((img, i) => ({ ...img, isPrimary: i === 0 }));
+                            });
+
+                            // Keep imageFiles in sync for new images
+                          }}
+                        >
+                          {/* Image box */}
                           <div
-                            className={`relative h-32 rounded-md overflow-hidden border-2 ${preview.isPrimary ? "border-primary" : "border-transparent"}`}
+                            className={`relative h-32 rounded-md overflow-hidden border-2 cursor-grab active:cursor-grabbing select-none
+              ${index === 0 ? "border-primary" : "border-gray-200"}`}
                           >
                             <img
                               src={preview.url}
-                              alt={`Product preview ${index + 1}`}
-                              className="h-full w-full object-cover"
+                              alt={`Product image ${index + 1}`}
+                              className="h-full w-full object-cover pointer-events-none"
                             />
-                            {preview.isPrimary && (
-                              <span className="absolute top-2 left-2 bg-primary text-white text-xs py-1 px-2 rounded-full">
-                                {t("products.form.media.primary_image")}
+                            {index === 0 && (
+                              <span className="absolute top-1 left-1 bg-primary text-white text-[10px] font-semibold py-0.5 px-2 rounded-full">
+                                Primary
                               </span>
                             )}
                           </div>
-                          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex space-x-1">
-                            {!preview.isPrimary && (
-                              <Button
-                                type="button"
-                                variant="outline"
-                                size="icon"
-                                className="h-7 w-7 bg-white hover:bg-primary hover:text-white"
-                                onClick={() => setPrimaryImage(index)}
-                              >
-                                <Star className="h-4 w-4" />
-                              </Button>
-                            )}
+
+                          {/* Action buttons below image */}
+                          <div className="flex justify-between items-center gap-1">
+                            {/* Move Left */}
                             <Button
                               type="button"
                               variant="outline"
                               size="icon"
-                              className="h-7 w-7 bg-white hover:bg-destructive hover:text-white"
-                              onClick={() => removeImage(index)}
+                              className="h-7 w-7 flex-1"
+                              disabled={index === 0}
+                              onClick={() => moveImageLeft(index)}
+                              title="Move left"
                             >
-                              <Trash2 className="h-4 w-4" />
+                              <ChevronLeft className="h-3 w-3" />
+                            </Button>
+
+                            {/* Preview */}
+                            <Button
+                              type="button"
+                              variant="outline"
+                              size="icon"
+                              className="h-7 w-7 flex-1"
+                              onClick={() => setPreviewImageUrl(preview.url)}
+                              title="Preview"
+                            >
+                              <ImageIcon className="h-3 w-3" />
+                            </Button>
+
+                            {/* Delete */}
+                            <Button
+                              type="button"
+                              variant="outline"
+                              size="icon"
+                              className="h-7 w-7 flex-1 hover:bg-destructive hover:text-white"
+                              onClick={() => removeImage(index)}
+                              title={index === 0 ? "Cannot delete primary image" : "Delete"}
+                              disabled={index === 0}
+                            >
+                              <Trash2 className="h-3 w-3" />
+                            </Button>
+
+                            {/* Move Right */}
+                            <Button
+                              type="button"
+                              variant="outline"
+                              size="icon"
+                              className="h-7 w-7 flex-1"
+                              disabled={index === imagePreviews.length - 1}
+                              onClick={() => moveImageRight(index)}
+                              title="Move right"
+                            >
+                              <ChevronRight className="h-3 w-3" />
                             </Button>
                           </div>
                         </div>
                       ))}
                     </div>
+
+                    {/* Preview Modal */}
+                    {previewImageUrl && (
+                      <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/75"
+                        onClick={() => setPreviewImageUrl(null)}
+                      >
+                        <div
+                          className="relative max-w-3xl max-h-[90vh] p-2"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <img
+                            src={previewImageUrl}
+                            alt="Full preview"
+                            className="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl"
+                          />
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="icon"
+                            className="absolute -top-3 -right-3 bg-white rounded-full shadow"
+                            onClick={() => setPreviewImageUrl(null)}
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
