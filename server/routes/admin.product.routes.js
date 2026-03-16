@@ -9,6 +9,7 @@ import {
   uploadProductImage,
   deleteProductImage,
   setProductImagePrimary,
+  reorderProductImages,          
   createProductVariant,
   updateProductVariant,
   deleteProductVariant,
@@ -93,6 +94,13 @@ router.patch(
   verifyAdminJWT,
   hasPermission("products", "update"),
   setProductImagePrimary
+);
+
+router.put(
+  "/products/:productId/images/reorder",
+  verifyAdminJWT,
+  hasPermission("products", "update"),
+  reorderProductImages
 );
 
 // Product variant routes

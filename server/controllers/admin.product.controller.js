@@ -4403,17 +4403,69 @@ export const setProductImagePrimary = asyncHandler(async (req, res) => {
     throw new ApiError(404, "Product image not found");
   }
 
-  await prisma.productImage.updateMany({
-    where: { productId: image.productId },
-    data: { isPrimary: false }
+  if (image.isPrimary) {
+    return res.status(200).json(new ApiResponsive(200, {}, "Image is already primary"));
+  }
+
+  await prisma.$transaction(async (tx) => {
+    const currentOrder = image.order;
+    const productId = image.productId;
+
+    // Step 1: Remove primary flag from all images of this product
+    await tx.productImage.updateMany({
+      where: { productId, isPrimary: true },
+      data: { isPrimary: false }
+    });
+
+    // Step 2: If image is not already at order 0, shift others and move it to front
+    if (currentOrder !== 0) {
+      await tx.productImage.updateMany({
+        where: { productId, order: { lt: currentOrder } },
+        data: { order: { increment: 1 } }
+      });
+    }
+
+    // Step 3: Set this image as primary at order 0
+    await tx.productImage.update({
+      where: { id: imageId },
+      data: { isPrimary: true, order: 0 }
+    });
   });
 
-  await prisma.productImage.update({
-    where: { id: imageId },
-    data: { isPrimary: true }
+  res.status(200).json(new ApiResponsive(200, null, "Primary image updated"));
+});
+
+
+export const reorderProductImages = asyncHandler(async (req, res) => {
+  const { productId } = req.params;
+  const { imageOrders } = req.body; // Array of { imageId, order }
+
+  if (!imageOrders || !Array.isArray(imageOrders)) {
+    throw new ApiError(400, "imageOrders array is required");
+  }
+
+  // Verify all images belong to this product
+  const imageIds = imageOrders.map((item) => item.imageId);
+  const images = await prisma.productImage.findMany({
+    where: { id: { in: imageIds }, productId }
   });
 
-  res.status(200).json(
-    new ApiResponsive(200, null, "Primary image updated")
-  );
+  if (images.length !== imageIds.length) {
+    throw new ApiError(400, "Some images do not belong to this product");
+  }
+
+  await prisma.$transaction(async (tx) => {
+    for (const { imageId, order } of imageOrders) {
+      await tx.productImage.update({
+        where: { id: imageId },
+        data: {
+          order,
+          // First image (order 0) is always primary
+          isPrimary: order === 0
+        }
+      });
+    }
+  });
+
+  res.status(200).json(new ApiResponsive(200, {}, "Product images reordered successfully"));
 });
