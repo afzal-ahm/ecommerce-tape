@@ -247,6 +247,7 @@ export default function CartPage() {
     const [couponCode, setCouponCode] = useState("");
     const [couponError, setCouponError] = useState("");
     const router = useRouter();
+    const [paymentMethod] = useState("CASH");
 
     // Use useCallback to memoize handlers
     const handleQuantityChange = useCallback(
@@ -672,7 +673,7 @@ export default function CartPage() {
                                     </div>
                                 )}
 
-                                <div className="flex justify-between items-center py-1">
+                                {/* <div className="flex justify-between items-center py-1">
                                     <span className="text-gray-600 font-medium">Shipping</span>
                                     {totals.shipping > 0 ? (
                                         <span className="text-gray-900 font-bold">
@@ -696,17 +697,12 @@ export default function CartPage() {
                                             FREE
                                         </span>
                                     )}
-                                </div>
+                                </div> */}
 
                                 {/* Free shipping progress message */}
-                                {totals.shipping > 0 && cart.freeShippingThreshold > 0 && (
-                                    <div className="mt-2 text-sm text-amber-700 bg-amber-50 p-3 rounded-lg text-center font-medium border border-amber-200 flex items-center justify-center gap-2">
-                                        <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        <span>
-                                            Add <strong>{formatCurrency(cart.freeShippingThreshold - totals.subtotal)}</strong> more for <span className="text-green-600 font-bold">FREE shipping!</span>
-                                        </span>
+                                {paymentMethod === "CASH" && (
+                                    <div className="mt-3 text-xs text-amber-700 bg-amber-50 p-2 rounded text-center font-medium border border-amber-200">
+                                         <strong className="text-green-600 font-bold">Pay Online</strong> to avoid <span className="text-red-600 font-bold">COD Charges!</span>
                                     </div>
                                 )}
 
@@ -718,7 +714,7 @@ export default function CartPage() {
                                     {!isAuthenticated && hidePricesForGuests ? (
                                         <Link href="/auth?redirect=cart" className="text-amber-600 hover:underline"> Login to view</Link>
                                     ) : (
-                                        formatCurrency(totals.total)
+                                        formatCurrency(totals.subtotal - totals.discount)
                                     )}
                                 </span>
                             </div>
@@ -738,7 +734,7 @@ export default function CartPage() {
                                         <ShoppingBag className="h-5 w-5" />
                                         Proceed to Checkout
                                         <span className="ml-2 font-bold">
-                                            • {formatCurrency(totals.total)}
+                                            • {formatCurrency(totals.subtotal - totals.discount)}
                                         </span>
                                     </>
                                 )}
@@ -759,7 +755,7 @@ export default function CartPage() {
                                     d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                                 />
                             </svg>
-                            <p>Taxes and shipping calculated at checkout</p>
+                            <p>Taxes and Charges calculated at checkout</p>
                         </div>
                     </div>
                 </div>

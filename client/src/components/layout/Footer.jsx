@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Truck, Shield, CreditCard, RotateCcw } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, ShieldCheck, Shield, CreditCard, RotateCcw } from "lucide-react";
 
 const shopLinks = [
   { name: "All Products", href: "/products" },
@@ -32,7 +32,7 @@ const socialLinks = [
 ];
 
 const trustFeatures = [
-  { icon: Truck, title: "Free Shipping", desc: "On orders ₹999+" },
+  { icon: ShieldCheck, title: "Better Pricing", desc: "with Online Payment" },
   { icon: Shield, title: "100% Genuine", desc: "Authentic products" },
   { icon: RotateCcw, title: "Easy Returns", desc: "30-day returns" },
   { icon: CreditCard, title: "Secure Pay", desc: "SSL encrypted" },

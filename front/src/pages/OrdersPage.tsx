@@ -408,7 +408,7 @@ export default function OrdersPage() {
                       ) : null}
                       {order.shippingCost && parseFloat(order.shippingCost) > 0 ? (
                         <p className="text-xs text-[#6B7280] mt-1">
-                          Shipping: {formatCurrency(parseFloat(order.shippingCost))}
+                          COD Charge: {formatCurrency(parseFloat(order.shippingCost))}
                         </p>
                       ) : null}
                       {order.couponCode ? (

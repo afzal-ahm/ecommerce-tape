@@ -68,6 +68,16 @@ export default function CheckoutPage() {
 
     const totals = getCartTotals();
     const gst = totals.subtotal * 0.18;
+
+    // COD slab shipping — based on subtotal after discount
+    const getCodShippingCharge = (subtotalAfterDiscount) => {
+        if (subtotalAfterDiscount <= 599) return 50;
+        if (subtotalAfterDiscount <= 1000) return 80;
+        if (subtotalAfterDiscount <= 2000) return 130;
+        return 200;
+    };
+    const subtotalAfterDiscount = totals.subtotal - (totals.discount || 0);
+    const codShippingCharge = getCodShippingCharge(subtotalAfterDiscount);
     //     console.log("CHECKOUT TOTALS DEBUG", {             //DEBUGGER
     //   subtotal: totals.subtotal,
     //   shipping: totals.shipping,
@@ -321,7 +331,7 @@ export default function CheckoutPage() {
             const calculatedAmount =
                 totals.subtotal +
                 gst +
-                totals.shipping +
+                (paymentMethod === "CASH" ? codShippingCharge : 0) +
                 (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
                 totals.discount;
             // Fix: Keep 2 decimal places instead of rounding to preserve exact amount
@@ -1220,34 +1230,30 @@ export default function CheckoutPage() {
                                     </div>
                                 )}
 
-                                <div className="flex justify-between">
-                                    <span className="text-gray-600">Shipping</span>
-                                    {totals.shipping > 0 ? (
-                                        <span className="font-medium">{formatCurrency(totals.shipping)}</span>
-                                    ) : (
-                                        <span className="text-green-600 font-medium">FREE</span>
-                                    )}
-                                </div>
+                                {/* COD charges row — only visible for COD */}
+                                {paymentMethod === "CASH" && (
+                                    <div className="flex justify-between">
+                                        <span className="text-gray-600">COD Charges</span>
+                                        <span className="font-medium">
+                                            {formatCurrency(codShippingCharge + (paymentSettings.codCharge || 0))}
+                                        </span>
+                                    </div>
+                                )}
 
                                 <div className="flex justify-between">
                                     <span className="text-gray-600">GST (18%)</span>
                                     <span>{formatCurrency(gst)}</span>
                                 </div>
 
-                                {/* COD Charge */}
-                                {paymentMethod === "CASH" && paymentSettings.codCharge > 0 && (
-                                    <div className="flex justify-between text-gray-600">
-                                        <span>COD Surcharge</span>
-                                        <span className="font-medium">{formatCurrency(paymentSettings.codCharge)}</span>
-                                    </div>
-                                )}
-
-                                {/* Tax removed */}
-
-                                {/* Free shipping progress message */}
-                                {totals.shipping > 0 && cart.freeShippingThreshold > 0 && (
+                                {/* Free shipping progress — only for COD */}
+                                {/* {paymentMethod === "CASH" && totals.shipping > 0 && cart.freeShippingThreshold > 0 && (
                                     <div className="mt-3 text-xs text-amber-700 bg-amber-50 p-2 rounded text-center font-medium border border-amber-200">
                                         Add <strong>{formatCurrency(cart.freeShippingThreshold - totals.subtotal)}</strong> more for <span className="text-green-600 font-bold">FREE shipping!</span>
+                                    </div>
+                                )} */}
+                                {paymentMethod === "CASH" && (
+                                    <div className="mt-3 text-xs text-amber-700 bg-amber-50 p-2 rounded text-center font-medium border border-amber-200">
+                                         <strong className="text-green-600 font-bold">Pay Online</strong> to avoid <span className="text-red-600 font-bold">COD Charges!</span>
                                     </div>
                                 )}
 
@@ -1260,7 +1266,11 @@ export default function CheckoutPage() {
                                                 totals.total + (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0)
                                             )}   uncomment this to remove the GST     */
                                                 formatCurrency(
-                                                    totals.total + gst + (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0)
+                                                    totals.subtotal +
+                                                    (paymentMethod === "CASH" ? codShippingCharge : 0) +
+                                                    gst +
+                                                    (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
+                                                    totals.discount
                                                 )
                                             }
                                         </span>
@@ -1300,7 +1310,7 @@ export default function CheckoutPage() {
                                         Place Order •{" "}
                                         {formatCurrency(
                                             totals.subtotal +
-                                            totals.shipping +
+                                            (paymentMethod === "CASH" ? codShippingCharge : 0) +
                                             gst +
                                             (paymentMethod === "CASH" ? (paymentSettings.codCharge || 0) : 0) -
                                             totals.discount

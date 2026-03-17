@@ -14,7 +14,7 @@ import {
   ChevronDown,
   Phone,
   Shield,
-  Truck,
+  ShieldCheck,
   LogOut,
   MapPin,
   Package as PackageIcon,
@@ -152,7 +152,7 @@ export function Navbar() {
         <div className="bg-[#1A1A1A] text-white text-[11px] font-medium py-2 px-4 hidden lg:block tracking-wide">
           <div className="section-container flex justify-between items-center">
             <div className="flex items-center gap-6">
-              <span className="flex items-center gap-2 font-sans opacity-90 tracking-tight"><Truck className="w-3.5 h-3.5 text-[#F7941D]" /> Free Shipping on ₹999+</span>
+              <span className="flex items-center gap-2 font-sans opacity-90 tracking-tight"><ShieldCheck className="w-3.5 h-3.5 text-[#F7941D]" /> Enjoy Better Pricing with Online Payment</span>
               <span className="flex items-center gap-2 font-sans opacity-90 tracking-tight"><Shield className="w-3.5 h-3.5 text-[#F7941D]" /> 100% Genuine Products</span>
             </div>
             <div className="flex items-center gap-6">

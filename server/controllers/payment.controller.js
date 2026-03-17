@@ -519,7 +519,7 @@ export const paymentVerification = asyncHandler(async (req, res) => {
 
     // fallback shipping (only if undefined)
     if (shippingCost === undefined || shippingCost === null) {
-      shippingCost = 100;
+      shippingCost = 0;
     }
 
     // Apply coupon discount if available
@@ -1727,17 +1727,34 @@ export const createCashOrder = asyncHandler(async (req, res) => {
       });
     }
 
-    // Calculate shipping cost based on active shipping provider settings
-    const FREE_SHIPPING_THRESHOLD = 999;
-    const SHIPPING_CHARGE = 100;
-
-    if (subTotal >= FREE_SHIPPING_THRESHOLD) {
-      shippingCost = 0;
-    } else {
-      shippingCost = SHIPPING_CHARGE;
+    // Calculate COD shipping cost using slab pricing
+    // Based on subtotal after discount (before GST)
+    // First calculate tentative discount to determine slab
+    let tentativeDiscount = 0;
+    if (userCoupon && userCoupon.coupon) {
+      if (userCoupon.coupon.discountType === "PERCENTAGE") {
+        let pct = parseFloat(userCoupon.coupon.discountValue);
+        if (pct > 90 || userCoupon.coupon.isDiscountCapped) pct = Math.min(pct, 90);
+        tentativeDiscount = (subTotal * pct) / 100;
+      } else {
+        tentativeDiscount = Math.min(parseFloat(userCoupon.coupon.discountValue), subTotal);
+      }
+    } else if (requestDiscount) {
+      tentativeDiscount = parseFloat(requestDiscount);
     }
-    if (shippingCost === undefined || shippingCost === null) {
-      shippingCost = 100;
+
+    const subtotalAfterDiscount = subTotal - tentativeDiscount;
+
+    if (subtotalAfterDiscount <= 599) {
+      shippingCost = 50;
+    } else if (subtotalAfterDiscount <= 1000) {
+      shippingCost = 80;
+    } else if (subtotalAfterDiscount <= 2000) {
+      shippingCost = 130;
+    } else if (subtotalAfterDiscount <= 3000) {
+      shippingCost = 200;
+    } else {
+      shippingCost = 200;
     }
 
     // Apply coupon discount if available
