@@ -35,9 +35,12 @@ export default function CheckoutPage() {
     const [companyInfo, setCompanyInfo] = useState({
         companyName: "",
         companyAddress: "",
-        companyTaxCode: "",
+        companyGstNumber: "",
         companyEmail: "",
+        companyPhone: "",
     });
+
+    const [companyInfoErrors, setCompanyInfoErrors] = useState({});
 
     const { isAuthenticated, user } = useAuth();
     const router = useRouter();
@@ -278,6 +281,36 @@ export default function CheckoutPage() {
             return;
         }
 
+        // Validate company invoice fields if required
+        if (requiresInvoice) {
+            const errors = {};
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[6-9]\d{9}$/;
+
+            if (!companyInfo.companyName.trim())
+                errors.companyName = "Company name is required";
+            if (!companyInfo.companyAddress.trim())
+                errors.companyAddress = "Company address is required";
+            if (!companyInfo.companyGstNumber.trim())
+                errors.companyGstNumber = "GST number is required";
+            else if (!/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(companyInfo.companyGstNumber.trim()))
+                errors.companyGstNumber = "Enter a valid GST number (e.g. 22AAAAA0000A1Z5)";
+            if (!companyInfo.companyEmail.trim())
+                errors.companyEmail = "Company email is required";
+            else if (!emailRegex.test(companyInfo.companyEmail.trim()))
+                errors.companyEmail = "Enter a valid email address";
+            if (!companyInfo.companyPhone.trim())
+                errors.companyPhone = "Phone number is required";
+            else if (!phoneRegex.test(companyInfo.companyPhone.trim()))
+                errors.companyPhone = "Enter a valid 10-digit Indian phone number";
+
+            setCompanyInfoErrors(errors);
+            if (Object.keys(errors).length > 0) {
+                toast.error("Please fill in all company invoice details correctly");
+                return;
+            }
+        }
+
         setProcessing(true);
         setError("");
 
@@ -320,8 +353,9 @@ export default function CheckoutPage() {
                         requiresInvoice,
                         companyName: requiresInvoice ? companyInfo.companyName : null,
                         companyAddress: requiresInvoice ? companyInfo.companyAddress : null,
-                        companyTaxCode: requiresInvoice ? companyInfo.companyTaxCode : null,
-                        companyEmail: requiresInvoice ? companyInfo.companyEmail : null
+                        companyGstNumber: requiresInvoice ? companyInfo.companyGstNumber : null,
+                        companyEmail: requiresInvoice ? companyInfo.companyEmail : null,
+                        companyPhone: requiresInvoice ? companyInfo.companyPhone : null,
                     }),
                 });
 
@@ -478,12 +512,14 @@ export default function CheckoutPage() {
 
                                     notes: "",
 
-                                    // 🔥 COMPANY INVOICE DATA
+                                    // COMPANY INVOICE DATA
+                                    requiresInvoice: requiresInvoice,
                                     requiresInvoice: requiresInvoice,
                                     companyName: requiresInvoice ? companyInfo.companyName : null,
                                     companyAddress: requiresInvoice ? companyInfo.companyAddress : null,
-                                    companyTaxCode: requiresInvoice ? companyInfo.companyTaxCode : null,
-                                    companyEmail: requiresInvoice ? companyInfo.companyEmail : null
+                                    companyGstNumber: requiresInvoice ? companyInfo.companyGstNumber : null,
+                                    companyEmail: requiresInvoice ? companyInfo.companyEmail : null,
+                                    companyPhone: requiresInvoice ? companyInfo.companyPhone : null,
                                 }),
                             });
 
@@ -976,43 +1012,95 @@ export default function CheckoutPage() {
                         </div>
 
                         {requiresInvoice && (
-
                             <div className="space-y-3">
 
-                                <input
-                                    type="text"
-                                    placeholder="Company name"
-                                    value={companyInfo.companyName}
-                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyName: e.target.value })}
-                                    className="w-full border rounded-md p-2"
-                                />
+                                {/* Company Name */}
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Company name *"
+                                        value={companyInfo.companyName}
+                                        onChange={(e) => {
+                                            setCompanyInfo({ ...companyInfo, companyName: e.target.value });
+                                            setCompanyInfoErrors({ ...companyInfoErrors, companyName: "" });
+                                        }}
+                                        className={`w-full border rounded-md p-2 ${companyInfoErrors.companyName ? "border-red-500" : ""}`}
+                                    />
+                                    {companyInfoErrors.companyName && (
+                                        <p className="text-red-500 text-xs mt-1">{companyInfoErrors.companyName}</p>
+                                    )}
+                                </div>
 
-                                <input
-                                    type="text"
-                                    placeholder="Company address"
-                                    value={companyInfo.companyAddress}
-                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyAddress: e.target.value })}
-                                    className="w-full border rounded-md p-2"
-                                />
+                                {/* Company Address */}
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Company address *"
+                                        value={companyInfo.companyAddress}
+                                        onChange={(e) => {
+                                            setCompanyInfo({ ...companyInfo, companyAddress: e.target.value });
+                                            setCompanyInfoErrors({ ...companyInfoErrors, companyAddress: "" });
+                                        }}
+                                        className={`w-full border rounded-md p-2 ${companyInfoErrors.companyAddress ? "border-red-500" : ""}`}
+                                    />
+                                    {companyInfoErrors.companyAddress && (
+                                        <p className="text-red-500 text-xs mt-1">{companyInfoErrors.companyAddress}</p>
+                                    )}
+                                </div>
 
-                                <input
-                                    type="text"
-                                    placeholder="Company tax code"
-                                    value={companyInfo.companyTaxCode}
-                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyTaxCode: e.target.value })}
-                                    className="w-full border rounded-md p-2"
-                                />
+                                {/* GST Number */}
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="GST number * (e.g. 22AAAAA0000A1Z5)"
+                                        value={companyInfo.companyGstNumber}
+                                        onChange={(e) => {
+                                            setCompanyInfo({ ...companyInfo, companyGstNumber: e.target.value.toUpperCase() });
+                                            setCompanyInfoErrors({ ...companyInfoErrors, companyGstNumber: "" });
+                                        }}
+                                        className={`w-full border rounded-md p-2 ${companyInfoErrors.companyGstNumber ? "border-red-500" : ""}`}
+                                    />
+                                    {companyInfoErrors.companyGstNumber && (
+                                        <p className="text-red-500 text-xs mt-1">{companyInfoErrors.companyGstNumber}</p>
+                                    )}
+                                </div>
 
-                                <input
-                                    type="email"
-                                    placeholder="Company email"
-                                    value={companyInfo.companyEmail}
-                                    onChange={(e) => setCompanyInfo({ ...companyInfo, companyEmail: e.target.value })}
-                                    className="w-full border rounded-md p-2"
-                                />
+                                {/* Company Email */}
+                                <div>
+                                    <input
+                                        type="email"
+                                        placeholder="Company email *"
+                                        value={companyInfo.companyEmail}
+                                        onChange={(e) => {
+                                            setCompanyInfo({ ...companyInfo, companyEmail: e.target.value });
+                                            setCompanyInfoErrors({ ...companyInfoErrors, companyEmail: "" });
+                                        }}
+                                        className={`w-full border rounded-md p-2 ${companyInfoErrors.companyEmail ? "border-red-500" : ""}`}
+                                    />
+                                    {companyInfoErrors.companyEmail && (
+                                        <p className="text-red-500 text-xs mt-1">{companyInfoErrors.companyEmail}</p>
+                                    )}
+                                </div>
+
+                                {/* Company Phone */}
+                                <div>
+                                    <input
+                                        type="tel"
+                                        placeholder="Company phone number * (10-digit)"
+                                        value={companyInfo.companyPhone}
+                                        onChange={(e) => {
+                                            const val = e.target.value.replace(/\D/g, "").slice(0, 10);
+                                            setCompanyInfo({ ...companyInfo, companyPhone: val });
+                                            setCompanyInfoErrors({ ...companyInfoErrors, companyPhone: "" });
+                                        }}
+                                        className={`w-full border rounded-md p-2 ${companyInfoErrors.companyPhone ? "border-red-500" : ""}`}
+                                    />
+                                    {companyInfoErrors.companyPhone && (
+                                        <p className="text-red-500 text-xs mt-1">{companyInfoErrors.companyPhone}</p>
+                                    )}
+                                </div>
 
                             </div>
-
                         )}
 
                     </div>

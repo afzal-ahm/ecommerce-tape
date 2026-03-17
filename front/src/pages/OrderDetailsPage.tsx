@@ -105,8 +105,9 @@ export default function OrderDetailsPage() {
     invoice?: {
       companyName: string;
       companyAddress: string;
-      companyTaxCode: string;
+      companyGstNumber: string;
       companyEmail: string;
+      companyPhone: string;
     };
   }
 
@@ -906,13 +907,18 @@ export default function OrderDetailsPage() {
                 </div>
 
                 <div>
-                  <p className="text-xs text-[#9CA3AF]">Company Tax Code</p>
-                  <p className="font-medium">{orderDetails.invoice.companyTaxCode}</p>
+                  <p className="text-xs text-[#9CA3AF]">GST Number</p>
+                  <p className="font-medium">{orderDetails.invoice.companyGstNumber}</p>
                 </div>
 
                 <div>
                   <p className="text-xs text-[#9CA3AF]">Company Email</p>
                   <p className="font-medium">{orderDetails.invoice.companyEmail}</p>
+                </div>
+
+                <div>
+                  <p className="text-xs text-[#9CA3AF]">Company Phone</p>
+                  <p className="font-medium">{orderDetails.invoice.companyPhone}</p>
                 </div>
 
               </CardContent>

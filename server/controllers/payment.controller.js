@@ -308,8 +308,9 @@ export const paymentVerification = asyncHandler(async (req, res) => {
     requiresInvoice,
     companyName,
     companyAddress,
-    companyTaxCode,
-    companyEmail
+    companyGstNumber,
+    companyEmail,
+    companyPhone
   } = req.body;
 
   // Validation
@@ -663,8 +664,9 @@ export const paymentVerification = asyncHandler(async (req, res) => {
             orderId: order.id,
             companyName,
             companyAddress,
-            companyTaxCode,
+            companyGstNumber,
             companyEmail,
+            companyPhone,
           },
         });
       }
@@ -1554,8 +1556,9 @@ export const createCashOrder = asyncHandler(async (req, res) => {
     // NEW INVOICE FIELDS
     companyName,
     companyAddress,
-    companyTaxCode,
+    companyGstNumber,
     companyEmail,
+    companyPhone,
     requiresInvoice
   } = req.body;
 
@@ -1803,8 +1806,9 @@ export const createCashOrder = asyncHandler(async (req, res) => {
             orderId: order.id,
             companyName,
             companyAddress,
-            companyTaxCode,
+            companyGstNumber,
             companyEmail,
+            companyPhone,
           },
         });
       }
