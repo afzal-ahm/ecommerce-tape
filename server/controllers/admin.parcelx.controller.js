@@ -26,6 +26,7 @@ export const getSettings = asyncHandler(async (req, res) => {
         ...settings,
         apiKey: settings.apiKey ? "********" : null,
         apiSecret: settings.apiSecret ? "********" : null,
+        accessToken: settings.accessToken ? "********" : null,
     };
 
     res.status(200).json(
@@ -63,6 +64,9 @@ export const updateSettings = asyncHandler(async (req, res) => {
     if (apiSecret !== undefined && apiSecret !== "********") {
         updateData.apiSecret = apiSecret.trim();
     }
+    if (req.body.accessToken !== undefined && req.body.accessToken !== "********") {
+        updateData.accessToken = req.body.accessToken.trim();
+    }
 
     if (baseUrl !== undefined) {
         updateData.baseUrl = baseUrl.trim();
@@ -98,9 +102,10 @@ export const updateSettings = asyncHandler(async (req, res) => {
 
     // Mask sensitive data
     const maskedSettings = {
-        ...updatedSettings,
-        apiKey: updatedSettings.apiKey ? "********" : null,
-        apiSecret: updatedSettings.apiSecret ? "********" : null,
+    ...settings,
+    apiKey: settings.apiKey ? "********" : null,
+    apiSecret: settings.apiSecret ? "********" : null,
+    accessToken: settings.accessToken ? "********" : null,
     };
 
     res.status(200).json(
@@ -112,9 +117,10 @@ export const updateSettings = asyncHandler(async (req, res) => {
 export const testConnection = asyncHandler(async (req, res) => {
     try {
         const settings = await getParcelXSettings();
-        if (!settings.apiKey) {
-            throw new Error("API Key is missing");
-        }
+const token = settings.accessToken || settings.apiKey;
+if (!token) {
+    throw new Error("Access token is missing");
+}
 
         // Try a simple request or just return success if credentials look set
         // ParcelX might not have a dedicated ping endpoint, so we just verify config
@@ -258,21 +264,40 @@ export const checkOrderServiceability = asyncHandler(async (req, res) => {
 
 // Sync order to ParcelX
 export const syncOrderToParcelX = asyncHandler(async (req, res) => {
-    const { orderId } = req.params;
+  const { orderId } = req.params;
 
-    const order = await prisma.order.findUnique({
-        where: { id: orderId },
-    });
+  // Extract optional overrides from request body
+  const {
+    length,
+    width,
+    height,
+    weight,
+    courierType,
+    courierCode,
+  } = req.body;
 
-    if (!order) {
-        throw new ApiError(404, "Order not found");
-    }
+  const order = await prisma.order.findUnique({
+    where: { id: orderId },
+  });
 
-    if (order.parcelxWaybill) {
-        throw new ApiError(400, "Order already synced to ParcelX");
-    }
+  if (!order) {
+    throw new ApiError(404, "Order not found");
+  }
 
-    const result = await processOrderForParcelX(orderId);
+  if (order.parcelxWaybill) {
+    throw new ApiError(400, "Order already synced to ParcelX");
+  }
+
+  const overrides = {
+    ...(length !== undefined && { length: parseFloat(length) }),
+    ...(width !== undefined && { width: parseFloat(width) }),
+    ...(height !== undefined && { height: parseFloat(height) }),
+    ...(weight !== undefined && { weight: parseFloat(weight) }),
+    ...(courierType !== undefined && { courierType: parseInt(courierType) }),
+    ...(courierCode !== undefined && { courierCode }),
+  };
+
+  const result = await processOrderForParcelX(orderId, overrides);
 
     if (!result) {
         throw new ApiError(400, "ParcelX is disabled or configuration is missing");

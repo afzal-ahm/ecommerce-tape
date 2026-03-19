@@ -177,7 +177,7 @@ export default function OrderDetailsPage() {
       debugData("Order Data", response?.data?.data, true);
 
       if (response?.data?.success && response?.data?.data?.order) {
-        console.log("ORDER DATA", response.data.data.order); // DEBUGGER
+        //console.log("ORDER DATA", response.data.data.order); // DEBUGGER
         // Fix: Access the order data correctly from response.data.data.order
         setOrderDetails(response.data.data.order);
       } else {
@@ -356,21 +356,50 @@ export default function OrderDetailsPage() {
     }
   };
 
+  // ParcelX sync modal state
+const [showParcelXModal, setShowParcelXModal] = useState(false);
+const [parcelXForm, setParcelXForm] = useState({
+  length: "10",
+  width: "10",
+  height: "10",
+  weight: "0.5",
+  type: "priority",
+  courierCode: "PXBDE01",
+});
+
+const COURIER_OPTIONS = [
+  { label: "Delhivery", value: "PXDEL01" },
+  { label: "Amazon", value: "PXA01" },
+  { label: "Bluedart", value: "PXBDE01" },
+  { label: "XPressBees", value: "PXXBS02" },
+  { label: "Ekart", value: "PXEK02" },
+  { label: "Ekart B2B", value: "PXEKB2B10" },
+  { label: "Delhivery B2B 6CFT", value: "PXDLB2B01" },
+];
+
   const handleSyncToParcelX = async () => {
-    if (!id) return;
-    try {
-      setIsLoading(true);
-      const response = await api.post(`/api/admin/parcelx/orders/${id}/sync`);
-      if (response.data.success) {
-        toast.success("Order synced to ParcelX successfully");
-        fetchOrderDetails();
-      }
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || "Failed to sync to ParcelX");
-    } finally {
-      setIsLoading(false);
+  if (!id) return;
+  try {
+    setIsLoading(true);
+    setShowParcelXModal(false);
+    const response = await api.post(`/api/admin/parcelx/orders/${id}/sync`, {
+      length: parseFloat(parcelXForm.length),
+      width: parseFloat(parcelXForm.width),
+      height: parseFloat(parcelXForm.height),
+      weight: parseFloat(parcelXForm.weight),
+      courierType: parcelXForm.type === "priority" ? 0 : 1,
+      courierCode: parcelXForm.type === "priority" ? "" : parcelXForm.courierCode,
+    });
+    if (response.data.success) {
+      toast.success("Order synced to ParcelX successfully");
+      fetchOrderDetails();
     }
-  };
+  } catch (error: any) {
+    toast.error(error.response?.data?.message || "Failed to sync to ParcelX");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   // Handle order status update
   const handleStatusUpdate = async (newStatus: string) => {
@@ -1207,20 +1236,108 @@ export default function OrderDetailsPage() {
             </Card>
           )}
 
-          {/* Sync Button for ParcelX if not synced and status is PROCESSING/SHIPPED */}
-          {orderDetails.status !== "CANCELLED" &&
-            orderDetails.status !== "DELIVERED" &&
-            !(orderDetails.parcelx?.waybill || orderDetails.shipping?.parcelx?.waybill) && (
-              <Card className="bg-[#F0FDF4] border-[#DCFCE7] shadow-sm rounded-xl">
-                <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold text-[#166534] mb-2 text-sm uppercase tracking-wider">ParcelX Fulfullment</h3>
-                  <p className="text-xs text-[#15803d] mb-4">Sync this order to ParcelX to generate waybill and tracking.</p>
-                  <Button onClick={handleSyncToParcelX} className="bg-[#4CAF50] hover:bg-[#43A047] text-white w-full">
-                    Sync to ParcelX
-                  </Button>
-                </CardContent>
-              </Card>
-            )}
+          {/* Sync Button for ParcelX */}
+{orderDetails.status !== "CANCELLED" &&
+  orderDetails.status !== "DELIVERED" &&
+  !(orderDetails.parcelx?.waybill || orderDetails.shipping?.parcelx?.waybill) && (
+    <Card className="bg-[#F0FDF4] border-[#DCFCE7] shadow-sm rounded-xl">
+      <CardContent className="p-6 text-center">
+        <h3 className="font-semibold text-[#166534] mb-2 text-sm uppercase tracking-wider">ParcelX Fulfillment</h3>
+        <p className="text-xs text-[#15803d] mb-4">Sync this order to ParcelX to generate waybill and tracking.</p>
+        <Button
+          onClick={() => setShowParcelXModal(true)}
+          className="bg-[#4CAF50] hover:bg-[#43A047] text-white w-full"
+        >
+          Sync to ParcelX
+        </Button>
+      </CardContent>
+    </Card>
+  )}
+
+{/* ParcelX Sync Modal */}
+{showParcelXModal && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+    <div className="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 p-6">
+      <h2 className="text-lg font-bold text-[#1F2937] mb-1">Sync to ParcelX</h2>
+      <p className="text-xs text-[#6B7280] mb-5">Set shipment details before syncing.</p>
+
+      {/* Dimensions & Weight */}
+      <div className="grid grid-cols-2 gap-3 mb-4">
+        {[
+          { label: "Length (cm)", key: "length" },
+          { label: "Width (cm)", key: "width" },
+          { label: "Height (cm)", key: "height" },
+          { label: "Weight (kg)", key: "weight" },
+        ].map(({ label, key }) => (
+          <div key={key}>
+            <label className="text-xs font-medium text-[#374151] mb-1 block">{label}</label>
+            <input
+              type="number"
+              min="0"
+              step="0.1"
+              value={parcelXForm[key as keyof typeof parcelXForm]}
+              onChange={(e) => setParcelXForm((prev) => ({ ...prev, [key]: e.target.value }))}
+              className="w-full border border-[#E5E7EB] rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Type Dropdown */}
+      <div className="mb-4">
+        <label className="text-xs font-medium text-[#374151] mb-1 block">Account Type</label>
+        <select
+          value={parcelXForm.type}
+          onChange={(e) => setParcelXForm((prev) => ({ ...prev, type: e.target.value }))}
+          className="w-full border border-[#E5E7EB] rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
+        >
+          <option value="priority">Priority (Auto Select Courier)</option>
+          <option value="normal">Normal (Select Courier)</option>
+        </select>
+      </div>
+
+      {/* Courier Dropdown — only when Normal */}
+      <div className="mb-6">
+        <label className="text-xs font-medium text-[#374151] mb-1 block">
+          Courier Partner
+          {parcelXForm.type === "priority" && (
+            <span className="ml-2 text-[#9CA3AF]">(disabled in Priority mode)</span>
+          )}
+        </label>
+        <select
+          value={parcelXForm.courierCode}
+          onChange={(e) => setParcelXForm((prev) => ({ ...prev, courierCode: e.target.value }))}
+          disabled={parcelXForm.type === "priority"}
+          className={`w-full border border-[#E5E7EB] rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#4CAF50] ${
+            parcelXForm.type === "priority" ? "bg-[#F3F4F6] text-[#9CA3AF] cursor-not-allowed" : ""
+          }`}
+        >
+          {COURIER_OPTIONS.map((c) => (
+            <option key={c.value} value={c.value}>{c.label}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex gap-3">
+        <button
+          onClick={() => setShowParcelXModal(false)}
+          className="flex-1 border border-[#E5E7EB] rounded-md py-2 text-sm font-medium text-[#374151] hover:bg-[#F9FAFB]"
+        >
+          Cancel
+        </button>
+        <button
+          onClick={handleSyncToParcelX}
+          disabled={isLoading}
+          className="flex-1 bg-[#4CAF50] hover:bg-[#43A047] text-white rounded-md py-2 text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-60"
+        >
+          {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+          {isLoading ? "Syncing..." : "Confirm & Sync"}
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
           {/* Shiprocket Information */}
           {orderDetails.shiprocket && (

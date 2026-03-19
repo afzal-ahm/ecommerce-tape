@@ -983,7 +983,8 @@ model ParcelXSettings {
   isEnabled             Boolean   @default(false)
   apiKey                String?
   apiSecret             String?
-  baseUrl               String?   @default("https://api.parcelx.in/v1")
+  accessToken           String?
+  baseUrl               String?   @default("https://app.parcelx.in")
   defaultLength         Float     @default(10)
   defaultBreadth        Float     @default(10)
   defaultHeight         Float     @default(10)
