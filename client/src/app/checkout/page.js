@@ -481,9 +481,9 @@ export default function CheckoutPage() {
                     key: currentKey,
                     amount: razorpayOrder.amount,
                     currency: razorpayOrder.currency,
-                    name: "Surat Cloth House - Premium Women's Fashion",
+                    name: "D-fix - Premium Packaging Solutions",
                     description:
-                        "Elegant women's clothing - Kurtis, Suits, Sarees & more.",
+                        "High-quality packing tapes and industrial packaging products for secure shipping.",
                     order_id: razorpayOrder.id,
                     prefill: {
                         name: user?.name || "",
