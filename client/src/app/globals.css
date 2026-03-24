@@ -417,3 +417,33 @@
 .safe-area-pb {
   padding-bottom: env(safe-area-inset-bottom, 0);
 }
+
+
+/* plugin custom css */
+/* AutoSEO Plugin Overrides */
+.plugin-box .plugins .icons span {
+    position: absolute;
+    display: inline-block;
+    right: -220%;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0);
+    top: 15px;
+    transition-duration: 0.3s;
+}
+
+.plugin-box .plugins {
+    transition-duration: 0.3s;
+    transform: scale(0);
+    position: absolute;
+    top: -600%;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
