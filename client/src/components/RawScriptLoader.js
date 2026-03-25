@@ -6,13 +6,13 @@ export default function RawScriptLoader() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Create script tag manually
-    const script = document.createElement("script");
-
-    script.innerHTML = `
-window.jQuery ||
-document.write("<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'><\\/script>");
-
+    // Load jQuery first
+    const jqueryScript = document.createElement("script");
+    jqueryScript.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js";
+    jqueryScript.onload = () => {
+      // Run plugin script only after jQuery is loaded
+      const script = document.createElement("script");
+      script.innerHTML = `
 var eppathurl = window.location.origin + window.location.pathname;
 var eptagmanage = new XMLHttpRequest();
 eptagmanage.onreadystatechange = function() {
@@ -27,15 +27,13 @@ eptagmanage.onreadystatechange = function() {
         }
     }
 };
-eptagmanage.open("GET", atob("aHR0cHM6Ly9wbHVnaW5zLmF1dG9sZWFwbHVnaW4uY29tL2FsbGhlYWRkYXRhP2VrZXk9ZS1BVVRPU0VPUExVR0lOOTQwOTY3MDI1NiZla2V5cGFzcz1pbFBIUlRWOXJhMzFKQkNOcXdUbGRBblNMd2s3RDE4b3JUVEImc2l0ZXVybD0=") + eppathurl);
+eptagmanage.open("GET", atob("aHR0cHM6Ly9wbHVnaW5zLmF1dG9zZW9wbHVnaW4uY29tL2FsbGhlYWRkYXRhP2VrZXk9ZS1BVVRPU0VPUExVR0lOOTQwOTY3MDI1NiZla2V5cGFzcz1pbFBIUlRWOXJhMzFKQkNOcXdUbGRBblNMd2s3RDE4b3JUVEImc2l0ZXVybD0=") + eppathurl);
 eptagmanage.send();
-    `;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
+      `;
+      document.body.appendChild(script);
     };
+    document.body.appendChild(jqueryScript);
+
   }, []);
 
   return null;
