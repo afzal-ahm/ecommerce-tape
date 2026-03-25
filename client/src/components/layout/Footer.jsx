@@ -146,7 +146,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-[12px] font-medium">
-            © {new Date().getFullYear()} D-Fix Kart. All rights reserved.
+            © {new Date().getFullYear()} D-Fix Kart. All rights reserved |  Developed & Managed by <a href="https://lso360seoplugin.com/" target="_blank" rel="noopener noreferrer"><u>Advertising India</u></a> 
           </p>
           <div className="flex items-center gap-2">
             <span className="text-gray-500 text-[11px] font-bold uppercase mr-2 opacity-60">SECURE PAYMENT:</span>
