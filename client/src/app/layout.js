@@ -8,8 +8,8 @@ import { WishlistProvider } from "@/lib/wishlist-context";
 import RawScriptLoader from "@/components/RawScriptLoader";
 
 export const metadata = {
-  title: "DfixKart | Premium Quality Products - Shop Online",
-  description: "Discover premium quality products at DfixKart. Fast delivery, secure payments, and 100% genuine products. Your trusted online shopping destination.",
+  // title: "DfixKart | Premium Quality Products - Shop Online",
+  // description: "Discover premium quality products at DfixKart. Fast delivery, secure payments, and 100% genuine products. Your trusted online shopping destination.",
   keywords: "DfixKart, online shopping, premium products, quality products, fast delivery, secure payment, India",
   authors: [{ name: "DfixKart" }],
   openGraph: {
@@ -29,6 +29,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Suppress React-managed title so SEO plugin can own it */}
+        <title></title>
+      </head>
       <body className="antialiased">
         <AuthProvider>
           <WishlistProvider>
