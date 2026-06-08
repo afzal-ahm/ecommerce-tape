@@ -186,6 +186,16 @@ export const checkout = asyncHandler(async (req, res) => {
     couponId,
     discountAmount,
     paymentGateway = "RAZORPAY", // Default to RAZORPAY
+    shippingAddressId,
+    billingAddressSameAsShipping,
+    billingAddress,
+    requiresInvoice,
+    companyName,
+    companyAddress,
+    companyGstNumber,
+    companyEmail,
+    companyPhone,
+    cartItems,
   } = req.body;
   const userId = req.user.id;
 
@@ -226,8 +236,10 @@ export const checkout = asyncHandler(async (req, res) => {
     const timestamp = Date.now().toString().slice(-10);
     const receipt = `rcpt_${timestamp}_${shortUserId}`;
 
-    // Store coupon information in the receipt notes
-    const notes = {};
+    // Store coupon and order information in the receipt notes for webhook recovery
+    const notes = {
+      userId,
+    };
     if (couponCode) {
       notes.couponCode = couponCode;
     }
@@ -235,8 +247,29 @@ export const checkout = asyncHandler(async (req, res) => {
       notes.couponId = couponId;
     }
     if (discountAmount && discountAmount > 0) {
-      notes.discountAmount = discountAmount;
+      notes.discountAmount = String(discountAmount);
     }
+    if (shippingAddressId) {
+      notes.shippingAddressId = shippingAddressId;
+    }
+    if (billingAddressSameAsShipping !== undefined) {
+      notes.billingAddressSameAsShipping = String(billingAddressSameAsShipping);
+    }
+    if (billingAddress) {
+      notes.billingAddress = typeof billingAddress === "string" ? billingAddress : JSON.stringify(billingAddress);
+    }
+    if (requiresInvoice !== undefined) {
+      notes.requiresInvoice = String(requiresInvoice);
+    }
+    if (companyName) notes.companyName = companyName;
+    if (companyAddress) notes.companyAddress = companyAddress;
+    if (companyGstNumber) notes.companyGstNumber = companyGstNumber;
+    if (companyEmail) notes.companyEmail = companyEmail;
+    if (companyPhone) notes.companyPhone = companyPhone;
+    if (cartItems) {
+      notes.cartItems = typeof cartItems === "string" ? cartItems : JSON.stringify(cartItems);
+    }
+
     // Store payment gateway info in notes
     notes.paymentGateway = paymentConfig.paymentSettings.gateway;
     notes.paymentMode = paymentConfig.paymentSettings.mode;
@@ -351,13 +384,26 @@ export const paymentVerification = asyncHandler(async (req, res) => {
   }
 
   try {
-    // Check if payment already processed
+    // Check if payment already processed (e.g. by webhook)
     const existingPayment = await prisma.razorpayPayment.findUnique({
       where: { razorpayPaymentId: razorpay_payment_id },
     });
 
     if (existingPayment) {
-      throw new ApiError(400, "Payment already processed");
+      const order = await prisma.order.findUnique({
+        where: { id: existingPayment.orderId },
+      });
+      return res.status(200).json(
+        new ApiResponsive(
+          200,
+          {
+            orderId: existingPayment.orderId,
+            orderNumber: order?.orderNumber || "",
+            paymentStatus: existingPayment.status,
+          },
+          "Payment already verified successfully"
+        )
+      );
     }
 
     // Check for cancelled orders with this Razorpay order ID

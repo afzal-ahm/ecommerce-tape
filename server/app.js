@@ -40,12 +40,17 @@ import adminMOQRoutes from "./routes/admin.moq.routes.js";
 import adminPaymentGatewayRoutes from "./routes/admin.payment-gateway.routes.js";
 import adminShiprocketRoutes from "./routes/admin.shiprocket.routes.js";
 import adminParcelXRoutes from "./routes/admin.parcelx.routes.js";
+import razorpayWebhookRoutes from "./routes/razorpay.webhook.routes.js";
 
 const app = express();
 
 /* -------------------- BASIC MIDDLEWARE -------------------- */
 
-app.use(express.json());
+app.use(express.json({
+  verify: (req, res, buf) => {
+    req.rawBody = buf;
+  }
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
@@ -182,9 +187,10 @@ app.use("/api/admin/parcelx", adminParcelXRoutes);
 import adminVariantRoutes from "./routes/admin.variant.routes.js";
 app.use("/api/admin/variants", adminVariantRoutes);
 
-// Shiprocket webhook (public endpoint)
+// Webhooks (public endpoints)
 app.use("/api/webhooks/shiprocket", adminShiprocketRoutes);
 app.use("/api/webhooks/parcelx", adminParcelXRoutes);
+app.use("/api/webhooks/razorpay", razorpayWebhookRoutes);
 
 /* -------------------- HEALTH CHECK -------------------- */
 

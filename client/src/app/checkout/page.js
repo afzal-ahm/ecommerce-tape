@@ -422,6 +422,18 @@ export default function CheckoutPage() {
                         couponCode: coupon?.code || null,
                         couponId: coupon?.id || null,
                         discountAmount: totals.discount || 0,
+                        shippingAddressId: selectedAddressId,
+                        billingAddressSameAsShipping: true,
+                        requiresInvoice: requiresInvoice,
+                        companyName: requiresInvoice ? companyInfo.companyName : null,
+                        companyAddress: requiresInvoice ? companyInfo.companyAddress : null,
+                        companyGstNumber: requiresInvoice ? companyInfo.companyGstNumber : null,
+                        companyEmail: requiresInvoice ? companyInfo.companyEmail : null,
+                        companyPhone: requiresInvoice ? companyInfo.companyPhone : null,
+                        cartItems: cart.items.map(item => ({
+                            productVariantId: item.productVariantId || item.variant?.id,
+                            quantity: item.quantity
+                        }))
                     }),
                 });
 
