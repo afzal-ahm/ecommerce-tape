@@ -35,6 +35,9 @@ async function getPaymentGatewayConfig(userId = null, gateway = "RAZORPAY") {
         gateway: gateway.toUpperCase(),
         isActive: true,
       },
+      orderBy: {
+        updatedAt: "desc",
+      },
     });
   }
 
@@ -52,6 +55,7 @@ async function getPaymentGatewayConfig(userId = null, gateway = "RAZORPAY") {
 
     let decryptedSecret;
     try {
+      console.log(`[RAZORPAY CONFIG] Loading credentials for Key ID: ${paymentSettings.razorpayKeyId} (Active: ${paymentSettings.isActive}, Mode: ${paymentSettings.mode})`);
       decryptedSecret = decrypt(paymentSettings.razorpayKeySecret);
       if (!decryptedSecret || decryptedSecret.trim() === "") {
         throw new Error("Decrypted secret is empty");
